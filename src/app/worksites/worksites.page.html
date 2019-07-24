@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>worksites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let worksite of worksites">
+    <h1>{{worksite.name}}</h1>
+  </div>
+  <ion-button (click)="refreshWorksites()">
+    Refresh Worksites
+  </ion-button>
+</ion-content>
