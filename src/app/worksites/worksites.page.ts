@@ -15,7 +15,7 @@ export class WorksitesPage implements OnInit {
   ) {
     this.worksiteService.worksitesLoaded.subscribe(worksites => {
       this.worksites = worksites;
-    })
+    });
   }
 
   ngOnInit() {
