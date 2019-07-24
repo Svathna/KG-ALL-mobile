@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
   public newUser = false;
-  public user: firebase.User;
   public loginForm: FormGroup;
-  public formErrors: FormErrors = {
+  public formErrors = {
     'email': '',
     'password': '',
   };
@@ -26,7 +27,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.authService.SignIn(
+    this.authService.signIn(
       this.loginForm.value['email'],
       this.loginForm.value['password'],
     );
