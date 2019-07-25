@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Worksite } from '../models/worksite.model';
-import { EventEmitter } from '@angular/core';
 
 export interface WorksiteResponse {
-  worksites: Worksite[],
-  success: boolean,
+  worksites: Worksite[];
+  success: boolean;
 }
 
 @Injectable({

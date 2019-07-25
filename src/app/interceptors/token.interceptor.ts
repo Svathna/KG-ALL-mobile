@@ -21,7 +21,6 @@ export class TokenInterceptor implements HttpInterceptor {
     try {
       token = localStorage.getItem('token');
     } catch { }
-
     request = request.clone({
       setHeaders: {
         Authorization: 'Token ' + token,
