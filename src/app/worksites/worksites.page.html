@@ -6,7 +6,8 @@
 
 <ion-content>
   <div *ngFor="let worksite of worksites">
-    <h1>{{worksite.name}}</h1>
+    <h1 (click)="goToWorksite(worksite)">{{worksite.name}}</h1>
+    <h6>{{worksite._id}}</h6>
   </div>
   <ion-button (click)="refreshWorksites()">
     Refresh Worksites

@@ -15,6 +15,11 @@ const routes: Routes = [
     loadChildren: './worksites/worksites.module#WorksitesPageModule',
     canActivate: [AdminGuard],
   },
+  {
+    path: 'worksites/:worksiteId',
+    loadChildren: './worksites/worksite/worksite.module#WorksitePageModule',
+    canActivate: [AdminGuard],
+  },
 ];
 
 @NgModule({
