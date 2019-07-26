@@ -1,4 +1,4 @@
-import { WorksiteService } from './../../services/worksite.service';
+import { WorksitesService } from './../../services/worksites.service';
 import { Worksite } from './../../models/worksite.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -15,19 +15,19 @@ export class WorksitePage implements OnInit {
   // id = '5d2eb57ad4594232574a603b';
 
   constructor(
-    private worksiteService: WorksiteService,
+    private worksitesService: WorksitesService,
     private route: ActivatedRoute ) {
-    this.worksiteService.worksiteLoaded.subscribe(worksite => {
+    this.worksitesService.worksiteLoaded.subscribe(worksite => {
       this.worksite = worksite;
     });
   }
 
   ngOnInit() {
     this.worksiteId = this.route.snapshot.paramMap.get('worksiteId');
-    this.worksiteService.getWorksite(this.worksiteId);
+    this.worksitesService.getWorksite(this.worksiteId);
   }
 
   refreshWorksite() {
-    this.worksiteService.getWorksite(this.worksiteId);
+    this.worksitesService.getWorksite(this.worksiteId);
   }
 }
