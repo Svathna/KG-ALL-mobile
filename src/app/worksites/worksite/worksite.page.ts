@@ -12,7 +12,6 @@ export class WorksitePage implements OnInit {
 
   worksite: Worksite;
   worksiteId: string;
-  // id = '5d2eb57ad4594232574a603b';
 
   constructor(
     private worksitesService: WorksitesService,
@@ -24,10 +23,18 @@ export class WorksitePage implements OnInit {
 
   ngOnInit() {
     this.worksiteId = this.route.snapshot.paramMap.get('worksiteId');
+    if (!this.worksiteId) {
+      // maybe go to 404 page ?
+      return false;
+    }
     this.worksitesService.getWorksite(this.worksiteId);
   }
 
   refreshWorksite() {
+    if (!this.worksiteId) {
+      // maybe go to 404 page ?
+      return false;
+    }
     this.worksitesService.getWorksite(this.worksiteId);
   }
 }

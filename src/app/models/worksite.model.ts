@@ -1,4 +1,3 @@
-
 export class Worksite {
   name: string;
   address: string;

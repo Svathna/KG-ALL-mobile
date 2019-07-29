@@ -7,6 +7,7 @@ export interface WorksitesResponse {
   worksites: Worksite[];
   success: boolean;
 }
+
 export interface WorksiteResponse {
   worksite: Worksite;
   success: boolean;
@@ -32,7 +33,11 @@ export class WorksitesService {
         this.worksitesLoaded.emit(this.worksites);
       });
   }
+
   getWorksite(id) {
+    if (!id) {
+      return false;
+    }
     this.http.get(environment.apiURL + '/worksites/' + id)
       .subscribe(( response: WorksiteResponse) => {
         this.worksite = response.worksite;
