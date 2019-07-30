@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-grid>
+    <!-- title and image -->
+    <ion-row>
+      <ion-col>
+        <h1>Avengers HQ</h1>
+        <p class="loading">Last Viewed : July 4th 2019</p>
+        <div class="top-img">
+          <img src="../../assets/1.jpg" alt="">
+        </div>
+        <div>
+          <ion-row class="header-loading">
+            <ion-progress-bar type="indeterminate"></ion-progress-bar>
+            <span margin-left class="loading">99%</span>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- end title and image -->
+
+    <!-- reports and workers buttons -->
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" shape="round">Reports</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" shape="round" color="secondary">Workers</ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- end works and reports buttons -->
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+
+  <!-- reports card -->
+  <ion-card *ngFor="let worker of workers">
+    <div style="padding: 10px">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="worker.imageUrl"></ion-img>
+      </ion-thumbnail>
+      <!-- <div style="padding: 5px"></div> -->
+      <ion-label>
+        <div>
+          <ion-row>
+            <span margin-left>{{worker.name}}</span>
+          </ion-row>
+        </div>
+        <div>
+          <ion-row padding-top>
+            <span margin-left>{{worker.title}}</span>
+          </ion-row>
+        </div>
+        <div>
+          <ion-row style="width: 100%" padding-top>
+            <ion-progress-bar value="0.25"></ion-progress-bar>
+            <span margin-left class="loading">99%</span>
+          </ion-row>
+        </div>
+      </ion-label>
+    </div>
+  </ion-card>
+  <!-- end reports card -->
+</ion-content>
