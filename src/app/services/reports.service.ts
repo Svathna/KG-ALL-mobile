@@ -23,6 +23,12 @@ export class ReportsService {
       "Report’s Id : #131329",
       "Elon Musk / 27 May 2020",
       "http://static.asiawebdirect.com/m/bangkok/portals/cambodia/homepage/phnom-penh/pagePropertiesImage/phnom-penh.jpg.jpg"
+    ),
+    new Report(
+      "w2",
+      "Report’s Id : #131329",
+      "Elon Musk / 27 May 2020",
+      "http://static.asiawebdirect.com/m/bangkok/portals/cambodia/homepage/phnom-penh/pagePropertiesImage/phnom-penh.jpg.jpg"
     )
   ];
 

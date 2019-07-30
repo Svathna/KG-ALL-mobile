@@ -11,8 +11,7 @@ ion-thumbnail {
   ion-img {
     border: 0px solid #fff;
     border-radius: 8%;
-    // max-width: 7.5rem;
-    // min-width: 7.5rem;
+
     width: 115px;
     height: 84px;
   }
@@ -37,7 +36,7 @@ div {
 
 
   img {
-    border-radius: 15px;
+    border-radius: 8px;
 
   }
 }
@@ -49,4 +48,14 @@ div {
 
 .loading {
   font-size: 12px;
+  color: #000000;
+}
+
+.card-font {
+  font-size: 14px;
+  color: #000000;
+}
+
+ion-button {
+  height: 35px;
 }
