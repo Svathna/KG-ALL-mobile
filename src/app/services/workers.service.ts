@@ -11,22 +11,21 @@ export class WorkersService {
       "Robert Downy | Scafolder",
       "ID NUMBER : 123991928192838",
       "Team : Iron Man",
-      "http://static.asiawebdirect.com/m/bangkok/portals/cambodia/homepage/phnom-penh/pagePropertiesImage/phnom-penh.jpg.jpg"
+      "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519821818-iron-man-worried-avengers-robert-downey-jr.jpg?crop=0.5373134328358209xw:1xh;center,top&resize=480:*"
     ),
     new Worker(
       "w2",
       "Report’s Id : #131329",
       "Elon Musk / 27 May 2020",
       "Team : Iron Man",
-
-      "http://static.asiawebdirect.com/m/bangkok/portals/cambodia/homepage/phnom-penh/pagePropertiesImage/phnom-penh.jpg.jpg"
+      "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519821818-iron-man-worried-avengers-robert-downey-jr.jpg?crop=0.5373134328358209xw:1xh;center,top&resize=480:*"
     ),
     new Worker(
       "w2",
       "Report’s Id : #131329",
       "Elon Musk / 27 May 2020",
       "Team : Iron Man",
-      "http://static.asiawebdirect.com/m/bangkok/portals/cambodia/homepage/phnom-penh/pagePropertiesImage/phnom-penh.jpg.jpg"
+      "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519821818-iron-man-worried-avengers-robert-downey-jr.jpg?crop=0.5373134328358209xw:1xh;center,top&resize=480:*"
     )
   ];
 

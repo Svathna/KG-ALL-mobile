@@ -1,4 +1,4 @@
-<ion-header>
+<div>
   <ion-grid>
     <!-- title and image -->
     <ion-row>
@@ -6,7 +6,7 @@
         <h1>Avengers HQ</h1>
         <p class="loading">Last Viewed : July 4th 2019</p>
         <div class="top-img">
-          <img src="../../assets/1.jpg" alt="">
+          <img src="../../assets/2.jpg" alt="">
         </div>
         <div>
           <ion-row class="header-loading">
@@ -21,25 +21,26 @@
     <!-- reports and workers buttons -->
     <ion-row>
       <ion-col>
-        <ion-button expand="block" shape="round">Reports</ion-button>
+        <ion-button expand="block" shape="round" [routerLink]="['/', 'reports']" color="medium">Reports</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" shape="round" color="medium">Workers</ion-button>
+        <ion-button expand="block" shape="round">Workers</ion-button>
       </ion-col>
     </ion-row>
+    <!-- <app-page-buttons [routerLink]="['/', 'routers']"></app-page-buttons> -->
+
     <!-- end works and reports buttons -->
   </ion-grid>
-</ion-header>
+</div>
 
 <ion-content>
 
-  <!-- reports card -->
+  <!-- workers card -->
   <ion-card *ngFor="let worker of workers">
     <div style="padding: 10px">
       <ion-thumbnail slot="start">
         <ion-img [src]="worker.imageUrl"></ion-img>
       </ion-thumbnail>
-      <!-- <div style="padding: 5px"></div> -->
       <ion-label>
         <div>
           <ion-row>
@@ -65,28 +66,9 @@
       </ion-label>
     </div>
   </ion-card>
-  <!-- end reports card -->
+  <!-- end workers card -->
 
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button color="secondary">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button>
-        <ion-icon name="paper"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="start">
-      <ion-fab-button>
-        <ion-icon name="home"></ion-icon>
-      </ion-fab-button>
-
-    </ion-fab-list>
-
-    <ion-fab-list side="end">
-      <ion-fab-button>
-        <ion-icon name="qr-scanner"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+  <!-- floating action button -->
+  <app-ion-fab slot="fixed"></app-ion-fab>
+  <!-- end floating action button -->
 </ion-content>

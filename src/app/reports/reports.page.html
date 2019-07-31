@@ -1,4 +1,4 @@
-<ion-header>
+<div>
   <ion-grid>
     <!-- title and image -->
     <ion-row>
@@ -24,12 +24,13 @@
         <ion-button expand="block" shape="round">Reports</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" shape="round" color="medium">Workers</ion-button>
+        <ion-button expand="block" shape="round" color="medium" [routerLink]="['/', 'workers']">Workers</ion-button>
       </ion-col>
     </ion-row>
+    <!-- <app-page-buttons [routerLink]="['/', 'reports']"></app-page-buttons> -->
     <!-- end works and reports buttons -->
   </ion-grid>
-</ion-header>
+</div>
 
 <ion-content>
 
@@ -62,26 +63,8 @@
   </ion-card>
   <!-- end reports card -->
 
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button color="secondary">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button>
-        <ion-icon name="paper"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="start">
-      <ion-fab-button>
-        <ion-icon name="home"></ion-icon>
-      </ion-fab-button>
 
-    </ion-fab-list>
-
-    <ion-fab-list side="end">
-      <ion-fab-button>
-        <ion-icon name="qr-scanner"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+  <!-- floating action button -->
+  <app-ion-fab slot="fixed"></app-ion-fab>
+  <!-- end floating action button -->
 </ion-content>
