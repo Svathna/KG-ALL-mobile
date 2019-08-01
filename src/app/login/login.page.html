@@ -1,6 +1,4 @@
 <ion-content center text-center>
-
-
 	<!-- <div class="card-body">
 		<div>
 			<h4>LOGIN</h4>
@@ -37,22 +35,21 @@
 	</div> -->
 
 	<!-- 2 -->
-	<div class="background">
+	<!-- <div class="background">
 		<div style="padding-left: 100px">
 
 			<img src="../../assets/PNG.png" alt="" width="auto" height="auto">
-		</div>
-		<!-- <div style="position: fixed; bottom: 20px; width: 100%;">
-
-			
 		</div> -->
-		<!-- <ion-grid no-padding>
+	<!-- <div style="position: fixed; bottom: 20px; width: 100%;">
+
+		</div> -->
+	<!-- <ion-grid no-padding>
 			<ion-row>
 				<ion-col style="padding-left: 100px">
 				</ion-col>
 			</ion-row>
 		</ion-grid> -->
-		<ion-grid style="position: fixed; bottom: 90px; width: 100%;">fdsfa
+	<!-- <ion-grid style="position: fixed; bottom: 90px; width: 100%;">
 			<ion-row>
 				<ion-col>
 					<ion-list padding style="background-color: transparent">
@@ -71,24 +68,35 @@
 				</ion-col>
 			</ion-row>
 		</ion-grid>
-
-
+	</div> -->
+	<div class="main">
+		<ion-grid no-padding>
+			<ion-row no-padding>
+				<ion-col>
+					<img src="../../assets/logo.png" alt="" height="100%" width="100%">
+				</ion-col>
+			</ion-row>
+		</ion-grid>
 	</div>
-
-	<!-- <ion-card>
-		<ion-card-header>Login</ion-card-header>
-		<ion-card-content>
-			<ion-list no-lines>
-				<ion-item>
-					<ion-label floating>Email Address</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label aria-placeholder="fasd"></ion-label>
-					<ion-input type="password"></ion-input>
-				</ion-item>
-			</ion-list>
-		</ion-card-content>
-	</ion-card> -->
-
+	<form>
+		<ion-grid style="position: absolute; bottom:10%; width: 100%;" padding>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-input placeholder="EMAIL ADRESS"></ion-input>
+					</ion-item>
+					<div padding></div>
+					<ion-item>
+						<ion-input type="password" placeholder="PASSWORD"></ion-input>
+					</ion-item>
+					<div text-center>
+						<ion-button color="#707070">ENTER</ion-button>
+					</div>
+					<ion-label style="color: #707070">
+						Forgot Password
+					</ion-label>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</form>
 </ion-content>

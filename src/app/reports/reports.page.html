@@ -31,11 +31,9 @@
     <!-- end works and reports buttons -->
   </ion-grid>
 </div>
-
 <ion-content>
-
   <!-- reports card -->
-  <ion-card *ngFor="let report of reports">
+  <ion-card *ngFor="let report of reports" button>
     <div style="padding: 10px">
       <ion-thumbnail slot="start">
         <ion-img [src]="report.imageUrl"></ion-img>
