@@ -69,34 +69,34 @@
 			</ion-row>
 		</ion-grid>
 	</div> -->
-	<div class="main">
-		<ion-grid no-padding>
-			<ion-row no-padding>
-				<ion-col>
-					<img src="../../assets/logo.png" alt="" height="100%" width="100%">
-				</ion-col>
-			</ion-row>
-		</ion-grid>
-	</div>
-	<form>
-		<ion-grid style="position: absolute; bottom:10%; width: 100%;" padding>
+	<ion-grid no-padding style="padding-left: 90px; padding-top: 50px" class="main">
+		<ion-row no-padding>
+			<ion-col no-padding>
+				<img src="../../assets/logo.png" alt="" height="auto" width="100%">
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-grid style="position: absolute; bottom:5%; width: 100%;" padding>
+		<form action="">
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-input placeholder="EMAIL ADRESS"></ion-input>
+						<ion-input type="email" placeholder="EMAIL ADRESS" padding></ion-input>
 					</ion-item>
 					<div padding></div>
 					<ion-item>
-						<ion-input type="password" placeholder="PASSWORD"></ion-input>
+						<ion-input type="password" placeholder="PASSWORD" padding></ion-input>
 					</ion-item>
-					<div text-center>
-						<ion-button color="#707070">ENTER</ion-button>
+					<div text-center padding>
+						<ion-button color="tertiary">
+							<ion-label color="primary">ENTER</ion-label>
+						</ion-button>
 					</div>
-					<ion-label style="color: #707070">
-						Forgot Password
-					</ion-label>
+					<ion-button color="tertiary" style="float: left">
+						<ion-label>Forgot Password</ion-label>
+					</ion-button>
 				</ion-col>
 			</ion-row>
-		</ion-grid>
-	</form>
+		</form>
+	</ion-grid>
 </ion-content>
