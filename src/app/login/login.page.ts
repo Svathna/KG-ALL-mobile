@@ -27,10 +27,13 @@ export class LoginPage {
   }
 
   login() {
-    this.authService.signIn(
+    if(this.loginForm.valid){
+      this.authService.signIn(
       this.loginForm.value['email'],
       this.loginForm.value['password'],
-    );
+      );
+    }
+    
   }
 
 }

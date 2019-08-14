@@ -40,3 +40,9 @@ ion-content {
     --placeholder-align: center;
     color: white;
   }
+
+  ion-label {
+    div {
+      color: red;
+    }
+  }
