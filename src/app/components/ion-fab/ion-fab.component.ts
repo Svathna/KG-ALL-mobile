@@ -9,8 +9,4 @@ export class IonFabComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  onClick() {
-    console.log("fadsfsd");
-  }
 }

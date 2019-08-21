@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 import { AdminGuard } from "./guards/admin.guard";
 import { LoginGuard } from "./guards/login.guard";
+import { WorkerDetailsComponent } from "./workers/worker-details/worker-details.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "reports",
     loadChildren: "./reports/reports.module#ReportsPageModule"
+  },
+  {
+    path: "workers/:workerId",
+    component: WorkerDetailsComponent
   }
 ];
 

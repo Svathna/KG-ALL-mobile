@@ -1,37 +1,42 @@
-import { Injectable } from "@angular/core";
-import { Worker } from "../workers/workers.model";
+import { Injectable, EventEmitter } from "@angular/core";
+import { User, UserType } from "../models/user.model";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment";
 
+export interface WorkersResponse {
+  users: User[];
+  success: boolean;
+}
+export interface WorkerResponse {
+  user: User;
+  success: boolean;
+}
 @Injectable({
   providedIn: "root"
 })
 export class WorkersService {
-  private _workers: Worker[] = [
-    new Worker(
-      "w1",
-      "Robert Downy | Scafolder",
-      "ID NUMBER : 123991928192838",
-      "Team : Iron Man",
-      "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519821818-iron-man-worried-avengers-robert-downey-jr.jpg?crop=0.5373134328358209xw:1xh;center,top&resize=480:*"
-    ),
-    new Worker(
-      "w2",
-      "Report’s Id : #131329",
-      "Elon Musk / 27 May 2020",
-      "Team : Iron Man",
-      "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519821818-iron-man-worried-avengers-robert-downey-jr.jpg?crop=0.5373134328358209xw:1xh;center,top&resize=480:*"
-    ),
-    new Worker(
-      "w2",
-      "Report’s Id : #131329",
-      "Elon Musk / 27 May 2020",
-      "Team : Iron Man",
-      "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519821818-iron-man-worried-avengers-robert-downey-jr.jpg?crop=0.5373134328358209xw:1xh;center,top&resize=480:*"
-    )
-  ];
+  public workers: User[];
+  public workersLoaded: EventEmitter<User[]> = new EventEmitter();
+  public worker: User;
+  public workerLoaded: EventEmitter<User> = new EventEmitter();
 
-  get workers() {
-    return [...this._workers];
+  constructor(private http: HttpClient) {}
+
+  getWorkers(type: UserType) {
+    this.http
+      .post(environment.apiURL + "/user/type", { type })
+      .subscribe((response: WorkersResponse) => {
+        this.workers = response.users;
+        this.workersLoaded.emit(this.workers);
+      });
   }
 
-  constructor() {}
+  getWorker(id) {
+    this.http
+      .get(environment.apiURL + "/user/" + id)
+      .subscribe((response: WorkerResponse) => {
+        this.worker = response.user;
+        this.workerLoaded.emit(this.worker);
+      });
+  }
 }

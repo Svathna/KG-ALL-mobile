@@ -27,7 +27,7 @@
         <ion-button expand="block" shape="round">Workers</ion-button>
       </ion-col>
     </ion-row>
-    <!-- <app-page-buttons [routerLink]="['/', 'routers']"></app-page-buttons> -->
+
 
     <!-- end works and reports buttons -->
   </ion-grid>
@@ -36,25 +36,26 @@
 <ion-content>
 
   <!-- workers card -->
-  <ion-card *ngFor="let worker of workers">
+  <ion-card *ngFor="let worker of workers" (click)="goToWorker(worker)">
     <div style="padding: 10px">
       <ion-thumbnail slot="start">
-        <ion-img [src]="worker.imageUrl"></ion-img>
+        <ion-img [src]="worker.photo"></ion-img>
       </ion-thumbnail>
+
       <ion-label>
         <div>
           <ion-row>
-            <span margin-left class="card-font">{{worker.name}}</span>
+            <span margin-left class="card-font">{{worker.firstName}} {{worker.lastName}}</span>
           </ion-row>
         </div>
         <div>
           <ion-row padding-top>
-            <span margin-left class="loading">{{worker.title}}</span>
+            <span margin-left class="loading">{{worker.email}}</span>
           </ion-row>
         </div>
         <div>
           <ion-row padding-top>
-            <span margin-left class="loading">{{worker.role}}</span>
+            <span margin-left class="loading">{{worker.birthday | date: 'mediumDate'}}</span>
           </ion-row>
         </div>
         <div>

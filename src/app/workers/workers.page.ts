@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { WorkersService } from "../services/workers.service";
-import { Worker } from "./workers.model";
+import { User, UserType } from "../models/user.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-workers",
@@ -8,11 +9,20 @@ import { Worker } from "./workers.model";
   styleUrls: ["./workers.page.scss"]
 })
 export class WorkersPage implements OnInit {
-  workers: Worker[];
+  workers: User[];
 
-  constructor(private workersService: WorkersService) {}
+  constructor(private workersService: WorkersService, private router: Router) {
+    this.workersService.workersLoaded.subscribe(workers => {
+      this.workers = workers;
+    });
+  }
 
   ngOnInit() {
-    this.workers = this.workersService.workers;
+    // this.workers = this.workersService.workers;
+    this.workersService.getWorkers(UserType.WORKER);
+  }
+
+  goToWorker(worker: User) {
+    this.router.navigate([`/workers/${worker._id}`]);
   }
 }

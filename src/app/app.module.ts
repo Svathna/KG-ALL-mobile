@@ -10,9 +10,11 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
+import { WorkerDetailsComponent } from "./workers/worker-details/worker-details.component";
+import { ComponentsModule } from "./components/components.module";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WorkerDetailsComponent],
   entryComponents: [],
   imports: [
     HttpClientModule,
