@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { WorksitesService } from '../services/worksites.service';
 import { Worksite } from '../models/worksite.model';
@@ -11,7 +12,8 @@ export class WorksitesPage implements OnInit {
   worksites: Worksite[];
 
   constructor(
-    private worksiteService: WorksitesService
+    private worksiteService: WorksitesService,
+    private router: Router,
   ) {
     this.worksiteService.worksitesLoaded.subscribe(worksites => {
       this.worksites = worksites;
@@ -20,6 +22,10 @@ export class WorksitesPage implements OnInit {
 
   ngOnInit() {
     this.worksiteService.getWorksites();
+  }
+
+  goToWorksite(worksite: Worksite) {
+    this.router.navigate([`/worksites/${worksite._id}`]);
   }
 
   refreshWorksites() {
