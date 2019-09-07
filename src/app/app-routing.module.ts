@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 import { AdminGuard } from "./guards/admin.guard";
 import { LoginGuard } from "./guards/login.guard";
 import { WorkerDetailsComponent } from "./workers/worker-details/worker-details.component";
+import { CreateReportsComponent } from "./reports/create-reports/create-reports.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -18,15 +19,21 @@ const routes: Routes = [
   },
   {
     path: "workers",
-    loadChildren: "./workers/workers.module#WorkersPageModule"
+    loadChildren: "./workers/workers.module#WorkersPageModule",
+    canActivate: [AdminGuard]
   },
   {
     path: "reports",
-    loadChildren: "./reports/reports.module#ReportsPageModule"
+    loadChildren: "./reports/reports.module#ReportsPageModule",
+    canActivate: [AdminGuard]
   },
   {
     path: "workers/:workerId",
     component: WorkerDetailsComponent
+  },
+  {
+    path: "reports/create-reports",
+    component: CreateReportsComponent
   }
 ];
 

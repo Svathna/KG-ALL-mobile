@@ -6,7 +6,7 @@
         <h1>Avengers HQ</h1>
         <p class="loading">Last Viewed : July 4th 2019</p>
         <div class="top-img">
-          <img src="../../assets/2.jpg" alt="">
+          <img src="../../assets/2.jpg" alt="" />
         </div>
         <div>
           <ion-row class="header-loading">
@@ -21,48 +21,62 @@
     <!-- reports and workers buttons -->
     <ion-row>
       <ion-col>
-        <ion-button expand="block" shape="round" [routerLink]="['/', 'reports']" color="medium">Reports</ion-button>
+        <ion-button
+          expand="block"
+          shape="round"
+          [routerLink]="['/', 'reports']"
+          color="medium"
+          >Reports</ion-button
+        >
       </ion-col>
       <ion-col>
         <ion-button expand="block" shape="round">Workers</ion-button>
       </ion-col>
     </ion-row>
-
-
     <!-- end works and reports buttons -->
   </ion-grid>
 </div>
 
 <ion-content>
-
   <!-- workers card -->
-  <ion-card *ngFor="let worker of workers" (click)="goToWorker(worker)">
+  <ion-card *ngFor="let worker of workers">
     <div style="padding: 10px">
-      <ion-thumbnail slot="start">
-        <ion-img [src]="worker.photo"></ion-img>
+      <ion-thumbnail slot="start" (click)="goToWorker(worker)">
+        <ion-img *ngIf="worker.photo" [src]="worker.photo"></ion-img>
+        <ion-img
+          *ngIf="!worker.photo"
+          [src]="'../../assets/people/worker.jpg'"
+        ></ion-img>
       </ion-thumbnail>
 
       <ion-label>
         <div>
           <ion-row>
-            <span margin-left class="card-font">{{worker.firstName}} {{worker.lastName}}</span>
+            <span margin-left class="card-font"
+              >{{ worker.firstName }} {{ worker.lastName }}</span
+            >
           </ion-row>
         </div>
         <div>
           <ion-row padding-top>
-            <span margin-left class="loading">{{worker.email}}</span>
+            <span margin-left class="loading">{{ worker.email }}</span>
           </ion-row>
         </div>
         <div>
           <ion-row padding-top>
-            <span margin-left class="loading">{{worker.birthday | date: 'mediumDate'}}</span>
+            <span margin-left class="loading">{{
+              worker.birthday | date: "mediumDate"
+            }}</span>
           </ion-row>
         </div>
         <div>
-          <ion-row style="width: 100%; padding-top: 10px" justify-content-center>
+          <ion-row
+            style="width: 100%; padding-top: 10px"
+            justify-content-center
+          >
             <div>
-              <ion-segment style="width: 188px; height: 30px;">
-                <ion-segment-button value="on" class="segment-button">
+              <ion-segment style="width: 180px; height: 30px">
+                <ion-segment-button value="on" checked class="segment-button">
                   <ion-label>On</ion-label>
                 </ion-segment-button>
                 <ion-segment-button value="off" class="segment-button">

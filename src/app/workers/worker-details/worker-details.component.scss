@@ -1,10 +1,6 @@
-ion-item {
-  padding: 5px
-}
-
 ion-thumbnail {
   width: 90.5px;
-  height: 119px;
+  height: 100%;
 
   ion-img {
     border: 0px solid #fff;
@@ -14,6 +10,12 @@ ion-thumbnail {
   }
 }
 
+div {
+  display: flex;
+  flex-direction: row
+}
+
+
 ion-label {
   width: 100%;
   padding-left: 10px;
@@ -21,11 +23,6 @@ ion-label {
   p {
     padding-top: 10px
   }
-}
-
-.row {
-  display: flex;
-  flex-direction: row
 }
 
 .loading {
@@ -50,16 +47,12 @@ ion-button {
   height: 35px;
 }
 
-ion-fab {
-  .icon {
-    background-color: transparent !important;
-    color: #000000 !important;
-  }
-}
-
 .segment-button {
-  border-radius: 50px;
+  --border-radius: 50px;
   font-size: 16px;
+  --background: #ebebeb;
+  --border-color: transparent;
+  --color: #919191
 }
 
 .title {
@@ -68,5 +61,14 @@ ion-fab {
   span {
     font-size: 16px;
     font-weight: 500
+  }
+}
+
+.select {
+  ion-select {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 10px;
+    -webkit-padding-end: 20px;
   }
 }

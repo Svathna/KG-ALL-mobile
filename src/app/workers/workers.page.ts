@@ -24,5 +24,6 @@ export class WorkersPage implements OnInit {
 
   goToWorker(worker: User) {
     this.router.navigate([`/workers/${worker._id}`]);
+    console.log("get worker");
   }
 }

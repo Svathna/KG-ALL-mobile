@@ -4,33 +4,48 @@
       <ion-col>
         <h1>Avengers HQ</h1>
         <p class="loading">Last Viewed : July 4th 2019</p>
-
         <ion-card *ngIf="worker">
-          <div style="padding: 10px" class="row">
+          <div style="padding: 10px">
             <ion-thumbnail slot="start">
-              <ion-img [src]="worker.photo"></ion-img>
+              <ion-img *ngIf="worker.photo" [src]="worker.photo"></ion-img>
+              <ion-img
+                *ngIf="!worker.photo"
+                [src]="'../../assets/people/worker.jpg'"
+              ></ion-img>
             </ion-thumbnail>
+
             <ion-label>
-              <div class="row">
+              <div>
                 <ion-row>
-                  <span margin-left class="card-font">{{worker.firstName}} {{worker.lastName}}</span>
+                  <span margin-left class="card-font"
+                    >{{ worker.firstName }} {{ worker.lastName }}</span
+                  >
                 </ion-row>
               </div>
-              <div class="row">
+              <div>
                 <ion-row padding-top>
-                  <span margin-left class="loading">{{worker.email}}</span>
+                  <span margin-left class="loading">{{ worker.email }}</span>
                 </ion-row>
               </div>
-              <div class="row">
+              <div>
                 <ion-row padding-top>
-                  <span margin-left class="loading">{{worker.birthday | date: 'mediumDate'}}</span>
+                  <span margin-left class="loading">{{
+                    worker.birthday | date: "mediumDate"
+                  }}</span>
                 </ion-row>
               </div>
-              <div class="row">
-                <ion-row style="width: 100%; padding-top: 10px" justify-content-center>
+              <div>
+                <ion-row
+                  style="width: 100%; padding-top: 10px"
+                  justify-content-center
+                >
                   <div>
-                    <ion-segment style="width: 188px; height: 30px;">
-                      <ion-segment-button value="on" class="segment-button">
+                    <ion-segment style="width: 180px; height: 30px">
+                      <ion-segment-button
+                        value="on"
+                        checked
+                        class="segment-button"
+                      >
                         <ion-label>On</ion-label>
                       </ion-segment-button>
                       <ion-segment-button value="off" class="segment-button">
@@ -46,33 +61,83 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-header>
 
 <ion-content>
-
-  <ion-item>
-    <ion-label>Gaming</ion-label>
-    <ion-select interface="popover">
-      <ion-select-option value="nes">NES</ion-select-option>
-      <ion-select-option value="n64">Nintendo64</ion-select-option>
-      <ion-select-option value="ps">PlayStation</ion-select-option>
-      <ion-select-option value="genesis">Sega Genesis</ion-select-option>
-      <ion-select-option value="saturn">Sega Saturn</ion-select-option>
-      <ion-select-option value="snes">SNES</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-row class="header-loading">
-
-    <ion-progress-bar type="indeterminate"></ion-progress-bar>
-    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; padding-top: 5px">
-      <div class="loading">Min</div>
-      <div class="loading">Min</div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="select">
+          <ion-select interface="popover" placeholder="Weather">
+            <ion-select-option value="nes">NES</ion-select-option>
+            <ion-select-option value="n64">Nintendo64</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="header-loading">
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      <div
+        style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; padding-top: 5px"
+      >
+        <div class="loading">Min</div>
+        <div class="loading">Min</div>
+      </div>
+    </ion-row>
+    <div class="title">
+      <span>Recent Activity</span>
     </div>
-  </ion-row>
-  <div class="title">
-    <span>Recent Activity</span>
-  </div>
-  <!-- <app-ion-fab slot="fixed"></app-ion-fab> -->
+    <ion-card *ngIf="worker">
+      <div style="padding: 10px">
+        <ion-thumbnail slot="start">
+          <ion-img *ngIf="worker.photo" [src]="worker.photo"></ion-img>
+          <ion-img
+            *ngIf="!worker.photo"
+            [src]="'../../assets/people/worker.jpg'"
+          ></ion-img>
+        </ion-thumbnail>
 
+        <ion-label>
+          <div>
+            <ion-row>
+              <span margin-left class="card-font"
+                >{{ worker.firstName }} {{ worker.lastName }}</span
+              >
+            </ion-row>
+          </div>
+          <div>
+            <ion-row padding-top>
+              <span margin-left class="loading">{{ worker.email }}</span>
+            </ion-row>
+          </div>
+          <div>
+            <ion-row padding-top>
+              <span margin-left class="loading">{{
+                worker.birthday | date: "mediumDate"
+              }}</span>
+            </ion-row>
+          </div>
+          <div>
+            <ion-row
+              style="width: 100%; padding-top: 10px"
+              justify-content-center
+            >
+              <div>
+                <ion-segment style="width: 180px; height: 30px">
+                  <ion-segment-button value="on" checked class="segment-button">
+                    <ion-label>On</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="off" class="segment-button">
+                    <ion-label>Off</ion-label>
+                  </ion-segment-button>
+                </ion-segment>
+              </div>
+            </ion-row>
+          </div>
+        </ion-label>
+      </div>
+    </ion-card>
+
+    <!-- <app-ion-fab slot="fixed"></app-ion-fab> -->
+  </ion-grid>
 </ion-content>

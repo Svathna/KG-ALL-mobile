@@ -9,7 +9,7 @@ import { Worksite } from "../models/worksite.model";
 })
 export class WorksitesPage implements OnInit {
   worksites: Worksite[];
-
+  ionicNamedColor: string = "medium";
   constructor(private worksiteService: WorksitesService) {
     this.worksiteService.worksitesLoaded.subscribe(worksites => {
       this.worksites = worksites;
@@ -22,5 +22,13 @@ export class WorksitesPage implements OnInit {
 
   refreshWorksites() {
     this.worksiteService.getWorksites();
+  }
+
+  public toggleNamedColor(): void {
+    if (this.ionicNamedColor === "medium") {
+      this.ionicNamedColor = "primary";
+    } else {
+      this.ionicNamedColor = "medium";
+    }
   }
 }

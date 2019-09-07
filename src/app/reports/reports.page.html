@@ -6,7 +6,7 @@
         <h1>Avengers HQ</h1>
         <p class="loading">Last Viewed : July 4th 2019</p>
         <div class="top-img">
-          <img src="../../assets/1.jpg" alt="">
+          <img src="../../assets/login.png" alt="" style="object-fit: cover" />
         </div>
         <div>
           <ion-row class="header-loading">
@@ -24,30 +24,37 @@
         <ion-button expand="block" shape="round">Reports</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" shape="round" color="medium" [routerLink]="['/', 'workers']">Workers</ion-button>
+        <ion-button
+          expand="block"
+          shape="round"
+          color="medium"
+          [routerLink]="['/', 'workers']"
+          >Workers</ion-button
+        >
       </ion-col>
     </ion-row>
-    <!-- <app-page-buttons [routerLink]="['/', 'reports']"></app-page-buttons> -->
     <!-- end works and reports buttons -->
   </ion-grid>
 </div>
 <ion-content>
   <!-- reports card -->
-  <ion-card *ngFor="let report of reports" button>
+  <ion-card
+    *ngFor="let report of reports"
+    [routerLink]="['/reports/create-reports']"
+  >
     <div style="padding: 10px">
       <ion-thumbnail slot="start">
         <ion-img [src]="report.imageUrl"></ion-img>
       </ion-thumbnail>
-      <!-- <div style="padding: 5px"></div> -->
       <ion-label>
         <div>
           <ion-row>
-            <span margin-left class="card-font">{{report.name}}</span>
+            <span margin-left class="card-font">{{ report.name }}</span>
           </ion-row>
         </div>
         <div>
           <ion-row padding-top>
-            <span margin-left class="loading">{{report.title}}</span>
+            <span margin-left class="loading">{{ report.title }}</span>
           </ion-row>
         </div>
         <div>
@@ -59,8 +66,8 @@
       </ion-label>
     </div>
   </ion-card>
-  <!-- end reports card -->
 
+  <!-- end reports card -->
 
   <!-- floating action button -->
   <app-ion-fab slot="fixed"></app-ion-fab>

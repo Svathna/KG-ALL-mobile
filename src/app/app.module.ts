@@ -11,10 +11,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
 import { WorkerDetailsComponent } from "./workers/worker-details/worker-details.component";
-import { ComponentsModule } from "./components/components.module";
+import { CreateReportsComponent } from "./reports/create-reports/create-reports.component";
 
 @NgModule({
-  declarations: [AppComponent, WorkerDetailsComponent],
+  declarations: [AppComponent, WorkerDetailsComponent, CreateReportsComponent],
   entryComponents: [],
   imports: [
     HttpClientModule,

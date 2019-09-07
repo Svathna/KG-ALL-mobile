@@ -29,8 +29,6 @@ div {
   flex-direction: row
 }
 
-
-
 .card-font {
   font-size: 14px;
   color: #000000;
@@ -47,6 +45,21 @@ ion-button {
   scroll-main {
     height: 100%;
     white-space: nowrap;
-    overflow: hidden
+    overflow: hidden;
   }
+
+  ion-button {
+    padding-left: 5px
+  }
+
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
+}
+
+.card span {
+  padding-right: 15px;
 }

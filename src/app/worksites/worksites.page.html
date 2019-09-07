@@ -7,55 +7,70 @@
     </ion-row>
   </ion-grid>
 </ion-header>
-
 <ion-searchbar></ion-searchbar>
-
 <div class="main">
   <div class="scroll-main">
     <div>
-      <ion-chip class="card">
-        <ion-label position="fixed">Phnom Penh</ion-label>
-        <ion-icon name="close"></ion-icon>
-      </ion-chip>
+      <ion-button
+        class="card"
+        [color]="ionicNamedColor"
+        style="--border-radius: 50px"
+        (click)="toggleNamedColor()"
+      >
+        <span>
+          Phnom Penh
+        </span>
+        <!-- <ion-label position="fixed">Phnom Penh</ion-label> -->
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
     </div>
     <div>
-      <ion-chip class="card">
-        <ion-label>Default</ion-label>
-        <ion-icon name="close"></ion-icon>
-      </ion-chip>
+      <ion-button class="card" color="medium" style="--border-radius: 50px">
+        <!-- Default -->
+        <!-- <ion-label position="fixed">Default</ion-label> -->
+        <span>Default</span>
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
     </div>
     <div>
-      <ion-chip class="card">
-        <ion-label>Default</ion-label>
-        <ion-icon name="close"></ion-icon>
-      </ion-chip>
+      <ion-button class="card" color="medium" style="--border-radius: 50px">
+        <!-- Default -->
+        <!-- <ion-label position="fixed">Default</ion-label> -->
+        <span>Default</span>
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
     </div>
     <div>
-      <ion-chip class="card">
-        <ion-label>Default</ion-label>
-        <ion-icon name="close"></ion-icon>
-      </ion-chip>
+      <ion-button class="card" color="medium" style="--border-radius: 50px">
+        <!-- Default -->
+        <span>Default</span>
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
     </div>
   </div>
 </div>
 
-
 <ion-content>
   <ion-card *ngFor="let worksite of worksites">
-    <div style="padding: 10px">
+    <div style="padding: 10px; overflow: auto">
       <ion-thumbnail slot="start">
-        <!-- <ion-img [src]="worksite.imageUrl"></ion-img> -->
+        <ion-img *ngIf="worksite.photo" [src]="worksite.photo"></ion-img>
+        <ion-img
+          *ngIf="!worksite.photo"
+          [src]="'../../assets/login.png'"
+        ></ion-img>
       </ion-thumbnail>
-      <!-- <div style="padding: 5px"></div> -->
       <ion-label>
         <div>
           <ion-row>
-            <span margin-left class="card-font">{{worksite.name}}</span>
+            <span margin-left class="card-font">{{ worksite.name }}</span>
           </ion-row>
         </div>
         <div>
           <ion-row padding-top>
-            <span margin-left class="loading">Last viewed: {{worksite.address}}</span>
+            <span margin-left class="loading"
+              >Last viewed: {{ worksite.address }}</span
+            >
           </ion-row>
         </div>
         <div>
@@ -93,5 +108,4 @@
     </ion-fab-list>
   </ion-fab>
   <!-- end floating buttons -->
-
 </ion-content>
