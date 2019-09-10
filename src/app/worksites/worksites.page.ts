@@ -1,6 +1,7 @@
 import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { WorksitesService } from "../services/worksites.service";
 import { Worksite } from "../models/worksite.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-worksites",
@@ -10,7 +11,10 @@ import { Worksite } from "../models/worksite.model";
 export class WorksitesPage implements OnInit {
   worksites: Worksite[];
   ionicNamedColor: string = "medium";
-  constructor(private worksiteService: WorksitesService) {
+  constructor(
+    private worksiteService: WorksitesService,
+    private router: Router
+  ) {
     this.worksiteService.worksitesLoaded.subscribe(worksites => {
       this.worksites = worksites;
     });
@@ -18,6 +22,10 @@ export class WorksitesPage implements OnInit {
 
   ngOnInit() {
     this.worksiteService.getWorksites();
+  }
+
+  goToWorksite(worksite: Worksite) {
+    this.router.navigate([`/worksites/${worksite._id}`]);
   }
 
   refreshWorksites() {
