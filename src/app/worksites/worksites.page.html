@@ -1,14 +1,111 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>worksites</ion-title>
-  </ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>WORKSITES</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
+<ion-searchbar></ion-searchbar>
+<div class="main">
+  <div class="scroll-main">
+    <div>
+      <ion-button
+        class="card"
+        [color]="ionicNamedColor"
+        style="--border-radius: 50px"
+        (click)="toggleNamedColor()"
+      >
+        <span>
+          Phnom Penh
+        </span>
+        <!-- <ion-label position="fixed">Phnom Penh</ion-label> -->
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
+    </div>
+    <div>
+      <ion-button class="card" color="medium" style="--border-radius: 50px">
+        <!-- Default -->
+        <!-- <ion-label position="fixed">Default</ion-label> -->
+        <span>Default</span>
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
+    </div>
+    <div>
+      <ion-button class="card" color="medium" style="--border-radius: 50px">
+        <!-- Default -->
+        <!-- <ion-label position="fixed">Default</ion-label> -->
+        <span>Default</span>
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
+    </div>
+    <div>
+      <ion-button class="card" color="medium" style="--border-radius: 50px">
+        <!-- Default -->
+        <span>Default</span>
+        <ion-icon name="add-circle" color="light"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</div>
 
 <ion-content>
-  <div *ngFor="let worksite of worksites">
-    <h1>{{worksite.name}}</h1>
-  </div>
+  <ion-card *ngFor="let worksite of worksites">
+    <div style="padding: 10px; overflow: auto">
+      <ion-thumbnail slot="start">
+        <ion-img *ngIf="worksite.photo" [src]="worksite.photo"></ion-img>
+        <ion-img
+          *ngIf="!worksite.photo"
+          [src]="'../../assets/login.png'"
+        ></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <div>
+          <ion-row>
+            <span margin-left class="card-font">{{ worksite.name }}</span>
+          </ion-row>
+        </div>
+        <div>
+          <ion-row padding-top>
+            <span margin-left class="loading"
+              >Last viewed: {{ worksite.address }}</span
+            >
+          </ion-row>
+        </div>
+        <div>
+          <ion-row style="width: 100%" padding-top>
+            <ion-progress-bar value="0.25"></ion-progress-bar>
+            <span margin-left class="loading">99%</span>
+          </ion-row>
+        </div>
+      </ion-label>
+    </div>
+  </ion-card>
   <ion-button (click)="refreshWorksites()">
     Refresh Worksites
   </ion-button>
+
+  <!-- floating buttons -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button href="reports">
+        <ion-icon name="paper"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button href="worksites">
+        <ion-icon name="home"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button href="workers">
+        <ion-icon name="person"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-- end floating buttons -->
 </ion-content>

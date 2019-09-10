@@ -1,0 +1,79 @@
+.background {
+  --background: #000000;
+}
+
+.logo-wrapper {
+  // position: relative;
+  // height: 53vh;
+  width: 100%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+  // display: flex;
+  // align-items: flex-end;
+  ion-img {
+    height: 50vh;
+    width: 140%; // width: 80vh;
+  }
+}
+
+// ion-input {
+//   --placeholder-color: red;
+//   --placeholder-opacity: 1;
+// }
+ion-content {
+  width: 100%;
+  margin: 0;
+
+  hr {
+    margin: 0;
+    background-color: #000000;
+  }
+}
+
+.main {
+  width: 100%;
+}
+
+ion-item {
+  background-color: transparent !important;
+  --background: none;
+  opacity: 1;
+  text-align: center;
+  --border-color: #707070;
+  --highlight-color-focused: none;
+}
+
+ion-input {
+  --placeholder-color: #707070;
+  --placeholder-opacity: 1;
+  --placeholder-align: center;
+  color: white;
+  width: 100%
+}
+
+ion-label {
+  div {
+    color: red;
+  }
+}
+
+.homescreen-content {
+  display: flex;
+  /* displays flex-items (children) inline */
+  flex-direction: column;
+  /* stacks them vertically */
+  height: 100vh;
+  /* 100% of the viewport height */
+}
+
+.homescreen-content>div {
+  display: flex;
+  justify-content: center;
+  /* horizontally centered */
+  align-items: center;
+  /* vertically centered */
+  flex: 1;
+  /* each stretches and takes equal height of the parent (50vh) */
+  background-color: #000000;
+}
