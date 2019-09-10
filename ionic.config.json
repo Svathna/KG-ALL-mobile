@@ -1,5 +1,7 @@
 {
   "name": "construction-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

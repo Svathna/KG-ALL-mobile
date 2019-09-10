@@ -2,7 +2,7 @@ export enum UserType {
   WORKER = 1,
   MANAGER = 2,
   OFFICE_MANAGER = 3,
-  OWNER = 4,
+  OWNER = 4
 }
 
 export class User {
@@ -16,6 +16,7 @@ export class User {
   birthday: Date;
   team: string;
   isCurrentlyWorking: boolean;
+  _id: string;
 
   constructor(user) {
     this.firstName = user.firstName;
