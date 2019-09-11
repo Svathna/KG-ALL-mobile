@@ -1,9 +1,11 @@
 <ion-content>
-  <ion-grid>
+  <ion-grid style="background-color: #F5F5F5">
     <ion-row>
       <ion-col>
-        <h1>REPORTS</h1>
-        <p class="loading">Last Viewed : July 4th 2019</p>
+        <div style="padding-left: 15px">
+          <h1>REPORTS</h1>
+          <p class="loading">Last Viewed : July 4th 2019</p>
+        </div>
 
         <!-- card report -->
         <ion-card>
@@ -111,7 +113,7 @@
 
     <!-- processing -->
     <ion-row>
-      <ion-col>
+      <ion-col class="process">
         <span style="font-size: 16px; font-weight: bold">
           Process Percentage
         </span>
@@ -133,9 +135,9 @@
     </ion-row>
 
     <!-- note -->
-    <ion-row>
+    <ion-row style="background-color: transparent !important">
       <ion-col>
-        <ion-item no-padding>
+        <ion-item no-padding color="none">
           <ion-input placeholder="Notes"></ion-input>
           <ion-icon name="create" color="medium"></ion-icon>
         </ion-item>
@@ -159,7 +161,7 @@
     <!-- summary -->
     <ion-row>
       <ion-col>
-        <ion-item no-padding>
+        <ion-item no-padding color="none" class="item">
           <ion-textarea rows="4" cols="10" placeholder="Summary">
           </ion-textarea>
           <div style="height: 75%;" class="icon is-large">

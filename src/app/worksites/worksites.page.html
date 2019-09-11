@@ -6,49 +6,49 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-header>
-<ion-searchbar></ion-searchbar>
-<div class="main">
-  <div class="scroll-main">
-    <div>
-      <ion-button
-        class="card"
-        [color]="ionicNamedColor"
-        style="--border-radius: 50px"
-        (click)="toggleNamedColor()"
-      >
-        <span>
-          Phnom Penh
-        </span>
-        <!-- <ion-label position="fixed">Phnom Penh</ion-label> -->
-        <ion-icon name="add-circle" color="light"></ion-icon>
-      </ion-button>
-    </div>
-    <div>
-      <ion-button class="card" color="medium" style="--border-radius: 50px">
-        <!-- Default -->
-        <!-- <ion-label position="fixed">Default</ion-label> -->
-        <span>Default</span>
-        <ion-icon name="add-circle" color="light"></ion-icon>
-      </ion-button>
-    </div>
-    <div>
-      <ion-button class="card" color="medium" style="--border-radius: 50px">
-        <!-- Default -->
-        <!-- <ion-label position="fixed">Default</ion-label> -->
-        <span>Default</span>
-        <ion-icon name="add-circle" color="light"></ion-icon>
-      </ion-button>
-    </div>
-    <div>
-      <ion-button class="card" color="medium" style="--border-radius: 50px">
-        <!-- Default -->
-        <span>Default</span>
-        <ion-icon name="add-circle" color="light"></ion-icon>
-      </ion-button>
+  <ion-searchbar></ion-searchbar>
+  <div class="main">
+    <div class="scroll-main">
+      <div>
+        <ion-button
+          class="card"
+          [color]="ionicNamedColor"
+          style="--border-radius: 50px"
+          (click)="toggleNamedColor()"
+        >
+          <span>
+            Phnom Penh
+          </span>
+          <!-- <ion-label position="fixed">Phnom Penh</ion-label> -->
+          <ion-icon name="add-circle" color="light"></ion-icon>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button class="card" color="medium" style="--border-radius: 50px">
+          <!-- Default -->
+          <!-- <ion-label position="fixed">Default</ion-label> -->
+          <span>Default</span>
+          <ion-icon name="add-circle" color="light"></ion-icon>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button class="card" color="medium" style="--border-radius: 50px">
+          <!-- Default -->
+          <!-- <ion-label position="fixed">Default</ion-label> -->
+          <span>Default</span>
+          <ion-icon name="add-circle" color="light"></ion-icon>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button class="card" color="medium" style="--border-radius: 50px">
+          <!-- Default -->
+          <span>Default</span>
+          <ion-icon name="add-circle" color="light"></ion-icon>
+        </ion-button>
+      </div>
     </div>
   </div>
-</div>
+</ion-header>
 
 <ion-content>
   <ion-card *ngFor="let worksite of worksites">
