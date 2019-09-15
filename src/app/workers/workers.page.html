@@ -4,7 +4,9 @@
     <ion-row>
       <ion-col>
         <h1>Avengers HQ</h1>
-        <p class="loading">Last Viewed : July 4th 2019</p>
+        <p class="loading">
+          Last Viewed : July 4th 2019
+        </p>
         <div class="top-img">
           <img src="../../assets/2.jpg" alt="" />
         </div>
@@ -20,7 +22,7 @@
 
     <!-- reports and workers buttons -->
     <ion-row>
-      <ion-col>
+      <ion-col no-padding>
         <ion-button
           expand="block"
           shape="round"
@@ -29,8 +31,11 @@
           >Reports</ion-button
         >
       </ion-col>
-      <ion-col>
-        <ion-button expand="block" shape="round">Workers</ion-button>
+      <div style="width: 13px"></div>
+      <ion-col no-padding>
+        <ion-button expand="block" shape="round" *ngIf="workers"
+          >Workers ({{ workers.length }})
+        </ion-button>
       </ion-col>
     </ion-row>
     <!-- end works and reports buttons -->
@@ -68,13 +73,10 @@
             }}</span>
           </ion-row>
         </div>
-        <div>
-          <ion-row
-            style="width: 100%; padding-top: 10px"
-            justify-content-center
-          >
+        <div class="segment">
+          <ion-row justify-content-center>
             <div>
-              <ion-segment style="width: 180px; height: 30px">
+              <ion-segment>
                 <ion-segment-button value="on" checked class="segment-button">
                   <ion-label>On</ion-label>
                 </ion-segment-button>

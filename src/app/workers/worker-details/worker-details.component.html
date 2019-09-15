@@ -1,11 +1,18 @@
-<ion-header>
-  <ion-grid>
+<ion-toolbar color="secondary">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/workers"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<div class="header">
+  <ion-grid no-padding>
     <ion-row>
-      <ion-col>
-        <h1>Avengers HQ</h1>
-        <p class="loading">Last Viewed : July 4th 2019</p>
+      <ion-col no-padding>
+        <div class="title">
+          <h1>Tony Stark</h1>
+          <p class="loading">Last Viewed : July 4th 2019</p>
+        </div>
         <ion-card *ngIf="worker">
-          <div style="padding: 10px">
+          <div class="card">
             <ion-thumbnail slot="start">
               <ion-img *ngIf="worker.photo" [src]="worker.photo"></ion-img>
               <ion-img
@@ -13,7 +20,6 @@
                 [src]="'../../assets/people/worker.jpg'"
               ></ion-img>
             </ion-thumbnail>
-
             <ion-label>
               <div>
                 <ion-row>
@@ -34,13 +40,10 @@
                   }}</span>
                 </ion-row>
               </div>
-              <div>
-                <ion-row
-                  style="width: 100%; padding-top: 10px"
-                  justify-content-center
-                >
+              <div class="segment">
+                <ion-row justify-content-center>
                   <div>
-                    <ion-segment style="width: 180px; height: 30px">
+                    <ion-segment>
                       <ion-segment-button
                         value="on"
                         checked
@@ -60,13 +63,8 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-grid>
-</ion-header>
-
-<ion-content>
-  <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col no-padding>
         <div class="select">
           <ion-select interface="popover" placeholder="Weather">
             <ion-select-option value="nes">NES</ion-select-option>
@@ -75,69 +73,49 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row class="header-loading">
-      <ion-progress-bar type="indeterminate"></ion-progress-bar>
-      <div
-        style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; padding-top: 5px"
-      >
-        <div class="loading">Min</div>
-        <div class="loading">Min</div>
-      </div>
-    </ion-row>
-    <div class="title">
-      <span>Recent Activity</span>
+    <div justify-content-center>
+      <ion-row class="header-loading">
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+        <div class="loading-text">
+          <div class="loading">Min</div>
+          <div class="loading">Min</div>
+        </div>
+      </ion-row>
     </div>
-    <ion-card *ngIf="worker">
-      <div style="padding: 10px">
-        <ion-thumbnail slot="start">
-          <ion-img *ngIf="worker.photo" [src]="worker.photo"></ion-img>
-          <ion-img
-            *ngIf="!worker.photo"
-            [src]="'../../assets/people/worker.jpg'"
-          ></ion-img>
-        </ion-thumbnail>
+    <div class="title">
+      <span>Team Leader's Reports</span>
+    </div>
+  </ion-grid>
+</div>
 
+<ion-content>
+  <ion-grid no-padding>
+    <ion-card>
+      <div class="card report-img">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="'../../assets/Background.png'"></ion-img>
+        </ion-thumbnail>
         <ion-label>
+          <ion-row>
+            <span margin-left class="card-font">Phnom Penh, Spaceship</span>
+          </ion-row>
           <div>
             <ion-row>
-              <span margin-left class="card-font"
-                >{{ worker.firstName }} {{ worker.lastName }}</span
-              >
+              <span margin-left class="loading">Last Check In : 12:04 AM</span>
             </ion-row>
           </div>
           <div>
-            <ion-row padding-top>
-              <span margin-left class="loading">{{ worker.email }}</span>
+            <ion-row>
+              <span margin-left class="loading">Total Hours : 112 hours</span>
             </ion-row>
           </div>
           <div>
-            <ion-row padding-top>
-              <span margin-left class="loading">{{
-                worker.birthday | date: "mediumDate"
-              }}</span>
-            </ion-row>
-          </div>
-          <div>
-            <ion-row
-              style="width: 100%; padding-top: 10px"
-              justify-content-center
-            >
-              <div>
-                <ion-segment style="width: 180px; height: 30px">
-                  <ion-segment-button value="on" checked class="segment-button">
-                    <ion-label>On</ion-label>
-                  </ion-segment-button>
-                  <ion-segment-button value="off" class="segment-button">
-                    <ion-label>Off</ion-label>
-                  </ion-segment-button>
-                </ion-segment>
-              </div>
+            <ion-row>
+              <span margin-left class="loading">Team : 20 Workers</span>
             </ion-row>
           </div>
         </ion-label>
       </div>
     </ion-card>
-
-    <!-- <app-ion-fab slot="fixed"></app-ion-fab> -->
   </ion-grid>
 </ion-content>

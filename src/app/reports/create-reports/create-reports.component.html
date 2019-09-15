@@ -1,15 +1,19 @@
+<ion-toolbar color="secondary">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/reports"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
 <ion-content>
-  <ion-grid style="background-color: #F5F5F5">
+  <ion-grid>
     <ion-row>
       <ion-col>
-        <div style="padding-left: 15px">
+        <div class="header">
           <h1>REPORTS</h1>
           <p class="loading">Last Viewed : July 4th 2019</p>
         </div>
-
         <!-- card report -->
         <ion-card>
-          <div style="padding: 10px">
+          <div class="card">
             <ion-thumbnail slot="start" class="img-report">
               <ion-img [src]="'../../assets/login.png'"></ion-img>
             </ion-thumbnail>
@@ -25,7 +29,7 @@
                 </ion-row>
               </div>
               <div>
-                <ion-row style="width: 100%" padding-top>
+                <ion-row padding-top class="process-bar">
                   <ion-progress-bar value="0.25"></ion-progress-bar>
                   <span margin-left class="loading">99%</span>
                 </ion-row>
@@ -60,36 +64,31 @@
 
         <!-- card worker-->
         <ion-card>
-          <div style="padding: 10px">
+          <div class="card">
             <ion-thumbnail slot="start" class="img-worker">
               <ion-img [src]="'../../assets/people/worker.jpg'"></ion-img>
             </ion-thumbnail>
 
             <ion-label>
               <div>
-                <ion-input
-                  placeholder="Type worker's name here"
-                  no-padding
-                ></ion-input>
-                <!-- <span margin-left class="card-font">Rithikun Sen</span> -->
-              </div>
-              <div>
-                <ion-row padding-top>
-                  <ion-input no-padding>ID Number:</ion-input>
+                <ion-row>
+                  <span margin-left class="card-font">Rithikun Sen</span>
                 </ion-row>
               </div>
               <div>
                 <ion-row padding-top>
-                  <ion-input no-padding>Team: </ion-input>
+                  <span margin-left class="loading">senrithikun@gmail.com</span>
                 </ion-row>
               </div>
               <div>
-                <ion-row
-                  style="width: 100%; padding-top: 10px"
-                  justify-content-center
-                >
+                <ion-row padding-top>
+                  <span margin-left class="loading">25 / 10 / 1999</span>
+                </ion-row>
+              </div>
+              <div class="segment">
+                <ion-row justify-content-center>
                   <div>
-                    <ion-segment style="width: 180px; height: 30px">
+                    <ion-segment>
                       <ion-segment-button
                         value="on"
                         checked
@@ -114,7 +113,7 @@
     <!-- processing -->
     <ion-row>
       <ion-col class="process">
-        <span style="font-size: 16px; font-weight: bold">
+        <span class="title">
           Process Percentage
         </span>
         <ion-range color="primary" pin="true" no-padding></ion-range>
@@ -135,7 +134,7 @@
     </ion-row>
 
     <!-- note -->
-    <ion-row style="background-color: transparent !important">
+    <ion-row>
       <ion-col>
         <ion-item no-padding color="none">
           <ion-input placeholder="Notes"></ion-input>
@@ -161,10 +160,10 @@
     <!-- summary -->
     <ion-row>
       <ion-col>
-        <ion-item no-padding color="none" class="item">
+        <ion-item no-padding color="none">
           <ion-textarea rows="4" cols="10" placeholder="Summary">
           </ion-textarea>
-          <div style="height: 75%;" class="icon is-large">
+          <div class="icon is-large">
             <ion-icon name="create" color="medium"></ion-icon>
           </div>
         </ion-item>

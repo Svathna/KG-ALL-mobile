@@ -10,10 +10,10 @@ import { Router } from "@angular/router";
 })
 export class WorkersPage implements OnInit {
   workers: User[];
-
   constructor(private workersService: WorkersService, private router: Router) {
     this.workersService.workersLoaded.subscribe(workers => {
       this.workers = workers;
+      console.log(workers);
     });
   }
 

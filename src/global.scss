@@ -9,3 +9,21 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+ion-popover {
+  ion-backdrop {
+    opacity: 0.2 !important;
+  }
+
+  .popover-wrapper {
+    .popover-content {
+      width: 80vw;
+      max-width: 500px;
+    }
+  }
+}
+
+.searchbar-input {
+  border-radius: 21px !important;
+  border: 1px solid #707070 !important;
+}
