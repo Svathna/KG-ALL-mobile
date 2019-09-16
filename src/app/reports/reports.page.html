@@ -1,4 +1,4 @@
-<div>
+<div class="header">
   <ion-grid>
     <!-- title and image -->
     <ion-row>
@@ -20,29 +20,31 @@
 
     <!-- reports and workers buttons -->
     <ion-row>
-      <ion-col>
+      <ion-col no-padding>
         <ion-button expand="block" shape="round">Reports</ion-button>
       </ion-col>
-      <ion-col>
+      <div style="width: 13px"></div>
+      <ion-col no-padding>
         <ion-button
           expand="block"
           shape="round"
           color="medium"
           [routerLink]="['/', 'workers']"
-          >Workers</ion-button
+        >
+          Workers</ion-button
         >
       </ion-col>
     </ion-row>
     <!-- end works and reports buttons -->
   </ion-grid>
 </div>
-<ion-content>
+<ion-content class="main">
   <!-- reports card -->
   <ion-card
     *ngFor="let report of reports"
     [routerLink]="['/reports/create-reports']"
   >
-    <div style="padding: 10px">
+    <div class="card">
       <ion-thumbnail slot="start">
         <ion-img [src]="report.imageUrl"></ion-img>
       </ion-thumbnail>
@@ -58,7 +60,7 @@
           </ion-row>
         </div>
         <div>
-          <ion-row style="width: 100%" padding-top>
+          <ion-row padding-top class="process-bar">
             <ion-progress-bar value="0.25"></ion-progress-bar>
             <span margin-left class="loading">99%</span>
           </ion-row>
@@ -66,7 +68,6 @@
       </ion-label>
     </div>
   </ion-card>
-
   <!-- end reports card -->
 
   <!-- floating action button -->
