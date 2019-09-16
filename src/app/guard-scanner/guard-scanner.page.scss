@@ -1,4 +1,6 @@
 ion-header {
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: #f5f5f5;
 
   .profile {
@@ -10,23 +12,23 @@ ion-header {
       border: 2px solid #FFCE00
     }
 
-    .name {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
     .content {
-      font-size: 14px;
-      padding-right: 100px
+      font-size: 16px;
+      padding-top: 8px
     }
-
   }
 
 }
 
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Big John
+}
+
 .main {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #f5f5f5;
 
   div {
@@ -50,6 +52,7 @@ ion-header {
   .loading {
     font-size: 12px;
     color: #000000;
+
   }
 
   .title {
