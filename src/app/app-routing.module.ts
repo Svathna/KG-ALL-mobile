@@ -34,7 +34,8 @@ const routes: Routes = [
   {
     path: "reports/create-reports",
     component: CreateReportsComponent
-  }
+  },
+  { path: 'guard-scanner', loadChildren: './guard-scanner/guard-scanner.module#GuardScannerPageModule' }
 ];
 
 @NgModule({

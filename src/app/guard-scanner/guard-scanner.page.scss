@@ -1,0 +1,63 @@
+ion-header {
+  background-color: #f5f5f5;
+
+  .profile {
+    --background: #f5f5f5;
+
+    ion-avatar {
+      width: 76px;
+      height: 76px;
+      border: 2px solid #FFCE00
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .content {
+      font-size: 14px;
+      padding-right: 100px
+    }
+
+  }
+
+}
+
+.main {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #f5f5f5;
+
+  div {
+    display: flex;
+    flex-direction: row
+  }
+
+  .top-img {
+    height: 163px;
+
+    img {
+      border-radius: 8px;
+    }
+  }
+
+  .header-loading {
+    width: 100%;
+    padding-top: 15px
+  }
+
+  .loading {
+    font-size: 12px;
+    color: #000000;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: bold
+  }
+
+  p {
+    font-size: 16px
+  }
+}
