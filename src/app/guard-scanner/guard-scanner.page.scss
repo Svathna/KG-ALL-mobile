@@ -23,13 +23,17 @@ ion-header {
 .name {
   font-size: 24px;
   font-weight: bold;
-  font-family: Big John
 }
 
 .main {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #f5f5f5;
+
+  h1 {
+    font-family: Big John;
+    font-size: 34px
+  }
 
   div {
     display: flex;
@@ -52,7 +56,6 @@ ion-header {
   .loading {
     font-size: 12px;
     color: #000000;
-
   }
 
   .title {
