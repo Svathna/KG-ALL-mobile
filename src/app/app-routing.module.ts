@@ -9,22 +9,22 @@ const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
   {
     path: "login",
-    loadChildren: "./login/login.module#LoginPageModule",
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
     canActivate: [LoginGuard]
   },
   {
     path: "worksites",
-    loadChildren: "./worksites/worksites.module#WorksitesPageModule",
+    loadChildren: () => import('./worksites/worksites.module').then(m => m.WorksitesPageModule),
     canActivate: [AdminGuard]
   },
   {
     path: "workers",
-    loadChildren: "./workers/workers.module#WorkersPageModule",
+    loadChildren: () => import('./workers/workers.module').then(m => m.WorkersPageModule),
     canActivate: [AdminGuard]
   },
   {
     path: "reports",
-    loadChildren: "./reports/reports.module#ReportsPageModule",
+    loadChildren: () => import('./reports/reports.module').then(m => m.ReportsPageModule),
     canActivate: [AdminGuard]
   },
   {
@@ -35,7 +35,7 @@ const routes: Routes = [
     path: "reports/create-reports",
     component: CreateReportsComponent
   },
-  { path: 'guard-scanner', loadChildren: './guard-scanner/guard-scanner.module#GuardScannerPageModule' }
+  { path: 'guard-scanner', loadChildren: () => import('./guard-scanner/guard-scanner.module').then(m => m.GuardScannerPageModule) }
 ];
 
 @NgModule({
