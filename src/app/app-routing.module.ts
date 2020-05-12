@@ -35,7 +35,6 @@ const routes: Routes = [
     path: "reports/create-reports",
     component: CreateReportsComponent
   },
-  { path: 'guard-scanner', loadChildren: () => import('./guard-scanner/guard-scanner.module').then(m => m.GuardScannerPageModule) }
 ];
 
 @NgModule({
@@ -44,4 +43,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
