@@ -1,66 +1,75 @@
 <ion-content center text-center class="background">
-  <div class="logo-wrapper">
-    <ion-img src="assets/logo.png"></ion-img>
-  </div>
-  <div class="main" text-center padding>
-    <form [formGroup]="loginForm">
-      <ion-item>
-        <ion-input
-          type="email"
-          placeholder="EMAIL ADRESS"
-          padding
-          require=""
-          formControlName="email"
-        ></ion-input>
-      </ion-item>
-      <div padding></div>
-      <ion-item>
-        <ion-input
-          type="password"
-          placeholder="PASSWORD"
-          padding
-          formControlName="password"
-        ></ion-input>
-      </ion-item>
-      <div text-center padding>
-        <ion-button color="tertiary" (click)="login()" type="submit">
-          <ion-label color="primary">
+    <div class="logo-wrapper">
+        <div class="logo">
+            <ion-img
+                class="ion-align-self-end"
+                src="assets/logo/kg-all-logo.png"
+            ></ion-img>
+        </div>
+    </div>
+    <div class="form" text-center padding>
+        <form [formGroup]="loginForm">
+            <ion-item class="ion-margin-bottom">
+                <ion-input
+                    type="email"
+                    placeholder="EMAIL ADRESS"
+                    padding
+                    required
+                    formControlName="email"
+                ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input
+                    type="password"
+                    placeholder="PASSWORD"
+                    padding
+                    formControlName="password"
+                ></ion-input>
+            </ion-item>
+
+            <ion-button
+                class="btn-login"
+                color="tertiary"
+                (click)="login()"
+                type="submit"
+            >
+                <ion-label color="light">Login</ion-label>
+            </ion-button>
+        </form>
+    </div>
+</ion-content>
+
+<!-- <div text-center padding>
+    <ion-button color="tertiary" (click)="login()" type="submit">
+        <ion-label color="primary">
             ENTER
             <div
-              *ngIf="
+                *ngIf="
                 loginForm.controls['email'].touched &&
                 loginForm.controls['email'].errors?.email
               "
-              class="text text-danger mt-1"
+                class="text text-danger mt-1"
             >
-              Invalid Email
+                Invalid Email
             </div>
             <div
-              *ngIf="
+                *ngIf="
                 loginForm.controls['email'].touched &&
                 loginForm.controls['email'].errors?.required
               "
-              class="text text-danger mt-1"
+                class="text text-danger mt-1"
             >
-              Email is required
+                Email is required
             </div>
             <div
-              *ngIf="
+                *ngIf="
                 loginForm.controls['password'].touched &&
                 loginForm.controls['password'].errors?.required
               "
-              class="text text-danger mt-1"
+                class="text text-danger mt-1"
             >
-              Password is required
+                Password is required
             </div>
-          </ion-label>
-        </ion-button>
-      </div>
-      <div>
-        <ion-button color="tertiary" style="float: left">
-          <ion-label>Forgot Password</ion-label>
-        </ion-button>
-      </div>
-    </form>
-  </div>
-</ion-content>
+        </ion-label>
+    </ion-button>
+</div> -->

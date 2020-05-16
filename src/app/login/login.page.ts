@@ -18,8 +18,8 @@ export class LoginPage {
 
   constructor(public authService: AuthService, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      email: ["kkk@gmail.com", [Validators.required, Validators.email]],
-      password: ["123123123", Validators.required]
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", Validators.required]
     });
   }
 

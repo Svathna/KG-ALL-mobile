@@ -1,79 +1,70 @@
 .background {
-  --background: #000000;
+    --background: #3069bb;
 }
 
-.logo-wrapper {
-  // position: relative;
-  // height: 53vh;
-  width: 100%;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-
-  // display: flex;
-  // align-items: flex-end;
-  ion-img {
-    height: 50vh;
-    width: 140%; // width: 80vh;
-  }
-}
-
-// ion-input {
-//   --placeholder-color: red;
-//   --placeholder-opacity: 1;
-// }
 ion-content {
-  width: 100%;
-  margin: 0;
-
-  hr {
+    width: 100%;
     margin: 0;
-    background-color: #000000;
-  }
-}
 
-.main {
-  width: 100%;
-}
+    .logo-wrapper {
+        display: -webkit-box;
+        height: 40%;
 
-ion-item {
-  background-color: transparent !important;
-  --background: none;
-  opacity: 1;
-  text-align: center;
-  --border-color: #707070;
-  --highlight-color-focused: none;
-}
+        .logo {
+            width: 190px;
+            height: 75px;
+            display: block;
+            margin: auto;
+            width: 50%;
+        }
+    }
 
-ion-input {
-  --placeholder-color: #707070;
-  --placeholder-opacity: 1;
-  --placeholder-align: center;
-  color: white;
-  width: 100%
-}
+    .form {
+        width: 80%;
+        display: block;
+        margin: auto;
 
-ion-label {
-  div {
-    color: red;
-  }
-}
+        ion-item {
+            border-radius: 10px;
 
-.homescreen-content {
-  display: flex;
-  /* displays flex-items (children) inline */
-  flex-direction: column;
-  /* stacks them vertically */
-  height: 100vh;
-  /* 100% of the viewport height */
-}
+            ion-input {
+                --placeholder-color: #888686;
+                --placeholder-opacity: 1;
+                width: 100%;
+            }
+        }
 
-.homescreen-content>div {
-  display: flex;
-  justify-content: center;
-  /* horizontally centered */
-  align-items: center;
-  /* vertically centered */
-  flex: 1;
-  /* each stretches and takes equal height of the parent (50vh) */
-  background-color: #000000;
+        .btn-login {
+            margin-top: 7rem;
+            width: 100%;
+            height: 50px;
+            --border-radius: 10px;
+        }
+
+        ion-label {
+            div {
+                color: red;
+            }
+        }
+    }
+
+    .homescreen-content {
+        display: flex;
+        /* displays flex-items (children) inline */
+        flex-direction: column;
+        /* stacks them vertically */
+        height: 100vh;
+        /* 100% of the viewport height */
+    }
+
+    .homescreen-content > div {
+        display: flex;
+        justify-content: center;
+        /* horizontally centered */
+        align-items: center;
+        /* vertically centered */
+        flex: 1;
+        /* each stretches and takes equal height of the parent (50vh) */
+        background-color: #000000;
+    }
 }
