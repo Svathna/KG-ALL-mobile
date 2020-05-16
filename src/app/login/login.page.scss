@@ -39,32 +39,11 @@ ion-content {
             width: 100%;
             height: 50px;
             --border-radius: 10px;
-        }
 
-        ion-label {
-            div {
-                color: red;
+            ion-label {
+                font-size: 18px;
+                font-weight: bold;
             }
         }
-    }
-
-    .homescreen-content {
-        display: flex;
-        /* displays flex-items (children) inline */
-        flex-direction: column;
-        /* stacks them vertically */
-        height: 100vh;
-        /* 100% of the viewport height */
-    }
-
-    .homescreen-content > div {
-        display: flex;
-        justify-content: center;
-        /* horizontally centered */
-        align-items: center;
-        /* vertically centered */
-        flex: 1;
-        /* each stretches and takes equal height of the parent (50vh) */
-        background-color: #000000;
     }
 }
