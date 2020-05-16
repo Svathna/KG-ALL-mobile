@@ -16,8 +16,7 @@ export interface LoginResponse {
 })
 export class AuthService implements OnInit {
 
-  public userData: any;
-  public user: User;
+  public userData: User;
   public showLoader: boolean = false;
 
   constructor(
@@ -29,34 +28,35 @@ export class AuthService implements OnInit {
   ngOnInit(): void { }
 
   //sign in function
-  signIn(email, password) {
+  signIn(userName, password) {
     return new Promise((resolve, reject) => {
       try {
         this.http.post(environment.apiURL + '/user/login', {
-          email,
+          userName,
           password,
         })
-        .subscribe(async ( response: LoginResponse) => {
-          const { token, user } = response;
-          if (user) {
-            // OH YEAH! logged in successfuly
-            this.userData = new User(user);
-            localStorage.setItem('user', JSON.stringify(this.userData));
-            localStorage.setItem('token', token);
-            // got to the main page
-            this.router.navigate(['worksites']);
+          .subscribe(async (response: LoginResponse) => {
+            const { token, user } = response;
+            if (user) {
+              // OH YEAH! logged in successfuly
+              this.userData = user;
+              localStorage.setItem('user', JSON.stringify(this.userData));
+              localStorage.setItem('token', token);
+              // got to the main page
+              // this.router.navigate(['worksites']);
+              console.log(this.userData);
 
-            resolve(true);
-          } else {
-            localStorage.setItem('user', null);
-            localStorage.setItem('token', null);
-            await this.alertService.error('No user found');
-            reject('No user found');
-          }
-        }, async () => {
-          await this.alertService.error('Wrong credentials, please try again');
-          reject('Error, logging in');
-        });
+              resolve(true);
+            } else {
+              localStorage.setItem('user', null);
+              localStorage.setItem('token', null);
+              await this.alertService.error('No user found');
+              reject('No user found');
+            }
+          }, async () => {
+            await this.alertService.error('Wrong credentials, please try again');
+            reject('Error, logging in');
+          });
       } catch (err) {
         this.alertService.error(err);
         reject(err);

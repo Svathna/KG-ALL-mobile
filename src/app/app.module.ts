@@ -10,11 +10,9 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
-import { WorkerDetailsComponent } from "./workers/worker-details/worker-details.component";
-import { CreateReportsComponent } from "./reports/create-reports/create-reports.component";
 
 @NgModule({
-  declarations: [AppComponent, WorkerDetailsComponent, CreateReportsComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     HttpClientModule,
@@ -37,4 +35,4 @@ import { CreateReportsComponent } from "./reports/create-reports/create-reports.
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

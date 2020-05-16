@@ -11,7 +11,7 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class LoginGuard implements CanActivate {
-  constructor(public router: Router) {}
+  constructor(public router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -22,8 +22,8 @@ export class LoginGuard implements CanActivate {
 
     if (token) {
       console.log('hey');
-      this.router.navigate(["worksites"]);
-      return false;
+      // this.router.navigate(["worksites"]);
+      // return false;
     }
     return true;
   }

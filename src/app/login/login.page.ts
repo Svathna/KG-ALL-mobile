@@ -18,7 +18,7 @@ export class LoginPage {
 
   constructor(public authService: AuthService, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      email: ["", [Validators.required, Validators.email]],
+      userName: ["", [Validators.required]],
       password: ["", Validators.required]
     });
   }
@@ -26,7 +26,7 @@ export class LoginPage {
   login() {
     if (this.loginForm.valid) {
       this.authService.signIn(
-        this.loginForm.value["email"],
+        this.loginForm.value["userName"],
         this.loginForm.value["password"]
       );
     }
