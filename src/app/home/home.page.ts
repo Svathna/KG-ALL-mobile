@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  btnGroup = ['General', 'Oblication', 'Tax Calucation', 'Service'];
 
-  constructor() {}
+  constructor() { }
+
+  goToOtherPage(event) {
+    console.log('implement me!');
+  }
 
 }

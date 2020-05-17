@@ -22,8 +22,8 @@ export class LoginGuard implements CanActivate {
 
     if (token) {
       console.log('hey');
-      // this.router.navigate(["worksites"]);
-      // return false;
+      this.router.navigate(["home"]);
+      return false;
     }
     return true;
   }

@@ -1,1 +1,46 @@
+.header {
+    height: 55px;
 
+    .logo-wrapper {
+        width: 80px;
+        display: block;
+        margin: auto;
+    }
+}
+
+ion-content {
+    vertical-align: middle;
+
+    .main-section {
+        background-color: #ffffff;
+        width: 80%;
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        padding: 0 10%;
+
+        .second-section {
+            height: 100%;
+
+            .btn-section {
+                padding: 2rem 10px;
+                border-bottom: 1px solid #3069bb;
+
+                .div-btn {
+                    width: fit-content;
+                    display: block;
+                    margin: auto;
+
+                    ion-label {
+                        font-size: 20px;
+                        pointer-events: all !important;
+                    }
+                }
+            }
+        }
+    }
+}
