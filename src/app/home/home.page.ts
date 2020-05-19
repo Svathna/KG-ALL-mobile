@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class HomePage {
   btnGroup = ['General', 'Oblication', 'Tax Calucation', 'Service'];
 
-  constructor() { }
+  constructor() {
+    console.log('yahhhh')
+  }
 
   goToOtherPage(event) {
     console.log('implement me!');

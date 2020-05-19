@@ -22,7 +22,7 @@ export class LoginGuard implements CanActivate {
 
     if (token) {
       console.log('hey');
-      this.router.navigate(["home"]);
+      this.router.navigate(["menu/user/home"]);
       return false;
     }
     return true;

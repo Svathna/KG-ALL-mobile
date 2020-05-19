@@ -1,19 +1,4 @@
-<ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-        <ion-toolbar color="primary">
-            <ion-title>Start Menu</ion-title>
-        </ion-toolbar>
-    </ion-header>
-    <ion-content>
-        <ion-list>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-        </ion-list>
-    </ion-content>
-</ion-menu>
+<!-- <app-menu></app-menu> -->
 
 <ion-header>
     <ion-toolbar class="header" color="secondary">
@@ -22,6 +7,9 @@
                 <ion-img src="assets/logo/kg-all.png"></ion-img>
             </div>
         </ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 

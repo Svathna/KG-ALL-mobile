@@ -1,19 +1,19 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-import { AdminGuard } from "./guards/admin.guard";
+import { AuthGuard } from "./guards/auth.guard";
 import { LoginGuard } from "./guards/login.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "", redirectTo: "menu", pathMatch: "full" },
   {
     path: "login",
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
     canActivate: [LoginGuard]
   },
   {
-    path: "home",
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AdminGuard]
+    path: "menu",
+    loadChildren: () => import('./menu/menu.module').then(m => m.MenuPageModule),
+    canActivate: [AuthGuard]
   },
   // {
   //   path: "worksites",
