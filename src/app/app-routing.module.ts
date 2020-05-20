@@ -4,32 +4,40 @@ import { AuthGuard } from "./guards/auth.guard";
 import { LoginGuard } from "./guards/login.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "menu", pathMatch: "full" },
-  {
-    path: "login",
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
-    canActivate: [LoginGuard]
-  },
-  {
-    path: "menu",
-    loadChildren: () => import('./menu/menu.module').then(m => m.MenuPageModule),
-    canActivate: [AuthGuard]
-  },
-  // {
-  //   path: "worksites",
-  //   loadChildren: () => import('./worksites/worksites.module').then(m => m.WorksitesPageModule),
-  //   canActivate: [AdminGuard]
-  // },
-  // {
-  //   path: "reports/create-reports",
-  //   component: CreateReportsComponent
-  // },
+    { path: "", redirectTo: "home", pathMatch: "full" },
+    {
+        path: "login",
+        loadChildren: () =>
+            import("./login/login.module").then((m) => m.LoginPageModule),
+        canActivate: [LoginGuard],
+    },
+    {
+        path: "home",
+        loadChildren: () =>
+            import("./home/home.module").then((m) => m.HomePageModule),
+        canActivate: [AuthGuard],
+    },
+    {
+        path: "menu",
+        loadChildren: () =>
+            import("./menu/menu.module").then((m) => m.MenuPageModule),
+        canActivate: [AuthGuard],
+    },
+    // {
+    //   path: "worksites",
+    //   loadChildren: () => import('./worksites/worksites.module').then(m => m.WorksitesPageModule),
+    //   canActivate: [AdminGuard]
+    // },
+    // {
+    //   path: "reports/create-reports",
+    //   component: CreateReportsComponent
+    // },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    ],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,27 +1,75 @@
-<ion-header>
-    <ion-toolbar color="dark">
-        <ion-title color="light">
-            Home
-        </ion-title>
-        <ion-buttons slot="start">
-            <ion-menu-button color="light" autoHide="false"></ion-menu-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content color="primary">
-    <div class="main-section border-primary">
-        <div
-            *ngFor="let btn of btnGroup; let lastIndex = last"
-            class="second-section"
-        >
-            <div [ngClass]="{'border-bottom-0': lastIndex}" class="btn-section">
-                <div class="div-btn" (click)="goToOtherPage($event)">
-                    <ion-label class="text-bold" color="primary"
-                        >{{btn}}</ion-label
+<ion-app>
+    <ion-menu contentId="main-content" side="start">
+        <!-- Header  -->
+        <ion-header>
+            <ion-row class="title">
+                <ion-col size="3">
+                    <div class="userImage">
+                        <ion-img
+                            src="https://pngimage.net/wp-content/uploads/2018/06/person-png-icon-6.png"
+                        ></ion-img>
+                    </div>
+                </ion-col>
+                <ion-title color="light">Username</ion-title>
+            </ion-row>
+        </ion-header>
+        <!-- Content  -->
+        <ion-content>
+            <ion-list lines="none">
+                <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
+                    <ion-item
+                        [routerLink]="page.path"
+                        routerDirection="root"
+                        [class.active-menu]="activePath === page.path"
                     >
+                        {{page.name}}
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
+        </ion-content>
+        <!-- Footer  -->
+        <ion-footer>
+            <ion-toolbar class="text-center">
+                <ion-button (click)="logout()" color="secondary">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <ion-label color="light">Logout</ion-label>
+                </ion-button>
+            </ion-toolbar>
+        </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="main-content" main>
+        <ion-header>
+            <ion-toolbar color="dark">
+                <ion-title color="light">
+                    Home
+                </ion-title>
+                <ion-buttons slot="start">
+                    <ion-menu-button
+                        color="light"
+                        autoHide="false"
+                    ></ion-menu-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content color="primary">
+            <div class="main-section border-primary">
+                <div
+                    *ngFor="let btn of btnGroup; let lastIndex = last"
+                    class="second-section"
+                >
+                    <div
+                        [ngClass]="{'border-bottom-0': lastIndex}"
+                        class="btn-section"
+                    >
+                        <div class="div-btn" (click)="goToOtherPage($event)">
+                            <ion-label class="text-bold" color="primary"
+                                >{{btn}}</ion-label
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</ion-content>
+        </ion-content>
+    </ion-router-outlet>
+</ion-app>
