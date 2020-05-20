@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Router, RouterEvent } from "@angular/router";
 import { AuthService } from "../services/auth.service";
+import { User } from "../models/user.model";
 
 @Component({
     selector: "app-home",
@@ -9,7 +10,7 @@ import { AuthService } from "../services/auth.service";
 })
 export class HomePage {
     activePath = "";
-    user: any;
+    user: User;
     btnGroup = ["General", "Oblication", "Tax Calucation", "Service"];
 
     pages = [
@@ -29,12 +30,7 @@ export class HomePage {
     }
 
     ngOnInit() {
-        this.authService.getUserSafe().subscribe((data: any) => {
-            if (data.success) {
-                this.user = data.user;
-            }
-            console.log(this.user);
-        });
+        this.user = this.authService.getUserSafe();
     }
 
     goToOtherPage(event) {

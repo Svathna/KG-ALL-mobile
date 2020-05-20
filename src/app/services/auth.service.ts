@@ -85,6 +85,9 @@ export class AuthService implements OnInit {
     }
 
     getUserSafe() {
-        return this.http.get(environment.apiURL + "/user/current");
+        const user: User = JSON.parse(localStorage.getItem("user"));
+        return user ? user : null;
+        // TODO: check this later
+        // return this.http.get(environment.apiURL + "/user/current");
     }
 }
