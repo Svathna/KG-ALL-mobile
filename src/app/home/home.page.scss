@@ -12,7 +12,7 @@ ion-content {
     vertical-align: middle;
 
     .main-section {
-        background-color: #ffffff;
+        background-color: var(--ion-color-primary);
         width: 80%;
         height: fit-content;
         position: absolute;
@@ -28,7 +28,7 @@ ion-content {
 
             .btn-section {
                 padding: 2rem 10px;
-                border-bottom: 1px solid #3069bb;
+                border-bottom: 1px solid #ffffff;
 
                 .div-btn {
                     width: fit-content;

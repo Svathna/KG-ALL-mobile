@@ -9,6 +9,7 @@ import { AuthService } from "../services/auth.service";
 })
 export class HomePage {
     activePath = "";
+    user: any;
     btnGroup = ["General", "Oblication", "Tax Calucation", "Service"];
 
     pages = [
@@ -28,7 +29,12 @@ export class HomePage {
     }
 
     ngOnInit() {
-        console.log("kkk");
+        this.authService.getUserSafe().subscribe((data: any) => {
+            if (data.success) {
+                this.user = data.user;
+            }
+            console.log(this.user);
+        });
     }
 
     goToOtherPage(event) {
