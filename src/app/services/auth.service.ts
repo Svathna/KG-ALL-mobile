@@ -1,9 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 import { environment } from "src/environments/environment";
 import { User } from "src/app/models/user.model";
 import { AlertService } from "./alerts.service";
+import { NavController } from '@ionic/angular';
 
 export interface LoginResponse {
     token: string;
@@ -19,7 +19,7 @@ export class AuthService implements OnInit {
     public showLoader: boolean = false;
 
     constructor(
-        public router: Router,
+        private navCtr: NavController,
         private http: HttpClient,
         private alertService: AlertService
     ) {}
@@ -48,7 +48,7 @@ export class AuthService implements OnInit {
                                 localStorage.setItem("token", token);
                                 console.log(this.userData);
                                 // got to the main page
-                                this.router.navigate([""]);
+                                this.navCtr.navigateRoot("");
 
                                 resolve(true);
                             } else {
@@ -76,7 +76,7 @@ export class AuthService implements OnInit {
     signOut() {
         localStorage.removeItem("user");
         localStorage.removeItem("token");
-        this.router.navigate(["login"]);
+        this.navCtr.navigateBack("login");
     }
 
     get isLoggedIn(): boolean {
