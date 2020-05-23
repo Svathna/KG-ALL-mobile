@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { Router, RouterEvent } from "@angular/router";
-import { AuthService } from "../services/auth.service";
-import { User } from "../models/user.model";
 import { NavController } from '@ionic/angular';
+import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
     selector: "app-home",
