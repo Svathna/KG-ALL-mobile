@@ -3,14 +3,17 @@
         <!-- Header  -->
         <ion-header>
             <ion-row class="title">
-                <ion-col size="3">
+                <!-- <ion-col size="3">
                     <div class="userImage">
                         <ion-img
                             src="https://pngimage.net/wp-content/uploads/2018/06/person-png-icon-6.png"
                         ></ion-img>
                     </div>
+                </ion-col> -->
+                <ion-col size="12">
+                    <ion-title class="titleInKhmer" color="light">{{ user.company?.nameInKhmer }}</ion-title>
+                    <ion-title color="light">{{ user.company?.name }}</ion-title>
                 </ion-col>
-                <ion-title color="light">{{ user.userName }}</ion-title>
             </ion-row>
         </ion-header>
         <!-- Content  -->

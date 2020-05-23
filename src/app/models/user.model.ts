@@ -1,3 +1,5 @@
+import { CompanyDetail } from './company.model';
+
 export enum UserType {
     WORKER = 1,
     MANAGER = 2,
@@ -11,5 +13,6 @@ export interface User {
     phoneNumber: number;
     registrationTokens: string[];
     deleted: boolean;
+    company: CompanyDetail;
     _id: string;
 }

@@ -31,6 +31,7 @@ export class HomePage {
 
     ngOnInit() {
         this.user = this.authService.getUserSafe();
+        console.log(this.user);
     }
 
     goToOtherPage(event) {
