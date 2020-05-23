@@ -58,16 +58,16 @@
         <ion-content color="light">
             <div class="main-section border-primary">
                 <div
-                    *ngFor="let btn of btnGroup; let lastIndex = last"
+                    *ngFor="let page of pageGroup; let lastIndex = last"
                     class="second-section"
                 >
                     <div
                         [ngClass]="{'border-bottom-0': lastIndex}"
                         class="btn-section"
                     >
-                        <div class="div-btn" (click)="goToOtherPage($event)">
+                        <div class="div-btn" (click)="goToOtherPage(page)">
                             <ion-label class="text-bold" color="light"
-                                >{{btn}}</ion-label
+                                >{{page.name}}</ion-label
                             >
                         </div>
                     </div>

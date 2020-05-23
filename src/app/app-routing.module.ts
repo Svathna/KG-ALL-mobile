@@ -17,12 +17,6 @@ const routes: Routes = [
             import("./home/home.module").then((m) => m.HomePageModule),
         canActivate: [AuthGuard],
     },
-    // {
-    //     path: "menu",
-    //     loadChildren: () =>
-    //         import("./menu/menu.module").then((m) => m.MenuPageModule),
-    //     canActivate: [AuthGuard],
-    // },
 ];
 
 @NgModule({

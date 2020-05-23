@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Router, RouterEvent } from "@angular/router";
 import { AuthService } from "../services/auth.service";
 import { User } from "../models/user.model";
+import { NavController } from '@ionic/angular';
 
 @Component({
     selector: "app-home",
@@ -11,7 +12,21 @@ import { User } from "../models/user.model";
 export class HomePage {
     activePath = "";
     user: User;
-    btnGroup = ["General", "Oblication", "Tax Calucation", "Service"];
+    pageGroup = [
+        {
+            name: "General",
+            url: 'home/general'
+        },
+        {
+            name: "Oblication"
+        },
+        {
+            name: "Tax Calucation"
+        },
+        {
+            name: "Service"
+        }
+    ];
 
     pages = [
         {
@@ -23,7 +38,11 @@ export class HomePage {
         },
     ];
 
-    constructor(private router: Router, private authService: AuthService) {
+    constructor(
+        private router: Router,
+        private authService: AuthService,
+        public navCtrl: NavController,
+    ) {
         this.router.events.subscribe((event: RouterEvent) => {
             this.activePath = event.url;
         });
@@ -34,8 +53,9 @@ export class HomePage {
         console.log(this.user);
     }
 
-    goToOtherPage(event) {
+    goToOtherPage(page) {
         console.log("implement me!");
+        this.navCtrl.navigateForward(page.url)
     }
 
     logout() {
