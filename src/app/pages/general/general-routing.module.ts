@@ -13,13 +13,17 @@ const routes: Routes = [
 				loadChildren: () => import('./moc/moc.module').then( m => m.MocPageModule)
 				// loadChildren: '../tab1/tab1.module#Tab1PageModule'
 			},
+			{
+				path: 'tax',
+				loadChildren: () => import('./tax-tap/tax-tap.module').then( m => m.TaxTapPageModule)
+			}
 		]
 	},
 	{
 		path: '',
 		redirectTo: 'taps/moc',
 		pathMatch: 'full'
-	}
+	},
 ];
 
 @NgModule({
