@@ -10,4 +10,5 @@ export class GeneralPage implements OnInit {
     constructor(public navCtrl: NavController) {}
 
     ngOnInit() {}
+
 }
