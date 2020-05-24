@@ -15,10 +15,11 @@ export class HomePage {
     pageGroup = [
         {
             name: "General",
-            url: 'home/general'
+            url: 'general'
         },
         {
-            name: "Oblication"
+            name: "Oblication",
+            url: "obligation"
         },
         {
             name: "Tax Calucation"
@@ -56,8 +57,7 @@ export class HomePage {
 
     goToOtherPage(page) {
         console.log("implement me!");
-        // this.navCtrl.navigateForward(page.url)
-        this.router.navigateByUrl(page.url);
+        this.navCtrl.navigateForward(page.url)
     }
 
     logout() {

@@ -3,11 +3,11 @@ import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-moc',
-  templateUrl: './moc.page.html',
-  styleUrls: ['./moc.page.scss'],
+  selector: 'app-obligation',
+  templateUrl: './obligation.page.html',
+  styleUrls: ['./obligation.page.scss'],
 })
-export class MocPage implements OnInit {
+export class ObligationPage implements OnInit {
 
   constructor(
     private navCtr: NavController,

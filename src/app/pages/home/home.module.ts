@@ -10,12 +10,6 @@ const routes: Routes = [
     {
         path: "",
 		component: HomePage,
-		children: [
-			{
-			  path: 'general',
-			  loadChildren: () => import('../general/general.module').then(m => m.GeneralPageModule),
-			}
-		  ]
     },
 ];
 @NgModule({
