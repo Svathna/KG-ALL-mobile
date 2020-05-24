@@ -4,7 +4,7 @@ import { AuthGuard } from "./guards/auth.guard";
 import { LoginGuard } from "./guards/login.guard";
 
 const routes: Routes = [
-    { path: "", redirectTo: "home", pathMatch: "full" },
+    { path: "", redirectTo: "login", pathMatch: "full" },
     {
         path: "login",
         loadChildren: () =>

@@ -45,6 +45,7 @@ export class HomePage {
     ) {
         this.router.events.subscribe((event: RouterEvent) => {
             this.activePath = event.url;
+            console.log(event);
         });
     }
 
@@ -55,7 +56,8 @@ export class HomePage {
 
     goToOtherPage(page) {
         console.log("implement me!");
-        this.navCtrl.navigateForward(page.url)
+        // this.navCtrl.navigateForward(page.url)
+        this.router.navigateByUrl(page.url);
     }
 
     logout() {

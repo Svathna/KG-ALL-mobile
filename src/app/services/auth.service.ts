@@ -48,7 +48,7 @@ export class AuthService implements OnInit {
                                 localStorage.setItem("token", token);
                                 console.log(this.userData);
                                 // got to the main page
-                                this.navCtr.navigateRoot("");
+                                this.navCtr.navigateRoot("home");
 
                                 resolve(true);
                             } else {

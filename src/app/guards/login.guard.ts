@@ -6,12 +6,13 @@ import {
     Router,
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { NavController } from '@ionic/angular';
 
 @Injectable({
     providedIn: "root",
 })
 export class LoginGuard implements CanActivate {
-    constructor(public router: Router) {}
+    constructor(public navCtr: NavController) {}
 
     canActivate(
         next: ActivatedRouteSnapshot,
@@ -22,7 +23,7 @@ export class LoginGuard implements CanActivate {
 
         if (token) {
             console.log("hey");
-            this.router.navigate([""]);
+            this.navCtr.navigateRoot(["home"]);
             return false;
         }
         return true;

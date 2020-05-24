@@ -10,13 +10,8 @@ const routes: Routes = [
     children: [
 			{
 				path: 'moc',
-				children: [
-					{
-						path: '',
-						loadChildren: () => import('./moc/moc.module').then( m => m.MocPageModule)
-						// loadChildren: '../tab1/tab1.module#Tab1PageModule'
-					}
-				]
+				loadChildren: () => import('./moc/moc.module').then( m => m.MocPageModule)
+				// loadChildren: '../tab1/tab1.module#Tab1PageModule'
 			},
 		]
 	},

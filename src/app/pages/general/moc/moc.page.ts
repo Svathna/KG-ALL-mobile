@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-moc',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MocPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private navCtr: NavController,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+
+  backHome() {
+    console.log('ha')
+    // this.navCtr.navigateBack("home");
+    this.router.navigateByUrl("home");
   }
 
 }

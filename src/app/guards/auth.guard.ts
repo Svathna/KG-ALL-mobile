@@ -3,15 +3,15 @@ import {
     CanActivate,
     ActivatedRouteSnapshot,
     RouterStateSnapshot,
-    Router,
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { NavController } from '@ionic/angular';
 
 @Injectable({
     providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-    constructor(public router: Router) {}
+    constructor(public navCtr: NavController) {}
 
     canActivate(
         next: ActivatedRouteSnapshot,
@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
         let token = localStorage.getItem("token");
 
         if (!token) {
-            this.router.navigate(["login"]);
+            this.navCtr.navigateBack(["login"]);
             return false;
         }
         return true;
