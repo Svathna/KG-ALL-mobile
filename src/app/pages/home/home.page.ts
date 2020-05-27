@@ -55,9 +55,9 @@ export class HomePage {
         console.log(this.user);
     }
 
-    goToOtherPage(page) {
+    goToOtherPage() {
         console.log("implement me!");
-        this.navCtrl.navigateForward(page.url)
+        // this.navCtrl.navigateForward(page.url)
     }
 
     logout() {

@@ -20,11 +20,7 @@
         <ion-content>
             <ion-list lines="none">
                 <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
-                    <ion-item
-                        [routerLink]="page.path"
-                        routerDirection="root"
-                        [class.active-menu]="activePath === page.path"
-                    >
+                    <ion-item [routerLink]="page.path" routerDirection="root">
                         {{page.name}}
                     </ion-item>
                 </ion-menu-toggle>
@@ -44,10 +40,7 @@
         <ion-header>
             <ion-toolbar color="primary">
                 <ion-buttons slot="start">
-                    <ion-menu-button
-                        color="light"
-                        autoHide="false"
-                    ></ion-menu-button>
+                    <ion-menu-button color="light" autoHide="false"></ion-menu-button>
                 </ion-buttons>
                 <ion-title color="light">
                     Home
@@ -57,22 +50,64 @@
 
         <ion-content color="light">
             <div class="main-section border-primary">
-                <div
-                    *ngFor="let page of pageGroup; let lastIndex = last"
-                    class="second-section"
-                >
-                    <div
-                        [ngClass]="{'border-bottom-0': lastIndex}"
-                        class="btn-section"
-                    >
-                        <div class="div-btn" (click)="goToOtherPage(page)">
-                            <ion-label class="text-bold" color="light"
-                                >{{page.name}}</ion-label
-                            >
-                        </div>
-                    </div>
-                </div>
+                <ion-grid class="second-section" fixed>
+                    <ion-row class="border-b">
+                        <ion-col class="border-r" size="6">
+                            <div class="btn-section">
+                                <div class="div-btn text-center" (click)="goToOtherPage()">
+                                    <div>
+                                        <ion-icon color="light" name="briefcase"></ion-icon>
+                                    </div>
+                                    <ion-label class="text-bold" color="light">General</ion-label>
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col size="6">
+                            <div class="btn-section">
+                                <div class="div-btn text-center" (click)="goToOtherPage()">
+                                    <div>
+                                        <ion-icon color="light" name="list"></ion-icon>
+                                    </div>
+                                    <ion-label class="text-bold" color="light">Obligation</ion-label>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col class="border-r" size="6">
+                            <div class="btn-section">
+                                <div class="div-btn text-center" (click)="goToOtherPage()">
+                                    <div>
+                                        <ion-icon color="light" name="calculator"></ion-icon>
+                                    </div>
+                                    <ion-label class="text-bold" color="light">Tax Calculation</ion-label>
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col size="6">
+                            <div class="btn-section">
+                                <div class="div-btn text-center" (click)="goToOtherPage()">
+                                    <div>
+                                        <ion-icon color="light" name="cash"></ion-icon>
+                                    </div>
+                                    <ion-label class="text-bold" color="light">Service</ion-label>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
             </div>
         </ion-content>
     </ion-router-outlet>
 </ion-app>
+
+<!-- <div
+    *ngFor="let page of pageGroup; let lastIndex = last"
+    class="second-section"
+>
+    <div [ngClass]="{'border-bottom-0': lastIndex}" class="btn-section">
+        <div class="div-btn" (click)="goToOtherPage(page)">
+            <ion-label class="text-bold" color="light">{{page.name}}</ion-label>
+        </div>
+    </div>
+</div> -->

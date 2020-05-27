@@ -14,29 +14,48 @@ ion-content {
     .main-section {
         background-color: var(--ion-color-primary);
         width: 80%;
-        height: fit-content;
+        height: 50%;
         position: absolute;
         top: 0;
         bottom: 0;
         right: 0;
         left: 0;
         margin: auto;
-        padding: 0 10%;
 
         .second-section {
             height: 100%;
 
+            ion-row {
+                height: 50%;
+
+                ion-col {
+                    padding: 0;
+                }
+            }
+
+            .border-b {
+                border-bottom: 1px solid var(--ion-color-success-tint);
+            }
+
+            .border-r {
+                border-right: 1px solid var(--ion-color-success-tint);
+            }
+
             .btn-section {
-                padding: 2rem 10px;
-                border-bottom: 1px solid #ffffff;
+                height: 100%;
+                display: flex;
 
                 .div-btn {
                     width: fit-content;
                     display: block;
                     margin: auto;
 
+                    ion-icon {
+                        font-size: 4rem;
+                    }
+
                     ion-label {
-                        font-size: 20px;
+                        font-size: 12px;
                         pointer-events: all !important;
                     }
                 }
@@ -92,6 +111,10 @@ ion-menu {
     }
 
     ion-footer {
+        ion-toolbar {
+            --background: var(--ion-color-secondary);
+        }
+
         ion-title {
             font-size: 15px;
         }

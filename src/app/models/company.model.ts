@@ -1,8 +1,8 @@
 export interface Company {
     company: CompanyDetail;
     moc: Moc;
-    vat: Vat;
-    tax: Tax;
+    dot: Dot;
+    taxHistory: TaxHistory;
 }
 
 export interface CompanyDetail {
@@ -35,10 +35,10 @@ export interface UsernamePasworrd {
     password: string;
 }
 
-export interface Vat {
-    vatNumber: number;
+export interface Dot {
+    dotNumber: number;
     notedDate: Date;
-    vatBranch: string;
+    dotBranch: string;
     address: string;
     bankName: string;
     bankAccountName: string;
@@ -49,7 +49,7 @@ export interface Vat {
     _id: string;
 }
 
-export interface Tax {
+export interface TaxHistory {
     revenue: number;
     spending: number;
     paidAmout: number;
