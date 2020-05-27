@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomePage {
     activePath = "";
     user: User;
+
     pageGroup = [
         {
             name: "General",

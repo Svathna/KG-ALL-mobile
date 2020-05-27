@@ -2,6 +2,11 @@ import { Component } from "@angular/core";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
 
+const PASSWORD_INPUT = {
+  type: "password",
+  showHideIcon: "eye-off"
+}
+
 @Component({
   selector: "login",
   templateUrl: "./login.page.html",
@@ -15,6 +20,8 @@ export class LoginPage {
     password: ""
   };
   public errorMessage: any;
+
+  passwordShowHide = PASSWORD_INPUT;
 
   constructor(public authService: AuthService, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -30,5 +37,10 @@ export class LoginPage {
         this.loginForm.value["password"]
       );
     }
+  }
+
+  showHidePassword() {
+    this.passwordShowHide.type = this.passwordShowHide.type === "password" ? "text" : "password";
+    this.passwordShowHide.showHideIcon = this.passwordShowHide.showHideIcon === "eye-off"? "eye" : "eye-off"; 
   }
 }
