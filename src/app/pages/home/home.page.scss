@@ -102,6 +102,8 @@ ion-menu {
     }
 
     ion-content {
+        --ion-background-color: var(--ion-color-secondary);
+        
         ion-list {
             padding-left: 20px;
 
