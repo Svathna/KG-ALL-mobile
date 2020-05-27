@@ -1,10 +1,8 @@
 import { CompanyDetail } from './company.model';
 
 export enum UserType {
-    WORKER = 1,
-    MANAGER = 2,
-    OFFICE_MANAGER = 3,
-    OWNER = 4,
+    ADMIN = 1,
+    NORMAL_USER = 2,
 }
 
 export interface User {

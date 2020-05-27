@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment";
-import { User } from "src/app/models/user.model";
+import { User, UserType } from "src/app/models/user.model";
 import { AlertService } from "./alerts.service";
 import { NavController } from '@ionic/angular';
 
@@ -38,7 +38,7 @@ export class AuthService implements OnInit {
                     .subscribe(
                         async (response: LoginResponse) => {
                             const { token, user } = response;
-                            if (user) {
+                            if (user && user.type === UserType.NORMAL_USER) {
                                 // OH YEAH! logged in successfuly
                                 this.userData = user;
                                 localStorage.setItem(
