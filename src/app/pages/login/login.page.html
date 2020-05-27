@@ -7,28 +7,16 @@
     <div class="form" text-center padding>
         <form [formGroup]="loginForm">
             <ion-item class="ion-margin-bottom">
-                <ion-input
-                    placeholder="Username"
-                    padding
-                    required
-                    formControlName="userName"
-                ></ion-input>
+                <ion-icon slot="start" size="small" name="person-outline"></ion-icon>
+                <ion-input placeholder="Username" padding required formControlName="userName"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-input
-                    type="password"
-                    placeholder="Password"
-                    padding
-                    formControlName="password"
-                ></ion-input>
+                <ion-icon slot="start" size="small" name="key-outline"></ion-icon>
+                <ion-input type="password" placeholder="Password" padding formControlName="password"></ion-input>
+                <ion-icon name="eye-off" size="small" slot="end"></ion-icon>
             </ion-item>
 
-            <ion-button
-                class="btn-login"
-                color="secondary"
-                (click)="login()"
-                type="submit"
-            >
+            <ion-button class="btn-login" color="secondary" (click)="login()" type="submit">
                 <ion-label color="light">Login</ion-label>
             </ion-button>
         </form>
