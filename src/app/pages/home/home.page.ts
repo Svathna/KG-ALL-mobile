@@ -13,22 +13,26 @@ export class HomePage {
     activePath = "";
     user: User;
 
-    pageGroup = [
-        {
-            name: "General",
-            url: 'general'
-        },
-        {
-            name: "Oblication",
-            url: "obligation"
-        },
-        {
-            name: "Tax Calucation"
-        },
-        {
-            name: "Service"
-        }
-    ];
+    // pageGroup = [
+    //     {
+    //         name: "General",
+    //         url: 'general',
+    //         icon: 'briefcase'
+    //     },
+    //     {
+    //         name: "Oblication",
+    //         url: "obligation",
+    //         icon: 'list'
+    //     },
+    //     {
+    //         name: "Tax Calucation",
+    //         icon: 'calculator'
+    //     },
+    //     {
+    //         name: "Service",
+    //         icon: 'cash'
+    //     }
+    // ];
 
     pages = [
         {
@@ -56,9 +60,12 @@ export class HomePage {
         console.log(this.user);
     }
 
-    goToOtherPage() {
-        console.log("implement me!");
-        // this.navCtrl.navigateForward(page.url)
+    goToPageGeneral() {
+        this.navCtrl.navigateForward("general");
+    }
+
+    goToPageObligation() {
+        this.navCtrl.navigateForward("obligation");
     }
 
     logout() {
