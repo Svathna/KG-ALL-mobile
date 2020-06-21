@@ -3,7 +3,7 @@
         <ion-buttons (click)="backHome()" class="ion-margin-start" slot="start">
             <ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
         </ion-buttons>
-        <ion-title color="light">Ministry of Commerce</ion-title>
+        <ion-title color="light">ក្រសួងពាណិជ្ជកម្ម</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -44,7 +44,7 @@
             <strong>ទាញយកឯកសារជា PDF :</strong>
             <ion-row class="ion-margin-top">
                 <div *ngIf="docs && docs.moc_certificate">
-                    <p>1.វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
+                    <p>1.<a (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</a></p>
                     <pdf-viewer
                         src="{{docs.moc_certificate}}"
                         [fit-to-page]="false"
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="ion-margin-start" *ngIf="docs && docs.business_extract">
-                    <p>2.សម្រង់ក្រុមហ៊ុន</p>
+                    <p>2.<a (click)="dowloadPDF(docs.business_extract, 'business_extract')">សម្រង់ក្រុមហ៊ុន</a></p>
                     <pdf-viewer
                         [src]="docs.business_extract"
                         [fit-to-page]="false"

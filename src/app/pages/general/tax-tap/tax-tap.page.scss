@@ -1,0 +1,28 @@
+ion-title {
+    font-size: 18px;
+}
+
+ion-content {
+    .main-container {
+        padding: 40px 0 0 15px;
+
+        .Pdf-file {
+            margin-top: 30px;
+
+            a {
+                text-decoration: underline;
+                color: #3069bb;
+            }
+        }
+    }
+}
+
+pdf-viewer {
+    // display: block;
+    height: 200px;
+    width: 150px;
+}
+
+::ng-deep .pdfViewer .page .textLayer {
+    border: 1px solid;
+}

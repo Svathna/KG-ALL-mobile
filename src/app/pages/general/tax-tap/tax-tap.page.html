@@ -1,18 +1,99 @@
 <ion-header>
     <ion-toolbar color="primary">
-        <ion-buttons
-            (click)="backHome()"
-            class="ion-margin-start"
-            slot="start"
-        >
-            <ion-icon
-                size="large"
-                color="light"
-                name="arrow-back-outline"
-            ></ion-icon>
+        <ion-buttons (click)="backHome()" class="ion-margin-start" slot="start">
+            <ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
         </ion-buttons>
-        <ion-title color="light">General Department of Taxation</ion-title>
+        <ion-title color="light">អគ្គនាយកដ្ឋានពន្ធដារ</ion-title>
     </ion-toolbar>
 </ion-header>
-
-<ion-content> </ion-content>
+<ion-content *ngIf="!isFetching">
+    <div class="main-container">
+        <ion-grid class="ion-no-padding">
+            <ion-row>
+                <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
+                <p class="ion-margin-start">{{ dot.dotNumber }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>ចុះថ្ងៃទី :</strong>
+                <p class="ion-margin-start">{{ moment(dot.notedDate).format('DD-MM-YYYY') }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>ចុះបញ្ជីនៅ :</strong>
+                <p class="ion-margin-start">{{ dot.notedAtBranch }} <strong>រៀល</strong></p>
+            </ion-row>
+            <ion-row>
+                <strong>អាសយដ្ឋាន :</strong>
+                <p class="ion-margin-start">{{ dot.address }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>ឈ្មោះធនាគារ :</strong>
+                <p class="ion-margin-start">{{ dot.bankName }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>ឈ្មោះគណនីធនាគារ :</strong>
+                <p class="ion-margin-start">{{ dot.bankAccountName }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>លេខគណនីធនាគារ :</strong>
+                <p class="ion-margin-start">{{ dot.bankAccountNumber }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>លេខកាតពន្ធដារ :</strong>
+                <p class="ion-margin-start">{{ dot.taxationCardNumber }}</p>
+            </ion-row>
+            <ion-row>
+                <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
+                <p class="ion-margin-start">{{ dot.phoneNumber }}</p>
+            </ion-row>
+        </ion-grid>
+        <!-- PDF section  -->
+        <div class="Pdf-file">
+            <strong>ទាញយកឯកសារជា PDF :</strong>
+            <ion-grid>
+                <ion-row class="ion-margin-top">
+                    <div *ngIf="docs && docs.vat_certificate">
+                        <p>1.<a (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</a></p>
+                        <pdf-viewer
+                            src="{{docs.vat_certificate}}"
+                            [fit-to-page]="false"
+                            [show-all]="false"
+                            [original-size]="false"
+                            [autoresize]="false"
+                            [show-borders]="true"
+                            (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')"
+                            style="display: block;">
+                        </pdf-viewer>
+                    </div>
+    
+                    <div class="ion-margin-start"  *ngIf="docs && docs.patent">
+                        <p>2.<a (click)="dowloadPDF(docs.patent, 'patent')">ប័ណ្ណប៉ាតង់</a></p>
+                        <pdf-viewer
+                            [src]="docs.patent"
+                            [fit-to-page]="false"
+                            [show-all]="false"
+                            [original-size]="false"
+                            [autoresize]="false"
+                            [show-borders]="true"
+                            (click)="dowloadPDF(docs.patent, 'patent')"
+                            style="display: block;">
+                        </pdf-viewer>
+                    </div>
+    
+                    <div *ngIf="docs && docs.gdt_card">
+                        <p>3.<a (click)="dowloadPDF(docs.gdt_card, 'gdt_card')">កាតពន្ធដារ</a></p>
+                        <pdf-viewer
+                            [src]="docs.gdt_card"
+                            [fit-to-page]="false"
+                            [show-all]="false"
+                            [original-size]="false"
+                            [autoresize]="false"
+                            [show-borders]="true"
+                            (click)="dowloadPDF(docs.gdt_card, 'gdt_card')"
+                            style="display: block;">
+                        </pdf-viewer>
+                    </div>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

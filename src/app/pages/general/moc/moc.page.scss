@@ -1,9 +1,18 @@
+ion-title {
+    font-size: 18px;
+}
+
 ion-content {
     .main-container {
         padding: 50px 0 0 15px;
 
         .Pdf-file {
             margin-top: 50px;
+
+            a {
+                text-decoration: underline;
+                color: #3069bb;
+            }
         }
     }
 }
