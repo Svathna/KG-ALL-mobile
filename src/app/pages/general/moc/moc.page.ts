@@ -56,7 +56,6 @@ export class MocPage implements OnInit {
 	}
 
 	dowloadPDF (url: string, docName: string) {
-		console.log('yaaa');
 		if (!url) {
 			return;
 		}
