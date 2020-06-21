@@ -67,5 +67,22 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
+        <!-- PDF section  -->
+        <div class="Pdf-file">
+            <p>ឯកសារជា PDF :</p>
+            <div *ngIf="docs && docs.moc_certificate">
+                <p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
+                <pdf-viewer
+                    (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
+                    src="{{docs.moc_certificate}}"
+                    fit-to-page="false"
+                    show-all="false"
+                    original-size="false"
+                    autoresize="false"
+                    show-borders="true"
+                    style="display: block;">
+                </pdf-viewer>
+            </div>
+        </div>
     </div>
 </ion-content>

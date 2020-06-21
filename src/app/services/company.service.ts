@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
     providedIn: "root",
 })
 export class CompanyService {
+	company: CompanyDetail;
+
     constructor(
         private navCtr: NavController,
         private http: HttpClient,
@@ -18,11 +20,13 @@ export class CompanyService {
 	) {}
 	
 	getCompanyMoc() {
-		const company = this.getCompanyLocal();
-		if (!company) {
-			this.authService.signOut();
+		if (!this.company) {
+			this.company = this.getCompanyLocal();
+			if (!this.company) {
+				this.authService.signOut();
+			}
 		}
-		const mocId = company.MOC._id ? company.MOC._id : company.MOC;
+		const mocId = this.company.MOC._id ? this.company.MOC._id : this.company.MOC;
 		return this.http.get(environment.apiURL + `/moc/${mocId}`);
 	}
 
@@ -39,5 +43,16 @@ export class CompanyService {
 			"company",
 			JSON.stringify(company),
 		);
+	}
+
+	getCompanyDocs() {
+		if (!this.company) {
+			this.company = this.getCompanyLocal();
+			if (!this.company) {
+				this.authService.signOut();
+			}
+		}
+		const docId = this.company.docs._id ? this.company.docs._id : this.company.docs;
+		return this.http.get(environment.apiURL + `/doc/${docId}`);
 	}
 }

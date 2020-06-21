@@ -60,6 +60,12 @@ export interface DocResponse {
     message: string;
 }
 
+export interface DotResponse {
+    dot: Dot;
+    success: boolean;
+    message: string;
+}
+
 export interface Company {
     name: string;
     nameInKhmer: string;

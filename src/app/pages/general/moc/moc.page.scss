@@ -15,6 +15,21 @@ ion-content {
                 margin-left: 10px;
             }
         }
+
+        .Pdf-file {
+            p {
+                font-size: 12px;
+            }
+        }
     }
 }
 
+pdf-viewer {
+    // display: block;
+    height: 200px;
+    width: 150px;
+}
+
+::ng-deep .pdfViewer .page .textLayer {
+    border: 1px solid;
+}
