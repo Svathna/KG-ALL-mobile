@@ -11,6 +11,12 @@ export interface User {
     phoneNumber: number;
     registrationTokens: string[];
     deleted: boolean;
-    company: CompanyDetail;
     _id: string;
+}
+
+export interface UserSafeResponse {
+    success: boolean;
+    user: User;
+    company: CompanyDetail;
+    message: string;
 }

@@ -18,7 +18,6 @@ export class ObligationPage implements OnInit {
   }
 
   backHome() {
-    console.log('ha')
     this.navCtr.navigateBack("home");
   }
 

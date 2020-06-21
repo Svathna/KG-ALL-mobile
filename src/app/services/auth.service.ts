@@ -4,10 +4,12 @@ import { environment } from "src/environments/environment";
 import { User, UserType } from "src/app/models/user.model";
 import { AlertService } from "./alerts.service";
 import { NavController } from '@ionic/angular';
+import { CompanyDetail } from '../models/company.model';
 
 export interface LoginResponse {
     token: string;
     user: User;
+    company: CompanyDetail;
     success: boolean;
 }
 
@@ -16,6 +18,7 @@ export interface LoginResponse {
 })
 export class AuthService implements OnInit {
     public userData: User;
+    public company: CompanyDetail
     public showLoader: boolean = false;
 
     constructor(
@@ -37,16 +40,23 @@ export class AuthService implements OnInit {
                     })
                     .subscribe(
                         async (response: LoginResponse) => {
-                            const { token, user } = response;
+                            const { token, user, company } = response;
                             if (user && user.type === UserType.NORMAL_USER) {
                                 // OH YEAH! logged in successfuly
                                 this.userData = user;
+                                this.company = company;
+                                console.log(response);
+                                console.log(this.userData);
+                                console.log(this.company);
                                 localStorage.setItem(
                                     "user",
                                     JSON.stringify(this.userData)
                                 );
+                                localStorage.setItem(
+                                    "company",
+                                    JSON.stringify(this.userData)
+                                );
                                 localStorage.setItem("token", token);
-                                console.log(this.userData);
                                 // got to the main page
                                 this.navCtr.navigateRoot("home");
 
@@ -85,9 +95,9 @@ export class AuthService implements OnInit {
     }
 
     getUserSafe() {
-        const user: User = JSON.parse(localStorage.getItem("user"));
-        return user ? user : null;
+        // const user: User = JSON.parse(localStorage.getItem("user"));
+        // return user ? user : null;
         // TODO: check this later
-        // return this.http.get(environment.apiURL + "/user/current");
+        return this.http.get(environment.apiURL + "/user/current/safe");
     }
 }

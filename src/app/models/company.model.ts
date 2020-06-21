@@ -1,15 +1,68 @@
-export interface Company {
-    company: CompanyDetail;
-    moc: Moc;
-    dot: Dot;
-    taxHistory: TaxHistory;
+import { User } from "./user.model";
+
+export enum DocType {
+    MOC_CERTIFICATE = 'moc_certificate',
+    BUSINESS_EXTRACT_FILE = 'business_extract',
+    VAT_CERTIFICATE = 'vat_certificate',
+    PATENT = 'patent',
+    GDT_CARD = 'gdt_card',
+    OTHERS = 'others',
+}
+
+export interface OtherDocument {
+    docUrl: string;
+    title: string;
+    titleInKhmer: string;
+  }
+
+export interface Doc {
+    _id: string;
+    moc_certificate: string;
+    business_extract: string;
+    vat_certificate: string;
+    patent: string;
+    gdt_card: string;
+    others: OtherDocument[];
 }
 
 export interface CompanyDetail {
     name: string;
     nameInKhmer: string;
-    description: string;
-    deleted: boolean;
+    _id: string;
+    user?: User;
+    MOC?: Moc;
+    DOT?: Dot;
+    docs: Doc,
+    taxHistorys?: TaxHistory[];
+}
+
+export interface CompanysResponse {
+    companys: CompanyDetail[];
+    success: boolean;
+    message: string;
+}
+
+export interface CompanyResponse {
+    company: CompanyDetail;
+    success: boolean;
+    message: string;
+}
+
+export interface MocResponse {
+    moc: Moc;
+    success: boolean;
+    message: string;
+}
+
+export interface DocResponse {
+    doc: Doc;
+    success: boolean;
+    message: string;
+}
+
+export interface Company {
+    name: string;
+    nameInKhmer: string;
     _id: string;
 }
 
@@ -17,11 +70,12 @@ export interface Moc {
     mocNumber: number;
     notedDate: Date;
     capital: number;
-    dateOfBTV: Date;
-    type: CompanyType;
-    mocUsernamePasswordLogin: UsernamePasworrd;
+    // dateOfBTV: Date;
+    annualTranscriptMaintenanceDate: Date;
+    companyType: CompanyType;
+    mocUsernameLogin: string;
+    mocPasswordLogin: string;
     _id: string;
-    deleted: boolean;
 }
 
 export enum CompanyType {
@@ -30,22 +84,21 @@ export enum CompanyType {
     PUBLIC_LIMITED_COMPANY = 3,
 }
 
-export interface UsernamePasworrd {
-    userName: string;
-    password: string;
-}
+// export interface UsernamePasworrd {
+//     userName: string;
+//     password: string;
+// }
 
 export interface Dot {
-    dotNumber: number;
+    dotNumber: string;
     notedDate: Date;
-    dotBranch: string;
+    notedAtBranch: string;
     address: string;
     bankName: string;
     bankAccountName: string;
     bankAccountNumber: number;
-    taxCardNumber: string;
-    phoneNumber: string;
-    deleted: boolean;
+    taxationCardNumber: string;
+    phoneNumber: number;
     _id: string;
 }
 
@@ -56,6 +109,5 @@ export interface TaxHistory {
     others: string;
     month: string;
     year: number;
-    deleted: boolean;
     _id: string;
 }

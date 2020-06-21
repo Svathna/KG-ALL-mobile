@@ -29,8 +29,6 @@ export class TokenInterceptor implements HttpInterceptor {
             },
         });
 
-        console.log(token);
-
         return next.handle(request).pipe(
             tap(
                 (event: HttpEvent<any>) => {

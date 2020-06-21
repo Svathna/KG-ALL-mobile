@@ -18,7 +18,6 @@ export class MocPage implements OnInit {
   }
 
   backHome() {
-    console.log('ha')
     this.navCtr.navigateBack("home");
   }
 

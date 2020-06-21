@@ -22,7 +22,6 @@ export class LoginGuard implements CanActivate {
         let token = localStorage.getItem("token");
 
         if (token) {
-            console.log("hey");
             this.navCtr.navigateRoot(["home"]);
             return false;
         }

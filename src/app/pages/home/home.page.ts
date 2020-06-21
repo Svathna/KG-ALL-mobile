@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
 import { Router, RouterEvent } from "@angular/router";
 import { NavController } from '@ionic/angular';
-import { User } from 'src/app/models/user.model';
+import { User, UserSafeResponse } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { CompanyDetail } from 'src/app/models/company.model';
 
 @Component({
     selector: "app-home",
@@ -12,6 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomePage {
     activePath = "";
     user: User;
+    company: CompanyDetail;
 
     // pageGroup = [
     //     {
@@ -51,13 +53,18 @@ export class HomePage {
     ) {
         this.router.events.subscribe((event: RouterEvent) => {
             this.activePath = event.url;
-            console.log(event);
         });
     }
 
     ngOnInit() {
-        this.user = this.authService.getUserSafe();
-        console.log(this.user);
+        this.authService.getUserSafe().subscribe((data: UserSafeResponse) => {
+            if (data && data.success) {
+                this.user = data.user;
+                this.company = data.company;
+                console.log(this.user);
+                console.log(this.company);
+            }
+        });
     }
 
     goToPageGeneral() {
