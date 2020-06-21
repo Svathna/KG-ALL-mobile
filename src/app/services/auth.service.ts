@@ -50,11 +50,11 @@ export class AuthService implements OnInit {
                                 console.log(this.company);
                                 localStorage.setItem(
                                     "user",
-                                    JSON.stringify(this.userData)
+                                    JSON.stringify(this.userData),
                                 );
                                 localStorage.setItem(
                                     "company",
-                                    JSON.stringify(this.userData)
+                                    JSON.stringify(this.company),
                                 );
                                 localStorage.setItem("token", token);
                                 // got to the main page

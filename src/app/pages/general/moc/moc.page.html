@@ -1,14 +1,71 @@
 <ion-header>
     <ion-toolbar color="primary">
         <ion-buttons (click)="backHome()" class="ion-margin-start" slot="start">
-            <ion-icon
-                size="large"
-                color="light"
-                name="arrow-back-outline"
-            ></ion-icon>
+            <ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
         </ion-buttons>
         <ion-title color="light">Ministry of Commerce</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content *ngIf="!isFetching">
+    <div class="main-container">
+        <ion-grid class="ion-no-padding">
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>ចុះបញ្ជីពាណិជ្ជកម្មលេខ :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ moc.mocNumber }}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>ចុះថ្ងៃទី :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ moment(moc.notedDate).format('DD-MM-YYYY') }}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>ដើមទុនចុះបញ្ជី :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ moc.capital | number }} <strong>រៀល</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>ប្រភេទ :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ companyTypeInKhmer[moc.companyType] }}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ moment(moc.annualTranscriptMaintenanceDate).format('DD-MM-YYYY') }}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ moc.mocUsernameLogin }}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="" size="5" class="title">
+                    <p>លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</p>
+                </ion-col>
+                <ion-col size="6" class="value">
+                    <p>{{ moc.mocPasswordLogin }}</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

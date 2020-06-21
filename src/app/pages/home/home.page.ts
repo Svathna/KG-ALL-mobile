@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { User, UserSafeResponse } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CompanyDetail } from 'src/app/models/company.model';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
     selector: "app-home",
@@ -49,6 +50,7 @@ export class HomePage {
     constructor(
         private router: Router,
         private authService: AuthService,
+        private companyService: CompanyService,
         public navCtrl: NavController,
     ) {
         this.router.events.subscribe((event: RouterEvent) => {
@@ -61,6 +63,7 @@ export class HomePage {
             if (data && data.success) {
                 this.user = data.user;
                 this.company = data.company;
+                this.companyService.setCompanyToLocal(this.company);
                 console.log(this.user);
                 console.log(this.company);
             }

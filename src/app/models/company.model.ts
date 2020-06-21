@@ -67,7 +67,7 @@ export interface Company {
 }
 
 export interface Moc {
-    mocNumber: number;
+    mocNumber: string;
     notedDate: Date;
     capital: number;
     // dateOfBTV: Date;
