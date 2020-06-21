@@ -38,7 +38,6 @@ export class MocPage implements OnInit {
             this.isFetching = false;
             if (data && data.moc) {
 				this.moc = data.moc;
-				console.log(this.moc);
             }
         });
     }

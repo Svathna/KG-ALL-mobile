@@ -64,8 +64,6 @@ export class HomePage {
                 this.user = data.user;
                 this.company = data.company;
                 this.companyService.setCompanyToLocal(this.company);
-                console.log(this.user);
-                console.log(this.company);
             }
         });
     }
