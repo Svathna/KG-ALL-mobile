@@ -1,0 +1,74 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-buttons (click)="backHome()" class="ion-padding-horizontal" slot="start">
+			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
+		</ion-buttons>
+		<ion-title color="light">document-inventory</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="main-container">
+		<!-- PDF section  -->
+        <div class="Pdf-file">
+            <strong>ទាញយកឯកសារជា PDF :</strong>
+            <ion-row *ngIf="!isFetching" class="ion-margin-top">
+				<ion-col size="7">
+					<div *ngIf="docs && docs.moc_certificate">
+						<p>1.<a (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</a></p>
+						<ion-icon (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
+							color="primary" 
+							class="pdf-icon" 
+							name="document-attach">
+						</ion-icon>
+					</div>
+				</ion-col>
+
+				<ion-col size="5">
+					<div class="ion-margin-start" *ngIf="docs && docs.business_extract">
+						<p>2.<a (click)="dowloadPDF(docs.business_extract, 'business_extract')">សម្រង់ក្រុមហ៊ុន</a></p>
+						<ion-icon (click)="dowloadPDF(docs.business_extract, 'business_extract')"
+							color="primary"
+							class="pdf-icon"
+							name="document-attach">
+						</ion-icon>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-row *ngIf="!isFetching" class="ion-margin-top">
+				<ion-col size="7">
+					<div *ngIf="docs && docs.vat_certificate">
+						<p>3.<a (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</a></p>
+						<ion-icon (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')"
+							color="primary"
+							class="pdf-icon"
+							name="document-attach">
+						</ion-icon>
+					</div>
+				</ion-col>
+
+				<ion-col size="5">
+					<div class="ion-margin-start"  *ngIf="docs && docs.patent">
+						<p>4.<a (click)="dowloadPDF(docs.patent, 'patent')">ប័ណ្ណប៉ាតង់</a></p>
+						<ion-icon (click)="dowloadPDF(docs.patent, 'patent')"
+							color="primary"
+							class="pdf-icon"
+							name="document-attach">
+						</ion-icon>
+					</div>
+				</ion-col>
+				
+				<ion-col size="6">
+					<div *ngIf="docs && docs.gdt_card">
+						<p>5.<a (click)="dowloadPDF(docs.gdt_card, 'gdt_card')">កាតពន្ធដារ</a></p>
+						<ion-icon (click)="dowloadPDF(docs.gdt_card, 'gdt_card')"
+							color="primary"
+							class="pdf-icon"
+							name="document-attach">
+						</ion-icon>
+					</div>
+				</ion-col>
+			</ion-row>
+        </div>
+	</div>
+</ion-content>

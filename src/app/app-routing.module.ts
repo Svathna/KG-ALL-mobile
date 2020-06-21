@@ -25,6 +25,10 @@ const routes: Routes = [
         path: 'general',
         loadChildren: () => import('./pages/general/general.module').then(m => m.GeneralPageModule),
     },
+    {
+        path: 'document-inventory',
+        loadChildren: () => import('./pages/home/document-inventory/document-inventory.module').then( m => m.DocumentInventoryPageModule)
+    },
 ];
 
 @NgModule({

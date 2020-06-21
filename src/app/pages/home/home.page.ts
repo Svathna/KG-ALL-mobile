@@ -16,27 +16,6 @@ export class HomePage {
     user: User;
     company: CompanyDetail;
 
-    // pageGroup = [
-    //     {
-    //         name: "General",
-    //         url: 'general',
-    //         icon: 'briefcase'
-    //     },
-    //     {
-    //         name: "Oblication",
-    //         url: "obligation",
-    //         icon: 'list'
-    //     },
-    //     {
-    //         name: "Tax Calucation",
-    //         icon: 'calculator'
-    //     },
-    //     {
-    //         name: "Service",
-    //         icon: 'cash'
-    //     }
-    // ];
-
     pages = [
         {
             name: "Request",
@@ -44,6 +23,7 @@ export class HomePage {
         },
         {
             name: "Document Inventory",
+            path: '/document-inventory',
         },
     ];
 
