@@ -18,13 +18,13 @@ export const COMPANY_TYPE_IN_KHMER = [
 @Component({
     selector: "app-moc",
     templateUrl: "./moc.page.html",
-    styleUrls: ["./moc.page.scss"],
+	styleUrls: ["./moc.page.scss"],
 })
 export class MocPage implements OnInit {
 	moc: Moc;
 	docs: Doc;
 	companyTypeInKhmer = COMPANY_TYPE_IN_KHMER;
-    isFetching = false;
+	isFetching = false;
 	moment: any = moment;
 
     constructor(

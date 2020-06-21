@@ -14,6 +14,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+    this.splashScreen.show();
     this.initializeApp();
   }
 

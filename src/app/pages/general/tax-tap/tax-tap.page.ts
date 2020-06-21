@@ -15,6 +15,7 @@ export class TaxTapPage implements OnInit {
     dot: Dot;
 	docs: Doc;
     isFetching = false;
+    isDocsFetching = false;
 	moment: any = moment;
 
     constructor(
@@ -39,7 +40,9 @@ export class TaxTapPage implements OnInit {
 	}
 	
 	fetchDocData() {
+        this.isDocsFetching = true;
 		this.companyService.getCompanyDocs().subscribe((data: DocResponse) => {
+            this.isDocsFetching = false;
 			if (data && data.doc) {
                 this.docs = data.doc;
             }
