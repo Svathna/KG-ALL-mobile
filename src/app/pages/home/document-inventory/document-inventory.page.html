@@ -3,16 +3,30 @@
 		<ion-buttons (click)="backHome()" class="ion-padding-horizontal" slot="start">
 			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
 		</ion-buttons>
-		<ion-title color="light">document-inventory</ion-title>
+		<ion-title color="light">ទូរឯកសារ</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+	<ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
 	<div class="main-container">
+		<div class="request-section">
+			<form [formGroup]="requestForm">
+				<!-- <ion-item class="ion-margin-bottom"> -->
+					<!-- <ion-icon slot="end" size="small" name="md-text" mode="md"></ion-icon> -->
+					<ion-textarea class="ion-margin-bottom" placeholder="ពាក្យស្នើសុំឯកសារបន្ថែម" padding required formControlName="description"></ion-textarea>
+				<!-- </ion-item> -->
+				<div class="ion-text-end">
+					<ion-button [disabled]="requestForm.invalid || isFetching" color="secondary" (click)="submitRequest()" type="submit">
+						<ion-label color="light">ដាក់ស្នើ</ion-label>
+					</ion-button>
+				</div>
+			</form>
+		</div>
 		<!-- PDF section  -->
         <div class="Pdf-file">
             <strong>ទាញយកឯកសារជា PDF :</strong>
-            <ion-row *ngIf="!isFetching" class="ion-margin-top">
+            <ion-row class="ion-margin-top">
 				<ion-col size="7">
 					<div *ngIf="docs && docs.moc_certificate">
 						<p>1.<a (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</a></p>
@@ -35,7 +49,7 @@
 					</div>
 				</ion-col>
 			</ion-row>
-			<ion-row *ngIf="!isFetching" class="ion-margin-top">
+			<ion-row class="ion-margin-top">
 				<ion-col size="7">
 					<div *ngIf="docs && docs.vat_certificate">
 						<p>3.<a (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</a></p>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { CompanyService } from 'src/app/services/company.service';
 import { Doc, DocResponse } from 'src/app/models/company.model';
+import { FormGroup, FormBuilder, Validators, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 declare var require: any;
 const FileSaver = require("file-saver");
@@ -14,14 +15,51 @@ const FileSaver = require("file-saver");
 export class DocumentInventoryPage implements OnInit {
 	docs: Doc;
 	isFetching = false;
+	requestForm: FormGroup;
+	companyId: string;
 
     constructor(
 		private navCtr: NavController,
 		private companyService: CompanyService,
+		private fb: FormBuilder,
+		private toast: ToastController,
 	) {}
 
 	ngOnInit() {
 		this.fetchDocData();
+		this.builRequestForm();
+	}
+
+	builRequestForm() {
+		this.requestForm = this.fb.group({
+			description: new FormControl('', [Validators.required, Validators.minLength(5)]),
+		});
+	}
+
+	async submitRequest() {
+		if (this.requestForm.invalid) {
+			return;
+		}
+		this.isFetching = true;
+		const companyId = await this.companyService.getCompanyId();
+		const value = this.requestForm.value;
+		Object.assign(value, { companyId });
+		this.companyService.sendRequest(value).subscribe((data: any) => {
+			this.isFetching = false;
+			if (data && data.success) {
+				this.toasterRequestSuccess();
+			}
+		})
+	}
+
+	toasterRequestSuccess() {
+		const toast = this.toast.create({
+			message: 'ការដាក់ពាក្យស្នើបានជោគជ័យ',
+			duration: 3000,
+			position: 'bottom'
+		}).then(data => {
+			data.present();
+		});
 	}
 	
 	fetchDocData() {

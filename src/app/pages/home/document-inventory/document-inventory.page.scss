@@ -1,6 +1,6 @@
 ion-content {
     .main-container {
-        padding: 100px 0 0 15px;
+        padding: 100px 15px 0 15px;
 
         .Pdf-file {
             // margin-top: 0px;
@@ -15,4 +15,9 @@ ion-content {
             }
         }
     }
+}
+
+ion-textarea{
+    border: solid 1px;
+    border-radius: 10px;
 }

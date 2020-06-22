@@ -66,4 +66,19 @@ export class CompanyService {
 		const dotId = this.company.DOT._id ? this.company.DOT._id : this.company.DOT;
 		return this.http.get(environment.apiURL + `/dot/${dotId}`);
 	}
+
+	getCompanyId() {
+		if (!this.company) {
+			this.company = this.getCompanyLocal();
+			if (!this.company) {
+				this.authService.signOut();
+			}
+		}
+		return this.company._id;
+	}
+
+	sendRequest(body) {
+		console.log(body)
+		return this.http.post(environment.apiURL + `/request` , body)
+	}
 }
