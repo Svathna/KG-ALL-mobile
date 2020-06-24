@@ -13,12 +13,11 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class HomePage {
     activePath = "";
-    user: User;
     company: CompanyDetail;
 
     pages = [
         {
-            name: "My Requests",
+            name: "Requests",
             path: '/requests-page'
         },
         {
@@ -39,13 +38,7 @@ export class HomePage {
     }
 
     ngOnInit() {
-        this.authService.getUserSafe().subscribe((data: UserSafeResponse) => {
-            if (data && data.success) {
-                this.user = data.user;
-                this.company = data.company;
-                this.companyService.setCompanyToLocal(this.company);
-            }
-        });
+        this.company = this.companyService.getCompanyLocal();
     }
 
     goToPageGeneral() {

@@ -32,7 +32,10 @@ export class CompanyService {
 
 	getCompanyLocal() {
 		const company: CompanyDetail = JSON.parse(localStorage.getItem("company"));
-        return company ? company : null;
+		if (!company) {
+			this.authService.signOut();
+		}
+        return company;
 	}
 
 	setCompanyToLocal(company: CompanyDetail) {
@@ -77,8 +80,12 @@ export class CompanyService {
 		return this.company._id;
 	}
 
+	getMyRequests() {
+		const id = this.getCompanyId();
+		return this.http.get(environment.apiURL + `/request/company/${id}`);
+	}
+
 	sendRequest(body) {
-		console.log(body)
 		return this.http.post(environment.apiURL + `/request` , body)
 	}
 }

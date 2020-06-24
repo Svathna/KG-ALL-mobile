@@ -34,6 +34,7 @@
         "normalize.css": "^8.0.1",
         "platform": "1.3.5",
         "rxjs": "~6.5.5",
+        "subsink": "^1.0.1",
         "tslib": "^1.10.0",
         "zone.js": "~0.10.2"
     },

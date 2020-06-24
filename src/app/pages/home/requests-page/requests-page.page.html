@@ -1,9 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>requests-page</ion-title>
-  </ion-toolbar>
+	<ion-toolbar color="primary">
+		<ion-buttons (click)="backHome()" class="ion-padding-horizontal" slot="start">
+			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
+		</ion-buttons>
+		<ion-title color="light">បញ្ជីពាក្យស្នើរ</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+	<ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
+	<div class="main-container">
+		<ion-grid *ngIf="!isFetching || requests.length > 0">
+			<ion-row>
+				<ion-col *ngFor="let item of requests" size="6">
+					<ion-card>
+						<ion-card-header color="primary">
+							<ion-card-title color="light" class="ion-text-center">{{ item.status }}</ion-card-title>
+						</ion-card-header>
+						<ion-card-content>
+							{{ item.description }}
+						</ion-card-content>
+					</ion-card>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+	<div class="btn-fixed">
+		<ion-icon size="large" color="primary" name="trash" mode="md"></ion-icon>
+	</div>
 </ion-content>

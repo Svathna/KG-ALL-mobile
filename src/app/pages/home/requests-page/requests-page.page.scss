@@ -1,0 +1,15 @@
+ion-content {
+    .main-container {
+        padding: 20px 15px 0 15px;
+
+        ion-card-header {
+            padding: 8px;
+        }
+    }
+
+    .btn-fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+}
