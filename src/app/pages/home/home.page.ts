@@ -18,8 +18,8 @@ export class HomePage {
 
     pages = [
         {
-            name: "Request",
-            // path: '/menu/home'
+            name: "My Requests",
+            path: '/requests-page'
         },
         {
             name: "Document Inventory",
