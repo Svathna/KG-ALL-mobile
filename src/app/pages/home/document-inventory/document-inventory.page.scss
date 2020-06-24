@@ -1,6 +1,6 @@
 ion-content {
     .main-container {
-        padding: 100px 15px 0 15px;
+        padding: 80px 15px 0 15px;
 
         .Pdf-file {
             // margin-top: 0px;
@@ -8,10 +8,11 @@ ion-content {
             a {
                 text-decoration: underline;
                 color: #3069bb;
+                font-size: 14px;
             }
 
             .pdf-icon {
-                font-size: 5rem;
+                font-size: 4rem;
             }
         }
     }

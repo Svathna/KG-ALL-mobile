@@ -43,6 +43,7 @@ export class DocumentInventoryPage implements OnInit {
 		this.isFetching = true;
 		const companyId = await this.companyService.getCompanyId();
 		const value = this.requestForm.value;
+		this.requestForm.reset();
 		Object.assign(value, { companyId });
 		this.companyService.sendRequest(value).subscribe((data: any) => {
 			this.isFetching = false;
@@ -54,7 +55,7 @@ export class DocumentInventoryPage implements OnInit {
 
 	toasterRequestSuccess() {
 		const toast = this.toast.create({
-			message: 'ការដាក់ពាក្យស្នើបានជោគជ័យ',
+			message: 'ការស្នើត្រូវបានបញ្ជូនទៅក្នុងប្រព័ន្ធ',
 			duration: 3000,
 			position: 'bottom'
 		}).then(data => {
@@ -68,6 +69,7 @@ export class DocumentInventoryPage implements OnInit {
 			this.isFetching = false;
 			if (data && data.doc) {
 				this.docs = data.doc;
+				console.log(this.docs);
             }
 		});
 	}
