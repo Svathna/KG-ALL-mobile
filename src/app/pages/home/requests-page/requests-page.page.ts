@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController, ToastController, AlertController } from '@ionic/angular';
 import { CompanyService } from 'src/app/services/company.service';
 import { RequestsResponse, Request } from 'src/app/models/request.model';
 import { SubSink } from 'subsink';
@@ -17,6 +17,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
   constructor(
     private navCtr: NavController,
     private toast: ToastController,
+    private alert: AlertController,
 		private companyService: CompanyService,
   ) { }
 
@@ -73,7 +74,26 @@ export class RequestsPagePage implements OnInit, OnDestroy {
 		}).then(data => {
 			data.present();
 		});
-	}
+  }
+  
+  alertConfrim(id: string) {
+    this.alert.create({
+      header: 'Are you sure?',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.deleteRequest(id);
+          },
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+        }
+      ],
+    }).then(data => data.present());
+  }
 
   backHome() {
     this.navCtr.navigateBack("home");
