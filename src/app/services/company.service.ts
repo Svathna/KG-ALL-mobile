@@ -88,4 +88,8 @@ export class CompanyService {
 	sendRequest(body) {
 		return this.http.post(environment.apiURL + `/request` , body)
 	}
+
+	deleteRequest(id: string) {
+		return this.http.delete(environment.apiURL + `/request/${id}`);
+	}
 }

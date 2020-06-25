@@ -4,6 +4,9 @@
 			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
 		</ion-buttons>
 		<ion-title color="light">បញ្ជីពាក្យស្នើរ</ion-title>
+		<!-- <ion-buttons slot="end">
+			<ion-icon class="trash-icon" color="light" name="trash" mode="md"></ion-icon>
+		</ion-buttons> -->
 	</ion-toolbar>
 </ion-header>
 
@@ -15,7 +18,13 @@
 				<ion-col *ngFor="let item of requests" size="6">
 					<ion-card>
 						<ion-card-header color="primary">
-							<ion-card-title color="light" class="ion-text-center">{{ item.status }}</ion-card-title>
+							<ion-card-title color="light" class="ion-text-start">
+								{{ item.status }}
+								<ion-icon (click)="deleteRequest(item._id)" class="trash-icon ion-float-end" color="danger" name="trash" mode="md"></ion-icon>
+							</ion-card-title>
+							<!-- <ion-button slot="end"> -->
+								<!-- <ion-icon class="trash-icon ion-float-end" color="light" name="trash" mode="md"></ion-icon> -->
+							<!-- </ion-button> -->
 						</ion-card-header>
 						<ion-card-content>
 							{{ item.description }}
@@ -25,7 +34,7 @@
 			</ion-row>
 		</ion-grid>
 	</div>
-	<div class="btn-fixed">
+	<!-- <div class="btn-fixed">
 		<ion-icon size="large" color="primary" name="trash" mode="md"></ion-icon>
-	</div>
+	</div> -->
 </ion-content>

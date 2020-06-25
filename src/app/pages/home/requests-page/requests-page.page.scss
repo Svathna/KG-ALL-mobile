@@ -2,8 +2,25 @@ ion-content {
     .main-container {
         padding: 20px 15px 0 15px;
 
-        ion-card-header {
-            padding: 8px;
+        ion-card {
+            ion-card-header {
+                padding: 8px;
+    
+                ion-card-title {
+                    text-transform: uppercase;
+                    font-size: 16px;
+                }
+    
+                .trash-icon {
+                    font-size: 16px;
+                }
+            }
+
+            ion-card-content {
+                height: 97px;
+                overflow-y: scroll;
+            }
+
         }
     }
 
