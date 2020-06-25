@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tax-calculation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaxCalculationPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private navCtl: NavController,
+  ) { }
 
   ngOnInit() {
+  }
+
+  backHome() {
+    this.navCtl.navigateBack('home');
   }
 
 }

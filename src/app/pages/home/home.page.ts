@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { Router, RouterEvent } from "@angular/router";
 import { NavController } from '@ionic/angular';
-import { User, UserSafeResponse } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CompanyDetail } from 'src/app/models/company.model';
 import { CompanyService } from 'src/app/services/company.service';
@@ -51,6 +50,10 @@ export class HomePage {
 
     goToPageTaxCalculation() {
         this.navCtrl.navigateForward("tax-calculation");
+    }
+
+    contactUs() {
+        console.log('implement me!');
     }
 
     logout() {

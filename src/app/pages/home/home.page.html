@@ -38,6 +38,9 @@
                 <ion-title color="light">
                     Home
                 </ion-title>
+                <ion-buttons class="phone-icon" slot="end" (click)="contactUs()">
+                    <ion-icon color="light" name="call"></ion-icon>
+                </ion-buttons>
             </ion-toolbar>
         </ion-header>
 
@@ -93,14 +96,3 @@
         </ion-content>
     </ion-router-outlet>
 </ion-app>
-
-<!-- <div
-    *ngFor="let page of pageGroup; let lastIndex = last"
-    class="second-section"
->
-    <div [ngClass]="{'border-bottom-0': lastIndex}" class="btn-section">
-        <div class="div-btn" (click)="goToOtherPage(page)">
-            <ion-label class="text-bold" color="light">{{page.name}}</ion-label>
-        </div>
-    </div>
-</div> -->
