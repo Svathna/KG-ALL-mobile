@@ -49,6 +49,10 @@ export class HomePage {
         this.navCtrl.navigateForward("obligation");
     }
 
+    goToPageTaxCalculation() {
+        this.navCtrl.navigateForward("tax-calculation");
+    }
+
     logout() {
         this.authService.signOut();
     }

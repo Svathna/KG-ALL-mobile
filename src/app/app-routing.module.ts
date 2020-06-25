@@ -33,6 +33,10 @@ const routes: Routes = [
         path: 'requests-page',
         loadChildren: () => import('./pages/home/requests-page/requests-page.module').then( m => m.RequestsPagePageModule)
     },
+    {
+        path: 'tax-calculation',
+        loadChildren: () => import('./pages/tax-calculation/tax-calculation.module').then( m => m.TaxCalculationPageModule)
+    },
 ];
 
 @NgModule({
