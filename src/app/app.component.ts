@@ -24,7 +24,6 @@ export class AppComponent {
   }
 
   initializeApp() {
-    console.log('kdkdkd');
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -34,9 +33,9 @@ export class AppComponent {
   fetData() {
     this.authService.getUserSafe().subscribe((data: UserSafeResponse) => {
       if (data && data.success) {
-          const { company } = data;
-          this.companyService.setCompanyToLocal(company);
+        const { company } = data;
+        this.companyService.setCompanyToLocal(company);
       }
-  });
+    });
   }
 }

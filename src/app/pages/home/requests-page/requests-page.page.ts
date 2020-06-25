@@ -26,9 +26,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log(this.subs);
     this.subs.unsubscribe();
-    console.log(this.subs);
   }
 
   fetchMyRequest() {
@@ -37,7 +35,6 @@ export class RequestsPagePage implements OnInit, OnDestroy {
       this.isFetching = false;
       if (data && data.success) {
         this.requests = data.requests;
-        console.log(this.requests);
       }
     });
   }

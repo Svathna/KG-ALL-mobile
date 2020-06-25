@@ -45,9 +45,6 @@ export class AuthService implements OnInit {
                                 // OH YEAH! logged in successfuly
                                 this.userData = user;
                                 this.company = company;
-                                console.log(response);
-                                console.log(this.userData);
-                                console.log(this.company);
                                 localStorage.setItem(
                                     "user",
                                     JSON.stringify(this.userData),

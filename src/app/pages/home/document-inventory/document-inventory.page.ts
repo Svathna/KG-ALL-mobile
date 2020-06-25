@@ -69,7 +69,6 @@ export class DocumentInventoryPage implements OnInit {
 			this.isFetching = false;
 			if (data && data.doc) {
 				this.docs = data.doc;
-				console.log(this.docs);
             }
 		});
 	}
