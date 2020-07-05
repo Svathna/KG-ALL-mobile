@@ -42,25 +42,54 @@
         <!-- PDF section  -->
         <div class="Pdf-file">
             <strong>ទាញយកឯកសារជា PDF :</strong>
-            <ion-row *ngIf="!isDocsFetching" class="ion-margin-top">
-                <div *ngIf="docs && docs.moc_certificate">
-                    <p>1.<a (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')">វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</a></p>
-                    <ion-icon (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
-                        color="primary" 
-                        class="pdf-icon ion-margin-start" 
-                        name="document-attach">
-                    </ion-icon>
-                </div>
-
-                <div class="ion-margin-start" *ngIf="docs && docs.business_extract">
-                    <p>2.<a (click)="dowloadPDF(docs.business_extract, 'business_extract')">សម្រង់ក្រុមហ៊ុន</a></p>
-                    <ion-icon (click)="dowloadPDF(docs.business_extract, 'business_extract')"
-                        color="primary"
-                        class="pdf-icon ion-margin-start"
-                        name="document-attach">
-                    </ion-icon>
-                </div>
-            </ion-row>
+            <div  *ngIf="docs">
+                <ion-card>
+                    <ion-row *ngIf="docs.moc_certificate">
+                        <ion-col size="3">
+                            <ion-icon (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
+                                color="primary" 
+                                class="pdf-icon" 
+                                name="document-attach">
+                            </ion-icon>
+                        </ion-col>
+                        <ion-col>
+                            <p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-icon
+                                (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
+                                color="primary"
+                                size="large"
+                                name="download"
+                                mode="md">
+                            </ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+                <ion-card>
+                    <ion-row *ngIf="docs.business_extract">
+                        <ion-col size="3">
+                            <ion-icon (click)="dowloadPDF(docs.business_extract, 'business_extract')"
+                                color="primary" 
+                                class="pdf-icon" 
+                                name="document-attach">
+                            </ion-icon>
+                        </ion-col>
+                        <ion-col>
+                            <p>2. សម្រង់ក្រុមហ៊ុន</p>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-icon
+                                (click)="dowloadPDF(docs.business_extract, 'business_extract')"
+                                color="primary"
+                                size="large"
+                                name="download"
+                                mode="md">
+                            </ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </div>
         </div>
     </div>
 </ion-content>

@@ -44,6 +44,7 @@ export class TaxTapPage implements OnInit {
             this.isDocsFetching = false;
 			if (data && data.doc) {
                 this.docs = data.doc;
+                console.log(this.docs);
             }
 		});
 	}
