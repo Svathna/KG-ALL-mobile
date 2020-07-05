@@ -16,11 +16,11 @@ export class HomePage {
 
     pages = [
         {
-            name: "Requests",
+            name: "បញ្ជីពាក្យស្នើរ",
             path: '/requests-page'
         },
         {
-            name: "Document Inventory",
+            name: "ទូឯកសារ",
             path: '/document-inventory',
         },
     ];
