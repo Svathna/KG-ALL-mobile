@@ -38,7 +38,11 @@ export class MocPage implements OnInit {
 	}
 
     fetchMocData() {
-        this.isFetching = true;
+		this.isFetching = true;
+		const company = this.companyService.getCompanyLocal();
+        if (!company.MOC) {
+            return this.isFetching = false;
+        }
         this.companyService.getCompanyMoc().subscribe((data: MocResponse) => {
             this.isFetching = false;
             if (data && data.moc) {

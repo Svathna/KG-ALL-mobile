@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content *ngIf="!isFetching">
     <div class="main-container">
-        <ion-grid class="ion-no-padding">
+        <ion-grid *ngIf="dot" class="ion-no-padding">
             <ion-row>
                 <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
                 <p class="ion-margin-start">{{ dot.dotNumber }}</p>
@@ -44,6 +44,44 @@
             <ion-row>
                 <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
                 <p class="ion-margin-start">{{ dot.phoneNumber }}</p>
+            </ion-row>
+        </ion-grid>
+        <ion-grid *ngIf="!dot" class="ion-no-padding">
+            <ion-row>
+                <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>ចុះថ្ងៃទី :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>ចុះបញ្ជីនៅ :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>អាសយដ្ឋាន :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>ឈ្មោះធនាគារ :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>ឈ្មោះគណនីធនាគារ :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>លេខគណនីធនាគារ :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>លេខកាតពន្ធដារ :</strong>
+                <p class="ion-margin-start">?</p>
+            </ion-row>
+            <ion-row>
+                <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
+                <p class="ion-margin-start">?</p>
             </ion-row>
         </ion-grid>
         <!-- PDF section  -->

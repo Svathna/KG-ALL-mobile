@@ -30,6 +30,10 @@ export class TaxTapPage implements OnInit {
 
     fetchDotData() {
         this.isFetching = true;
+        const company = this.companyService.getCompanyLocal();
+        if (!company.DOT) {
+            return this.isFetching = false;
+        }
         this.companyService.getCompanyDot().subscribe((data: DotResponse) => {
             this.isFetching = false;
             if (data && data.dot) {
@@ -44,7 +48,6 @@ export class TaxTapPage implements OnInit {
             this.isDocsFetching = false;
 			if (data && data.doc) {
                 this.docs = data.doc;
-                console.log(this.docs);
             }
 		});
 	}
