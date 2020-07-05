@@ -43,7 +43,7 @@
         <div class="Pdf-file">
             <strong>ទាញយកឯកសារជា PDF :</strong>
             <div  *ngIf="docs">
-                <ion-card>
+                <ion-card class="doc-card">
                     <ion-row *ngIf="docs.moc_certificate">
                         <ion-col size="3">
                             <ion-icon (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
@@ -66,7 +66,7 @@
                         </ion-col>
                     </ion-row>
                 </ion-card>
-                <ion-card>
+                <ion-card class="doc-card">
                     <ion-row *ngIf="docs.business_extract">
                         <ion-col size="3">
                             <ion-icon (click)="dowloadPDF(docs.business_extract, 'business_extract')"

@@ -24,7 +24,7 @@
         <div class="Pdf-file">
 			<strong>ទាញយកឯកសារជា PDF :</strong>
 			<div *ngIf="docs">
-				<ion-card>
+				<ion-card class="doc-card">
 					<ion-row *ngIf="docs.moc_certificate">
 						<ion-col size="3">
 							<ion-icon (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
@@ -47,7 +47,7 @@
 						</ion-col>
 					</ion-row>
 				</ion-card>
-				<ion-card>
+				<ion-card class="doc-card">
 					<ion-row *ngIf="docs.business_extract">
 						<ion-col size="3">
 							<ion-icon (click)="dowloadPDF(docs.business_extract, 'business_extract')"
@@ -70,7 +70,7 @@
 						</ion-col>
 					</ion-row>
 				</ion-card>
-				<ion-card>
+				<ion-card class="doc-card">
 					<ion-row *ngIf="docs.vat_certificate">
 						<ion-col size="3">
 							<ion-icon (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')"
@@ -93,7 +93,7 @@
 						</ion-col>
 					</ion-row>
 				</ion-card>
-				<ion-card>
+				<ion-card class="doc-card">
 					<ion-row *ngIf="docs.patent">
 						<ion-col size="3">
 							<ion-icon (click)="dowloadPDF(docs.patent, 'patent')"
@@ -116,7 +116,7 @@
 						</ion-col>
 					</ion-row>
 				</ion-card>
-				<ion-card>
+				<ion-card class="doc-card">
 					<ion-row *ngIf="docs.gdt_card">
 						<ion-col size="3">
 							<ion-icon (click)="dowloadPDF(docs.gdt_card, 'gdt_card')"
@@ -145,7 +145,7 @@
 				<strong>
 					ឯកសារផ្សេងៗជា PDF :
 				</strong>
-				<ion-card  *ngFor="let doc of docs.others;let index = index">
+				<ion-card  *ngFor="let doc of docs.others;let index = index" class="doc-card">
 					<ion-row>
 						<ion-col size="3">
 							<ion-icon (click)="dowloadPDF(doc.docUrl, doc.title)"
