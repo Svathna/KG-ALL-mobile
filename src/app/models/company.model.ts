@@ -1,4 +1,6 @@
 import { User } from "./user.model";
+import { TaxPerMonth } from '../interfaces/tax-per-month.interface';
+import { TaxPerYear } from '../interfaces/tax-per-year.interface';
 
 export enum DocType {
     MOC_CERTIFICATE = 'moc_certificate',
@@ -33,7 +35,7 @@ export interface CompanyDetail {
     MOC?: Moc;
     DOT?: Dot;
     docs: Doc,
-    taxHistorys?: TaxHistory[];
+    taxHistory: TaxHistory;
 }
 
 export interface CompanysResponse {
@@ -109,11 +111,7 @@ export interface Dot {
 }
 
 export interface TaxHistory {
-    revenue: number;
-    spending: number;
-    paidAmout: number;
-    others: string;
-    month: string;
-    year: number;
+    taxPerMonths?: TaxPerMonth[];
+    taxPerYears?: TaxPerYear[];
     _id: string;
 }
