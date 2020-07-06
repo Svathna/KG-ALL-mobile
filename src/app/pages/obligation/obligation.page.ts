@@ -2,12 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+export const MONTHS = [
+  'មករា',
+  'កុម្ភៈ',
+  'មីនា',
+  'មេសា',
+  'ឧសភា',
+  'មិថុនា',
+  'កក្កដា',
+  'សីហា',
+  'កញ្ញា',
+  'តុលា',
+  'វិច្ឆិកា',
+  'ធ្នូ',
+];
+
 @Component({
   selector: 'app-obligation',
   templateUrl: './obligation.page.html',
   styleUrls: ['./obligation.page.scss'],
 })
 export class ObligationPage implements OnInit {
+  arrayMonths = MONTHS;
+  currentDate = new Date();
 
   constructor(
     private navCtr: NavController,
