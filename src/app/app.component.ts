@@ -21,6 +21,7 @@ export class AppComponent {
   ) {
     this.splashScreen.show();
     this.initializeApp();
+    this.fetData();
   }
 
   initializeApp() {

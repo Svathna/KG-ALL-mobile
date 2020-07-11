@@ -17,7 +17,7 @@ export class HomePage {
     pages = [
         {
             name: "បញ្ជីពាក្យស្នើរ",
-            path: '/requests-page'
+            path: '/requests-page',
         },
         {
             name: "ទូឯកសារ",

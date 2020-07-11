@@ -92,4 +92,18 @@ export class CompanyService {
 	deleteRequest(id: string) {
 		return this.http.delete(environment.apiURL + `/request/${id}`);
 	}
+
+	getTaxHistory() {
+		if (!this.company) {
+			this.company = this.getCompanyLocal();
+			if (!this.company) {
+				this.authService.signOut();
+			}
+		}
+		if (!this.company.taxHistory) {
+			return;
+		}
+		const id = this.company.taxHistory;
+		return this.http.get(environment.apiURL + `/tax/${id}`);
+	}
 }

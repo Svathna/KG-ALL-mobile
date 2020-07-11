@@ -10,7 +10,7 @@
 <ion-content>
     <div class="main-container ion-padding-top">
         <strong class="ion-margin-start">1. ពន្ធប្រចាំខែក្នុងឆ្នាំ {{ currentDate | date: 'yyyy'}}</strong>
-        <ion-row>
+        <ion-row *ngIf="taxPerMonths.length > 0">
             <ion-col class="ion-no-padding ion-text-center" size="2">
                 <div class="ion-margin-top border-bottom">
                     <h6 class="table_header">ខែ</h6>
@@ -25,18 +25,18 @@
                                 <ion-row class="w-100-p">
                                     <ion-col class="ion-no-padding ion-text-start" size="6">
                                         <div class="ion-margin-top ion-padding-start border-bottom">
-                                            <h6 class="table_header">ចំណាយ (រៀល)</h6>
+                                            <h6 class="table_header">ចំណូល (រៀល)</h6>
                                         </div>
-                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let month of arrayMonths">
-                                            <h6>...</h6>
+                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let item of taxPerMonths">
+                                            <h6>{{ item.revenue ? (item.revenue  | number) : '...'}}</h6>
                                         </div>
                                     </ion-col>
                                     <ion-col class="ion-no-padding ion-text-start" size="6">
                                         <div class="ion-margin-top ion-padding-start border-bottom">
-                                            <h6 class="table_header">ចំណូល (រៀល)</h6>
+                                            <h6 class="table_header">ចំណាយ (រៀល)</h6>
                                         </div>
-                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let month of arrayMonths">
-                                            <h6>...</h6>
+                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let item of taxPerMonths">
+                                            <h6>{{ item.spending ? (item.spending | number) : '...' }}</h6>
                                         </div>
                                     </ion-col>
                                 </ion-row>
@@ -47,16 +47,16 @@
                                         <div class="ion-margin-top ion-padding-start border-bottom">
                                             <h6 class="table_header">ប្រាក់ពន្ធបង់រួច(រៀល)</h6>
                                         </div>
-                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let month of arrayMonths">
-                                            <h6>..</h6>
+                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let item of taxPerMonths">
+                                            <h6>{{ item.taxPaidAmount ? (item.taxPaidAmount | number) : '...' }}</h6>
                                         </div>
                                     </ion-col>
                                     <ion-col class="ion-no-padding ion-text-start" size="6">
                                         <div class="ion-margin-top ion-padding-start border-bottom" >
                                             <h6 class="table_header">ផ្សេងៗ</h6>
                                         </div>
-                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let month of arrayMonths">
-                                            <h6>..</h6>
+                                        <div class="ion-margin-top ion-padding-start border-bottom" *ngFor="let item of taxPerMonths">
+                                            <h6>{{ item.others ? item.others : '...' }}</h6>
                                         </div>
                                     </ion-col>
                                 </ion-row>
