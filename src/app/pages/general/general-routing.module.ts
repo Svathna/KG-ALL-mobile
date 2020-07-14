@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { GeneralPage } from './general.page';
 
 const routes: Routes = [
-  {
-    path: 'taps',
-    component: GeneralPage,
-    children: [
+  	{
+    	path: 'taps',
+    	component: GeneralPage,
+    	children: [
 			{
 				path: 'moc',
 				loadChildren: () => import('./moc/moc.module').then( m => m.MocPageModule)

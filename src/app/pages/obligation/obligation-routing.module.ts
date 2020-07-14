@@ -5,13 +5,20 @@ import { ObligationPage } from './obligation.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ObligationPage
+    path: 'tap',
+    component: ObligationPage,
+    children: [
+			{
+				path: 'tax-per-months',
+        loadChildren: () => import('./tax-per-months/tax-per-months.module').then( m => m.TaxPerMonthsPageModule)
+			},
+		]
   },
-  // {
-  //   path: 'tax-per-months',
-  //   loadChildren: () => import('./tax-per-months/tax-per-months.module').then( m => m.TaxPerMonthsPageModule)
-  // }
+  {
+		path: '',
+		redirectTo: 'tap/tax-per-months',
+		pathMatch: 'full'
+	},
 ];
 
 @NgModule({

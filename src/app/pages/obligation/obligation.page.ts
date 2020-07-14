@@ -27,11 +27,11 @@ export const MONTHS = [
   styleUrls: ['./obligation.page.scss'],
 })
 export class ObligationPage implements OnInit {
-  arrayMonths = MONTHS;
-  currentDate = new Date();
-  taxHistory: TaxHistory;
-  taxPerMonths: TaxPerMonth[] = [];
-  isFetching = false;
+  // arrayMonths = MONTHS;
+  // currentDate = new Date();
+  // taxHistory: TaxHistory;
+  // taxPerMonths: TaxPerMonth[] = [];
+  // isFetching = false;
 
   constructor(
     private navCtr: NavController,
@@ -40,7 +40,7 @@ export class ObligationPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fetchTaxhistory();
+    // this.fetchTaxhistory();
   }
 
   backHome() {
