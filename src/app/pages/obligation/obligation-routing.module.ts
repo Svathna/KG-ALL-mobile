@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ObligationPage
-  }
+  },
+  // {
+  //   path: 'tax-per-months',
+  //   loadChildren: () => import('./tax-per-months/tax-per-months.module').then( m => m.TaxPerMonthsPageModule)
+  // }
 ];
 
 @NgModule({
