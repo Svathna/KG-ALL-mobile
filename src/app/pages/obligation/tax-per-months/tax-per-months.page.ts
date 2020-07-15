@@ -4,7 +4,7 @@ import { MONTHS } from '../obligation.page';
 import { TaxHistory } from 'src/app/models/company.model';
 import { NavController } from '@ionic/angular';
 import { CompanyService } from 'src/app/services/company.service';
-import { TaxPerMonthsService } from 'src/app/services/tax-per-months.service';
+import { TaxPerHistoryService } from 'src/app/services/tax-history.service';
 
 @Component({
   selector: 'app-tax-per-months',
@@ -21,7 +21,7 @@ export class TaxPerMonthsPage implements OnInit {
   constructor(
     private navCtr: NavController,
     private companyService: CompanyService,
-    private taxPerMonthService: TaxPerMonthsService,
+    private taxHistoryService: TaxPerHistoryService,
   ) { }
 
   ngOnInit() {
@@ -49,7 +49,7 @@ export class TaxPerMonthsPage implements OnInit {
       taxPerMonths = [];
     }
     this.isFetching = true;
-    const arrayData: TaxPerMonth[] = await this.taxPerMonthService.buildTaxPerMonths(taxPerMonths ? taxPerMonths : this.taxHistory.taxPerMonths);
+    const arrayData: TaxPerMonth[] = await this.taxHistoryService.buildTaxPerMonths(taxPerMonths ? taxPerMonths : this.taxHistory.taxPerMonths);
     this.taxPerMonths = [...arrayData];
     this.isFetching = false;
     console.log(this.taxPerMonths);

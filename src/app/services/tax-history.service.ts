@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { TaxPerMonth } from '../interfaces/tax-per-month.interface';
 import * as moment from 'moment';
+import { TaxPerYear } from '../interfaces/tax-per-year.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaxPerMonthsService {
+export class TaxPerHistoryService {
   currentDate = new Date();
 
   constructor() { }
@@ -35,5 +36,31 @@ export class TaxPerMonthsService {
     }
 
     return taxPerMonths;
+  }
+
+  builTaxPerYears(arrayData: TaxPerYear[]) {
+    const currentYear = parseInt(moment(this.currentDate).format('YYYY'));
+
+    let taxPerYears: TaxPerYear[] = [];
+
+    for (let index = 1; index < 6; index++) {
+      
+      const existingData = arrayData.filter((data: TaxPerYear) => {
+        return data.year === (currentYear - index).toString();
+      });
+      
+      if (existingData.length > 0) {
+        taxPerYears.push(existingData[0]);
+        continue;
+      }
+
+      const emptyTaxPerYear: TaxPerYear = {
+        year: (currentYear - index).toString(),
+      }
+
+      taxPerYears.push(emptyTaxPerYear);
+    }
+    
+    return taxPerYears;
   }
 }
