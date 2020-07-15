@@ -11,7 +11,11 @@ const routes: Routes = [
 			{
 				path: 'tax-per-months',
         loadChildren: () => import('./tax-per-months/tax-per-months.module').then( m => m.TaxPerMonthsPageModule)
-			},
+      },
+      {
+        path: 'tax-per-years',
+        loadChildren: () => import('./tax-per-years/tax-per-years.module').then( m => m.TaxPerYearsPageModule)
+      },
 		]
   },
   {
