@@ -5,6 +5,11 @@ import { RouteReuseStrategy } from "@angular/router";
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { File } from '@ionic-native/file/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -23,6 +28,11 @@ import { TokenInterceptor } from "./interceptors/token.interceptor";
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FileTransfer,
+    DocumentViewer,
+    FileOpener,
+    AndroidPermissions,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
