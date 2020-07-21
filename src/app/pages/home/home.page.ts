@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { CompanyDetail } from 'src/app/models/company.model';
 import { CompanyService } from 'src/app/services/company.service';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
     selector: "app-home",
@@ -30,6 +31,7 @@ export class HomePage {
         private authService: AuthService,
         private companyService: CompanyService,
         public navCtrl: NavController,
+        private callNumber: CallNumber,
     ) {
         this.router.events.subscribe((event: RouterEvent) => {
             this.activePath = event.url;
@@ -53,7 +55,9 @@ export class HomePage {
     }
 
     contactUs() {
-        console.log('implement me!');
+        this.callNumber.callNumber("098381832", true)
+            .then(res => console.log('Launched dialer!', res))
+            .catch(err => console.log('Error launching dialer', err));
     }
 
     logout() {

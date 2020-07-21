@@ -11,6 +11,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -35,6 +36,7 @@ import { TokenInterceptor } from "./interceptors/token.interceptor";
     FileOpener,
     AndroidPermissions,
     LocalNotifications,
+    CallNumber,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
