@@ -71,7 +71,7 @@ export class MocPage implements OnInit {
         });
     }
 
-    onClickDowload(url: string, docName: string) {
+    onClickDownload(url: string, docName: string) {
         if (!url) {
             return;
         }

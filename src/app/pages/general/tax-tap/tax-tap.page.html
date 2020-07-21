@@ -92,7 +92,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.vat_certificate">
                         <ion-col size="3">
-                            <ion-icon (click)="onClickDowload(docs.vat_certificate, 'vat_certificate')"
+                            <ion-icon (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -103,7 +103,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="onClickDowload(docs.vat_certificate, 'vat_certificate')"
+                                (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -115,7 +115,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.patent">
                         <ion-col size="3">
-                            <ion-icon (click)="onClickDowload(docs.patent, 'patent')"
+                            <ion-icon (click)="onClickDownload(docs.patent, 'patent')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -126,7 +126,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="onClickDowload(docs.patent, 'patent')"
+                                (click)="onClickDownload(docs.patent, 'patent')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -138,7 +138,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.gdt_card">
                         <ion-col size="3">
-                            <ion-icon (click)="onClickDowload(docs.gdt_card, 'gdt_card')"
+                            <ion-icon (click)="onClickDownload(docs.gdt_card, 'gdt_card')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -149,7 +149,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="onClickDowload(docs.gdt_card, 'gdt_card')"
+                                (click)="onClickDownload(docs.gdt_card, 'gdt_card')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -170,6 +170,6 @@
     [original-size]="false"
     [autoresize]="false"
     [show-borders]="true"
-    (click)="onClickDowload(docs.patent, 'patent')"
+    (click)="onClickDownload(docs.patent, 'patent')"
     style="display: block;">
 </pdf-viewer> -->

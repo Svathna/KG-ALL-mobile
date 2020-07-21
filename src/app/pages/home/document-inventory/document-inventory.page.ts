@@ -3,9 +3,7 @@ import { NavController, ToastController } from '@ionic/angular';
 import { CompanyService } from 'src/app/services/company.service';
 import { Doc, DocResponse } from 'src/app/models/company.model';
 import { FormGroup, FormBuilder, Validators, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-declare var require: any;
-const FileSaver = require("file-saver");
+import { HelpersService } from 'src/app/services/helpers.service';
 
 @Component({
     selector: "app-document-inventory",
@@ -23,6 +21,7 @@ export class DocumentInventoryPage implements OnInit {
 		private companyService: CompanyService,
 		private fb: FormBuilder,
 		private toast: ToastController,
+        private helpersService: HelpersService,
 	) {}
 
 	ngOnInit() {
@@ -73,11 +72,11 @@ export class DocumentInventoryPage implements OnInit {
 		});
 	}
 
-	dowloadPDF (url: string, docName: string) {
+	onClickdownload (url: string, docName: string) {
 		if (!url) {
 			return;
 		}
-		FileSaver.saveAs(url, docName ? docName : '');
+		this.helpersService.getPermissionAndDownloadPdf(url, docName);
 	}
 
     backHome() {
