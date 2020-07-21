@@ -76,7 +76,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.moc_certificate">
                         <ion-col size="3">
-                            <ion-icon (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
+                            <ion-icon (click)="onClickDowload(docs.moc_certificate, 'moc_certificate')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -87,7 +87,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="dowloadPDF(docs.moc_certificate, 'moc_certificate')"
+                                (click)="onClickDowload(docs.moc_certificate, 'moc_certificate')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -99,7 +99,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.business_extract">
                         <ion-col size="3">
-                            <ion-icon (click)="dowloadPDF(docs.business_extract, 'business_extract')"
+                            <ion-icon (click)="onClickDowload(docs.business_extract, 'business_extract')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -110,7 +110,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="dowloadPDF(docs.business_extract, 'business_extract')"
+                                (click)="onClickDowload(docs.business_extract, 'business_extract')"
                                 color="primary"
                                 size="large"
                                 name="download"

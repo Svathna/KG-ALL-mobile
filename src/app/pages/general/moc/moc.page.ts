@@ -14,9 +14,10 @@ import {
     FileTransfer,
     FileTransferObject,
 } from "@ionic-native/file-transfer/ngx";
-import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { FileOpener } from "@ionic-native/file-opener/ngx";
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { HelpersService } from 'src/app/services/helpers.service';
 
 export const COMPANY_TYPE_IN_KHMER = [
     "",
@@ -40,11 +41,7 @@ export class MocPage implements OnInit {
     constructor(
         private navCtr: NavController,
         private companyService: CompanyService,
-        private transfer: FileTransfer,
-        private file: File,
-        private document: DocumentViewer,
-		private fileOpener: FileOpener,
-		private androidPermissions: AndroidPermissions,
+        private helpersService: HelpersService,
     ) {}
 
     ngOnInit() {
@@ -74,58 +71,11 @@ export class MocPage implements OnInit {
         });
     }
 
-    dowloadPDF(url: string, docName: string) {
+    onClickDowload(url: string, docName: string) {
         if (!url) {
             return;
         }
-        this.getPermission(url, docName);
-    }
-
-    download(url: string, docName: string) {
-        const uri = encodeURI(url);
-        const fileTransfer: FileTransferObject = this.transfer.create();
-        fileTransfer
-            .download(
-                uri,
-                this.file.externalRootDirectory + `/Download/${docName}.pdf`
-            )
-            .then(
-                (entry) => {
-                    const url = entry.nativeURL;
-                    this.fileOpener.showOpenWithDialog(url, 'application/pdf')
-                    	.then((data) => {
-                    			console.log('File is opened');
-                    		})
-                    	.catch(e => console.log('Error opening file', e));
-                },
-                (error) => {
-                    // handle error
-                    console.log(error);
-                }
-            );
-    }
-
-    getPermission(url: string, docName: string) {
-        this.androidPermissions
-            .hasPermission(
-                this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE
-            )
-            .then((status) => {
-                if (status.hasPermission) {
-                    this.download(url, docName);
-                } else {
-                    this.androidPermissions
-                        .requestPermission(
-                            this.androidPermissions.PERMISSION
-                                .WRITE_EXTERNAL_STORAGE
-                        )
-                        .then((status) => {
-                            if (status.hasPermission) {
-                                this.download(url, docName);
-                            }
-                        });
-                }
-            });
+        this.helpersService.getPermissionAndDownloadPdf(url, docName);
     }
 
     backHome() {
