@@ -67,7 +67,7 @@ export class AuthService implements OnInit {
                         },
                         async () => {
                             await this.alertService.error(
-                                "Wrong credentials, please try again"
+                                "បញ្ចូលព័ត៌មានខុស! សូមព្យាយាមម្តងទៀត។"
                             );
                             reject("Error, logging in");
                         }

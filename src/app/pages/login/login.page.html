@@ -4,7 +4,7 @@
             <ion-img src="assets/logo/kg-all-logo.png"></ion-img>
         </div>
     </div>
-    <div class="form" text-center padding>
+    <div class="form text-center" padding>
         <form [formGroup]="loginForm">
             <ion-item class="ion-margin-bottom">
                 <ion-icon slot="start" size="small" name="person-outline"></ion-icon>
@@ -20,5 +20,6 @@
                 <ion-label color="light">ចូលក្នុងប្រព័ន្ធ</ion-label>
             </ion-button>
         </form>
+        <ion-spinner *ngIf="isFetching" name="lines" color="light"></ion-spinner>
     </div>
 </ion-content>

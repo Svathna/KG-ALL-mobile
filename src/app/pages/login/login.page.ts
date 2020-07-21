@@ -20,8 +20,8 @@ export class LoginPage {
     password: ""
   };
   public errorMessage: any;
-
   passwordShowHide = PASSWORD_INPUT;
+  isFetching = false;
 
   constructor(public authService: AuthService, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -32,10 +32,13 @@ export class LoginPage {
 
   login() {
     if (this.loginForm.valid) {
+      this.isFetching = true;
       this.authService.signIn(
         this.loginForm.value["userName"],
         this.loginForm.value["password"]
-      );
+      ).finally(() => {
+        this.isFetching = false;
+      });
     }
   }
 

@@ -12,9 +12,9 @@ export class AlertService {
 
   async error(message) {
     const alert = await this.alertController.create({
-      header: 'Error',
+      header: 'កំហុស',
       message,
-      buttons: ['OK']
+      buttons: ['យល់ព្រម']
     });
 
     await alert.present();
