@@ -12,11 +12,18 @@
         <!-- Content  -->
         <ion-content>
             <ion-list lines="none">
-                <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
-                    <ion-item [routerLink]="page.path" routerDirection="root">
-                        {{page.name}}
-                    </ion-item>
-                </ion-menu-toggle>
+                <!-- <ion-menu-toggle auto-hide="false" *ngFor="let page of pages"> -->
+                    <div *ngFor="let page of pages">
+                        <ion-item *ngIf="page.path" [routerLink]="page.path" routerDirection="root">
+                            <ion-icon class="ion-padding-end" [name]="page.icon" size="small" mode="md"></ion-icon>
+                            {{page.name}}
+                        </ion-item>
+                        <ion-item *ngIf="!page.path && page.name === 'ទាក់ទង​មក​ពួក​យើង'" (click)="contactUs()">
+                            <ion-icon class="ion-padding-end" [name]="page.icon" size="small" mode="md"></ion-icon>
+                            {{page.name}}
+                        </ion-item>
+                    </div>
+                <!-- </ion-menu-toggle> -->
             </ion-list>
         </ion-content>
         <!-- Footer  -->
@@ -39,7 +46,7 @@
                     KG-ALL
                 </ion-title>
                 <ion-buttons class="phone-icon" slot="end" (click)="contactUs()">
-                    <ion-icon color="light" name="call"></ion-icon>
+                    <ion-icon color="light" name="call" mode="md"></ion-icon>
                 </ion-buttons>
             </ion-toolbar>
         </ion-header>

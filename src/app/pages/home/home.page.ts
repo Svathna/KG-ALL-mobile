@@ -19,11 +19,17 @@ export class HomePage {
         {
             name: "បញ្ជីពាក្យស្នើរ",
             path: '/requests-page',
+            icon: 'list-outline',
         },
         {
             name: "ទូឯកសារ",
             path: '/document-inventory',
+            icon: 'albums-outline',
         },
+        {
+            name: 'ទាក់ទង​មក​ពួក​យើង',
+            icon: 'call-outline',
+        }
     ];
 
     constructor(
