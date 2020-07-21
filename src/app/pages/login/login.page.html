@@ -8,16 +8,16 @@
         <form [formGroup]="loginForm">
             <ion-item class="ion-margin-bottom">
                 <ion-icon slot="start" size="small" name="person-outline"></ion-icon>
-                <ion-input placeholder="Username" padding required formControlName="userName"></ion-input>
+                <ion-input placeholder="ឈ្មោះប្រើប្រាស់" padding required formControlName="userName"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon slot="start" size="small" name="key-outline"></ion-icon>
-                <ion-input [type]="passwordShowHide.type" placeholder="Password" padding formControlName="password"></ion-input>
+                <ion-input [type]="passwordShowHide.type" placeholder="លេខកូដសម្ងាត់" padding formControlName="password"></ion-input>
                 <ion-icon (click)="showHidePassword()" [name]="passwordShowHide.showHideIcon" size="small" slot="end"></ion-icon>
             </ion-item>
 
             <ion-button class="btn-login" color="secondary" (click)="login()" type="submit">
-                <ion-label color="light">Login</ion-label>
+                <ion-label color="light">ចូលក្នុងប្រព័ន្ធ</ion-label>
             </ion-button>
         </form>
     </div>
