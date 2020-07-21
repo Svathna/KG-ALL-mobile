@@ -6,7 +6,8 @@
         <ion-title color="light">អគ្គនាយកដ្ឋានពន្ធដារ</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content *ngIf="!isFetching">
+<ion-content>
+    <ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
     <div class="main-container">
         <ion-grid *ngIf="dot" class="ion-no-padding">
             <ion-row>
@@ -49,39 +50,39 @@
         <ion-grid *ngIf="!dot" class="ion-no-padding">
             <ion-row>
                 <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>ចុះថ្ងៃទី :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>ចុះបញ្ជីនៅ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>អាសយដ្ឋាន :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>ឈ្មោះធនាគារ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>ឈ្មោះគណនីធនាគារ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>លេខគណនីធនាគារ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>លេខកាតពន្ធដារ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                 <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
-                <p class="ion-margin-start">?</p>
+                <p class="ion-margin-start">...</p>
             </ion-row>
         </ion-grid>
         <!-- PDF section  -->
@@ -91,7 +92,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.vat_certificate">
                         <ion-col size="3">
-                            <ion-icon (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')"
+                            <ion-icon (click)="onClickDowload(docs.vat_certificate, 'vat_certificate')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -102,7 +103,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="dowloadPDF(docs.vat_certificate, 'vat_certificate')"
+                                (click)="onClickDowload(docs.vat_certificate, 'vat_certificate')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -114,7 +115,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.patent">
                         <ion-col size="3">
-                            <ion-icon (click)="dowloadPDF(docs.patent, 'patent')"
+                            <ion-icon (click)="onClickDowload(docs.patent, 'patent')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -125,7 +126,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="dowloadPDF(docs.patent, 'patent')"
+                                (click)="onClickDowload(docs.patent, 'patent')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -137,7 +138,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.gdt_card">
                         <ion-col size="3">
-                            <ion-icon (click)="dowloadPDF(docs.gdt_card, 'gdt_card')"
+                            <ion-icon (click)="onClickDowload(docs.gdt_card, 'gdt_card')"
                                 color="primary" 
                                 class="pdf-icon" 
                                 name="document-attach">
@@ -148,7 +149,7 @@
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon
-                                (click)="dowloadPDF(docs.gdt_card, 'gdt_card')"
+                                (click)="onClickDowload(docs.gdt_card, 'gdt_card')"
                                 color="primary"
                                 size="large"
                                 name="download"
@@ -169,6 +170,6 @@
     [original-size]="false"
     [autoresize]="false"
     [show-borders]="true"
-    (click)="dowloadPDF(docs.patent, 'patent')"
+    (click)="onClickDowload(docs.patent, 'patent')"
     style="display: block;">
 </pdf-viewer> -->

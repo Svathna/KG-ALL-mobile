@@ -7,7 +7,8 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="!isFetching">
+<ion-content>
+    <ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
     <div class="main-container">
         <ion-grid *ngIf="moc" class="ion-no-padding">
             <ion-row>
@@ -42,31 +43,31 @@
         <ion-grid *ngIf="!moc" class="ion-no-padding">
             <ion-row>
                     <strong>ចុះបញ្ជីពាណិជ្ជកម្មលេខ :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                     <strong>ចុះថ្ងៃទី :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                     <strong>ដើមទុនចុះបញ្ជី :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                     <strong>ប្រភេទ :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                     <strong>ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                     <strong>ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
             <ion-row>
                     <strong>លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</strong>
-                    <p class="ion-margin-start">?</p>
+                    <p class="ion-margin-start">...</p>
             </ion-row>
         </ion-grid>
         <!-- PDF section  -->

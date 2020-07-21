@@ -3,9 +3,7 @@ import { NavController } from "@ionic/angular";
 import * as moment from 'moment';
 import { Dot, Doc, DotResponse, DocResponse } from 'src/app/models/company.model';
 import { CompanyService } from 'src/app/services/company.service';
-
-declare var require: any;
-const FileSaver = require("file-saver");
+import { HelpersService } from 'src/app/services/helpers.service';
 @Component({
     selector: "app-tax-tap",
     templateUrl: "./tax-tap.page.html",
@@ -20,7 +18,8 @@ export class TaxTapPage implements OnInit {
 
     constructor(
         private navCtr: NavController,
-        private companyService: CompanyService
+        private companyService: CompanyService,
+        private helpersService: HelpersService,
     ) {}
 
     ngOnInit() {
@@ -52,11 +51,11 @@ export class TaxTapPage implements OnInit {
 		});
 	}
 
-	dowloadPDF (url: string, docName: string) {
+	onClickDowload (url: string, docName: string) {
 		if (!url) {
 			return;
-		}
-		FileSaver.saveAs(url, docName ? docName : '');
+        }
+        this.helpersService.getPermissionAndDownloadPdf(url, docName);
 	}
 
     backHome() {
