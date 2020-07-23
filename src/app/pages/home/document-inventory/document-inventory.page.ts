@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NavController, ToastController } from '@ionic/angular';
 import { CompanyService } from 'src/app/services/company.service';
 import { Doc, DocResponse } from 'src/app/models/company.model';
-import { FormGroup, FormBuilder, Validators, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { HelpersService } from 'src/app/services/helpers.service';
 
 @Component({
