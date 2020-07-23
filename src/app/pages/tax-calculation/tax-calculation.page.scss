@@ -2,16 +2,27 @@ ion-content {
     .main-container {
         padding: 20px 15px 0 15px;
 
-        .title {
-            padding-bottom: 20px;
-        }
-
-        ion-label {
-            color: var(--ion-color-primary);
-        }
+        // ion-label {
+        //     color: var(--ion-color-primary);
+        // }
 
         ion-item {
             margin-bottom: 10px;
+        }
+
+        .tax-calculation-form {
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .result-list {
+            ion-item {
+                margin: 0;
+                
+                ion-label {
+                    margin: 0;
+                }
+            }
         }
     }
 }

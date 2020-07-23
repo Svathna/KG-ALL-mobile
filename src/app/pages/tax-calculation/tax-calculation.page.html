@@ -9,26 +9,57 @@
 
 <ion-content>
 	<div class="main-container">
-		<div class="title ion-text-center">
+		<div class="ion-text-center">
 			<strong>គិតចាប់ពីថ្ងៃទី ០១ ដល់ ៣០ នៃខែ...</strong>
 		</div>
-		<form>
-			<ion-item>
-				<ion-label position="floating">ប្រាក់ចំណូលក្រុមហ៊ុន៖</ion-label>
-				<ion-input type="text"></ion-input>
-			</ion-item>
-			<ion-item>
-				<ion-label position="floating">ចំណាយដែលមានវិក័យបត្រអាករសរុប៖</ion-label>
-				<ion-input type="text"></ion-input>
-			</ion-item>
-			<ion-item>
-				<ion-label position="floating">ចំណាយលើជួលអចលទ្រព្យ និងអចលទ្រព្យ៖</ion-label>
-				<ion-input type="text"></ion-input>
-			</ion-item>
-			<ion-item>
-				<ion-label position="floating">ចំណាយលើសេវាកម្មនៃបុគ្គលមិនមែនក្រុមហ៊ុន៖</ion-label>
-				<ion-input type="text"></ion-input>
-			</ion-item>
-		</form>
+		<div>
+			<form class="tax-calculation-form ion-padding-horizontal">
+				<ion-item>
+					<ion-label position="floating">ប្រាក់ចំណូលក្រុមហ៊ុន៖</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label position="floating">ចំណាយដែលមានវិក័យបត្រអាករសរុប៖</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label position="floating">ចំណាយលើជួលអចលទ្រព្យ និងអចលទ្រព្យ៖</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label position="floating">ចំណាយលើសេវាកម្មនៃបុគ្គលមិនមែនក្រុមហ៊ុន៖</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<div class="ion-padding-horizontal">
+					<ion-button color="primary" type="submit" class="w-100-p">
+						<ion-label color="light">គណនាពន្ធ</ion-label>
+					</ion-button>
+				</div>
+			</form>
+		</div>
+		<!-- Result of calculation -->
+		<div class="ion-text-center ion-margin-top">
+			<strong>លទ្ធផលនៃការគណនាប្រាក់ពន្ធ</strong>
+		</div>
+		<div>
+			<ion-card class="ion-no-margin">
+				<ion-card-content class="ion-no-padding">
+					<ion-list class="result-list ion-no-padding" lines="none">
+						<ion-item>
+							<ion-label>ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល ៖</ion-label>
+						</ion-item>
+						<ion-item>
+							<ion-label>អាករលើតម្លៃបន្ថែម ៖</ion-label>
+						</ion-item>
+						<ion-item>
+							<ion-label>ពន្ធកាត់ទុកលើការជូល ១០% ៖</ion-label>
+						</ion-item>
+						<ion-item>
+							<ion-label>ពន្ធកាត់ទុកលើការសេវាកម្ម ១៥% ៖</ion-label>
+						</ion-item>
+					</ion-list>
+				</ion-card-content>
+			</ion-card>
+		</div>
 	</div>
 </ion-content>
