@@ -14,7 +14,7 @@
 			<form [formGroup]="requestForm">
 				<ion-textarea class="ion-margin-bottom" placeholder="ពាក្យស្នើសុំឯកសារបន្ថែម" padding required formControlName="description"></ion-textarea>
 				<div class="ion-text-end">
-					<ion-button [disabled]="requestForm.invalid || isFetching" color="secondary" (click)="submitRequest()" type="submit">
+					<ion-button [disabled]="requestForm.invalid || isFetching" color="primary" (click)="submitRequest()" type="submit">
 						<ion-label color="light">ដាក់ស្នើ</ion-label>
 					</ion-button>
 				</div>

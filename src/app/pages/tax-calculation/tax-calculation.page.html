@@ -13,25 +13,25 @@
 			<strong>គិតចាប់ពីថ្ងៃទី ០១ ដល់ ៣០ នៃខែ...</strong>
 		</div>
 		<div>
-			<form class="tax-calculation-form ion-padding-horizontal">
+			<form class="tax-calculation-form ion-padding-horizontal"  [formGroup]="taxCalculationForm">
 				<ion-item>
 					<ion-label position="floating">ប្រាក់ចំណូលក្រុមហ៊ុន៖</ion-label>
-					<ion-input type="text"></ion-input>
+					<ion-input type="number" formControlName="revenue"></ion-input>
 				</ion-item>
 				<ion-item>
 					<ion-label position="floating">ចំណាយដែលមានវិក័យបត្រអាករសរុប៖</ion-label>
-					<ion-input type="text"></ion-input>
+					<ion-input type="number" formControlName="expendWithInvoiceTotal"></ion-input>
 				</ion-item>
 				<ion-item>
 					<ion-label position="floating">ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ៖</ion-label>
-					<ion-input type="text"></ion-input>
+					<ion-input type="number" formControlName="expendOnRenting"></ion-input>
 				</ion-item>
 				<ion-item>
 					<ion-label position="floating">ចំណាយលើសេវាកម្មនៃបុគ្គលមិនមែនក្រុមហ៊ុន៖</ion-label>
-					<ion-input type="text"></ion-input>
+					<ion-input type="number" formControlName="expendOnOutsideService"></ion-input>
 				</ion-item>
 				<div class="ion-padding-horizontal">
-					<ion-button color="primary" type="submit" class="w-100-p">
+					<ion-button color="primary" type="submit" class="w-100-p" (click)="calculation()">
 						<ion-label color="light">គណនាពន្ធ</ion-label>
 					</ion-button>
 				</div>
