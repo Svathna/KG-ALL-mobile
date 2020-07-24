@@ -22,14 +22,18 @@ export class TaxCalculationPage implements OnInit {
   buildForm() {
     this.taxCalculationForm = this.formBuilder.group({
       revenue: new FormControl('', [Validators.required]),
-      expendWithInvoiceTotal: new FormControl('', [Validators.required]),
-      expendOnRenting: new FormControl('', [Validators.required]),
-      expendOnOutsideService: new FormControl('', [Validators.required]),
+      expendWithInvoiceTotal: new FormControl(''),
+      expendOnRenting: new FormControl(''),
+      expendOnOutsideService: new FormControl(''),
     });
   }
 
   calculation() {
     console.log(this.taxCalculationForm.value);
+    console.log('Implement me!');
+    if (this.taxCalculationForm.invalid) {
+      return;
+    }
   }
 
   backHome() {
