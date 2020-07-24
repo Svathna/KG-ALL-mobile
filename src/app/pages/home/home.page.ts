@@ -48,16 +48,20 @@ export class HomePage {
         this.company = this.companyService.getCompanyLocal();
     }
 
-    goToPageGeneral() {
-        this.navCtrl.navigateForward("general");
-    }
+    // goToPageGeneral() {
+    //     this.navCtrl.navigateForward("general");
+    // }
 
-    goToPageObligation() {
-        this.navCtrl.navigateForward("obligation");
-    }
+    // goToPageObligation() {
+    //     this.navCtrl.navigateForward("obligation");
+    // }
 
-    goToPageTaxCalculation() {
-        this.navCtrl.navigateForward("tax-calculation");
+    // goToPageTaxCalculation() {
+    //     this.navCtrl.navigateForward("tax-calculation");
+    // }
+
+    goToOtherPage(url: string) {
+        this.navCtrl.navigateForward(url);
     }
 
     contactUs() {
