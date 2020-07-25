@@ -6,8 +6,14 @@ import { TaxCalculationPage } from './tax-calculation.page';
 const routes: Routes = [
   {
     path: '',
-    component: TaxCalculationPage
-  }
+    component: TaxCalculationPage,
+    // children: [
+    //   {
+    //     path: 'general-tax',
+    //     loadChildren: () => import('./general-tax/general-tax.module').then( m => m.GeneralTaxPageModule)
+    //   },
+    // ]
+  },
 ];
 
 @NgModule({

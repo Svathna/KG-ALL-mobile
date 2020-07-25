@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tax-calculation',
-  templateUrl: './tax-calculation.page.html',
-  styleUrls: ['./tax-calculation.page.scss'],
+  selector: 'app-general-tax',
+  templateUrl: './general-tax.page.html',
+  styleUrls: ['./general-tax.page.scss'],
 })
-export class TaxCalculationPage implements OnInit {
+export class GeneralTaxPage implements OnInit {
   taxCalculationForm: FormGroup;
 
   constructor(
@@ -36,13 +36,8 @@ export class TaxCalculationPage implements OnInit {
     }
   }
 
-  goToCalculator(url: string) {
-    this.navCtl.navigateForward(url);
-    // this.navCtl.
-  }
-
-  backHome() {
-    this.navCtl.navigateBack('home');
+  backTaxCalculation() {
+    this.navCtl.navigateBack('tax-calculation');
   }
 
 }
