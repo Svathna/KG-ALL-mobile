@@ -19,6 +19,7 @@ export class AppComponent {
     private authService: AuthService,
     private companyService: CompanyService,
   ) {
+    //*** Control SplashScreen
     this.splashScreen.show();
     this.initializeApp();
     this.fetData();
@@ -26,7 +27,10 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      //*** Control Status Bar
       this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString('#3069bb');
+      //*** Control SplashScreen
       this.splashScreen.hide();
     });
   }
