@@ -11,18 +11,46 @@ ion-content {
         }
 
         .tax-calculation-form {
-            border: 1px solid;
+            margin-top: 5px;
+            // border: 1px solid;
             border-radius: 10px;
-        }
 
-        .result-list {
             ion-item {
-                margin: 0;
-                
+                border-radius: 10px;
+                --ion-background-color: var(--ion-color-body);
+                margin-top: 5px;
+    
+                ion-input {
+                    --placeholder-color: #888686;
+                    --placeholder-opacity: 1;
+                    width: 100%;
+                }
+            }
+
+            .btn-calculation {
+                height: 50px;
+                --border-radius: 10px;
+    
                 ion-label {
-                    margin: 0;
+                    font-size: 18px;
+                    font-weight: bold;
                 }
             }
         }
+
+        .result-card {
+            margin-top: 5px;
+            
+            .result-list {
+                ion-item {
+                    margin: 0;
+                    
+                    ion-label {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
     }
 }

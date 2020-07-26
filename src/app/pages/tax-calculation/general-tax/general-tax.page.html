@@ -12,26 +12,26 @@
 		<div class="ion-text-center">
 			<strong>គិតចាប់ពីថ្ងៃទី ០១ ដល់ ៣០ នៃខែ...</strong>
 		</div>
-		<div>
+		<div class="ion-margin-top">
 			<form class="tax-calculation-form ion-padding-horizontal"  [formGroup]="taxCalculationForm">
+				<ion-label position="floating">ប្រាក់ចំណូលក្រុមហ៊ុន៖</ion-label>
 				<ion-item>
-					<ion-label position="floating">ប្រាក់ចំណូលក្រុមហ៊ុន៖</ion-label>
-					<ion-input type="number" formControlName="revenue"></ion-input>
+					<ion-input type="number" placeholder="0 រៀល" formControlName="revenue"></ion-input>
 				</ion-item>
+				<ion-label position="floating">ចំណាយដែលមានវិក័យបត្រអាករសរុប៖</ion-label>
 				<ion-item>
-					<ion-label position="floating">ចំណាយដែលមានវិក័យបត្រអាករសរុប៖</ion-label>
-					<ion-input type="number" formControlName="expendWithInvoiceTotal"></ion-input>
+					<ion-input type="number" placeholder="0 រៀល" formControlName="expendWithInvoiceTotal"></ion-input>
 				</ion-item>
+				<ion-label position="floating">ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ៖</ion-label>
 				<ion-item>
-					<ion-label position="floating">ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ៖</ion-label>
-					<ion-input type="number" formControlName="expendOnRenting"></ion-input>
+					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnRenting"></ion-input>
 				</ion-item>
+				<ion-label position="floating">ចំណាយលើសេវាកម្មនៃបុគ្គលមិនមែនក្រុមហ៊ុន៖</ion-label>
 				<ion-item>
-					<ion-label position="floating">ចំណាយលើសេវាកម្មនៃបុគ្គលមិនមែនក្រុមហ៊ុន៖</ion-label>
-					<ion-input type="number" formControlName="expendOnOutsideService"></ion-input>
+					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnOutsideService"></ion-input>
 				</ion-item>
-				<div class="ion-padding-horizontal">
-					<ion-button color="primary" type="submit" class="w-100-p" (click)="calculation()">
+				<div>
+					<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
 						<ion-label color="light">គណនាពន្ធ</ion-label>
 					</ion-button>
 				</div>
@@ -42,7 +42,7 @@
 			<strong>លទ្ធផលនៃការគណនាប្រាក់ពន្ធ</strong>
 		</div>
 		<div>
-			<ion-card class="ion-no-margin">
+			<ion-card class="result-card ion-no-margin">
 				<ion-card-content class="ion-no-padding">
 					<ion-list class="result-list ion-no-padding" lines="none">
 						<ion-item>
