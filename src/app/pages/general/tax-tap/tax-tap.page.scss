@@ -1,6 +1,10 @@
 ion-content {
     .main-container {
         padding: 40px 0 0 15px;
+        
+        ion-skeleton-text {
+            height: 16px;
+        }
 
         .Pdf-file {
             margin-top: 30px;

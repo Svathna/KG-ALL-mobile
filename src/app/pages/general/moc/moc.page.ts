@@ -9,14 +9,6 @@ import {
 } from "src/app/models/company.model";
 import { CompanyService } from "src/app/services/company.service";
 import * as moment from "moment";
-import { File } from "@ionic-native/file/ngx";
-import {
-    FileTransfer,
-    FileTransferObject,
-} from "@ionic-native/file-transfer/ngx";
-import { FileOpener } from "@ionic-native/file-opener/ngx";
-import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
-import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { HelpersService } from 'src/app/services/helpers.service';
 
 export const COMPANY_TYPE_IN_KHMER = [

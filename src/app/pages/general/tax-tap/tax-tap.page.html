@@ -47,67 +47,62 @@
                 <p class="ion-margin-start">{{ dot.phoneNumber }}</p>
             </ion-row>
         </ion-grid>
+        <!-- loading -->
         <ion-grid *ngIf="!dot" class="ion-no-padding">
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>ចុះថ្ងៃទី :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>ចុះបញ្ជីនៅ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>អាសយដ្ឋាន :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>ឈ្មោះធនាគារ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>ឈ្មោះគណនីធនាគារ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>លេខគណនីធនាគារ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>លេខកាតពន្ធដារ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
-            <ion-row>
+            <ion-row class="ion-margin-top">
                 <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
-                <p class="ion-margin-start">...</p>
+                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
         </ion-grid>
         <!-- PDF section  -->
         <div class="Pdf-file">
             <strong>ទាញយកឯកសារជា PDF :</strong>
-            <div  *ngIf="docs">
+            <div *ngIf="docs">
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.vat_certificate">
                         <ion-col size="3">
-                            <ion-icon (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')"
-                                color="primary" 
-                                class="pdf-icon" 
-                                name="document-attach">
+                            <ion-icon (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')" color="primary"
+                                class="pdf-icon" name="document-attach">
                             </ion-icon>
                         </ion-col>
                         <ion-col>
                             <p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</p>
                         </ion-col>
                         <ion-col size="2">
-                            <ion-icon
-                                (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')"
-                                color="primary"
-                                size="large"
-                                name="download"
-                                mode="md">
+                            <ion-icon (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')" color="primary"
+                                size="large" name="download" mode="md">
                             </ion-icon>
                         </ion-col>
                     </ion-row>
@@ -115,9 +110,7 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.patent">
                         <ion-col size="3">
-                            <ion-icon (click)="onClickDownload(docs.patent, 'patent')"
-                                color="primary" 
-                                class="pdf-icon" 
+                            <ion-icon (click)="onClickDownload(docs.patent, 'patent')" color="primary" class="pdf-icon"
                                 name="document-attach">
                             </ion-icon>
                         </ion-col>
@@ -125,12 +118,8 @@
                             <p>2. ប័ណ្ណប៉ាតង់</p>
                         </ion-col>
                         <ion-col size="2">
-                            <ion-icon
-                                (click)="onClickDownload(docs.patent, 'patent')"
-                                color="primary"
-                                size="large"
-                                name="download"
-                                mode="md">
+                            <ion-icon (click)="onClickDownload(docs.patent, 'patent')" color="primary" size="large"
+                                name="download" mode="md">
                             </ion-icon>
                         </ion-col>
                     </ion-row>
@@ -138,22 +127,16 @@
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.gdt_card">
                         <ion-col size="3">
-                            <ion-icon (click)="onClickDownload(docs.gdt_card, 'gdt_card')"
-                                color="primary" 
-                                class="pdf-icon" 
-                                name="document-attach">
+                            <ion-icon (click)="onClickDownload(docs.gdt_card, 'gdt_card')" color="primary"
+                                class="pdf-icon" name="document-attach">
                             </ion-icon>
                         </ion-col>
                         <ion-col>
                             <p>3. កាតពន្ធដារ</p>
                         </ion-col>
                         <ion-col size="2">
-                            <ion-icon
-                                (click)="onClickDownload(docs.gdt_card, 'gdt_card')"
-                                color="primary"
-                                size="large"
-                                name="download"
-                                mode="md">
+                            <ion-icon (click)="onClickDownload(docs.gdt_card, 'gdt_card')" color="primary" size="large"
+                                name="download" mode="md">
                             </ion-icon>
                         </ion-col>
                     </ion-row>

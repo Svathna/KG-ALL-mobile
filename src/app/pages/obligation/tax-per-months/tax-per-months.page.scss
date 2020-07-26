@@ -2,6 +2,10 @@ ion-content {
     .main-container {
         padding: 30px 0 0 0;
 
+        ion-skeleton-text {
+            height: 16px;
+        }
+
         .table_header{
             color: var(--ion-color-primary);
         }
