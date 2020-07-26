@@ -14,7 +14,7 @@
 			<form [formGroup]="requestForm">
 				<ion-textarea class="ion-margin-bottom" placeholder="ពាក្យស្នើសុំឯកសារបន្ថែម" padding required formControlName="description"></ion-textarea>
 				<div class="ion-text-end">
-					<ion-button [disabled]="requestForm.invalid || isFetching" color="primary" (click)="submitRequest()" type="submit">
+					<ion-button color="primary" (click)="submitRequest()" type="submit">
 						<ion-label color="light">ដាក់ស្នើ</ion-label>
 					</ion-button>
 				</div>
@@ -23,148 +23,189 @@
 		<!-- PDF section  -->
         <div class="Pdf-file">
 			<strong>ទាញយកឯកសារជា PDF :</strong>
-			<div *ngIf="docs">
-				<ion-card class="doc-card">
-					<ion-row *ngIf="docs.moc_certificate">
-						<ion-col size="3">
-							<ion-icon (click)="onClickdownload(docs.moc_certificate, 'moc_certificate')"
-								color="primary" 
-								class="pdf-icon" 
-								name="document-attach">
-							</ion-icon>
-						</ion-col>
-						<ion-col>
-							<p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
-						</ion-col>
-						<ion-col size="2">
-							<ion-icon
-								(click)="onClickdownload(docs.moc_certificate, 'moc_certificate')"
-								color="primary"
-								size="large"
-								name="download"
-								mode="md">
-							</ion-icon>
-						</ion-col>
-					</ion-row>
-				</ion-card>
-				<ion-card class="doc-card">
-					<ion-row *ngIf="docs.business_extract">
-						<ion-col size="3">
-							<ion-icon (click)="onClickdownload(docs.business_extract, 'business_extract')"
-								color="primary" 
-								class="pdf-icon" 
-								name="document-attach">
-							</ion-icon>
-						</ion-col>
-						<ion-col>
-							<p>2. សម្រង់ក្រុមហ៊ុន</p>
-						</ion-col>
-						<ion-col size="2">
-							<ion-icon
-								(click)="onClickdownload(docs.business_extract, 'business_extract')"
-								color="primary"
-								size="large"
-								name="download"
-								mode="md">
-							</ion-icon>
-						</ion-col>
-					</ion-row>
-				</ion-card>
-				<ion-card class="doc-card">
-					<ion-row *ngIf="docs.vat_certificate">
-						<ion-col size="3">
-							<ion-icon (click)="onClickdownload(docs.vat_certificate, 'vat_certificate')"
-								color="primary" 
-								class="pdf-icon" 
-								name="document-attach">
-							</ion-icon>
-						</ion-col>
-						<ion-col>
-							<p>3. វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</p>
-						</ion-col>
-						<ion-col size="2">
-							<ion-icon
-								(click)="onClickdownload(docs.vat_certificate, 'vat_certificate')"
-								color="primary"
-								size="large"
-								name="download"
-								mode="md">
-							</ion-icon>
-						</ion-col>
-					</ion-row>
-				</ion-card>
-				<ion-card class="doc-card">
-					<ion-row *ngIf="docs.patent">
-						<ion-col size="3">
-							<ion-icon (click)="onClickdownload(docs.patent, 'patent')"
-								color="primary" 
-								class="pdf-icon" 
-								name="document-attach">
-							</ion-icon>
-						</ion-col>
-						<ion-col>
-							<p>4. ប័ណ្ណប៉ាតង់</p>
-						</ion-col>
-						<ion-col size="2">
-							<ion-icon
-								(click)="onClickdownload(docs.patent, 'patent')"
-								color="primary"
-								size="large"
-								name="download"
-								mode="md">
-							</ion-icon>
-						</ion-col>
-					</ion-row>
-				</ion-card>
-				<ion-card class="doc-card">
-					<ion-row *ngIf="docs.gdt_card">
-						<ion-col size="3">
-							<ion-icon (click)="onClickdownload(docs.gdt_card, 'gdt_card')"
-								color="primary" 
-								class="pdf-icon" 
-								name="document-attach">
-							</ion-icon>
-						</ion-col>
-						<ion-col>
-							<p>5. កាតពន្ធដារ</p>
-						</ion-col>
-						<ion-col size="2">
-							<ion-icon
-								(click)="onClickdownload(docs.gdt_card, 'gdt_card')"
-								color="primary"
-								size="large"
-								name="download"
-								mode="md">
-							</ion-icon>
-						</ion-col>
-					</ion-row>
-				</ion-card>
+			<div *ngIf="!isFetching">
+				<div *ngIf="docs">
+					<ion-card class="doc-card">
+						<ion-row *ngIf="docs.moc_certificate">
+							<ion-col size="3">
+								<ion-icon (click)="onClickdownload(docs.moc_certificate, 'moc_certificate')"
+									color="primary" 
+									class="pdf-icon" 
+									name="document-attach">
+								</ion-icon>
+							</ion-col>
+							<ion-col>
+								<p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
+							</ion-col>
+							<ion-col size="2">
+								<ion-icon
+									(click)="onClickdownload(docs.moc_certificate, 'moc_certificate')"
+									color="primary"
+									size="large"
+									name="download"
+									mode="md">
+								</ion-icon>
+							</ion-col>
+						</ion-row>
+					</ion-card>
+					<ion-card class="doc-card">
+						<ion-row *ngIf="docs.business_extract">
+							<ion-col size="3">
+								<ion-icon (click)="onClickdownload(docs.business_extract, 'business_extract')"
+									color="primary" 
+									class="pdf-icon" 
+									name="document-attach">
+								</ion-icon>
+							</ion-col>
+							<ion-col>
+								<p>2. សម្រង់ក្រុមហ៊ុន</p>
+							</ion-col>
+							<ion-col size="2">
+								<ion-icon
+									(click)="onClickdownload(docs.business_extract, 'business_extract')"
+									color="primary"
+									size="large"
+									name="download"
+									mode="md">
+								</ion-icon>
+							</ion-col>
+						</ion-row>
+					</ion-card>
+					<ion-card class="doc-card">
+						<ion-row *ngIf="docs.vat_certificate">
+							<ion-col size="3">
+								<ion-icon (click)="onClickdownload(docs.vat_certificate, 'vat_certificate')"
+									color="primary" 
+									class="pdf-icon" 
+									name="document-attach">
+								</ion-icon>
+							</ion-col>
+							<ion-col>
+								<p>3. វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</p>
+							</ion-col>
+							<ion-col size="2">
+								<ion-icon
+									(click)="onClickdownload(docs.vat_certificate, 'vat_certificate')"
+									color="primary"
+									size="large"
+									name="download"
+									mode="md">
+								</ion-icon>
+							</ion-col>
+						</ion-row>
+					</ion-card>
+					<ion-card class="doc-card">
+						<ion-row *ngIf="docs.patent">
+							<ion-col size="3">
+								<ion-icon (click)="onClickdownload(docs.patent, 'patent')"
+									color="primary" 
+									class="pdf-icon" 
+									name="document-attach">
+								</ion-icon>
+							</ion-col>
+							<ion-col>
+								<p>4. ប័ណ្ណប៉ាតង់</p>
+							</ion-col>
+							<ion-col size="2">
+								<ion-icon
+									(click)="onClickdownload(docs.patent, 'patent')"
+									color="primary"
+									size="large"
+									name="download"
+									mode="md">
+								</ion-icon>
+							</ion-col>
+						</ion-row>
+					</ion-card>
+					<ion-card class="doc-card">
+						<ion-row *ngIf="docs.gdt_card">
+							<ion-col size="3">
+								<ion-icon (click)="onClickdownload(docs.gdt_card, 'gdt_card')"
+									color="primary" 
+									class="pdf-icon" 
+									name="document-attach">
+								</ion-icon>
+							</ion-col>
+							<ion-col>
+								<p>5. កាតពន្ធដារ</p>
+							</ion-col>
+							<ion-col size="2">
+								<ion-icon
+									(click)="onClickdownload(docs.gdt_card, 'gdt_card')"
+									color="primary"
+									size="large"
+									name="download"
+									mode="md">
+								</ion-icon>
+							</ion-col>
+						</ion-row>
+					</ion-card>
+				</div>
+				<!-- Other Doc  section-->
+				<div *ngIf="docs && docs.others" class="ion-margin-top">
+					<strong>
+						ឯកសារផ្សេងៗជា PDF :
+					</strong>
+					<ion-card  *ngFor="let doc of docs.others;let index = index" class="doc-card">
+						<ion-row>
+							<ion-col size="3">
+								<ion-icon (click)="onClickdownload(doc.docUrl, doc.title)"
+									color="primary" 
+									class="pdf-icon" 
+									name="document-attach">
+								</ion-icon>
+							</ion-col>
+							<ion-col>
+								<p>{{ index + 1 }}. {{ doc.titleInKhmer }}</p>
+							</ion-col>
+							<ion-col size="2">
+								<ion-icon
+									(click)="onClickdownload(doc.docUrl, doc.title)"
+									color="primary"
+									size="large"
+									name="download"
+									mode="md">
+								</ion-icon>
+							</ion-col>
+						</ion-row>
+					</ion-card>
+				</div>
 			</div>
-			<!-- Other Doc  section-->
-			<div *ngIf="docs && docs.others" class="ion-margin-top">
-				<strong>
-					ឯកសារផ្សេងៗជា PDF :
-				</strong>
-				<ion-card  *ngFor="let doc of docs.others;let index = index" class="doc-card">
+			<!-- loading -->
+			<div *ngIf="isFetching">
+				<ion-card class="doc-card">
 					<ion-row>
 						<ion-col size="3">
-							<ion-icon (click)="onClickdownload(doc.docUrl, doc.title)"
-								color="primary" 
-								class="pdf-icon" 
-								name="document-attach">
-							</ion-icon>
+							<div class="loading-box"></div>
 						</ion-col>
 						<ion-col>
-							<p>{{ index + 1 }}. {{ doc.titleInKhmer }}</p>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 30%"></ion-skeleton-text>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 20%"></ion-skeleton-text>
 						</ion-col>
-						<ion-col size="2">
-							<ion-icon
-								(click)="onClickdownload(doc.docUrl, doc.title)"
-								color="primary"
-								size="large"
-								name="download"
-								mode="md">
-							</ion-icon>
+					</ion-row>
+				</ion-card>
+				<ion-card class="doc-card">
+					<ion-row>
+						<ion-col size="3">
+							<div class="loading-box"></div>
+						</ion-col>
+						<ion-col>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 30%"></ion-skeleton-text>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 20%"></ion-skeleton-text>
+						</ion-col>
+					</ion-row>
+				</ion-card>
+				<ion-card class="doc-card">
+					<ion-row>
+						<ion-col size="3">
+							<div class="loading-box"></div>
+						</ion-col>
+						<ion-col>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 30%"></ion-skeleton-text>
+							<ion-skeleton-text class="ion-margin-start" animated style="width: 20%"></ion-skeleton-text>
 						</ion-col>
 					</ion-row>
 				</ion-card>
@@ -172,16 +213,3 @@
         </div>
 	</div>
 </ion-content>
-
-<!-- <ion-row class="ion-margin-top">
-	<ion-col *ngFor="let doc of docs.others" size="6">
-		<div>
-			<p><a (click)="onClickdownload(doc.docUrl, doc.title)">{{ doc.titleInKhmer }}</a></p>
-			<ion-icon (click)="onClickdownload(doc.docUrl, doc.title)"
-				color="primary" 
-				class="pdf-icon" 
-				name="document-attach">
-			</ion-icon>
-		</div>
-	</ion-col>
-</ion-row> -->

@@ -21,6 +21,13 @@ ion-content {
                 overflow-y: scroll;
             }
 
+            &.card-loading {
+                height: 120px;
+
+                ion-card-header {
+                    height: 35px;
+                }
+            }
         }
     }
 
