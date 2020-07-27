@@ -12,11 +12,9 @@ ion-content {
 
         .tax-calculation-form {
             margin-top: 5px;
-            // border: 1px solid;
-            border-radius: 10px;
 
             ion-item {
-                border-radius: 10px;
+                border-radius: 5px;
                 --ion-background-color: var(--ion-color-body);
                 margin-top: 5px;
     
@@ -29,10 +27,9 @@ ion-content {
 
             .btn-calculation {
                 height: 50px;
-                --border-radius: 10px;
+                --border-radius: 5px;
     
                 ion-label {
-                    font-size: 18px;
                     font-weight: bold;
                 }
             }
