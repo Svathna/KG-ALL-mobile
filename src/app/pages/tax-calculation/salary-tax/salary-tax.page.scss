@@ -1,0 +1,69 @@
+ion-content {
+    .main-container {
+        padding: 20px 15px 0 15px;
+
+        // ion-label {
+        //     color: var(--ion-color-primary);
+        // }
+
+        .tax-calculation-form {
+            margin-top: 5px;
+            // border: 1px solid;
+
+            .icon-wrapper {
+                margin-top: 8px;
+
+                ion-icon {
+                    font-size: 35px;
+                }
+            }
+
+            ion-item {
+                border-radius: 5px;
+                --ion-background-color: var(--ion-color-body);
+                margin-top: 5px;
+    
+                ion-input {
+                    --placeholder-color: #888686;
+                    --placeholder-opacity: 1;
+                    width: 100%;
+                }
+
+                &.last {
+                    width: 35%;
+                    height: 48px;
+                }
+            }
+
+            ion-row {
+                ion-col {
+                    &.padding-left {
+                        padding-left: 3px;
+                    }
+
+                    &.padding-right {
+                        padding-right: 3px;
+                    }
+                }
+            }
+
+            ion-button {
+                height: 40px;
+                --border-radius: 5px;
+
+                &.no-active {
+                    --border-color: #888686;
+                    --color: #888686;
+                    --opacity: 1;
+                }
+    
+                &.btn-calculator {
+                    ion-label {
+                        // font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

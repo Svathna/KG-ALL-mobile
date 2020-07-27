@@ -8,5 +8,56 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="main-container">
+		<div class="ion-margin-top">
+			<form class="tax-calculation-form ion-padding-horizontal" [formGroup]="taxCalculationForm">
+				<div>
+					<ion-label position="floating">ប្រាក់បៀវត្សប្រចាំខែ</ion-label>
+					<ion-item>
+						<ion-input type="number" placeholder="0 រៀល" formControlName="salary" required></ion-input>
+					</ion-item>
+				</div>
+				<div class="ion-margin-top">
+					<ion-label position="floating">អត្ថប្រយោជន៍បន្ថែម</ion-label>
+					<ion-item>
+						<ion-input type="number" placeholder="0 រៀល" formControlName="extraSalary"></ion-input>
+					</ion-item>
+				</div>
+				<div class="ion-margin-top">
+					<ion-label position="floating">សហព័ទ្ធ ( ប្តី ឬប្រពន្ធ )</ion-label>
+					<ion-row>
+						<ion-col class="ion-no-padding padding-right" size="6">
+							<ion-button (click)="radioButtonCLick()" [fill]="!isHad? 'outline' : 'solid'" class="w-100-p">
+								<ion-label>មាន</ion-label>
+							</ion-button>
+						</ion-col>
+						<ion-col class="ion-no-padding padding-left" size="6">
+							<ion-button (click)="radioButtonCLick()" [fill]="isHad? 'outline' : 'solid'" class="w-100-p">
+								<ion-label>គ្មាន</ion-label>
+							</ion-button>
+						</ion-col>
+					</ion-row>
+				</div>
+				<div class="ion-margin-top">
+					<ion-label>ចំនួនកូនក្នុងបន្ទុក</ion-label>
+					<ion-row>
+						<div class="icon-wrapper">
+							<ion-icon (click)="childrenDecrese()" color="primary" name="remove-circle"></ion-icon>
+						</div>
+						<ion-item class="ion-margin-start last">
+							<ion-input type="number" placeholder="0" formControlName="children"></ion-input>
+						</ion-item>
+						<div class="icon-wrapper ion-margin-start">
+							<ion-icon (click)="childrenIncrease()" color="primary" name="add-circle"></ion-icon>
+						</div>
+					</ion-row>
+				</div>
+				<div class="ion-margin-top">
+					<ion-button color="primary" type="submit" class="w-100-p btn-calculator">
+						<ion-label color="light">គណនាពន្ធ</ion-label>
+					</ion-button>
+				</div>
+			</form>
+		</div>
+  </div>
 </ion-content>
