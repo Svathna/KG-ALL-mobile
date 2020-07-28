@@ -16,7 +16,7 @@ export interface RequestsResponse {
 
 export enum RequestStatus {
     PENDING = 'pending',
-    COMPLETED = 'completed',
+    ACCEPTED = 'accepted',
     REJECTED = 'rejected',
 }
   

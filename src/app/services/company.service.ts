@@ -80,9 +80,9 @@ export class CompanyService {
 		return this.company._id;
 	}
 
-	getMyRequests() {
+	getMyRequests(body) {
 		const id = this.getCompanyId();
-		return this.http.get(environment.apiURL + `/request/company/${id}`);
+		return this.http.post(environment.apiURL + `/request/company/${id}`, body);
 	}
 
 	sendRequest(body) {

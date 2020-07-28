@@ -1,99 +1,137 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavController, ToastController, AlertController } from '@ionic/angular';
-import { CompanyService } from 'src/app/services/company.service';
-import { RequestsResponse, Request } from 'src/app/models/request.model';
-import { SubSink } from 'subsink';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+    NavController,
+    ToastController,
+    AlertController,
+} from "@ionic/angular";
+import { CompanyService } from "src/app/services/company.service";
+import { RequestsResponse, Request, RequestStatus } from "src/app/models/request.model";
+import { SubSink } from "subsink";
 
 @Component({
-  selector: 'app-requests-page',
-  templateUrl: './requests-page.page.html',
-  styleUrls: ['./requests-page.page.scss'],
+    selector: "app-requests-page",
+    templateUrl: "./requests-page.page.html",
+    styleUrls: ["./requests-page.page.scss"],
 })
 export class RequestsPagePage implements OnInit, OnDestroy {
-  requests: Request[] = [];
-  isFetching = false;
-  private subs = new SubSink();
+    requests: Request[] = [];
+    isFetching = false;
+    currentStatus = RequestStatus.PENDING;
+    currentCardHeaderColor = 'primary';
+    loadingCardNumber = [1, 2, 3, 4];
+    headerTitle = 'ដែលស្ថិតក្នុងការរងចាំ';
+    private subs = new SubSink();
 
-  constructor(
-    private navCtr: NavController,
-    private toast: ToastController,
-    private alert: AlertController,
-		private companyService: CompanyService,
-  ) { }
+    constructor(
+        private navCtr: NavController,
+        private toast: ToastController,
+        private alert: AlertController,
+        private companyService: CompanyService
+    ) {}
 
-  ngOnInit() {
-    this.fetchMyRequest();
-  }
-
-  ngOnDestroy() {
-    this.subs.unsubscribe();
-  }
-
-  fetchMyRequest() {
-    this.isFetching = true;
-    this.subs.sink = this.companyService.getMyRequests().subscribe((data: RequestsResponse) => {
-      this.isFetching = false;
-      if (data && data.success) {
-        this.requests = data.requests;
-      }
-    });
-  }
-
-  deleteRequest(id: string) {
-    if (!id) {
-      return;
-    }
-    this.subs.sink = this.companyService.deleteRequest(id).subscribe((data: any) => {
-      if (data && data.success) {
-        this.toasterDeletedRequestSuccess();
+    ngOnInit() {
         this.fetchMyRequest();
-      } else {
-        this.toasterDeletedRequestFailed();
-      }
-    });
-  }
+    }
 
-  toasterDeletedRequestSuccess() {
-		const toast = this.toast.create({
-			message: 'ពាក្យស្នើរត្រូវបានលុបចោល',
-			duration: 3000,
-			position: 'bottom'
-		}).then(data => {
-			data.present();
-		});
-  }
-  
-  toasterDeletedRequestFailed() {
-		const toast = this.toast.create({
-			message: 'error ប្រព័ន្ធមានបញ្ហា',
-			duration: 3000,
-			position: 'bottom'
-		}).then(data => {
-			data.present();
-		});
-  }
-  
-  alertConfrim(id: string) {
-    this.alert.create({
-      header: 'Are you sure?',
-      buttons: [
-        {
-          text: 'Ok',
-          handler: () => {
-            this.deleteRequest(id);
-          },
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
+    ngOnDestroy() {
+        this.subs.unsubscribe();
+    }
+
+    fetchMyRequest(status: string = 'pending') {
+        this.isFetching = true;
+        this.subs.sink = this.companyService
+            .getMyRequests({status})
+            .subscribe((data: RequestsResponse) => {
+                this.isFetching = false;
+                if (data && data.success) {
+                    this.requests = data.requests;
+                }
+            });
+    }
+
+    deleteRequest(id: string) {
+        if (!id) {
+            return;
         }
-      ],
-    }).then(data => data.present());
-  }
+        this.subs.sink = this.companyService
+            .deleteRequest(id)
+            .subscribe((data: any) => {
+                if (data && data.success) {
+                    this.toasterDeletedRequestSuccess();
+                    this.fetchMyRequest();
+                } else {
+                    this.toasterDeletedRequestFailed();
+                }
+            });
+    }
 
-  backHome() {
-    this.navCtr.navigateBack("home");
-  }
+    toasterDeletedRequestSuccess() {
+        const toast = this.toast
+            .create({
+                message: "ពាក្យស្នើរត្រូវបានលុបចោល",
+                duration: 3000,
+                position: "bottom",
+            })
+            .then((data) => {
+                data.present();
+            });
+    }
 
+    toasterDeletedRequestFailed() {
+        const toast = this.toast
+            .create({
+                message: "error ប្រព័ន្ធមានបញ្ហា",
+                duration: 3000,
+                position: "bottom",
+            })
+            .then((data) => {
+                data.present();
+            });
+    }
+
+    alertConfrim(id: string) {
+        this.alert
+            .create({
+                header: "Are you sure?",
+                buttons: [
+                    {
+                        text: "Ok",
+                        handler: () => {
+                            this.deleteRequest(id);
+                        },
+                    },
+                    {
+                        text: "Cancel",
+                        role: "cancel",
+                        cssClass: "secondary",
+                    },
+                ],
+            })
+            .then((data) => data.present());
+    }
+
+    filter(status: string) {
+        this.currentStatus = RequestStatus[status.toUpperCase()];
+        this.setCardHeaderColor();
+        this.fetchMyRequest(this.currentStatus);
+    }
+
+    setCardHeaderColor() {
+        if (this.currentStatus === RequestStatus.PENDING) {
+            this.currentCardHeaderColor = 'primary';
+            this.headerTitle = 'ដែលស្ថិតក្នុងការរងចាំ';
+        } else {
+            if (this.currentStatus === RequestStatus.ACCEPTED) {
+                this.currentCardHeaderColor = 'success';
+                this.headerTitle = 'ដែលត្រូវបានទទួលយក';
+            } else {
+                this.currentCardHeaderColor = 'warning';
+                this.headerTitle = 'ដែលបានបដិសេធ';
+            }
+        }
+    }
+
+    backHome() {
+        this.navCtr.navigateBack("home");
+    }
 }
