@@ -7,14 +7,14 @@ import {
 } from "@angular/forms";
 import { NavController } from "@ionic/angular";
 
-export interface CalucationInput {
+interface CalucationInput {
     revenue: number;
     expendWithInvoiceTotal: number;
     expendOnRenting: number;
     expendOnOutsideService: number;
 }
 
-export interface CalucationResults {
+interface CalucationResults {
   incomeTax: number;
   valueAddedTax: number;
   rentingTax: number;

@@ -47,25 +47,53 @@
 			</form>
 		</div>
 		<!-- Result of calculation -->
-		<div *ngIf="isShowingResults">
+		<div *ngIf="isShowingResults" class="ion-padding-horizontal">
 			<div class="ion-text-center ion-margin-top">
-				<strong>លទ្ធផលនៃការគណនាប្រាក់ពន្ធ</strong>
+				<strong>លទ្ធផលនៃការគណនាពន្ធ</strong>
 			</div>
 			<div class="ion-margin-bottom">
-				<ion-card class="result-card ion-no-margin">
+				<ion-card class="result-card ion-no-margin ion-padding-vertical">
 					<ion-card-content class="ion-no-padding">
 						<ion-list class="result-list ion-no-padding" lines="none">
 							<ion-item>
-								<ion-label color="light">ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល ៖ {{calucationResults.incomeTax}}</ion-label>
+								<ion-col>
+									<ion-label color="light">ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{calucationResults.incomeTax | number}} រៀល
+										</strong>
+									</ion-label>
+								</ion-col>
 							</ion-item>
 							<ion-item>
-								<ion-label color="light">អាករលើតម្លៃបន្ថែម ៖ {{calucationResults.valueAddedTax}}</ion-label>
+								<ion-col>
+									<ion-label color="light">អាករលើតម្លៃបន្ថែម ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{calucationResults.valueAddedTax | number}} រៀល
+										</strong>
+									</ion-label>
+								</ion-col>
 							</ion-item>
 							<ion-item>
-								<ion-label color="light">ពន្ធកាត់ទុកលើការជូល ១០% ៖ {{calucationResults.rentingTax}}</ion-label>
+								<ion-col>
+									<ion-label color="light">ពន្ធកាត់ទុកលើការជូល ១០% ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{calucationResults.rentingTax | number}} រៀល
+										</strong>
+									</ion-label>
+								</ion-col>
 							</ion-item>
 							<ion-item>
-								<ion-label color="light">ពន្ធកាត់ទុកលើការសេវាកម្ម ១៥% ៖ {{calucationResults.serviceTax}}</ion-label>
+								<ion-col>
+									<ion-label color="light">ពន្ធកាត់ទុកលើការសេវាកម្ម ១៥% ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{calucationResults.serviceTax | number}} រៀល
+										</strong>
+									</ion-label>
+								</ion-col>
 							</ion-item>
 						</ion-list>
 					</ion-card-content>

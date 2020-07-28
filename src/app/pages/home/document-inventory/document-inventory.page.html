@@ -22,7 +22,10 @@
 		</div>
 		<!-- PDF section  -->
         <div class="Pdf-file">
-			<strong>ទាញយកឯកសារជា PDF :</strong>
+			<div>
+				<ion-searchbar showCancelButton="focus"></ion-searchbar>
+			</div>
+			<strong class="ion-margin-top">ទាញយកឯកសារជា PDF :</strong>
 			<div *ngIf="!isFetching">
 				<div *ngIf="docs">
 					<ion-card class="doc-card">
