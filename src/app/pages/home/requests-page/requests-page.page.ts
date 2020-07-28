@@ -5,8 +5,12 @@ import {
     AlertController,
 } from "@ionic/angular";
 import { CompanyService } from "src/app/services/company.service";
-import { RequestsResponse, Request, RequestStatus } from "src/app/models/request.model";
+import { RequestsResponse, Request, RequestStatus, RequestStatusInKhmer } from "src/app/models/request.model";
 import { SubSink } from "subsink";
+
+const EequestStatusInKhmer = {
+
+}
 
 @Component({
     selector: "app-requests-page",
@@ -20,6 +24,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     currentCardHeaderColor = 'primary';
     loadingCardNumber = [1, 2, 3, 4];
     headerTitle = 'ដែលស្ថិតក្នុងការរងចាំ';
+    requestStatusInKhmer = RequestStatusInKhmer;
     private subs = new SubSink();
 
     constructor(
@@ -119,14 +124,14 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     setCardHeaderColor() {
         if (this.currentStatus === RequestStatus.PENDING) {
             this.currentCardHeaderColor = 'primary';
-            this.headerTitle = 'ដែលស្ថិតក្នុងការរងចាំ';
+            this.headerTitle = 'ដែលកំពុងរង់ចាំ';
         } else {
             if (this.currentStatus === RequestStatus.ACCEPTED) {
                 this.currentCardHeaderColor = 'success';
                 this.headerTitle = 'ដែលត្រូវបានទទួលយក';
             } else {
                 this.currentCardHeaderColor = 'warning';
-                this.headerTitle = 'ដែលបានបដិសេធ';
+                this.headerTitle = 'ដែលត្រូវបានបដិសេធ';
             }
         }
     }

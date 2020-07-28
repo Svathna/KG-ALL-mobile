@@ -16,7 +16,7 @@
 					<ion-card>
 						<ion-card-header [color]="currentCardHeaderColor">
 							<ion-card-title color="light" class="ion-text-start">
-								{{ item.status }}
+								{{ requestStatusInKhmer[item.status] }}
 								<ion-icon (click)="alertConfrim(item._id)" class="trash-icon ion-float-end" color="danger" name="trash" mode="md"></ion-icon>
 							</ion-card-title>
 						</ion-card-header>

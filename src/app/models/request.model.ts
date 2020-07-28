@@ -19,6 +19,12 @@ export enum RequestStatus {
     ACCEPTED = 'accepted',
     REJECTED = 'rejected',
 }
+
+export enum RequestStatusInKhmer {
+    pending = 'កំពុងរង់ចាំ',
+    accepted = 'បានទទួលយក',
+    rejected = 'បានបដិសេធ',
+}
   
 export enum RequestType {
     REQUEST_DOCUMENT = 1,
