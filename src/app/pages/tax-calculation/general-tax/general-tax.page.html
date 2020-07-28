@@ -31,14 +31,23 @@
 					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnOutsideService" min="0"></ion-input>
 				</ion-item>
 				<div>
-					<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
-						<ion-label color="light">គណនាពន្ធ</ion-label>
-					</ion-button>
+					<ion-row>
+						<ion-col class="ion-no-padding ion-padding-end" size="5">
+							<ion-button type="reset" fill="outline" class="w-100-p btn-calculation" (click)="reset()">
+								<ion-label>កំណត់ឡើងវិញ</ion-label>
+							</ion-button>
+						</ion-col>
+						<ion-col class="ion-no-padding" size="7">
+							<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
+								<ion-label color="light">គណនាពន្ធ</ion-label>
+							</ion-button>
+						</ion-col>
+					</ion-row>
 				</div>
 			</form>
 		</div>
 		<!-- Result of calculation -->
-		<div *ngIf="calucationResults">
+		<div *ngIf="isShowingResults">
 			<div class="ion-text-center ion-margin-top">
 				<strong>លទ្ធផលនៃការគណនាប្រាក់ពន្ធ</strong>
 			</div>
@@ -47,16 +56,16 @@
 					<ion-card-content class="ion-no-padding">
 						<ion-list class="result-list ion-no-padding" lines="none">
 							<ion-item>
-								<ion-label>ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល ៖ {{calucationResults.incomeTax}}</ion-label>
+								<ion-label color="light">ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល ៖ {{calucationResults.incomeTax}}</ion-label>
 							</ion-item>
 							<ion-item>
-								<ion-label>អាករលើតម្លៃបន្ថែម ៖ {{calucationResults.valueAddedTax}}</ion-label>
+								<ion-label color="light">អាករលើតម្លៃបន្ថែម ៖ {{calucationResults.valueAddedTax}}</ion-label>
 							</ion-item>
 							<ion-item>
-								<ion-label>ពន្ធកាត់ទុកលើការជូល ១០% ៖ {{calucationResults.rentingTax}}</ion-label>
+								<ion-label color="light">ពន្ធកាត់ទុកលើការជូល ១០% ៖ {{calucationResults.rentingTax}}</ion-label>
 							</ion-item>
 							<ion-item>
-								<ion-label>ពន្ធកាត់ទុកលើការសេវាកម្ម ១៥% ៖ {{calucationResults.serviceTax}}</ion-label>
+								<ion-label color="light">ពន្ធកាត់ទុកលើការសេវាកម្ម ១៥% ៖ {{calucationResults.serviceTax}}</ion-label>
 							</ion-item>
 						</ion-list>
 					</ion-card-content>

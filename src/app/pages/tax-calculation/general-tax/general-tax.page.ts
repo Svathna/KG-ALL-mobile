@@ -32,6 +32,7 @@ const PERCENT_OF_TAX = 0.01;
 export class GeneralTaxPage implements OnInit {
     taxCalculationForm: FormGroup;
     calucationResults: CalucationResults;
+    isShowingResults = false;
 
     constructor(
         private navCtl: NavController,
@@ -62,7 +63,12 @@ export class GeneralTaxPage implements OnInit {
         }
         const value: CalucationInput = this.taxCalculationForm.value;
         this.calucationResults = this.taxCalculator(value);
-        console.log(this.calucationResults);
+        this.isShowingResults = true;
+    }
+
+    reset() {
+        this.taxCalculationForm.reset();
+        this.isShowingResults = false;
     }
 
     taxCalculator(value: CalucationInput): CalucationResults {
