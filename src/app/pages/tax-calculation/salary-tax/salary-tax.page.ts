@@ -24,10 +24,10 @@ export class SalaryTaxPage implements OnInit {
 
   buildForm() {
     this.taxCalculationForm = this.formBuilder.group({
-      salary: new FormControl('', [Validators.required]),
-      extraSalary: new FormControl(''),
+      salary: new FormControl('', [Validators.required, Validators.min(0)]),
+      extraSalary: new FormControl('', [Validators.min(0)]),
       married: new FormControl(this.isHad, [Validators.required]),
-      children: new FormControl(this.children, [Validators.required]),
+      children: new FormControl(this.children, [Validators.required, Validators.min(0)]),
     });
   }
 
