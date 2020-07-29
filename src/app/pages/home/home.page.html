@@ -52,54 +52,103 @@
         </ion-header>
 
         <ion-content>
-            <ion-card class="main-section border-primary">
-                <ion-grid class="second-section" fixed shadow>
-                    <ion-row class="border-b">
-                        <ion-col class="border-r" size="6">
-                            <div class="btn-section">
+            <div class="main-section">
+                <div class="second-section">
+                    <ion-row class="h-100-p">
+                        <ion-col size="6">
+                            <ion-card class="btn-section ion-no-margin" color="primary">
                                 <div class="div-btn text-center" (click)="goToOtherPage('general')">
                                     <div>
                                         <ion-icon color="light" name="briefcase"></ion-icon>
                                     </div>
                                     <ion-label class="text-bold" color="light">ពត៌មានទូទៅ</ion-label>
                                 </div>
-                            </div>
+                            </ion-card>
                         </ion-col>
                         <ion-col size="6">
-                            <div class="btn-section">
+                            <ion-card class="btn-section ion-no-margin" color="primary">
                                 <div class="div-btn text-center" (click)="goToOtherPage('obligation')">
                                     <div>
                                         <ion-icon color="light" name="list"></ion-icon>
                                     </div>
                                     <ion-label class="text-bold" color="light">ស្ថានភាពក្រុមហ៊ុន</ion-label>
                                 </div>
-                            </div>
+                            </ion-card>
                         </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col class="border-r" size="6">
-                            <div class="btn-section">
+                        <ion-col size="6">
+                            <ion-card class="btn-section ion-no-margin" color="primary">
                                 <div class="div-btn text-center" (click)="goToOtherPage('tax-calculation')">
                                     <div>
                                         <ion-icon color="light" name="calculator"></ion-icon>
                                     </div>
                                     <ion-label class="text-bold" color="light">ការគណនាពន្ធ</ion-label>
                                 </div>
-                            </div>
+                            </ion-card>
                         </ion-col>
                         <ion-col size="6">
-                            <div class="btn-section">
+                            <ion-card class="btn-section ion-no-margin" color="primary">
                                 <div class="div-btn text-center">
                                     <div>
                                         <ion-icon color="light" name="card"></ion-icon>
                                     </div>
                                     <ion-label class="text-bold" color="light">សេវាកម្ម</ion-label>
                                 </div>
-                            </div>
+                            </ion-card>
                         </ion-col>
                     </ion-row>
-                </ion-grid>
-            </ion-card>
+                </div>
+            </div>
         </ion-content>
     </ion-router-outlet>
 </ion-app>
+
+<!-- <ion-content>
+    <ion-card class="main-section border-primary">
+        <ion-grid class="second-section" fixed shadow>
+            <ion-row class="border-b">
+                <ion-col class="border-r" size="6">
+                    <div class="btn-section">
+                        <div class="div-btn text-center" (click)="goToOtherPage('general')">
+                            <div>
+                                <ion-icon color="light" name="briefcase"></ion-icon>
+                            </div>
+                            <ion-label class="text-bold" color="light">ពត៌មានទូទៅ</ion-label>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="btn-section">
+                        <div class="div-btn text-center" (click)="goToOtherPage('obligation')">
+                            <div>
+                                <ion-icon color="light" name="list"></ion-icon>
+                            </div>
+                            <ion-label class="text-bold" color="light">ស្ថានភាពក្រុមហ៊ុន</ion-label>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="border-r" size="6">
+                    <div class="btn-section">
+                        <div class="div-btn text-center" (click)="goToOtherPage('tax-calculation')">
+                            <div>
+                                <ion-icon color="light" name="calculator"></ion-icon>
+                            </div>
+                            <ion-label class="text-bold" color="light">ការគណនាពន្ធ</ion-label>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="btn-section">
+                        <div class="div-btn text-center">
+                            <div>
+                                <ion-icon color="light" name="card"></ion-icon>
+                            </div>
+                            <ion-label class="text-bold" color="light">សេវាកម្ម</ion-label>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content> -->
