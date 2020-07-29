@@ -15,8 +15,14 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from "@angular/common/http";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +31,13 @@ import { TokenInterceptor } from "./interceptors/token.interceptor";
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     AppRoutingModule
   ],
   providers: [

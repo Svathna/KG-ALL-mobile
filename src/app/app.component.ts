@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
 import { UserSafeResponse } from './models/user.model';
 import { CompanyService } from './services/company.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private authService: AuthService,
     private companyService: CompanyService,
+    private translate: TranslateService,
   ) {
     //*** Control SplashScreen
     this.splashScreen.show();
@@ -30,6 +32,8 @@ export class AppComponent {
       //*** Control Status Bar
       this.statusBar.styleDefault();
       this.statusBar.backgroundColorByHexString('#3069bb');
+      //*** Set default languge
+      this.translate.setDefaultLang('kh');
       //*** Control SplashScreen
       this.splashScreen.hide();
     });
