@@ -19,9 +19,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    TranslateModule.forChild({
-      extend: true,
-    }),
+    TranslateModule.forChild(),
     RouterModule.forChild(routes)
   ],
   declarations: [LoginPage]

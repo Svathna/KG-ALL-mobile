@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -12,7 +11,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -25,13 +24,6 @@ export class AppComponent implements OnInit {
     this.splashScreen.show();
     this.initializeApp();
     this.fetData();
-  }
-
-  ngOnInit() {
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.translate.use(event.lang);
-      localStorage.setItem('locale', event.lang);
-    })
   }
 
   initializeApp() {
@@ -51,7 +43,15 @@ export class AppComponent implements OnInit {
       }
       //*** Control SplashScreen
       this.splashScreen.hide();
+
+      // subscibe when lang change
+      this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        console.log(event)
+        this.translate.use(event.lang);
+        localStorage.setItem('locale', event.lang);
+      });
     });
+
   }
 
   fetData() {

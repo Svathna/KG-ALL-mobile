@@ -8,7 +8,6 @@ import { TranslateService } from "@ngx-translate/core";
     styleUrls: ["./chose-language.component.scss"],
 })
 export class ChoseLanguageComponent {
-	isEn = false;
 	currentLang = 'kh';
 
     constructor(
@@ -16,15 +15,13 @@ export class ChoseLanguageComponent {
 		private translate: TranslateService,
 		public navParams: NavParams,
     ) {
-		// this.isEn = this.currentLang === 'en' ? true : false;
-		console.log(this.isEn);
 		this.currentLang = this.navParams.get('currentLang')
-		console.log(this.navParams.get('currentLang'));
-		console.log(this.navParams.data);
 	}
 
     close(lang: string) {
-		this.translate.use(lang);
+		setTimeout(() => {
+			this.translate.use(lang);
+		});
 		setTimeout(() => {
 			this.popoverCtrl.dismiss();
 		}, 100);

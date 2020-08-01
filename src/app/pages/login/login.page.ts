@@ -48,21 +48,7 @@ export class LoginPage implements OnInit {
 
     setLangIco() {
         // control lang-icon
-        if (
-            localStorage.getItem("locale") &&
-            localStorage.getItem("locale") == "null"
-        ) {
-            this.langIconSrc = "assets/logo/kh-icon.png";
-        } else if (
-            localStorage.getItem("locale") &&
-            localStorage.getItem("locale") != "null"
-        ) {
-            this.langIconSrc = `assets/logo/${localStorage.getItem(
-                "locale"
-            )}-icon.png`;
-        } else {
-            this.langIconSrc = "assets/logo/kh-icon.png";
-        }
+        this.langIconSrc = `assets/logo/${this.translate.currentLang}-icon.png`;
     }
 
     login() {
