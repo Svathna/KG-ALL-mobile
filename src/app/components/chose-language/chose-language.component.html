@@ -1,0 +1,16 @@
+<ion-list>
+	<ion-item (click)="close('kh')">
+		<ion-label>ភាសាខ្មែរ</ion-label>
+		<div *ngIf="currentLang === 'kh'">
+			<ion-icon name="checkmark"></ion-icon>
+		</div>
+		<ion-img class="lang-icon" src="assets/logo/kh-icon.png"></ion-img>
+	</ion-item>
+	<ion-item lines="none" (click)="close('en')">
+		<ion-label>English</ion-label>
+		<div *ngIf="currentLang === 'en'">
+			<ion-icon name="checkmark"></ion-icon>
+		</div>
+		<ion-img class="lang-icon" src="assets/logo/en-icon.png"></ion-img>
+	</ion-item>
+</ion-list>

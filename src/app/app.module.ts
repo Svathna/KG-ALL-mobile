@@ -19,6 +19,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from "@angular/common
 import { TokenInterceptor } from "./interceptors/token.interceptor";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { ComponentsModule } from './components/components.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,11 +31,12 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     HttpClientModule,
     BrowserModule,
+    ComponentsModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     }),

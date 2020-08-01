@@ -1,4 +1,11 @@
 <ion-content center text-center class="background">
+    <ion-toolbar color="primary">
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-img (click)="changeLanguage()" class="lang-icon" [src]="langIconSrc"></ion-img>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
     <div class="logo-wrapper">
         <div class="logo">
             <ion-img src="assets/logo/kg-all-logo.png"></ion-img>
