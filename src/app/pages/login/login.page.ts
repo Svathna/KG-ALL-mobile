@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
 import { PopoverController } from '@ionic/angular';
 import { ChoseLanguageComponent } from 'src/app/components/chose-language/chose-language.component';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { SubSink } from 'subsink';
 
 const PASSWORD_INPUT = {
     type: "password",
@@ -15,7 +16,7 @@ const PASSWORD_INPUT = {
     templateUrl: "./login.page.html",
     styleUrls: ["./login.page.scss"],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, OnDestroy {
     public newUser = false;
     public loginForm: FormGroup;
     public formErrors = {
@@ -26,6 +27,7 @@ export class LoginPage implements OnInit {
     passwordShowHide = PASSWORD_INPUT;
     isFetching = false;
     langIconSrc = "assets/logo/kh-icon.png";
+    private subs = new SubSink();
 
     constructor(
         public authService: AuthService,
@@ -41,9 +43,13 @@ export class LoginPage implements OnInit {
     }
 
     ngOnInit() {
-        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        this.subs.sink = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
             this.setLangIco();
         })
+    }
+
+    ngOnDestroy() {
+        this.subs.unsubscribe();
     }
 
     setLangIco() {
@@ -77,8 +83,7 @@ export class LoginPage implements OnInit {
     async changeLanguage() {
         const popover = await this.popoverCtrl.create({
             component: ChoseLanguageComponent,
-            // cssClass: 'my-custom-class',
-            // translucent: true,
+            translucent: true,
             componentProps: {
                 currentLang: this.translate.currentLang,
             }
