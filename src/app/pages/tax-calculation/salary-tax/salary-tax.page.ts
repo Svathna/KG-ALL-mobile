@@ -30,6 +30,7 @@ export class SalaryTaxPage implements OnInit {
     children = 0;
     taxCalculationForm: FormGroup;
     isShowingResults = false;
+    cardInputArray: CalucationInput[] = [];
 
     constructor(
         private navCtl: NavController,
@@ -89,8 +90,19 @@ export class SalaryTaxPage implements OnInit {
         return;
     }
 
-    reset() {
-        this.taxCalculationForm.reset();
+    resetForm() {
+        this.buildForm();
+    }
+
+    saveForCalculation() {
+        console.log('waeeee')
+        if (this.taxCalculationForm.invalid) {
+            console.log(this.taxCalculationForm)
+            return;
+        }
+        this.cardInputArray.push(this.taxCalculationForm.value);
+        this.resetForm();
+        console.log(this.cardInputArray);
     }
 
     backTaxCalculation() {

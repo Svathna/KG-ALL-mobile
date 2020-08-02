@@ -2,13 +2,8 @@ ion-content {
     .main-container {
         padding: 20px 15px 0 15px;
 
-        // ion-label {
-        //     color: var(--ion-color-primary);
-        // }
-
         .tax-calculation-form {
             margin-top: 5px;
-            // border-bottom: 1px solid;
 
             .icon-wrapper {
                 margin-top: 8px;
@@ -51,12 +46,6 @@ ion-content {
                 height: 50px;
                 --border-radius: 5px;
 
-                // &.no-active {
-                //     --border-color: #888686;
-                //     --color: #888686;
-                //     --opacity: 1;
-                // }
-
                 &.btn-radio {
                     --border-radius: 25px;
                 }
@@ -69,6 +58,25 @@ ion-content {
                 }
             }
         }
+
+        .card-input-wrapper {
+            ion-label {
+                &.title {
+                    margin-left: 5px;
+                }
+            }
+
+            ion-slide {
+                width: 110px !important;
+            }
+
+            .card-input {
+                --ion-background-color: var(--ion-color-primary);
+                width: 100px;
+                height: 150px;
+            }
+        }
+
 
         .result-card {
             --ion-background-color: var(--ion-color-primary);
