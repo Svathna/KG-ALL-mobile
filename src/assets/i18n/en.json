@@ -1,5 +1,6 @@
 {
-  	"LOGIN": "Login ",
+	"LOGIN": "Login ",
+	"LOGOUT": "Logout",
   	"USERNAME": "Username",
 	"PASSWORD": "Password",
 	"LOGIN_ERROR_CONENT": "wrong credentials! try again.",
