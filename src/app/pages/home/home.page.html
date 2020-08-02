@@ -16,11 +16,11 @@
                     <div *ngFor="let page of pages">
                         <ion-item *ngIf="page.path" (click)="goToOtherPage(page.path)">
                             <ion-icon class="ion-padding-end" [name]="page.icon" size="small" mode="md"></ion-icon>
-                            {{page.name}}
+                            {{page.name | translate}}
                         </ion-item>
-                        <ion-item *ngIf="!page.path && page.name === 'ទាក់ទង​មក​ពួក​យើង'" (click)="contactUs()">
+                        <ion-item *ngIf="!page.path && page.name === 'SIDE_MENU.CONTACT_US'" (click)="contactUs()">
                             <ion-icon class="ion-padding-end" [name]="page.icon" size="small" mode="md"></ion-icon>
-                            {{page.name}}
+                            {{page.name | translate}}
                         </ion-item>
                     </div>
                 <!-- </ion-menu-toggle> -->
@@ -63,7 +63,7 @@
                                     <div>
                                         <ion-icon color="light" name="briefcase"></ion-icon>
                                     </div>
-                                    <ion-label class="text-bold" color="light">ពត៌មានទូទៅ</ion-label>
+                                    <ion-label class="text-bold" color="light">{{ 'HOME_PAGE.BTN1' | translate }}</ion-label>
                                 </div>
                             </ion-card>
                         </ion-col>
@@ -73,7 +73,7 @@
                                     <div>
                                         <ion-icon color="light" name="list"></ion-icon>
                                     </div>
-                                    <ion-label class="text-bold" color="light">ស្ថានភាពក្រុមហ៊ុន</ion-label>
+                                    <ion-label class="text-bold" color="light">{{ 'HOME_PAGE.BTN2' | translate }}</ion-label>
                                 </div>
                             </ion-card>
                         </ion-col>
@@ -83,7 +83,7 @@
                                     <div>
                                         <ion-icon color="light" name="calculator"></ion-icon>
                                     </div>
-                                    <ion-label class="text-bold" color="light">ការគណនាពន្ធ</ion-label>
+                                    <ion-label class="text-bold" color="light">{{ 'HOME_PAGE.BTN3' | translate }}</ion-label>
                                 </div>
                             </ion-card>
                         </ion-col>
@@ -93,7 +93,7 @@
                                     <div>
                                         <ion-icon color="light" name="card"></ion-icon>
                                     </div>
-                                    <ion-label class="text-bold" color="light">សេវាកម្ម</ion-label>
+                                    <ion-label class="text-bold" color="light">{{ 'HOME_PAGE.BTN4' | translate }}</ion-label>
                                 </div>
                             </ion-card>
                         </ion-col>

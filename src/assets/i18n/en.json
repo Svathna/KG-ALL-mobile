@@ -1,5 +1,20 @@
 {
   	"LOGIN": "Login ",
   	"USERNAME": "Username",
-	"PASSWORD": "Password"
+	"PASSWORD": "Password",
+	"LOGIN_ERROR_CONENT": "wrong credentials! try again.",
+	"ERROR": "error",
+	"OK": "ok",
+	"HOME_PAGE": {
+		"TITLE": "KG-ALL",
+		"BTN1": "General",
+		"BTN2": "Company Status",
+		"BTN3": "Tax Calculation",
+		"BTN4": "Services"
+	},
+	"SIDE_MENU": {
+		"MENU1": "Request List",
+		"MENU2": "Documents",
+		"CONTACT_US": "Contact Us"
+	}
 }

@@ -20,17 +20,17 @@ export class HomePage {
 
     pages = [
         {
-            name: "បញ្ជីពាក្យស្នើរ",
+            name: 'SIDE_MENU.MENU1',
             path: '/requests-page',
             icon: 'list-outline',
         },
         {
-            name: "ទូឯកសារ",
+            name: 'SIDE_MENU.MENU2',
             path: '/document-inventory',
             icon: 'albums-outline',
         },
         {
-            name: 'ទាក់ទង​មក​ពួក​យើង',
+            name: 'SIDE_MENU.CONTACT_US',
             icon: 'call-outline',
         }
     ];

@@ -5,6 +5,7 @@ import { User, UserType } from "src/app/models/user.model";
 import { AlertService } from "./alerts.service";
 import { NavController } from '@ionic/angular';
 import { CompanyDetail } from '../models/company.model';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface LoginResponse {
     token: string;
@@ -24,7 +25,8 @@ export class AuthService implements OnInit {
     constructor(
         private navCtr: NavController,
         private http: HttpClient,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private translate: TranslateService,
     ) {}
 
     ngOnInit(): void {}
@@ -67,7 +69,8 @@ export class AuthService implements OnInit {
                         },
                         async () => {
                             await this.alertService.error(
-                                "បញ្ចូលព័ត៌មានខុស! សូមព្យាយាមម្តងទៀត។"
+                                this.translate.instant('LOGIN_ERROR_CONENT'),
+                                // "បញ្ចូលព័ត៌មានខុស! សូមព្យាយាមម្តងទៀត។"
                             );
                             reject("Error, logging in");
                         }

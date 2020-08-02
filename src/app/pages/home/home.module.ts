@@ -5,6 +5,9 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
 import { HomePage } from "./home.page";
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
 
 const routes: Routes = [
     {
@@ -17,6 +20,13 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
+        TranslateModule.forChild({
+            loader: {
+              provide: TranslateLoader,
+              useFactory: (createTranslateLoader),
+              deps: [HttpClient]
+            }
+          }),
         RouterModule.forChild(routes),
     ],
     declarations: [HomePage],
