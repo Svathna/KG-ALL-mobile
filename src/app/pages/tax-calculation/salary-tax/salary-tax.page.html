@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="ion-margin-top">
-					<ion-row>
+					<ion-row *ngIf="!isEditing">
 						<ion-col class="ion-no-padding ion-padding-end" size="5">
 							<ion-button fill="outline" class="w-100-p btn-calculation" (click)="resetForm()">
 								<ion-label>កំណត់ឡើងវិញ</ion-label>
@@ -67,6 +67,18 @@
 							</ion-button>
 						</ion-col>
 					</ion-row>
+					<ion-row *ngIf="isEditing">
+						<ion-col class="ion-no-padding ion-padding-end" size="5">
+							<ion-button fill="outline" class="w-100-p btn-calculation" (click)="cancelEdit()">
+								<ion-label>បោះបង់</ion-label>
+							</ion-button>
+						</ion-col>
+						<ion-col class="ion-no-padding" size="7">
+							<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="saveEdit()">
+								<ion-label color="light">រក្សាទុក</ion-label>
+							</ion-button>
+						</ion-col>
+					</ion-row>
 				</div>
 				<!-- For card input -->
 				<div *ngIf="cardInputArray.length > 0" class="card-input-wrapper ion-margin-top">
@@ -74,18 +86,18 @@
 					<ion-slides class="ion-padding-vertical" mode="ios" scrollbar="true" [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
 						<ion-slide *ngFor="let item of cardInputArray; let index = index">
 								<ion-card class="card-input ion-no-margin">
-									<ion-card-content class="ion-text-center">
+									<ion-card-content class="ion-no-padding ion-padding-top ion-text-center">
 										<ion-label color="light">បុគ្គលិក {{index + 1}}</ion-label>
 										<ion-buttons class="ion-margin-top">
-											<ion-button>
-												<ion-label color="light">កែប្រែ</ion-label>
-												<ion-icon color="light" size="small" name="create-outline"></ion-icon>
+											<ion-button class="w-100-p">
+												<ion-label color="light">មើល</ion-label>
+												<ion-icon color="light" size="small" name="eye-outline"></ion-icon>
 											</ion-button>
 										</ion-buttons>
 										<ion-buttons>
-											<ion-button>
-												<ion-label color="light">មើល</ion-label>
-												<ion-icon color="light" size="small" name="eye-outline"></ion-icon>
+											<ion-button class="w-100-p" (click)="editInput(index)">
+												<ion-label color="light">កែប្រែ</ion-label>
+												<ion-icon color="light" size="small" name="create-outline"></ion-icon>
 											</ion-button>
 										</ion-buttons>
 									</ion-card-content>

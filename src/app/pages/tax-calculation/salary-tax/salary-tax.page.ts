@@ -7,7 +7,7 @@ import {
     Validators,
 } from "@angular/forms";
 
-interface CalucationInput {
+export interface CalucationInput {
     salary: number;
     extraSalary: number;
     hasPartnerWithIncome: boolean;
@@ -31,6 +31,8 @@ export class SalaryTaxPage implements OnInit {
     taxCalculationForm: FormGroup;
     isShowingResults = false;
     cardInputArray: CalucationInput[] = [];
+    isEditing = false;
+    indexInputEditing: number;
 
     constructor(
         private navCtl: NavController,
@@ -91,18 +93,41 @@ export class SalaryTaxPage implements OnInit {
     }
 
     resetForm() {
+        this.isHad = false;
+        this.children = 0;
         this.buildForm();
     }
 
     saveForCalculation() {
-        console.log('waeeee')
         if (this.taxCalculationForm.invalid) {
-            console.log(this.taxCalculationForm)
+            console.log(this.taxCalculationForm);
             return;
         }
         this.cardInputArray.push(this.taxCalculationForm.value);
         this.resetForm();
         console.log(this.cardInputArray);
+    }
+
+    editInput(index: number) {
+        this.isEditing = true;
+        this.indexInputEditing = index;
+        this.resetForm();
+        this.taxCalculationForm.patchValue(this.cardInputArray[index]);
+    }
+
+    cancelEdit() {
+        this.resetForm();
+        this.isEditing = false;
+        this.indexInputEditing = null;
+    }
+
+    saveEdit() {
+        if (this.taxCalculationForm.invalid) {
+            console.log(this.taxCalculationForm);
+            return;
+        }
+        this.cardInputArray[this.indexInputEditing] = this.taxCalculationForm.value;
+        this.resetForm();
     }
 
     backTaxCalculation() {
