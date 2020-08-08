@@ -1,11 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { NavController } from "@ionic/angular";
+import { NavController, PopoverController } from "@ionic/angular";
 import {
     FormBuilder,
     FormGroup,
     FormControl,
     Validators,
 } from "@angular/forms";
+import { CardInputVeiwerComponent } from 'src/app/components/card-input-veiwer/card-input-veiwer.component';
 
 export interface CalucationInput {
     salary: number;
@@ -36,7 +37,8 @@ export class SalaryTaxPage implements OnInit {
 
     constructor(
         private navCtl: NavController,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        public popoverCtrl: PopoverController,
     ) {}
 
     ngOnInit() {
@@ -128,6 +130,17 @@ export class SalaryTaxPage implements OnInit {
         }
         this.cardInputArray[this.indexInputEditing] = this.taxCalculationForm.value;
         this.resetForm();
+    }
+
+    async viewInput(index: number) {
+        const popover = await this.popoverCtrl.create({
+            component: CardInputVeiwerComponent,
+            translucent: true,
+            componentProps: {
+                cardInput: this.cardInputArray[index],
+            }
+        });
+        return await popover.present();
     }
 
     backTaxCalculation() {

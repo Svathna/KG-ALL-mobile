@@ -54,7 +54,7 @@
 						</ion-row>
 					</div>
 				</div>
-				<div class="ion-margin-top">
+				<!-- <div class="ion-margin-top">
 					<ion-row *ngIf="!isEditing">
 						<ion-col class="ion-no-padding ion-padding-end" size="5">
 							<ion-button fill="outline" class="w-100-p btn-calculation" (click)="resetForm()">
@@ -80,7 +80,6 @@
 						</ion-col>
 					</ion-row>
 				</div>
-				<!-- For card input -->
 				<div *ngIf="cardInputArray.length > 0" class="card-input-wrapper ion-margin-top">
 					<ion-label class="title">បញ្ជីបុគ្គលិក</ion-label>
 					<ion-slides class="ion-padding-vertical" mode="ios" scrollbar="true" [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
@@ -89,12 +88,6 @@
 									<ion-card-content class="ion-no-padding ion-padding-top ion-text-center">
 										<ion-label color="light">បុគ្គលិក {{index + 1}}</ion-label>
 										<ion-buttons class="ion-margin-top">
-											<ion-button class="w-100-p">
-												<ion-label color="light">មើល</ion-label>
-												<ion-icon color="light" size="small" name="eye-outline"></ion-icon>
-											</ion-button>
-										</ion-buttons>
-										<ion-buttons>
 											<ion-button class="w-100-p" (click)="editInput(index)">
 												<ion-label color="light">កែប្រែ</ion-label>
 												<ion-icon color="light" size="small" name="create-outline"></ion-icon>
@@ -104,7 +97,7 @@
 								</ion-card>
 						</ion-slide>
 					</ion-slides>
-				</div>
+				</div> -->
 				<div class="ion-margin-top">
 					<ion-row>
 						<ion-col class="ion-no-padding" size="12">

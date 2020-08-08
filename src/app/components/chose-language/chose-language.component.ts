@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { PopoverController, NavParams } from "@ionic/angular";
 import { TranslateService } from "@ngx-translate/core";
 
@@ -15,7 +15,7 @@ export class ChoseLanguageComponent {
 		private translate: TranslateService,
 		public navParams: NavParams,
     ) {
-		this.currentLang = this.navParams.get('currentLang')
+		this.currentLang = this.navParams.get('currentLang');
 	}
 
     close(lang: string) {
