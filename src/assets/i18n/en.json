@@ -21,18 +21,26 @@
 	"MOC": {
 		"HEADER": "Ministry of Commerce",
 		"REGISTRATION_ID": "Commercial Registration ID",
-		"NOTED_DATE": "Noted Date",
+		"REGISTRATION_DATE": "Noted Date",
 		"CAPITAL_REGISTRATION": "Capital Registration",
 		"TYPE": "Type",
 		"ANNUAL_SUBMISSION_DATE": "Annual Submission Date",
 		"USERNAME": "Username (For MOC)",
 		"PASSWORD": "Password (For MOC)",
-		"DOWNLOAD_PDF": "Download document as PDF",
-		"MOC_CERTIFICATE": "MOC ceritficate",
-		"BUSINESS_EXTRACT": "Business Extract",
 		"RIEL": "Riel"
 	},
-	"GDT": "Taxation Department",
+	"GDT": {
+		"HEADER": "Taxation Department",
+		"TAX_IDENTIFICATION": "Tax Identification Number",
+		"REGISTRATION_DATE": "Registration Date",
+		"REGISTRATION_AT": "Registration At",
+		"ADDRESS": "Address",
+		"BANK_NAME": "Bank Name",
+		"BANK_ACC_NAME": "Bank Account Name",
+		"BANK_ACC_NUM": "Bank Account Number",
+		"TAX_CARD_NUM": "Tax Card Number",
+		"PHONE_NUMBER": "Phonenumber"
+	},
 	"COMPANY_STATUS": {
 		"HEADER": "Company Status",
 		"TAB1": "Monthly tax",
@@ -47,5 +55,19 @@
 		"SOLE_PROPRIETORSHIPS": "Sole Proprietorships",
 		"PRIVATE_LIMITED_COMPANY": "Private Limited Company",
 		"PUBLIC_LIMITED_COMPANY": "Public Limited Company"
+	},
+	"DOC": {
+		"DOWNLOAD_PDF": "Download document as PDF",
+		"MOC_CERTIFICATE": "MOC ceritficate",
+		"BUSINESS_EXTRACT": "Business Extract",
+		"VAT_CERTIFICATE": "VAT Certificate",
+		"PATENT": "Paten",
+		"GDT_CARD": "GDT Card"
+	},
+	"DOC_PAGE": {
+		"HEADER": "Documents",
+		"BTN_REQUEST": "Send Request",
+		"REQUEST_PLACEHOLDER": "Request Any Document",
+		"SEARCH": "Search"
 	}
 }

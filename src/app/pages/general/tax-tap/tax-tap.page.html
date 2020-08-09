@@ -3,7 +3,7 @@
         <ion-buttons (click)="backHome()" class="ion-margin-start" slot="start">
             <ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
         </ion-buttons>
-        <ion-title color="light">{{ 'GDT' | translate }}</ion-title>
+        <ion-title color="light">{{ 'GDT.HEADER' | translate }}</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -11,84 +11,84 @@
     <div class="main-container">
         <ion-grid *ngIf="dot" class="ion-no-padding">
             <ion-row>
-                <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
+                <strong>{{ 'GDT.TAX_IDENTIFICATION' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.dotNumber }}</p>
             </ion-row>
             <ion-row>
-                <strong>ចុះថ្ងៃទី :</strong>
+                <strong>{{ 'GDT.REGISTRATION_DATE' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moment(dot.notedDate).format('DD-MM-YYYY') }}</p>
             </ion-row>
             <ion-row>
-                <strong>ចុះបញ្ជីនៅ :</strong>
-                <p class="ion-margin-start">{{ dot.notedAtBranch }} <strong>រៀល</strong></p>
+                <strong>{{ 'GDT.REGISTRATION_AT' | translate }} :</strong>
+                <p class="ion-margin-start">{{ dot.notedAtBranch }}</p>
             </ion-row>
             <ion-row>
-                <strong>អាសយដ្ឋាន :</strong>
+                <strong>{{ 'GDT.ADDRESS' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.address }}</p>
             </ion-row>
             <ion-row>
-                <strong>ឈ្មោះធនាគារ :</strong>
+                <strong>{{ 'GDT.BANK_NAME' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.bankName }}</p>
             </ion-row>
             <ion-row>
-                <strong>ឈ្មោះគណនីធនាគារ :</strong>
+                <strong>{{ 'GDT.BANK_ACC_NAME' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.bankAccountName }}</p>
             </ion-row>
             <ion-row>
-                <strong>លេខគណនីធនាគារ :</strong>
+                <strong>{{ 'GDT.BANK_ACC_NUM' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.bankAccountNumber }}</p>
             </ion-row>
             <ion-row>
-                <strong>លេខកាតពន្ធដារ :</strong>
+                <strong>{{ 'GDT.TAX_CARD_NUM' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.taxationCardNumber }}</p>
             </ion-row>
             <ion-row>
-                <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
+                <strong>{{ 'GDT.PHONE_NUMBER' | translate }} :</strong>
                 <p class="ion-margin-start">{{ dot.phoneNumber }}</p>
             </ion-row>
         </ion-grid>
         <!-- loading -->
         <ion-grid *ngIf="!dot" class="ion-no-padding">
             <ion-row class="ion-margin-top">
-                <strong>លេខអត្តសញ្ញាណសារពើពន្ធ :</strong>
+                <strong>{{ 'GDT.TAX_IDENTIFICATION' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ចុះថ្ងៃទី :</strong>
+                <strong>{{ 'GDT.REGISTRATION_DATE' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ចុះបញ្ជីនៅ :</strong>
+                <strong>{{ 'GDT.REGISTRATION_AT' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>អាសយដ្ឋាន :</strong>
+                <strong>{{ 'GDT.ADDRESS' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ឈ្មោះធនាគារ :</strong>
+                <strong>{{ 'GDT.BANK_NAME' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ឈ្មោះគណនីធនាគារ :</strong>
+                <strong>{{ 'GDT.BANK_ACC_NAME' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>លេខគណនីធនាគារ :</strong>
+                <strong>{{ 'GDT.BANK_ACC_NUM' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>លេខកាតពន្ធដារ :</strong>
+                <strong>{{ 'GDT.TAX_CARD_NUM' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ :</strong>
+                <strong>{{ 'GDT.PHONE_NUMBER' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
         </ion-grid>
         <!-- PDF section  -->
         <div class="Pdf-file">
-            <strong>ទាញយកឯកសារជា PDF :</strong>
+            <strong>{{ 'DOC.DOWNLOAD_PDF' | translate }} :</strong>
             <div *ngIf="docs">
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.vat_certificate">
@@ -98,7 +98,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</p>
+                            <p>1. {{ 'DOC.VAT_CERTIFICATE' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.vat_certificate, 'vat_certificate')" color="primary"
@@ -115,7 +115,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>2. ប័ណ្ណប៉ាតង់</p>
+                            <p>2. {{ 'DOC.PATENT' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.patent, 'patent')" color="primary" size="large"
@@ -132,7 +132,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>3. កាតពន្ធដារ</p>
+                            <p>3. {{ 'DOC.GDT_CARD' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.gdt_card, 'gdt_card')" color="primary" size="large"

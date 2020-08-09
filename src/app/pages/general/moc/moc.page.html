@@ -16,7 +16,7 @@
                 <p class="ion-margin-start">{{ moc.mocNumber }}</p>
             </ion-row>
             <ion-row>
-                <strong>{{ 'MOC.NOTED_DATE' | translate }} :</strong>
+                <strong>{{ 'MOC.REGISTRATION_DATE' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moment(moc.notedDate).format('DD-MM-YYYY') }}</p>
             </ion-row>
             <ion-row>
@@ -47,7 +47,7 @@
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.NOTED_DATE' | translate }} :</strong>
+                <strong>{{ 'MOC.REGISTRATION_DATE' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
@@ -73,7 +73,7 @@
         </ion-grid>
         <!-- PDF section  -->
         <div class="Pdf-file">
-            <strong>{{ 'MOC.DOWNLOAD_PDF' | translate }} :</strong>
+            <strong>{{ 'DOC.DOWNLOAD_PDF' | translate }} :</strong>
             <div *ngIf="docs && !isFetching">
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.moc_certificate">
@@ -83,7 +83,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>1. {{ 'MOC.MOC_CERTIFICATE' | translate }}</p>
+                            <p>1. {{ 'DOC.MOC_CERTIFICATE' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.moc_certificate, 'moc_certificate')" color="primary"
@@ -100,7 +100,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>2. {{ 'MOC.BUSINESS_EXTRACT' | translate }}</p>
+                            <p>2. {{ 'DOC.BUSINESS_EXTRACT' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.business_extract, 'business_extract')"

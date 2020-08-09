@@ -21,18 +21,26 @@
 	"MOC": {
 		"HEADER": "ក្រសួងពាណិជ្ជកម្ម",
 		"REGISTRATION_ID": "ចុះបញ្ជីពាណិជ្ជកម្មលេខ",
-		"NOTED_DATE": "ចុះថ្ងៃទី",
+		"REGISTRATION_DATE": "ចុះថ្ងៃទី",
 		"CAPITAL_REGISTRATION": "ដើមទុនចុះបញ្ជី",
 		"TYPE": "ប្រភេទ",
 		"ANNUAL_SUBMISSION_DATE": "ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ",
 		"USERNAME": "ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម",
 		"PASSWORD": "លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម",
-		"DOWNLOAD_PDF": "ទាញយកឯកសារជា PDF",
-		"MOC_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម",
-		"BUSINESS_EXTRACT": "សម្រង់ក្រុមហ៊ុន",
 		"RIEL": "រៀល"
 	},
-    "GDT": "អគ្គនាយកដ្ឋានពន្ធដារ",
+    "GDT": {
+		"HEADER": "អគ្គនាយកដ្ឋានពន្ធដារ",
+		"TAX_IDENTIFICATION": "លេខអត្តសញ្ញាណសារពើពន្ធ",
+		"REGISTRATION_DATE": "ចុះថ្ងៃទី",
+		"REGISTRATION_AT": "ចុះបញ្ជីនៅ",
+		"ADDRESS": "អាសយដ្ឋាន",
+		"BANK_NAME": "ឈ្មោះធនាគារ",
+		"BANK_ACC_NAME": "ឈ្មោះគណនីធនាគារ",
+		"BANK_ACC_NUM": "លេខគណនីធនាគារ",
+		"TAX_CARD_NUM": "លេខកាតពន្ធដារ",
+		"PHONE_NUMBER": "លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ"
+	},
     "COMPANY_STATUS": {
         "HEADER": "ស្ថានភាពក្រុមហ៊ុន",
         "TAB1": "ពន្ធប្រចាំខែ",
@@ -47,5 +55,19 @@
 		"SOLE_PROPRIETORSHIPS": "សហគ្រាសឯកបុគ្គល",
 		"PRIVATE_LIMITED_COMPANY": "ក្រុមហ៊ុនឯកជនទទួលខុសត្រូវមានកម្រិត",
 		"PUBLIC_LIMITED_COMPANY": "ក្រុមហ៊ុនមហាជនទទួលខុសត្រូវមានកម្រិត"
+	},
+	"DOC": {
+		"DOWNLOAD_PDF": "ទាញយកឯកសារជា PDF",
+		"MOC_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម",
+		"BUSINESS_EXTRACT": "សម្រង់ក្រុមហ៊ុន",
+		"VAT_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ",
+		"PATENT": "ប័ណ្ណប៉ាតង់",
+		"GDT_CARD": "កាតពន្ធដារ"
+	},
+	"DOC_PAGE": {
+		"HEADER": "ទូរឯកសារ",
+		"BTN_REQUEST": "ដាក់ស្នើ",
+		"REQUEST_PLACEHOLDER": "ពាក្យស្នើសុំឯកសារបន្ថែម",
+		"SEARCH": "ស្វែងរក"
 	}
 }

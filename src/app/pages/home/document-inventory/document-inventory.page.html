@@ -3,7 +3,7 @@
 		<ion-buttons (click)="backHome()" class="ion-padding-horizontal" slot="start">
 			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
 		</ion-buttons>
-		<ion-title color="light">ទូរឯកសារ</ion-title>
+		<ion-title color="light">{{ 'DOC_PAGE.HEADER' | translate }}</ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -12,20 +12,17 @@
 	<div class="main-container">
 		<div class="request-section">
 			<form [formGroup]="requestForm">
-				<ion-textarea class="ion-margin-bottom" placeholder="ពាក្យស្នើសុំឯកសារបន្ថែម" padding required formControlName="description"></ion-textarea>
+				<ion-textarea class="ion-margin-bottom" placeholder="{{ 'DOC_PAGE.REQUEST_PLACEHOLDER' | translate }}" padding required formControlName="description"></ion-textarea>
 				<div class="ion-text-end">
 					<ion-button color="primary" (click)="submitRequest()" type="submit">
-						<ion-label color="light">ដាក់ស្នើ</ion-label>
+						<ion-label color="light">{{ 'DOC_PAGE.BTN_REQUEST' | translate }}</ion-label>
 					</ion-button>
 				</div>
 			</form>
 		</div>
 		<!-- PDF section  -->
         <div class="Pdf-file">
-			<div>
-				<ion-searchbar showCancelButton="focus"></ion-searchbar>
-			</div>
-			<strong class="ion-margin-top">ទាញយកឯកសារជា PDF :</strong>
+			<strong class="ion-margin-top">{{ 'DOC.DOWNLOAD_PDF' | translate }} :</strong>
 			<div *ngIf="!isFetching">
 				<div *ngIf="docs">
 					<ion-card class="doc-card">
@@ -38,7 +35,7 @@
 								</ion-icon>
 							</ion-col>
 							<ion-col>
-								<p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
+								<p>1. {{ 'DOC.MOC_CERTIFICATE' | translate }}</p>
 							</ion-col>
 							<ion-col size="2">
 								<ion-icon
@@ -61,7 +58,7 @@
 								</ion-icon>
 							</ion-col>
 							<ion-col>
-								<p>2. សម្រង់ក្រុមហ៊ុន</p>
+								<p>2. {{ 'DOC.BUSINESS_EXTRACT' | translate }}</p>
 							</ion-col>
 							<ion-col size="2">
 								<ion-icon
@@ -84,7 +81,7 @@
 								</ion-icon>
 							</ion-col>
 							<ion-col>
-								<p>3. វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ</p>
+								<p>3. {{ 'DOC.VAT_CERTIFICATE' | translate }}</p>
 							</ion-col>
 							<ion-col size="2">
 								<ion-icon
@@ -107,7 +104,7 @@
 								</ion-icon>
 							</ion-col>
 							<ion-col>
-								<p>4. ប័ណ្ណប៉ាតង់</p>
+								<p>4. {{ 'DOC.PATENT' | translate }}</p>
 							</ion-col>
 							<ion-col size="2">
 								<ion-icon
@@ -130,7 +127,7 @@
 								</ion-icon>
 							</ion-col>
 							<ion-col>
-								<p>5. កាតពន្ធដារ</p>
+								<p>5. {{ 'DOC.GDT_CARD' | translate }}</p>
 							</ion-col>
 							<ion-col size="2">
 								<ion-icon
@@ -145,11 +142,14 @@
 					</ion-card>
 				</div>
 				<!-- Other Doc  section-->
-				<div *ngIf="docs && docs.others" class="ion-margin-top">
+				<div *ngIf="docs && docs.others" class="ion-margin-top ion-margin-bottom">
 					<strong>
 						ឯកសារផ្សេងៗជា PDF :
 					</strong>
-					<ion-card  *ngFor="let doc of docs.others;let index = index" class="doc-card">
+					<div>
+						<ion-searchbar (ionInput)="filterDocs($event)" showCancelButton="focus" placeholder="{{ 'DOC_PAGE.SEARCH' | translate }}"></ion-searchbar>
+					</div>
+					<ion-card  *ngFor="let doc of otherDocsFiltered;let index = index" class="doc-card">
 						<ion-row>
 							<ion-col size="3">
 								<ion-icon (click)="onClickdownload(doc.docUrl, doc.title)"
@@ -159,7 +159,7 @@
 								</ion-icon>
 							</ion-col>
 							<ion-col>
-								<p>{{ index + 1 }}. {{ doc.titleInKhmer }}</p>
+								<p>{{ index + 1 }}. {{ currentLang === 'en' ? doc.title : doc.titleInKhmer }}</p>
 							</ion-col>
 							<ion-col size="2">
 								<ion-icon
