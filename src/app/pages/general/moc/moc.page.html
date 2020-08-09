@@ -3,7 +3,7 @@
         <ion-buttons (click)="backHome()" class="ion-margin-start" slot="start">
             <ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
         </ion-buttons>
-        <ion-title color="light">ក្រសួងពាណិជ្ជកម្ម</ion-title>
+        <ion-title color="light">{{ 'MOC.HEADER' | translate }}</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -12,68 +12,68 @@
     <div class="main-container">
         <ion-grid *ngIf="moc" class="ion-no-padding">
             <ion-row>
-                <strong>ចុះបញ្ជីពាណិជ្ជកម្មលេខ :</strong>
+                <strong>{{ 'MOC.REGISTRATION_ID' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moc.mocNumber }}</p>
             </ion-row>
             <ion-row>
-                <strong>ចុះថ្ងៃទី :</strong>
+                <strong>{{ 'MOC.NOTED_DATE' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moment(moc.notedDate).format('DD-MM-YYYY') }}</p>
             </ion-row>
             <ion-row>
-                <strong>ដើមទុនចុះបញ្ជី :</strong>
-                <p class="ion-margin-start">{{ moc.capital | number }} <strong>រៀល</strong></p>
+                <strong>{{ 'MOC.CAPITAL_REGISTRATION' | translate }} :</strong>
+                <p class="ion-margin-start">{{ moc.capital | number }} <strong>{{ 'MOC.RIEL' | translate }}</strong></p>
             </ion-row>
             <ion-row>
-                <strong>ប្រភេទ :</strong>
-                <p class="ion-margin-start">{{ companyTypeInKhmer[moc.companyType] }}</p>
+                <strong>{{ 'MOC.TYPE' | translate }} :</strong>
+                <p class="ion-margin-start">{{ 'COMPANY_TYPE.' + companyType[moc.companyType] | translate }}</p>
             </ion-row>
             <ion-row>
-                <strong>ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ :</strong>
+                <strong>{{ 'MOC.ANNUAL_SUBMISSION_DATE' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moment(moc.annualTranscriptMaintenanceDate).format('DD-MM-YYYY') }}</p>
             </ion-row>
             <ion-row>
-                <strong>ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</strong>
+                <strong>{{ 'MOC.USERNAME' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moc.mocUsernameLogin }}</p>
             </ion-row>
             <ion-row>
-                <strong>លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</strong>
+                <strong>{{ 'MOC.PASSWORD' | translate }} :</strong>
                 <p class="ion-margin-start">{{ moc.mocPasswordLogin }}</p>
             </ion-row>
         </ion-grid>
         <!-- loading -->
         <ion-grid *ngIf="!moc" class="ion-no-padding">
             <ion-row class="ion-margin-top">
-                <strong>ចុះបញ្ជីពាណិជ្ជកម្មលេខ :</strong>
+                <strong>{{ 'MOC.REGISTRATION_ID' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ចុះថ្ងៃទី :</strong>
+                <strong>{{ 'MOC.NOTED_DATE' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ដើមទុនចុះបញ្ជី :</strong>
+                <strong>{{ 'MOC.CAPITAL_REGISTRATION' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ប្រភេទ :</strong>
+                <strong>{{ 'MOC.TYPE' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ :</strong>
+                <strong>{{ 'MOC.ANNUAL_SUBMISSION_DATE' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</strong>
+                <strong>{{ 'MOC.USERNAME' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
             </ion-row>
             <ion-row class="ion-margin-top">
-                <strong>លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម :</strong>
+                <strong>{{ 'MOC.PASSWORD' | translate }} :</strong>
                 <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
             </ion-row>
         </ion-grid>
         <!-- PDF section  -->
         <div class="Pdf-file">
-            <strong>ទាញយកឯកសារជា PDF :</strong>
+            <strong>{{ 'MOC.DOWNLOAD_PDF' | translate }} :</strong>
             <div *ngIf="docs && !isFetching">
                 <ion-card class="doc-card">
                     <ion-row *ngIf="docs.moc_certificate">
@@ -83,7 +83,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>1. វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម</p>
+                            <p>1. {{ 'MOC.MOC_CERTIFICATE' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.moc_certificate, 'moc_certificate')" color="primary"
@@ -100,7 +100,7 @@
                             </ion-icon>
                         </ion-col>
                         <ion-col>
-                            <p>2. សម្រង់ក្រុមហ៊ុន</p>
+                            <p>2. {{ 'MOC.BUSINESS_EXTRACT' | translate }}</p>
                         </ion-col>
                         <ion-col size="2">
                             <ion-icon (click)="onClickDownload(docs.business_extract, 'business_extract')"

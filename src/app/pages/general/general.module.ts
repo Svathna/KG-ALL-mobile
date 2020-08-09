@@ -6,11 +6,13 @@ import { IonicModule } from '@ionic/angular';
 import { GeneralPageRoutingModule } from './general-routing.module';
 
 import { GeneralPage } from './general.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule.forChild(),
     IonicModule,
     GeneralPageRoutingModule
   ],

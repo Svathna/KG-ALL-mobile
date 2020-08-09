@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { IonicModule } from '@ionic/angular';
 
 import { TaxTapPageRoutingModule } from './tax-tap-routing.module';
 
 import { TaxTapPage } from './tax-tap.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    PdfViewerModule,
+    TranslateModule.forChild(),
     IonicModule,
     TaxTapPageRoutingModule
   ],

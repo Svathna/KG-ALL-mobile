@@ -12,11 +12,16 @@ import * as moment from "moment";
 import { HelpersService } from 'src/app/services/helpers.service';
 
 export const COMPANY_TYPE_IN_KHMER = [
-    "",
     "សហគ្រាសឯកបុគ្គល",
     "ក្រុមហ៊ុនឯកជនទទួលខុសត្រូវមានកម្រិត",
     "ក្រុមហ៊ុនមហាជនទទួលខុសត្រូវមានកម្រិត",
 ];
+
+export const COMPANY_TYPE = {
+    1: "SOLE_PROPRIETORSHIPS",
+    2: "PRIVATE_LIMITED_COMPANY",
+    3: "PUBLIC_LIMITED_COMPANY",
+};
 
 @Component({
     selector: "app-moc",
@@ -26,7 +31,7 @@ export const COMPANY_TYPE_IN_KHMER = [
 export class MocPage implements OnInit {
     moc: Moc;
     docs: Doc;
-    companyTypeInKhmer = COMPANY_TYPE_IN_KHMER;
+    companyType = COMPANY_TYPE;
     isFetching = false;
     moment: any = moment;
 

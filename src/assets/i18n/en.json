@@ -17,5 +17,35 @@
 		"MENU1": "Request List",
 		"MENU2": "Documents",
 		"CONTACT_US": "Contact Us"
+	},
+	"MOC": {
+		"HEADER": "Ministry of Commerce",
+		"REGISTRATION_ID": "Commercial Registration ID",
+		"NOTED_DATE": "Noted Date",
+		"CAPITAL_REGISTRATION": "Capital Registration",
+		"TYPE": "Type",
+		"ANNUAL_SUBMISSION_DATE": "Annual Submission Date",
+		"USERNAME": "Username (For MOC)",
+		"PASSWORD": "Password (For MOC)",
+		"DOWNLOAD_PDF": "Download document as PDF",
+		"MOC_CERTIFICATE": "MOC ceritficate",
+		"BUSINESS_EXTRACT": "Business Extract",
+		"RIEL": "Riel"
+	},
+	"GDT": "Taxation Department",
+	"COMPANY_STATUS": {
+		"HEADER": "Company Status",
+		"TAB1": "Monthly tax",
+		"TAB2": "Annual tax"
+	},
+	"TAX_CALCULATION": {
+		"HEADER": "Tax Calculation",
+		"BTN1": "General Tax Calculation",
+		"BTN2": "Salary Tax Calculation"
+	},
+	"COMPANY_TYPE": {
+		"SOLE_PROPRIETORSHIPS": "Sole Proprietorships",
+		"PRIVATE_LIMITED_COMPANY": "Private Limited Company",
+		"PUBLIC_LIMITED_COMPANY": "Public Limited Company"
 	}
 }

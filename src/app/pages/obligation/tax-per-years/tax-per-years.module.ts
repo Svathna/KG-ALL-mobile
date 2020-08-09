@@ -7,11 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { TaxPerYearsPageRoutingModule } from './tax-per-years-routing.module';
 
 import { TaxPerYearsPage } from './tax-per-years.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule.forChild(),
     IonicModule,
     TaxPerYearsPageRoutingModule
   ],
