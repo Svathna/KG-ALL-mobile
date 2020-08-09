@@ -9,14 +9,14 @@
 
 <ion-content>
     <div class="main-container ion-padding-top">
-        <strong class="ion-margin-start">ពន្ធប្រចាំខែក្នុងឆ្នាំ {{ currentDate | date: 'yyyy'}}</strong>
+        <strong class="ion-margin-start">{{ 'COMPANY_STATUS.MONTHLY_TAX_INY_EAR' | translate }} {{ currentDate | date: 'yyyy'}}</strong>
         <ion-row *ngIf="taxPerMonths.length > 0" class="ion-margin-top">
             <ion-col class="ion-no-padding ion-text-center" size="2">
                 <div class="ion-margin-top border-bottom">
-                    <h6 class="table_header">ខែ</h6>
+                    <h6 class="table_header">{{ 'COMPANY_STATUS.MONTH' | translate }}</h6>
                 </div>
                 <div class="ion-margin-top border-bottom" *ngFor="let month of arrayMonths">
-                    <h6>{{ month }}</h6>
+                    <h6>{{ 'MONTHS.' + month | translate }}</h6>
                 </div>
             </ion-col>
             <ion-col class="ion-no-padding" size="10">
@@ -25,7 +25,7 @@
                         <ion-row class="w-100-p">
                             <ion-col class="ion-no-padding ion-text-start" size="6">
                                 <div class="ion-margin-top ion-padding-start border-bottom">
-                                    <h6 class="table_header">ចំណូល (រៀល)</h6>
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.REVENUE' | translate }}(រៀល)</h6>
                                 </div>
                                 <div class="ion-margin-top ion-padding-start border-bottom"
                                     *ngFor="let item of taxPerMonths">
@@ -34,7 +34,7 @@
                             </ion-col>
                             <ion-col class="ion-no-padding ion-text-start" size="6">
                                 <div class="ion-margin-top ion-padding-start border-bottom">
-                                    <h6 class="table_header">ចំណាយ (រៀល)</h6>
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.EXPENSE' | translate }}(រៀល)</h6>
                                 </div>
                                 <div class="ion-margin-top ion-padding-start border-bottom"
                                     *ngFor="let item of taxPerMonths">
@@ -47,7 +47,7 @@
                         <ion-row class="w-100-p">
                             <ion-col class="ion-no-padding ion-text-start" size="6">
                                 <div class="ion-margin-top ion-padding-start border-bottom">
-                                    <h6 class="table_header">ប្រាក់ពន្ធបង់រួច(រៀល)</h6>
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.TAX_PAID_AMOUNT' | translate }}(រៀល)</h6>
                                 </div>
                                 <div class="ion-margin-top ion-padding-start border-bottom"
                                     *ngFor="let item of taxPerMonths">
@@ -56,7 +56,7 @@
                             </ion-col>
                             <ion-col class="ion-no-padding ion-text-start" size="6">
                                 <div class="ion-margin-top ion-padding-start border-bottom">
-                                    <h6 class="table_header">ផ្សេងៗ</h6>
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.OTHERS' | translate }}</h6>
                                 </div>
                                 <div class="ion-margin-top ion-padding-start border-bottom"
                                     *ngFor="let item of taxPerMonths">

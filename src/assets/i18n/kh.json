@@ -44,7 +44,15 @@
     "COMPANY_STATUS": {
         "HEADER": "ស្ថានភាពក្រុមហ៊ុន",
         "TAB1": "ពន្ធប្រចាំខែ",
-		"TAB2": "ពន្ធប្រចាំឆ្នាំ"
+		"TAB2": "ពន្ធប្រចាំឆ្នាំ",
+		"MONTHLY_TAX_INY_EAR": "ពន្ធប្រចាំខែក្នុងឆ្នាំ",
+		"REVENUE": "ចំណូល",
+		"EXPENSE": "ចំណាយ",
+		"TAX_PAID_AMOUNT": "ប្រាក់ពន្ធបានបង់",
+		"OTHERS": "ផ្សេងៗ",
+		"MONTH": "ខែ",
+		"ANNUAL_TAX_IN_LAST_5YEAR": "ពន្ធប្រចាំឆ្នាំ (5ឆ្នាំចុងក្រោយ)",
+		"YEAR": "ឆ្នាំ"
     },
     "TAX_CALCULATION": {
         "HEADER": "ការគណនាពន្ធ",
@@ -69,5 +77,19 @@
 		"BTN_REQUEST": "ដាក់ស្នើ",
 		"REQUEST_PLACEHOLDER": "ពាក្យស្នើសុំឯកសារបន្ថែម",
 		"SEARCH": "ស្វែងរក"
+	},
+	"MONTHS": {
+		"JAN": "មករា",
+		"FEB": "កុម្ភៈ",
+		"MARCH": "មីនា",
+		"APRIL": "មេសា",
+		"MAY": "ឧសភា",
+		"JUNE": "មិថុនា",
+		"JULY": "កក្កដា",
+		"AUGUST": "សីហា",
+		"SEPTEMBER": "កញ្ញា",
+		"OCTOBER": "តុលា",
+		"NOVEMBER": "វិច្ឆិកា",
+		"DECEMBER": "ធ្នូ"
 	}
 }

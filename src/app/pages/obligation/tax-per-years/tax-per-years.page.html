@@ -9,17 +9,17 @@
 
 <ion-content>
   <div class="main-container ion-padding-top">
-    <strong class="ion-margin-start">ពន្ធប្រចាំឆ្នាំ (5ឆ្នាំចុងក្រោយ)</strong>
+    <strong class="ion-margin-start">{{ 'COMPANY_STATUS.ANNUAL_TAX_IN_LAST_5YEAR' | translate }}</strong>
     <div *ngIf="!isFetching">
       <ion-row class="table_header ion-margin-top">
         <ion-col size="4" class="border-bottom text-center">
           <div>
-            <h6>ឆ្នាំ</h6>
+            <h6>{{ 'COMPANY_STATUS.YEAR' | translate }}</h6>
           </div>
         </ion-col>
         <ion-col size="8" class="border-bottom">
           <div>
-            <h6>ប្រាក់ពន្ធបានបង់ (រៀល)</h6>
+            <h6>{{ 'COMPANY_STATUS.TAX_PAID_AMOUNT' | translate }} (រៀល)</h6>
           </div>
         </ion-col>
       </ion-row>

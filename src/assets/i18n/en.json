@@ -44,7 +44,15 @@
 	"COMPANY_STATUS": {
 		"HEADER": "Company Status",
 		"TAB1": "Monthly tax",
-		"TAB2": "Annual tax"
+		"TAB2": "Annual tax",
+		"MONTHLY_TAX_INY_EAR": "Monthly Tax In",
+		"REVENUE": "Revenue",
+		"EXPENSE": "Expense",
+		"TAX_PAID_AMOUNT": "Taxes Paid",
+		"OTHERS": "Others",
+		"MONTH": "Month",
+		"ANNUAL_TAX_IN_LAST_5YEAR": "Annual Tax (last 5 years)",
+		"YEAR": "Year"
 	},
 	"TAX_CALCULATION": {
 		"HEADER": "Tax Calculation",
@@ -69,5 +77,19 @@
 		"BTN_REQUEST": "Send Request",
 		"REQUEST_PLACEHOLDER": "Request Any Document",
 		"SEARCH": "Search"
+	},
+	"MONTHS": {
+		"JAN": "Jan",
+		"FEB": "Feb",
+		"MARCH": "Mar",
+		"APRIL": "Apr",
+		"MAY": "May",
+		"JUNE": "Jun",
+		"JULY": "Jul",
+		"AUGUST": "Aug",
+		"SEPTEMBER": "Sep",
+		"OCTOBER": "Oct",
+		"NOVEMBER": "Nov",
+		"DECEMBER": "Dec"
 	}
 }
