@@ -7,11 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { RequestsPagePageRoutingModule } from './requests-page-routing.module';
 
 import { RequestsPagePage } from './requests-page.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule.forChild(),
     IonicModule,
     RequestsPagePageRoutingModule
   ],

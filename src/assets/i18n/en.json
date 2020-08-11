@@ -91,5 +91,19 @@
 		"OCTOBER": "Oct",
 		"NOVEMBER": "Nov",
 		"DECEMBER": "Dec"
+	},
+	"REQUEST_PAGE": {
+		"HEADER_1": "Pendding Requests",
+		"HEADER_2": "Accepted Requests",
+		"HEADER_3": "Rejected Requests",
+		"CREATED_AT": "created at",
+		"ACCEPTED_AT": "accepted at",
+		"REJECTED_AT": "rejected at",
+		"DATE": "date"
+	},
+	"REQUEST_STATUS": {
+		"pending": "Pending",
+		"accepted": "Accepted",
+		"rejected": "Rejected"
 	}
 }

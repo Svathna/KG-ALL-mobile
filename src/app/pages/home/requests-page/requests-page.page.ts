@@ -23,7 +23,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     currentStatus = RequestStatus.PENDING;
     currentCardHeaderColor = 'primary';
     loadingCardNumber = [1, 2, 3, 4];
-    headerTitle = 'ដែលស្ថិតក្នុងការរងចាំ';
+    headerTitle = 'REQUEST_PAGE.HEADER_1';
     requestStatusInKhmer = RequestStatusInKhmer;
     private subs = new SubSink();
 
@@ -50,6 +50,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
                 this.isFetching = false;
                 if (data && data.success) {
                     this.requests = data.requests;
+                    console.log(this.requests);
                 }
             });
     }
@@ -124,14 +125,14 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     setCardHeaderColor() {
         if (this.currentStatus === RequestStatus.PENDING) {
             this.currentCardHeaderColor = 'primary';
-            this.headerTitle = 'ដែលកំពុងរង់ចាំ';
+            this.headerTitle = 'REQUEST_PAGE.HEADER_1';
         } else {
             if (this.currentStatus === RequestStatus.ACCEPTED) {
                 this.currentCardHeaderColor = 'success';
-                this.headerTitle = 'ដែលត្រូវបានទទួលយក';
+                this.headerTitle = 'REQUEST_PAGE.HEADER_2';
             } else {
                 this.currentCardHeaderColor = 'warning';
-                this.headerTitle = 'ដែលត្រូវបានបដិសេធ';
+                this.headerTitle = 'REQUEST_PAGE.HEADER_3';
             }
         }
     }
