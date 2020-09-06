@@ -43,7 +43,7 @@
                     <ion-menu-button color="light" autoHide="false"></ion-menu-button>
                 </ion-buttons>
                 <ion-title color="light">
-                    KG-ALL
+                    {{ 'KG_ALL' | translate }}
                 </ion-title>
                 <ion-buttons class="phone-icon" slot="end" (click)="changeLanguage()">
                     <ion-button>
@@ -89,7 +89,7 @@
                         </ion-col>
                         <ion-col size="6">
                             <ion-card class="btn-section ion-no-margin" color="primary">
-                                <div class="div-btn text-center">
+                                <div class="div-btn text-center" (click)="goToOtherPage('service-pricing')">
                                     <div>
                                         <ion-icon color="light" name="card"></ion-icon>
                                     </div>

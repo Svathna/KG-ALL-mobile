@@ -1,141 +1,145 @@
 {
-	"LOGIN": "Login ",
-	"LOGOUT": "Logout",
-  	"USERNAME": "Username",
-	"PASSWORD": "Password",
-	"LOGIN_ERROR_CONENT": "wrong credentials! try again.",
-	"ERROR": "error",
-	"OK": "ok",
-	"HOME_PAGE": {
-		"TITLE": "KG-ALL",
-		"BTN1": "General",
-		"BTN2": "Company Status",
-		"BTN3": "Tax Calculation",
-		"BTN4": "Services"
-	},
-	"SIDE_MENU": {
-		"MENU1": "Request List",
-		"MENU2": "Documents",
-		"CONTACT_US": "Contact Us"
-	},
-	"MOC": {
-		"HEADER": "Ministry of Commerce",
-		"REGISTRATION_ID": "Commercial Registration ID",
-		"REGISTRATION_DATE": "Noted Date",
-		"CAPITAL_REGISTRATION": "Capital Registration",
-		"TYPE": "Type",
-		"ANNUAL_SUBMISSION_DATE": "Annual Submission Date",
-		"USERNAME": "Username (For MOC)",
-		"PASSWORD": "Password (For MOC)",
-		"RIEL": "Riel"
-	},
-	"GDT": {
-		"HEADER": "Taxation Department",
-		"TAX_IDENTIFICATION": "Tax Identification Number",
-		"REGISTRATION_DATE": "Registration Date",
-		"REGISTRATION_AT": "Registration At",
-		"ADDRESS": "Address",
-		"BANK_NAME": "Bank Name",
-		"BANK_ACC_NAME": "Bank Account Name",
-		"BANK_ACC_NUM": "Bank Account Number",
-		"TAX_CARD_NUM": "Tax Card Number",
-		"PHONE_NUMBER": "Phonenumber"
-	},
-	"COMPANY_STATUS": {
-		"HEADER": "Company Status",
-		"TAB1": "Monthly tax",
-		"TAB2": "Annual tax",
-		"MONTHLY_TAX_INY_EAR": "Monthly Tax In",
-		"REVENUE": "Revenue",
-		"EXPENSE": "Expense",
-		"TAX_PAID_AMOUNT": "Taxes Paid",
-		"OTHERS": "Others",
-		"MONTH": "Month",
-		"ANNUAL_TAX_IN_LAST_5YEAR": "Annual Tax (last 5 years)",
-		"YEAR": "Year"
-	},
-	"TAX_CALCULATION": {
-		"HEADER": "Tax Calculation",
-		"BTN1": "General Tax Calculation",
-		"BTN2": "Salary Tax Calculation",
-		"REVENUE": "Company Revenue",
-		"EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "Expenditures Total Tax Invoice",
-		"PROPERTY_RENTAL_EXPENSES": "Property Rental Expenses",
-		"OUTSOURCE_SERVICE_EXPENSES": "Oustside Service Exprenses",
-		"BTN_RESET": "Reset",
-		"BTN_CALCULATE": "Calculate",
-		"SALARY": "Monthly Salary",
-		"BONUS": "Fringe Benefits",
-		"SPOUSE": "Has Spouse",
-		"BTN_HAVE": "Yes",
-		"BTN_NO_HAVE": "No",
-		"CHILDREN": "Amount of Children",
-		"RESULT": "Results of Calculation",
-		"INCOME_TAX_RELIEF": "Income Tax Relief",
-		"VAT_TO_BE_PAID": "VAT to be paid",
-		"RENTAL_WITHHOLDING_TAX": "Rental Withholding Tax",
-		"WITHHOLDING_TAX_ON_SERVICE": "Withholding Tax On Service",
-		"SALARY_TAX": "Salary Tax",
-		"BONUS_TAX": "Fringe Benefits Tax",
-		"TOTAL_TAX": "Total Tax",
-		"TAX_RATE": "Tax Rate",
-		"FINAL_SALARY": "Salary After Tax Paid"
-	},
-	"COMPANY_TYPE": {
-		"SOLE_PROPRIETORSHIPS": "Sole Proprietorships",
-		"PRIVATE_LIMITED_COMPANY": "Private Limited Company",
-		"PUBLIC_LIMITED_COMPANY": "Public Limited Company"
-	},
-	"DOC": {
-		"DOWNLOAD_PDF": "Download document as PDF",
-		"MOC_CERTIFICATE": "MOC ceritficate",
-		"BUSINESS_EXTRACT": "Business Extract",
-		"VAT_CERTIFICATE": "VAT Certificate",
-		"PATENT": "Paten",
-		"GDT_CARD": "GDT Card"
-	},
-	"DOC_PAGE": {
-		"HEADER": "Documents",
-		"BTN_REQUEST": "Send Request",
-		"REQUEST_PLACEHOLDER": "Request Any Document",
-		"SEARCH": "Search"
-	},
-	"MONTHS": {
-		"JAN": "Jan",
-		"FEB": "Feb",
-		"MARCH": "Mar",
-		"APRIL": "Apr",
-		"MAY": "May",
-		"JUNE": "Jun",
-		"JULY": "Jul",
-		"AUGUST": "Aug",
-		"SEPTEMBER": "Sep",
-		"OCTOBER": "Oct",
-		"NOVEMBER": "Nov",
-		"DECEMBER": "Dec"
-	},
-	"REQUEST_PAGE": {
-		"HEADER_1": "Pendding Requests",
-		"HEADER_2": "Accepted Requests",
-		"HEADER_3": "Rejected Requests",
-		"CREATED_AT": "created at",
-		"ACCEPTED_AT": "accepted at",
-		"REJECTED_AT": "rejected at",
-		"DATE": "date"
-	},
-	"REQUEST_STATUS": {
-		"pending": "Pending",
-		"accepted": "Accepted",
-		"rejected": "Rejected"
-	},
-	"MESSAGE": {
-		"REQUEST_SUCCESS": "Request has send to system",
-		"DELETE_REQUEST_SUCCESS": "Request deleted successfull",
-		"DETELE_REQUEST_FAILED": "Error Server"
-	},
-	"ALERT_CONFIRM": {
-		"HEADER": "តើ​អ្នក​ប្រាកដ​ឬ​អត់?",
-		"OK": "យល់ព្រម",
-		"CANCEL": "លប់ចោល"
-	}
+	"KG_ALL": "KG-ALL",
+    "LOGIN": "Login ",
+    "LOGOUT": "Logout",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "LOGIN_ERROR_CONENT": "wrong credentials! try again.",
+    "ERROR": "error",
+    "OK": "ok",
+    "HOME_PAGE": {
+        "TITLE": "KG-ALL",
+        "BTN1": "General",
+        "BTN2": "Company Status",
+        "BTN3": "Tax Calculation",
+        "BTN4": "Service Pricing"
+    },
+    "SIDE_MENU": {
+        "MENU1": "Request List",
+        "MENU2": "Documents",
+        "CONTACT_US": "Contact Us"
+    },
+    "MOC": {
+        "HEADER": "Ministry of Commerce",
+        "REGISTRATION_ID": "Commercial Registration ID",
+        "REGISTRATION_DATE": "Noted Date",
+        "CAPITAL_REGISTRATION": "Capital Registration",
+        "TYPE": "Type",
+        "ANNUAL_SUBMISSION_DATE": "Annual Submission Date",
+        "USERNAME": "Username (For MOC)",
+        "PASSWORD": "Password (For MOC)",
+        "RIEL": "Riel"
+    },
+    "GDT": {
+        "HEADER": "Taxation Department",
+        "TAX_IDENTIFICATION": "Tax Identification Number",
+        "REGISTRATION_DATE": "Registration Date",
+        "REGISTRATION_AT": "Registration At",
+        "ADDRESS": "Address",
+        "BANK_NAME": "Bank Name",
+        "BANK_ACC_NAME": "Bank Account Name",
+        "BANK_ACC_NUM": "Bank Account Number",
+        "TAX_CARD_NUM": "Tax Card Number",
+        "PHONE_NUMBER": "Phonenumber"
+    },
+    "COMPANY_STATUS": {
+        "HEADER": "Company Status",
+        "TAB1": "Monthly tax",
+        "TAB2": "Annual tax",
+        "MONTHLY_TAX_INY_EAR": "Monthly Tax In",
+        "REVENUE": "Revenue",
+        "EXPENSE": "Expense",
+        "TAX_PAID_AMOUNT": "Taxes Paid",
+        "OTHERS": "Others",
+        "MONTH": "Month",
+        "ANNUAL_TAX_IN_LAST_5YEAR": "Annual Tax (last 5 years)",
+        "YEAR": "Year"
+    },
+    "TAX_CALCULATION": {
+        "HEADER": "Tax Calculation",
+        "BTN1": "General Tax Calculation",
+        "BTN2": "Salary Tax Calculation",
+        "REVENUE": "Company Revenue",
+        "EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "Expenditures Total Tax Invoice",
+        "PROPERTY_RENTAL_EXPENSES": "Property Rental Expenses",
+        "OUTSOURCE_SERVICE_EXPENSES": "Oustside Service Exprenses",
+        "BTN_RESET": "Reset",
+        "BTN_CALCULATE": "Calculate",
+        "SALARY": "Monthly Salary",
+        "BONUS": "Fringe Benefits",
+        "SPOUSE": "Has Spouse",
+        "BTN_HAVE": "Yes",
+        "BTN_NO_HAVE": "No",
+        "CHILDREN": "Amount of Children",
+        "RESULT": "Results of Calculation",
+        "INCOME_TAX_RELIEF": "Income Tax Relief",
+        "VAT_TO_BE_PAID": "VAT to be paid",
+        "RENTAL_WITHHOLDING_TAX": "Rental Withholding Tax",
+        "WITHHOLDING_TAX_ON_SERVICE": "Withholding Tax On Service",
+        "SALARY_TAX": "Salary Tax",
+        "BONUS_TAX": "Fringe Benefits Tax",
+        "TOTAL_TAX": "Total Tax",
+        "TAX_RATE": "Tax Rate",
+        "FINAL_SALARY": "Salary After Tax Paid"
+    },
+    "COMPANY_TYPE": {
+        "SOLE_PROPRIETORSHIPS": "Sole Proprietorships",
+        "PRIVATE_LIMITED_COMPANY": "Private Limited Company",
+        "PUBLIC_LIMITED_COMPANY": "Public Limited Company"
+    },
+    "DOC": {
+        "DOWNLOAD_PDF": "Download document as PDF",
+        "MOC_CERTIFICATE": "MOC ceritficate",
+        "BUSINESS_EXTRACT": "Business Extract",
+        "VAT_CERTIFICATE": "VAT Certificate",
+        "PATENT": "Paten",
+        "GDT_CARD": "GDT Card"
+    },
+    "DOC_PAGE": {
+        "HEADER": "Documents",
+        "BTN_REQUEST": "Send Request",
+        "REQUEST_PLACEHOLDER": "Request Any Document",
+        "SEARCH": "Search"
+    },
+    "MONTHS": {
+        "JAN": "Jan",
+        "FEB": "Feb",
+        "MARCH": "Mar",
+        "APRIL": "Apr",
+        "MAY": "May",
+        "JUNE": "Jun",
+        "JULY": "Jul",
+        "AUGUST": "Aug",
+        "SEPTEMBER": "Sep",
+        "OCTOBER": "Oct",
+        "NOVEMBER": "Nov",
+        "DECEMBER": "Dec"
+    },
+    "REQUEST_PAGE": {
+        "HEADER_1": "Pendding Requests",
+        "HEADER_2": "Accepted Requests",
+        "HEADER_3": "Rejected Requests",
+        "CREATED_AT": "created at",
+        "ACCEPTED_AT": "accepted at",
+        "REJECTED_AT": "rejected at",
+        "DATE": "date"
+    },
+    "REQUEST_STATUS": {
+        "pending": "Pending",
+        "accepted": "Accepted",
+        "rejected": "Rejected"
+    },
+    "MESSAGE": {
+        "REQUEST_SUCCESS": "Request has send to system",
+        "DELETE_REQUEST_SUCCESS": "Request deleted successfull",
+        "DETELE_REQUEST_FAILED": "Error Server"
+    },
+    "ALERT_CONFIRM": {
+        "HEADER": "Are you sure?",
+        "OK": "Ok",
+        "CANCEL": "Cancel"
+    },
+    "SERVICE": {
+        "HEADER": "Service Pricing"
+    }
 }

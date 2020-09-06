@@ -44,7 +44,11 @@ const routes: Routes = [
     {
         path: 'salary-tax',
         loadChildren: () => import('./pages/tax-calculation/salary-tax/salary-tax.module').then( m => m.SalaryTaxPageModule)
-      },
+    },
+    {
+        path: 'service-pricing',
+        loadChildren: () => import('./pages/service-pricing/service-pricing.module').then( m => m.ServicePricingPageModule)
+    },
 ];
 
 @NgModule({

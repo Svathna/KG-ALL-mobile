@@ -1,4 +1,5 @@
 {
+	"KG_ALL": "ខេជីអល",
     "LOGIN": "ចូលទៅក្នុងប្រពន្ធ័",
     "LOGOUT": "ចាកចេញ",
     "USERNAME": "ឈ្មោះប្រើប្រាស់",
@@ -11,131 +12,134 @@
         "BTN1": "ពត៌មានទូទៅ",
         "BTN2": "ស្ថានភាពក្រុមហ៊ុន",
         "BTN3": "ការគណនាពន្ធ",
-        "BTN4": "សេវាកម្ម"
+        "BTN4": "តម្លៃសេវាកម្ម"
     },
     "SIDE_MENU": {
-		"MENU1": "បញ្ជីពាក្យស្នើរ",
-		"MENU2": "ទូឯកសារ",
-		"CONTACT_US": "ទាក់ទង​មក​ពួក​យើង"
-  	},
-	"MOC": {
-		"HEADER": "ក្រសួងពាណិជ្ជកម្ម",
-		"REGISTRATION_ID": "ចុះបញ្ជីពាណិជ្ជកម្មលេខ",
-		"REGISTRATION_DATE": "ចុះថ្ងៃទី",
-		"CAPITAL_REGISTRATION": "ដើមទុនចុះបញ្ជី",
-		"TYPE": "ប្រភេទ",
-		"ANNUAL_SUBMISSION_DATE": "ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ",
-		"USERNAME": "ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម",
-		"PASSWORD": "លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម",
-		"RIEL": "រៀល"
-	},
+        "MENU1": "បញ្ជីពាក្យស្នើរ",
+        "MENU2": "ទូឯកសារ",
+        "CONTACT_US": "ទាក់ទង​មក​ពួក​យើង"
+    },
+    "MOC": {
+        "HEADER": "ក្រសួងពាណិជ្ជកម្ម",
+        "REGISTRATION_ID": "ចុះបញ្ជីពាណិជ្ជកម្មលេខ",
+        "REGISTRATION_DATE": "ចុះថ្ងៃទី",
+        "CAPITAL_REGISTRATION": "ដើមទុនចុះបញ្ជី",
+        "TYPE": "ប្រភេទ",
+        "ANNUAL_SUBMISSION_DATE": "ថ្ងៃខែតម្កល់ប្រតិវេទប្រចាំឆ្នាំ",
+        "USERNAME": "ឈ្មោះប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម",
+        "PASSWORD": "លេខកូដប្រើប្រាស់ប្រព័ន្ធពាណិជ្ជកម្ម",
+        "RIEL": "រៀល"
+    },
     "GDT": {
-		"HEADER": "អគ្គនាយកដ្ឋានពន្ធដារ",
-		"TAX_IDENTIFICATION": "លេខអត្តសញ្ញាណសារពើពន្ធ",
-		"REGISTRATION_DATE": "ចុះថ្ងៃទី",
-		"REGISTRATION_AT": "ចុះបញ្ជីនៅ",
-		"ADDRESS": "អាសយដ្ឋាន",
-		"BANK_NAME": "ឈ្មោះធនាគារ",
-		"BANK_ACC_NAME": "ឈ្មោះគណនីធនាគារ",
-		"BANK_ACC_NUM": "លេខគណនីធនាគារ",
-		"TAX_CARD_NUM": "លេខកាតពន្ធដារ",
-		"PHONE_NUMBER": "លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ"
-	},
+        "HEADER": "អគ្គនាយកដ្ឋានពន្ធដារ",
+        "TAX_IDENTIFICATION": "លេខអត្តសញ្ញាណសារពើពន្ធ",
+        "REGISTRATION_DATE": "ចុះថ្ងៃទី",
+        "REGISTRATION_AT": "ចុះបញ្ជីនៅ",
+        "ADDRESS": "អាសយដ្ឋាន",
+        "BANK_NAME": "ឈ្មោះធនាគារ",
+        "BANK_ACC_NAME": "ឈ្មោះគណនីធនាគារ",
+        "BANK_ACC_NUM": "លេខគណនីធនាគារ",
+        "TAX_CARD_NUM": "លេខកាតពន្ធដារ",
+        "PHONE_NUMBER": "លេខទូរសព្ទភ្ជាប់ប្រព័ន្ធ"
+    },
     "COMPANY_STATUS": {
         "HEADER": "ស្ថានភាពក្រុមហ៊ុន",
         "TAB1": "ពន្ធប្រចាំខែ",
-		"TAB2": "ពន្ធប្រចាំឆ្នាំ",
-		"MONTHLY_TAX_INY_EAR": "ពន្ធប្រចាំខែក្នុងឆ្នាំ",
-		"REVENUE": "ចំណូល",
-		"EXPENSE": "ចំណាយ",
-		"TAX_PAID_AMOUNT": "ប្រាក់ពន្ធបានបង់",
-		"OTHERS": "ផ្សេងៗ",
-		"MONTH": "ខែ",
-		"ANNUAL_TAX_IN_LAST_5YEAR": "ពន្ធប្រចាំឆ្នាំ (5ឆ្នាំចុងក្រោយ)",
-		"YEAR": "ឆ្នាំ"
+        "TAB2": "ពន្ធប្រចាំឆ្នាំ",
+        "MONTHLY_TAX_INY_EAR": "ពន្ធប្រចាំខែក្នុងឆ្នាំ",
+        "REVENUE": "ចំណូល",
+        "EXPENSE": "ចំណាយ",
+        "TAX_PAID_AMOUNT": "ប្រាក់ពន្ធបានបង់",
+        "OTHERS": "ផ្សេងៗ",
+        "MONTH": "ខែ",
+        "ANNUAL_TAX_IN_LAST_5YEAR": "ពន្ធប្រចាំឆ្នាំ (5ឆ្នាំចុងក្រោយ)",
+        "YEAR": "ឆ្នាំ"
     },
     "TAX_CALCULATION": {
         "HEADER": "ការគណនាពន្ធ",
         "BTN1": "ការគណនាពន្ធទូទៅ",
-		"BTN2": "ការគណនាពន្ធប្រាក់បៀវត្ស",
-		"REVENUE": "ប្រាក់ចំណូលក្រុមហ៊ុន",
-		"EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "ចំណាយដែលមានវិក័យបត្រអាករសរុប",
-		"PROPERTY_RENTAL_EXPENSES": "ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ",
-		"OUTSOURCE_SERVICE_EXPENSES": "ចំណាយលើសេវាកម្មនៃបុគ្គលិកមិនមែនក្រុមហ៊ុន",
-		"BTN_RESET": "កំណត់ឡើងវិញ",
-		"BTN_CALCULATE": "គណនា",
-		"SALARY": "ប្រាក់បៀវត្សប្រចាំខែ",
-		"BONUS": "អត្ថប្រយោជន៍បន្ថែម",
-		"SPOUSE": "សហព័ទ្ធ",
-		"BTN_HAVE": "មាន",
-		"BTN_NO_HAVE": "គ្មាន",
-		"CHILDREN": "ចំនួនកូនក្នុងបន្ទុក",
-		"RESULT": "លទ្ធផលនៃការគណនា",
-		"INCOME_TAX_RELIEF": "ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល",
-		"VAT_TO_BE_PAID": "អាករលើតម្លៃបន្ថែមត្រូវបង់ចំនូន",
-		"RENTAL_WITHHOLDING_TAX": "ពន្ធកាត់ទុកលើការជួល",
-		"WITHHOLDING_TAX_ON_SERVICE": "ពន្ធកាត់ទុកលើការសេវាកម្ម",
-		"SALARY_TAX": "ពន្ធលើប្រាក់បៀវត្ស",
-		"BONUS_TAX": "ពន្ធលើអត្ថប្រយោជន៍បន្ថែម",
-		"TOTAL_TAX": "ពន្ធសរុបដែលត្រូវបង់",
-		"TAX_RATE": "អត្រាពន្ធ",
-		"FINAL_SALARY": "ប្រាក់បៀវត្សដែលត្រូវទទួលបាន"
-	},
-	"COMPANY_TYPE": {
-		"SOLE_PROPRIETORSHIPS": "សហគ្រាសឯកបុគ្គល",
-		"PRIVATE_LIMITED_COMPANY": "ក្រុមហ៊ុនឯកជនទទួលខុសត្រូវមានកម្រិត",
-		"PUBLIC_LIMITED_COMPANY": "ក្រុមហ៊ុនមហាជនទទួលខុសត្រូវមានកម្រិត"
-	},
-	"DOC": {
-		"DOWNLOAD_PDF": "ទាញយកឯកសារជា PDF",
-		"MOC_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម",
-		"BUSINESS_EXTRACT": "សម្រង់ក្រុមហ៊ុន",
-		"VAT_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ",
-		"PATENT": "ប័ណ្ណប៉ាតង់",
-		"GDT_CARD": "កាតពន្ធដារ"
-	},
-	"DOC_PAGE": {
-		"HEADER": "ទូរឯកសារ",
-		"BTN_REQUEST": "ដាក់ស្នើ",
-		"REQUEST_PLACEHOLDER": "ពាក្យស្នើសុំឯកសារបន្ថែម",
-		"SEARCH": "ស្វែងរក"
-	},
-	"MONTHS": {
-		"JAN": "មករា",
-		"FEB": "កុម្ភៈ",
-		"MARCH": "មីនា",
-		"APRIL": "មេសា",
-		"MAY": "ឧសភា",
-		"JUNE": "មិថុនា",
-		"JULY": "កក្កដា",
-		"AUGUST": "សីហា",
-		"SEPTEMBER": "កញ្ញា",
-		"OCTOBER": "តុលា",
-		"NOVEMBER": "វិច្ឆិកា",
-		"DECEMBER": "ធ្នូ"
-	},
-	"REQUEST_PAGE": {
-		"HEADER_1": "ពាក្យស្នើរដែលកំពុងរង់ចាំ",
-		"HEADER_2": "ពាក្យស្នើរដែលត្រូវបានទទួលយក",
-		"HEADER_3": "ពាក្យស្នើរដែលត្រូវបានបដិសេធ",
-		"CREATED_AT": "",
-		"ACCEPTED_AT": "",
-		"REJECTED_AT": "",
-		"DATE": "ថ្ងៃទី"
-	},
-	"REQUEST_STATUS": {
-		"pending": "កំពុងរង់ចាំ",
-		"accepted": "បានទទួលយក",
-		"rejected": "បានបដិសេធ"
-	},
-	"MESSAGE": {
-		"REQUEST_SUCCESS": "ការស្នើត្រូវបានបញ្ជូនទៅក្នុងប្រព័ន្ធ",
-		"DELETE_REQUEST_SUCCESS": "ពាក្យស្នើរត្រូវបានលុបចោល",
-		"DETELE_REQUEST_FAILED": "error ប្រព័ន្ធមានបញ្ហ"
-	},
-	"ALERT_CONFIRM": {
-		"HEADER": "Are you sure?",
-		"OK": "Ok",
-		"CANCEL": "Cancel"
-	}
+        "BTN2": "ការគណនាពន្ធប្រាក់បៀវត្ស",
+        "REVENUE": "ប្រាក់ចំណូលក្រុមហ៊ុន",
+        "EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "ចំណាយដែលមានវិក័យបត្រអាករសរុប",
+        "PROPERTY_RENTAL_EXPENSES": "ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ",
+        "OUTSOURCE_SERVICE_EXPENSES": "ចំណាយលើសេវាកម្មនៃបុគ្គលិកមិនមែនក្រុមហ៊ុន",
+        "BTN_RESET": "កំណត់ឡើងវិញ",
+        "BTN_CALCULATE": "គណនា",
+        "SALARY": "ប្រាក់បៀវត្សប្រចាំខែ",
+        "BONUS": "អត្ថប្រយោជន៍បន្ថែម",
+        "SPOUSE": "សហព័ទ្ធ",
+        "BTN_HAVE": "មាន",
+        "BTN_NO_HAVE": "គ្មាន",
+        "CHILDREN": "ចំនួនកូនក្នុងបន្ទុក",
+        "RESULT": "លទ្ធផលនៃការគណនា",
+        "INCOME_TAX_RELIEF": "ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល",
+        "VAT_TO_BE_PAID": "អាករលើតម្លៃបន្ថែមត្រូវបង់ចំនូន",
+        "RENTAL_WITHHOLDING_TAX": "ពន្ធកាត់ទុកលើការជួល",
+        "WITHHOLDING_TAX_ON_SERVICE": "ពន្ធកាត់ទុកលើការសេវាកម្ម",
+        "SALARY_TAX": "ពន្ធលើប្រាក់បៀវត្ស",
+        "BONUS_TAX": "ពន្ធលើអត្ថប្រយោជន៍បន្ថែម",
+        "TOTAL_TAX": "ពន្ធសរុបដែលត្រូវបង់",
+        "TAX_RATE": "អត្រាពន្ធ",
+        "FINAL_SALARY": "ប្រាក់បៀវត្សដែលត្រូវទទួលបាន"
+    },
+    "COMPANY_TYPE": {
+        "SOLE_PROPRIETORSHIPS": "សហគ្រាសឯកបុគ្គល",
+        "PRIVATE_LIMITED_COMPANY": "ក្រុមហ៊ុនឯកជនទទួលខុសត្រូវមានកម្រិត",
+        "PUBLIC_LIMITED_COMPANY": "ក្រុមហ៊ុនមហាជនទទួលខុសត្រូវមានកម្រិត"
+    },
+    "DOC": {
+        "DOWNLOAD_PDF": "ទាញយកឯកសារជា PDF",
+        "MOC_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពាណិជ្ជកម្ម",
+        "BUSINESS_EXTRACT": "សម្រង់ក្រុមហ៊ុន",
+        "VAT_CERTIFICATE": "វិញ្ញាបនប័ត្រចុះបញ្ជីពន្ធដារ",
+        "PATENT": "ប័ណ្ណប៉ាតង់",
+        "GDT_CARD": "កាតពន្ធដារ"
+    },
+    "DOC_PAGE": {
+        "HEADER": "ទូរឯកសារ",
+        "BTN_REQUEST": "ដាក់ស្នើ",
+        "REQUEST_PLACEHOLDER": "ពាក្យស្នើសុំឯកសារបន្ថែម",
+        "SEARCH": "ស្វែងរក"
+    },
+    "MONTHS": {
+        "JAN": "មករា",
+        "FEB": "កុម្ភៈ",
+        "MARCH": "មីនា",
+        "APRIL": "មេសា",
+        "MAY": "ឧសភា",
+        "JUNE": "មិថុនា",
+        "JULY": "កក្កដា",
+        "AUGUST": "សីហា",
+        "SEPTEMBER": "កញ្ញា",
+        "OCTOBER": "តុលា",
+        "NOVEMBER": "វិច្ឆិកា",
+        "DECEMBER": "ធ្នូ"
+    },
+    "REQUEST_PAGE": {
+        "HEADER_1": "ពាក្យស្នើរដែលកំពុងរង់ចាំ",
+        "HEADER_2": "ពាក្យស្នើរដែលត្រូវបានទទួលយក",
+        "HEADER_3": "ពាក្យស្នើរដែលត្រូវបានបដិសេធ",
+        "CREATED_AT": "",
+        "ACCEPTED_AT": "",
+        "REJECTED_AT": "",
+        "DATE": "ថ្ងៃទី"
+    },
+    "REQUEST_STATUS": {
+        "pending": "កំពុងរង់ចាំ",
+        "accepted": "បានទទួលយក",
+        "rejected": "បានបដិសេធ"
+    },
+    "MESSAGE": {
+        "REQUEST_SUCCESS": "ការស្នើត្រូវបានបញ្ជូនទៅក្នុងប្រព័ន្ធ",
+        "DELETE_REQUEST_SUCCESS": "ពាក្យស្នើរត្រូវបានលុបចោល",
+        "DETELE_REQUEST_FAILED": "error ប្រព័ន្ធមានបញ្ហ"
+    },
+    "ALERT_CONFIRM": {
+        "HEADER": "តើ​អ្នក​ប្រាកដ​ឬ​អត់?",
+        "OK": "យល់ព្រម",
+        "CANCEL": "លប់ចោល"
+    },
+    "SERVICE": {
+        "HEADER": "តម្លៃសេវាកម្ម"
+    }
 }
