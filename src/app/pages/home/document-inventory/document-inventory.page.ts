@@ -44,7 +44,7 @@ export class DocumentInventoryPage implements OnInit {
         this.requestForm = this.fb.group({
             description: new FormControl("", [
                 Validators.required,
-                Validators.minLength(5),
+                Validators.minLength(3),
             ]),
         });
     }

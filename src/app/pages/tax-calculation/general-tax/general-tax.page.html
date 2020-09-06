@@ -16,19 +16,19 @@
 			<form class="tax-calculation-form ion-padding-horizontal"  [formGroup]="taxCalculationForm">
 				<ion-label position="floating">{{ 'TAX_CALCULATION.REVENUE' | translate }}*</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 រៀល" formControlName="revenue" min="0"></ion-input>
+					<ion-input type="number" placeholder="0 ៛" formControlName="revenue" min="0"></ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.EXPENDITURES_WITH_TOTAL_TAX_INVOICE' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 រៀល" formControlName="expendWithInvoiceTotal" min="0"></ion-input>
+					<ion-input type="number" placeholder="0 ៛" formControlName="expendWithInvoiceTotal" min="0"></ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.PROPERTY_RENTAL_EXPENSES' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnRenting" min="0"></ion-input>
+					<ion-input type="number" placeholder="0 ៛" formControlName="expendOnRenting" min="0"></ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.OUTSOURCE_SERVICE_EXPENSES' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnOutsideService" min="0"></ion-input>
+					<ion-input type="number" placeholder="0 ៛" formControlName="expendOnOutsideService" min="0"></ion-input>
 				</ion-item>
 				<div>
 					<ion-row>
@@ -60,7 +60,7 @@
 									<ion-label color="light">{{ 'TAX_CALCULATION.INCOME_TAX_RELIEF' | translate }} ៖</ion-label>
 									<ion-label color="light">
 										<strong>
-											{{calucationResults.incomeTax | number}} រៀល
+											{{calucationResults.incomeTax | number}} ៛
 										</strong>
 									</ion-label>
 								</ion-col>
@@ -70,7 +70,7 @@
 									<ion-label color="light">{{ 'TAX_CALCULATION.VAT_TO_BE_PAID' | translate }} ៖</ion-label>
 									<ion-label color="light">
 										<strong>
-											{{calucationResults.valueAddedTax | number}} រៀល
+											{{calucationResults.valueAddedTax | number}} ៛
 										</strong>
 									</ion-label>
 								</ion-col>
@@ -80,7 +80,7 @@
 									<ion-label color="light">{{ 'TAX_CALCULATION.RENTAL_WITHHOLDING_TAX' | translate }} 10% ៖</ion-label>
 									<ion-label color="light">
 										<strong>
-											{{calucationResults.rentingTax | number}} រៀល
+											{{calucationResults.rentingTax | number}} ៛
 										</strong>
 									</ion-label>
 								</ion-col>
@@ -90,7 +90,7 @@
 									<ion-label color="light">{{ 'TAX_CALCULATION.WITHHOLDING_TAX_ON_SERVICE' | translate }} 15% ៖</ion-label>
 									<ion-label color="light">
 										<strong>
-											{{calucationResults.serviceTax | number}} រៀល
+											{{calucationResults.serviceTax | number}} ៛
 										</strong>
 									</ion-label>
 								</ion-col>

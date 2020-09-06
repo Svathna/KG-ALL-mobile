@@ -66,8 +66,8 @@ export class SalaryTaxPage implements OnInit {
                 Validators.required,
                 Validators.min(0),
             ]),
-            extraSalary: new FormControl("", [Validators.min(0)]),
-            hasPartnerWithIncome: new FormControl(this.isHad, [Validators.required]),
+            bonus: new FormControl("", [Validators.min(0)]),
+            spouse: new FormControl(this.isHad, [Validators.required]),
             children: new FormControl(this.children, [
                 Validators.required,
                 Validators.min(0),
