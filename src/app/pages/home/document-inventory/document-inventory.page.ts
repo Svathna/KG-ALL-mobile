@@ -69,7 +69,7 @@ export class DocumentInventoryPage implements OnInit {
     toasterRequestSuccess() {
         const toast = this.toast
             .create({
-                message: "ការស្នើត្រូវបានបញ្ជូនទៅក្នុងប្រព័ន្ធ",
+                message: this.translate.instant('MESSAGE.REQUEST_SUCCESS'),
                 duration: 3000,
                 position: "bottom",
             })

@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, DEFAULT_CURRENCY_CODE, LOCALE_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 
@@ -60,7 +60,11 @@ export function createTranslateLoader(http: HttpClient) {
     {
       provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy
-    }
+    },
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'KHR'
+    },
   ],
   bootstrap: [AppComponent]
 })

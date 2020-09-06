@@ -94,6 +94,22 @@ export class AuthService implements OnInit {
         return token != null ? true : false;
     }
 
+    setUserToLocal(user: User, token: string) {
+        // sanity check
+        if (!user || !token) {
+            return;
+        }
+
+        localStorage.setItem(
+            "user",
+            JSON.stringify(this.userData),
+        );
+        localStorage.setItem(
+            "company",
+            JSON.stringify(this.company),
+        );
+    }
+
     getUserSafe() {
         // const user: User = JSON.parse(localStorage.getItem("user"));
         // return user ? user : null;

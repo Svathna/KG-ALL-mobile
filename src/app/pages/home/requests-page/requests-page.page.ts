@@ -7,6 +7,7 @@ import {
 import { CompanyService } from "src/app/services/company.service";
 import { RequestsResponse, Request, RequestStatus, RequestStatusInKhmer } from "src/app/models/request.model";
 import { SubSink } from "subsink";
+import { TranslateService } from '@ngx-translate/core';
 
 const EequestStatusInKhmer = {
 
@@ -31,7 +32,8 @@ export class RequestsPagePage implements OnInit, OnDestroy {
         private navCtr: NavController,
         private toast: ToastController,
         private alert: AlertController,
-        private companyService: CompanyService
+        private companyService: CompanyService,
+        private translate: TranslateService,
     ) {}
 
     ngOnInit() {
@@ -74,7 +76,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     toasterDeletedRequestSuccess() {
         const toast = this.toast
             .create({
-                message: "ពាក្យស្នើរត្រូវបានលុបចោល",
+                message: this.translate.instant('MESSAGE.DELETE_REQUEST_SUCCESS'),
                 duration: 3000,
                 position: "bottom",
             })
@@ -86,7 +88,7 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     toasterDeletedRequestFailed() {
         const toast = this.toast
             .create({
-                message: "error ប្រព័ន្ធមានបញ្ហា",
+                message: this.translate.instant('MESSAGE.DETELE_REQUEST_FAILED'),
                 duration: 3000,
                 position: "bottom",
             })
@@ -98,16 +100,16 @@ export class RequestsPagePage implements OnInit, OnDestroy {
     alertConfrim(id: string) {
         this.alert
             .create({
-                header: "Are you sure?",
+                header: this.translate.instant('ALERT_CONFIRM.HEADER'),
                 buttons: [
                     {
-                        text: "Ok",
+                        text: this.translate.instant('ALERT_CONFIRM.OK'),
                         handler: () => {
                             this.deleteRequest(id);
                         },
                     },
                     {
-                        text: "Cancel",
+                        text: this.translate.instant('ALERT_CONFIRM.CANCEL'),
                         role: "cancel",
                         cssClass: "secondary",
                     },

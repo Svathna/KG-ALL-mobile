@@ -9,24 +9,24 @@
 
 <ion-content>
 	<div class="main-container">
-		<div class="ion-text-center">
+		<!-- <div class="ion-text-center">
 			<strong>គិតចាប់ពីថ្ងៃទី ០១ ដល់ ៣០ នៃខែ...</strong>
-		</div>
+		</div> -->
 		<div class="ion-margin-top">
 			<form class="tax-calculation-form ion-padding-horizontal"  [formGroup]="taxCalculationForm">
-				<ion-label position="floating">ប្រាក់ចំណូលក្រុមហ៊ុន*</ion-label>
+				<ion-label position="floating">{{ 'TAX_CALCULATION.REVENUE' | translate }}*</ion-label>
 				<ion-item>
 					<ion-input type="number" placeholder="0 រៀល" formControlName="revenue" min="0"></ion-input>
 				</ion-item>
-				<ion-label position="floating">ចំណាយដែលមានវិក័យបត្រអាករសរុប</ion-label>
+				<ion-label position="floating">{{ 'TAX_CALCULATION.EXPENDITURES_WITH_TOTAL_TAX_INVOICE' | translate }}</ion-label>
 				<ion-item>
 					<ion-input type="number" placeholder="0 រៀល" formControlName="expendWithInvoiceTotal" min="0"></ion-input>
 				</ion-item>
-				<ion-label position="floating">ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ</ion-label>
+				<ion-label position="floating">{{ 'TAX_CALCULATION.PROPERTY_RENTAL_EXPENSES' | translate }}</ion-label>
 				<ion-item>
 					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnRenting" min="0"></ion-input>
 				</ion-item>
-				<ion-label position="floating">ចំណាយលើសេវាកម្មនៃបុគ្គលិកមិនមែនក្រុមហ៊ុន</ion-label>
+				<ion-label position="floating">{{ 'TAX_CALCULATION.OUTSOURCE_SERVICE_EXPENSES' | translate }}</ion-label>
 				<ion-item>
 					<ion-input type="number" placeholder="0 រៀល" formControlName="expendOnOutsideService" min="0"></ion-input>
 				</ion-item>
@@ -34,12 +34,12 @@
 					<ion-row>
 						<ion-col class="ion-no-padding ion-padding-end" size="5">
 							<ion-button type="reset" fill="outline" class="w-100-p btn-calculation" (click)="reset()">
-								<ion-label>កំណត់ឡើងវិញ</ion-label>
+								<ion-label>{{ 'TAX_CALCULATION.BTN_RESET' | translate }}</ion-label>
 							</ion-button>
 						</ion-col>
 						<ion-col class="ion-no-padding" size="7">
 							<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
-								<ion-label color="light">គណនាពន្ធ</ion-label>
+								<ion-label color="light">{{ 'TAX_CALCULATION.BTN_CALCULATE' | translate }}</ion-label>
 							</ion-button>
 						</ion-col>
 					</ion-row>
@@ -49,7 +49,7 @@
 		<!-- Result of calculation -->
 		<div *ngIf="isShowingResults" class="ion-padding-horizontal">
 			<div class="ion-text-center ion-margin-top">
-				<strong>លទ្ធផលនៃការគណនាពន្ធ</strong>
+				<strong>{{ 'TAX_CALCULATION.RESULT' | translate }}</strong>
 			</div>
 			<div class="ion-margin-bottom">
 				<ion-card class="result-card ion-no-margin ion-padding-vertical">
@@ -57,7 +57,7 @@
 						<ion-list class="result-list ion-no-padding" lines="none">
 							<ion-item>
 								<ion-col>
-									<ion-label color="light">ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល ៖</ion-label>
+									<ion-label color="light">{{ 'TAX_CALCULATION.INCOME_TAX_RELIEF' | translate }} ៖</ion-label>
 									<ion-label color="light">
 										<strong>
 											{{calucationResults.incomeTax | number}} រៀល
@@ -67,7 +67,7 @@
 							</ion-item>
 							<ion-item>
 								<ion-col>
-									<ion-label color="light">អាករលើតម្លៃបន្ថែម ៖</ion-label>
+									<ion-label color="light">{{ 'TAX_CALCULATION.VAT_TO_BE_PAID' | translate }} ៖</ion-label>
 									<ion-label color="light">
 										<strong>
 											{{calucationResults.valueAddedTax | number}} រៀល
@@ -77,7 +77,7 @@
 							</ion-item>
 							<ion-item>
 								<ion-col>
-									<ion-label color="light">ពន្ធកាត់ទុកលើការជូល ១០% ៖</ion-label>
+									<ion-label color="light">{{ 'TAX_CALCULATION.RENTAL_WITHHOLDING_TAX' | translate }} 10% ៖</ion-label>
 									<ion-label color="light">
 										<strong>
 											{{calucationResults.rentingTax | number}} រៀល
@@ -87,7 +87,7 @@
 							</ion-item>
 							<ion-item>
 								<ion-col>
-									<ion-label color="light">ពន្ធកាត់ទុកលើការសេវាកម្ម ១៥% ៖</ion-label>
+									<ion-label color="light">{{ 'TAX_CALCULATION.WITHHOLDING_TAX_ON_SERVICE' | translate }} 15% ៖</ion-label>
 									<ion-label color="light">
 										<strong>
 											{{calucationResults.serviceTax | number}} រៀល

@@ -13,34 +13,34 @@
 			<form class="tax-calculation-form ion-padding-horizontal" [formGroup]="taxCalculationForm">
 				<div class="ion-padding-bottom">
 					<div>
-						<ion-label position="floating">ប្រាក់បៀវត្សប្រចាំខែ</ion-label>
+						<ion-label position="floating">{{ 'TAX_CALCULATION.SALARY' | translate }}</ion-label>
 						<ion-item>
 							<ion-input type="number" placeholder="0 រៀល" formControlName="salary" required></ion-input>
 						</ion-item>
 					</div>
 					<div class="ion-margin-top">
-						<ion-label position="floating">អត្ថប្រយោជន៍បន្ថែម</ion-label>
+						<ion-label position="floating">{{ 'TAX_CALCULATION.BONUS' | translate }}</ion-label>
 						<ion-item>
-							<ion-input type="number" placeholder="0 រៀល" formControlName="extraSalary"></ion-input>
+							<ion-input type="number" placeholder="0 រៀល" formControlName="bonus"></ion-input>
 						</ion-item>
 					</div>
 					<div class="ion-margin-top">
-						<ion-label position="floating">សហព័ទ្ធ ( ប្តី ឬប្រពន្ធ )</ion-label>
+						<ion-label position="floating">{{ 'TAX_CALCULATION.SPOUSE' | translate }}</ion-label>
 						<ion-row>
 							<ion-col size="3">
 								<ion-button (click)="radioButtonCLick()" [fill]="!isHad? 'outline' : 'solid'" class="w-100-p btn-radio">
-									<ion-label>មាន</ion-label>
+									<ion-label>{{ 'TAX_CALCULATION.BTN_HAVE' | translate }}</ion-label>
 								</ion-button>
 							</ion-col>
 							<ion-col size="3">
 								<ion-button (click)="radioButtonCLick()" [fill]="isHad? 'outline' : 'solid'" class="w-100-p btn-radio">
-									<ion-label>គ្មាន</ion-label>
+									<ion-label>{{ 'TAX_CALCULATION.BTN_NO_HAVE' | translate }}</ion-label>
 								</ion-button>
 							</ion-col>
 						</ion-row>
 					</div>
 					<div class="ion-margin-top">
-						<ion-label>ចំនួនកូនក្នុងបន្ទុក</ion-label>
+						<ion-label>{{ 'TAX_CALCULATION.CHILDREN' | translate }}</ion-label>
 						<ion-row>
 							<div class="icon-wrapper">
 								<ion-icon (click)="childrenDecrese()" color="primary" name="remove-circle"></ion-icon>
@@ -54,7 +54,87 @@
 						</ion-row>
 					</div>
 				</div>
-				<!-- <div class="ion-margin-top">
+				<div class="ion-margin-top">
+					<ion-row>
+						<ion-col class="ion-no-padding" size="12">
+							<ion-col class="ion-no-padding" size="7">
+								<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
+									<ion-label color="light">{{ 'TAX_CALCULATION.BTN_CALCULATE' | translate }}</ion-label>
+								</ion-button>
+							</ion-col>
+						</ion-col>
+					</ion-row>
+				</div>
+			</form>
+		</div>
+		<!-- Result of calculation -->
+		<div *ngIf="isShowingResults" class="ion-padding-horizontal">
+			<div class="ion-text-center ion-margin-top">
+				<strong>{{ 'TAX_CALCULATION.RESULT' | translate }}</strong>
+			</div>
+			<div class="ion-margin-bottom">
+				<ion-card class="result-card ion-no-margin ion-padding-vertical">
+					<ion-card-content class="ion-no-padding">
+						<ion-list class="result-list ion-no-padding" lines="none">
+							<ion-item>
+								<ion-col>
+									<ion-label color="light">{{ 'TAX_CALCULATION.SALARY_TAX' | translate }} ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{ calucationResults.salaryTax | number }} ៛
+										</strong>
+									</ion-label>
+								</ion-col>
+							</ion-item>
+							<ion-item>
+								<ion-col>
+									<ion-label color="light">{{ 'TAX_CALCULATION.BONUS_TAX' | translate }} ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{ calucationResults.bonusTax | number }} ៛
+										</strong>
+									</ion-label>
+								</ion-col>
+							</ion-item>
+							<ion-item>
+								<ion-col>
+									<ion-label color="light">{{ 'TAX_CALCULATION.TOTAL_TAX' | translate }} ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{ calucationResults.totalTax | number }} ៛
+										</strong>
+									</ion-label>
+								</ion-col>
+							</ion-item>
+							<ion-item>
+								<ion-col>
+									<ion-label color="light">{{ 'TAX_CALCULATION.TAX_RATE' | translate }} ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{ calucationResults.rate }} %
+										</strong>
+									</ion-label>
+								</ion-col>
+							</ion-item>
+							<ion-item>
+								<ion-col>
+									<ion-label color="light">{{ 'TAX_CALCULATION.FINAL_SALARY' | translate }} ៖</ion-label>
+									<ion-label color="light">
+										<strong>
+											{{ calucationResults.salaryLeft | number }} ៛
+										</strong>
+									</ion-label>
+								</ion-col>
+							</ion-item>
+						</ion-list>
+					</ion-card-content>
+				</ion-card>
+			</div>
+		</div>
+  </div>
+</ion-content>
+
+<!-- <div class="ion-margin-top">
 					<ion-row *ngIf="!isEditing">
 						<ion-col class="ion-no-padding ion-padding-end" size="5">
 							<ion-button fill="outline" class="w-100-p btn-calculation" (click)="resetForm()">
@@ -98,52 +178,3 @@
 						</ion-slide>
 					</ion-slides>
 				</div> -->
-				<div class="ion-margin-top">
-					<ion-row>
-						<ion-col class="ion-no-padding" size="12">
-							<ion-col class="ion-no-padding" size="7">
-								<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
-									<ion-label color="light">គណនាពន្ធ</ion-label>
-								</ion-button>
-							</ion-col>
-						</ion-col>
-					</ion-row>
-				</div>
-			</form>
-		</div>
-		<!-- Result of calculation -->
-		<div hidden="true" class="ion-padding-horizontal">
-			<div class="ion-text-center ion-margin-top">
-				<strong>លទ្ធផលនៃការគណនាពន្ធ</strong>
-			</div>
-			<div class="ion-margin-bottom">
-				<ion-card class="result-card ion-no-margin ion-padding-vertical">
-					<ion-card-content class="ion-no-padding">
-						<ion-list class="result-list ion-no-padding" lines="none">
-							<ion-item>
-								<ion-col>
-									<ion-label color="light">ពន្ធលើប្រាក់បៀវត្ស ៖</ion-label>
-									<!-- <ion-label color="light">
-										<strong>
-											{{calucationResults.incomeTax | number}} រៀល
-										</strong>
-									</ion-label> -->
-								</ion-col>
-							</ion-item>
-							<ion-item>
-								<ion-col>
-									<ion-label color="light">ពន្ធលើអត្ថប្រយោជន៍បន្ថែម ៖</ion-label>
-									<!-- <ion-label color="light">
-										<strong>
-											{{calucationResults.valueAddedTax | number}} រៀល
-										</strong>
-									</ion-label> -->
-								</ion-col>
-							</ion-item>
-						</ion-list>
-					</ion-card-content>
-				</ion-card>
-			</div>
-		</div>
-  </div>
-</ion-content>

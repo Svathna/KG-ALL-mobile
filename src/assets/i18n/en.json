@@ -57,7 +57,29 @@
 	"TAX_CALCULATION": {
 		"HEADER": "Tax Calculation",
 		"BTN1": "General Tax Calculation",
-		"BTN2": "Salary Tax Calculation"
+		"BTN2": "Salary Tax Calculation",
+		"REVENUE": "Company Revenue",
+		"EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "Expenditures Total Tax Invoice",
+		"PROPERTY_RENTAL_EXPENSES": "Property Rental Expenses",
+		"OUTSOURCE_SERVICE_EXPENSES": "Oustside Service Exprenses",
+		"BTN_RESET": "Reset",
+		"BTN_CALCULATE": "Calculate",
+		"SALARY": "Monthly Salary",
+		"BONUS": "Fringe Benefits",
+		"SPOUSE": "Has Spouse",
+		"BTN_HAVE": "Yes",
+		"BTN_NO_HAVE": "No",
+		"CHILDREN": "Amount of Children",
+		"RESULT": "Results of Calculation",
+		"INCOME_TAX_RELIEF": "Income Tax Relief",
+		"VAT_TO_BE_PAID": "VAT to be paid",
+		"RENTAL_WITHHOLDING_TAX": "Rental Withholding Tax",
+		"WITHHOLDING_TAX_ON_SERVICE": "Withholding Tax On Service",
+		"SALARY_TAX": "Salary Tax",
+		"BONUS_TAX": "Fringe Benefits Tax",
+		"TOTAL_TAX": "Total Tax",
+		"TAX_RATE": "Tax Rate",
+		"FINAL_SALARY": "Salary After Tax Paid"
 	},
 	"COMPANY_TYPE": {
 		"SOLE_PROPRIETORSHIPS": "Sole Proprietorships",
@@ -105,5 +127,15 @@
 		"pending": "Pending",
 		"accepted": "Accepted",
 		"rejected": "Rejected"
+	},
+	"MESSAGE": {
+		"REQUEST_SUCCESS": "Request has send to system",
+		"DELETE_REQUEST_SUCCESS": "Request deleted successfull",
+		"DETELE_REQUEST_FAILED": "Error Server"
+	},
+	"ALERT_CONFIRM": {
+		"HEADER": "តើ​អ្នក​ប្រាកដ​ឬ​អត់?",
+		"OK": "យល់ព្រម",
+		"CANCEL": "លប់ចោល"
 	}
 }

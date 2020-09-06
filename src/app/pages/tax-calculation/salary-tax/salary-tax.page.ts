@@ -9,15 +9,30 @@ import {
 
 export interface CalucationInput {
     salary: number;
-    extraSalary: number;
-    hasPartnerWithIncome: boolean;
+    bonus: number;
+    spouse: boolean;
     children: number;
 }
 
 interface CalucationResults {
   salaryTax: number;
-  extraSalaryTax: number;
+  bonusTax: number;
+  totalTax: number;
+  salaryLeft: number;
+  // rate is percentage
+  rate: number;
 }
+
+const LEVEL1 = 1300000;
+const LEVEL2 = 2000000;
+const LEVEL3 = 8500000;
+const LEVEL4 = 12500000;
+
+const RATE_LEVEL1 = 0.05;
+const RATE_LEVEL2 = 0.1;
+const RATE_LEVEL3 = 0.15;
+const RATE_LEVEL4 = 0.2;
+
 
 @Component({
     selector: "app-salary-tax",
@@ -30,6 +45,7 @@ export class SalaryTaxPage implements OnInit {
     children = 0;
     taxCalculationForm: FormGroup;
     isShowingResults = false;
+    calucationResults: CalucationResults;
     cardInputArray: CalucationInput[] = [];
     isEditing = false;
     indexInputEditing: number;
@@ -61,12 +77,11 @@ export class SalaryTaxPage implements OnInit {
 
     radioButtonCLick() {
         this.isHad = !this.isHad;
-        this.taxCalculationForm.controls['hasPartnerWithIncome'].setValue(this.isHad);
+        this.taxCalculationForm.controls['spouse'].setValue(this.isHad);
     }
 
     childrenIncrease() {
         this.children++;
-        console.log(this.children);
         this.taxCalculationForm.controls['children'].setValue(this.children);
     }
 
@@ -75,22 +90,84 @@ export class SalaryTaxPage implements OnInit {
             return;
         }
         this.children--;
-        console.log(this.children);
         this.taxCalculationForm.controls["children"].setValue(this.children);
     }
 
     calculation() {
-        console.log(this.taxCalculationForm.value);
-        console.log("Implement me!");
         if (this.taxCalculationForm.invalid) {
             return;
         }
         const value: CalucationInput = this.taxCalculationForm.value;
-        // this.calucationResults = this.taxCalculator(value);
+        this.calucationResults = this.taxCalculator(value);
+        this.isShowingResults = true;
     }
 
     taxCalculator(value: CalucationInput): CalucationResults {
-        return;
+        const { bonus } = value;
+
+        const salary = this.taxBaseCalculator(value);
+
+        // sanity check
+        if (!salary || salary <= 0) {
+            return;
+        }
+
+        let rate;
+        let minusNumber;
+
+        if (salary <= LEVEL1) {
+            rate = 0;
+            minusNumber = 0;
+        } else if (salary <= LEVEL2) {
+            rate = RATE_LEVEL1;
+            minusNumber = 65000;
+        } else if (salary <= LEVEL3) {
+            rate = RATE_LEVEL2;
+            minusNumber = 165000;
+        } else if (salary < LEVEL4) {
+            rate = RATE_LEVEL3;
+            minusNumber = 590000;
+        } else {
+            rate = RATE_LEVEL4
+            minusNumber = 1215000;
+        }
+
+        let salaryTax;
+
+        // sanity check
+        if (!rate) {
+            salaryTax = 0;
+        } else {
+            salaryTax = (salary * rate) - minusNumber;
+        }
+
+        // Calculate bonus tax
+        const bonusTax = bonus * 0.2;
+
+        return {
+            salaryTax: salaryTax,
+            bonusTax,
+            totalTax: salaryTax + bonusTax,
+            salaryLeft: (value.salary + bonus) - (salaryTax + bonusTax),
+            rate: rate * 100,
+        };
+    }
+
+    taxBaseCalculator (value: CalucationInput) {
+        const { salary, spouse, children } = value;
+
+        let taxBase;
+
+        if (salary && salary > 0) {
+            const burdenAmount = spouse ? children + 1 : children;
+            console.log("burdenAmount :", burdenAmount);
+            // if burdenAmount
+            taxBase = burdenAmount > 0 ? salary - (burdenAmount * 150000) : salary;
+        } else {
+            taxBase = 0;
+        }
+
+        return taxBase;
     }
 
     resetForm() {
@@ -101,12 +178,10 @@ export class SalaryTaxPage implements OnInit {
 
     saveForCalculation() {
         if (this.taxCalculationForm.invalid) {
-            console.log(this.taxCalculationForm);
             return;
         }
         this.cardInputArray.push(this.taxCalculationForm.value);
         this.resetForm();
-        console.log(this.cardInputArray);
     }
 
     editInput(index: number) {
@@ -124,7 +199,6 @@ export class SalaryTaxPage implements OnInit {
 
     saveEdit() {
         if (this.taxCalculationForm.invalid) {
-            console.log(this.taxCalculationForm);
             return;
         }
         this.cardInputArray[this.indexInputEditing] = this.taxCalculationForm.value;

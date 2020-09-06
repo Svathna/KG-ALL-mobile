@@ -57,7 +57,29 @@
     "TAX_CALCULATION": {
         "HEADER": "ការគណនាពន្ធ",
         "BTN1": "ការគណនាពន្ធទូទៅ",
-		"BTN2": "ការគណនាពន្ធប្រាក់បៀវត្ស"
+		"BTN2": "ការគណនាពន្ធប្រាក់បៀវត្ស",
+		"REVENUE": "ប្រាក់ចំណូលក្រុមហ៊ុន",
+		"EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "ចំណាយដែលមានវិក័យបត្រអាករសរុប",
+		"PROPERTY_RENTAL_EXPENSES": "ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ",
+		"OUTSOURCE_SERVICE_EXPENSES": "ចំណាយលើសេវាកម្មនៃបុគ្គលិកមិនមែនក្រុមហ៊ុន",
+		"BTN_RESET": "កំណត់ឡើងវិញ",
+		"BTN_CALCULATE": "គណនា",
+		"SALARY": "ប្រាក់បៀវត្សប្រចាំខែ",
+		"BONUS": "អត្ថប្រយោជន៍បន្ថែម",
+		"SPOUSE": "សហព័ទ្ធ",
+		"BTN_HAVE": "មាន",
+		"BTN_NO_HAVE": "គ្មាន",
+		"CHILDREN": "ចំនួនកូនក្នុងបន្ទុក",
+		"RESULT": "លទ្ធផលនៃការគណនា",
+		"INCOME_TAX_RELIEF": "ប្រាក់រំដោះពន្ធលើប្រាក់ចំណូល",
+		"VAT_TO_BE_PAID": "អាករលើតម្លៃបន្ថែមត្រូវបង់ចំនូន",
+		"RENTAL_WITHHOLDING_TAX": "ពន្ធកាត់ទុកលើការជួល",
+		"WITHHOLDING_TAX_ON_SERVICE": "ពន្ធកាត់ទុកលើការសេវាកម្ម",
+		"SALARY_TAX": "ពន្ធលើប្រាក់បៀវត្ស",
+		"BONUS_TAX": "ពន្ធលើអត្ថប្រយោជន៍បន្ថែម",
+		"TOTAL_TAX": "ពន្ធសរុបដែលត្រូវបង់",
+		"TAX_RATE": "អត្រាពន្ធ",
+		"FINAL_SALARY": "ប្រាក់បៀវត្សដែលត្រូវទទួលបាន"
 	},
 	"COMPANY_TYPE": {
 		"SOLE_PROPRIETORSHIPS": "សហគ្រាសឯកបុគ្គល",
@@ -105,5 +127,15 @@
 		"pending": "កំពុងរង់ចាំ",
 		"accepted": "បានទទួលយក",
 		"rejected": "បានបដិសេធ"
+	},
+	"MESSAGE": {
+		"REQUEST_SUCCESS": "ការស្នើត្រូវបានបញ្ជូនទៅក្នុងប្រព័ន្ធ",
+		"DELETE_REQUEST_SUCCESS": "ពាក្យស្នើរត្រូវបានលុបចោល",
+		"DETELE_REQUEST_FAILED": "error ប្រព័ន្ធមានបញ្ហ"
+	},
+	"ALERT_CONFIRM": {
+		"HEADER": "Are you sure?",
+		"OK": "Ok",
+		"CANCEL": "Cancel"
 	}
 }
