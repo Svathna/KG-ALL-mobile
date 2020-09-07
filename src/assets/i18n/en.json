@@ -140,6 +140,15 @@
         "CANCEL": "Cancel"
     },
     "SERVICE": {
-        "HEADER": "Service Pricing"
+		"HEADER": "Service Pricing",
+		"MONTHLY_TAX_HEADER": "Monthly Tax Return Pricing",
+		"ANNUAL_TAX_HEADER": "Annual Tax Return Pricing",
+		"PRICING_LESSTHAN_50": "For Lessthan 50 invoices",
+		"PRICING_MORETHAN_50": "For Morethan 50 invoices",
+		"INCOME_TAX": "Income Tax",
+		"PATENT_TAX": "Patent Tax",
+		"TRADEMARK_TAX": "Trademark tax",
+		"PROPERTY_TAX": "Property",
+		"TRANSPORTATION_TAX": "Transportation Tax"
     }
 }

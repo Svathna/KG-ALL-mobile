@@ -8,5 +8,73 @@
 </ion-header>
 
 <ion-content>
+  <div class="main-container">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title class="text-center">{{ 'SERVICE.MONTHLY_TAX_HEADER' | translate }}</ion-card-title>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.PRICING_LESSTHAN_50' | translate }}:</div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 100 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.PRICING_MORETHAN_50' | translate }}: </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 200 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
 
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title class="text-center">{{ 'SERVICE.ANNUAL_TAX_HEADER' | translate }}</ion-card-title>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.INCOME_TAX' | translate }}: </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 400 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.PATENT_TAX' | translate }}: </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 50 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.TRADEMARK_TAX' | translate }}: </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 20 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.PROPERTY_TAX' | translate }}: </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 20 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="7">
+            <div>{{ 'SERVICE.TRANSPORTATION_TAX' | translate }}: </div>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{ 20 | currency: 'USD' }}</div>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
