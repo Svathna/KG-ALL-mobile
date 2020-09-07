@@ -20,6 +20,83 @@
                 </div>
             </ion-col>
             <ion-col class="ion-no-padding" size="10">
+                <ion-slides mode="md" scrollbar="true" [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                    <ion-slide>
+                            <ion-col class="ion-no-padding ion-text-start">
+                                <div class="ion-margin-top ion-padding-start border-bottom">
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.REVENUE' | translate }}</h6>
+                                </div>
+                                <div class="ion-margin-top ion-padding-start border-bottom"
+                                    *ngFor="let item of taxPerMonths">
+                                    <h6 *ngIf="item.revenue">{{ item.revenue  | number }} ៛</h6>
+                                    <h6 *ngIf="!item.revenue">...</h6>
+                                </div>
+                            </ion-col>
+                    </ion-slide>
+                    <ion-slide>
+                            <ion-col class="ion-no-padding ion-text-start">
+                                <div class="ion-margin-top ion-padding-start border-bottom">
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.EXPENSE' | translate }}</h6>
+                                </div>
+                                <div class="ion-margin-top ion-padding-start border-bottom"
+                                    *ngFor="let item of taxPerMonths">
+                                    <h6 *ngIf="item.spending">{{ item.spending  | number }} ៛</h6>
+                                    <h6 *ngIf="!item.spending">...</h6>
+                                </div>
+                            </ion-col>
+                    </ion-slide>
+
+                    <ion-slide>
+                            <ion-col class="ion-no-padding ion-text-start">
+                                <div class="ion-margin-top ion-padding-start border-bottom">
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.TAX_PAID_AMOUNT' | translate }}</h6>
+                                </div>
+                                <div class="ion-margin-top ion-padding-start border-bottom"
+                                    *ngFor="let item of taxPerMonths">
+                                    <h6 *ngIf="item.taxPaidAmount">{{ item.taxPaidAmount  | number }} ៛</h6>
+                                    <h6 *ngIf="item.taxPaidAmount">...</h6>
+                                </div>
+                            </ion-col>
+                    </ion-slide>
+                    <ion-slide>
+                            <ion-col class="ion-no-padding ion-text-start">
+                                <div class="ion-margin-top ion-padding-start border-bottom">
+                                    <h6 class="table_header">{{ 'COMPANY_STATUS.OTHERS' | translate }}</h6>
+                                </div>
+                                <div class="ion-margin-top ion-padding-start border-bottom"
+                                    *ngFor="let item of taxPerMonths">
+                                    <h6>{{ item.others ? item.others : '...' }}</h6>
+                                </div>
+                            </ion-col>
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+        <!-- loading -->
+        <ion-row *ngIf="taxPerMonths.length === 0" class="ion-margin-top ion-margin-start">
+            <ion-col size="12" *ngFor="let month of arrayMonths">
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
+
+
+
+
+<!-- <ion-content>
+    <div class="main-container ion-padding-top">
+        <strong class="ion-margin-start">{{ 'COMPANY_STATUS.MONTHLY_TAX_INY_EAR' | translate }} {{ currentDate | date: 'yyyy'}}</strong>
+        <ion-row *ngIf="taxPerMonths.length > 0" class="ion-margin-top">
+            <ion-col class="ion-no-padding ion-text-center" size="2">
+                <div class="ion-margin-top border-bottom">
+                    <h6 class="table_header">{{ 'COMPANY_STATUS.MONTH' | translate }}</h6>
+                </div>
+                <div class="ion-margin-top border-bottom" *ngFor="let month of arrayMonths">
+                    <h6>{{ 'MONTHS.' + month | translate }}</h6>
+                </div>
+            </ion-col>
+            <ion-col class="ion-no-padding" size="10">
                 <ion-slides mode="md" scrollbar="true">
                     <ion-slide>
                         <ion-row class="w-100-p">
@@ -68,11 +145,10 @@
                 </ion-slides>
             </ion-col>
         </ion-row>
-        <!-- loading -->
         <ion-row *ngIf="taxPerMonths.length === 0" class="ion-margin-top ion-margin-start">
             <ion-col size="12" *ngFor="let month of arrayMonths">
                 <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </ion-col>
         </ion-row>
     </div>
-</ion-content>
+</ion-content> -->
