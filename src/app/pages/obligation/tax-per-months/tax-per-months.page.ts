@@ -73,6 +73,5 @@ export class TaxPerMonthsPage implements OnInit {
         );
         this.taxPerMonths = [...arrayData];
         this.isFetching = false;
-        console.log(this.taxPerMonths);
     }
 }

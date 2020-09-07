@@ -46,7 +46,6 @@ export class AppComponent {
 
       // subscibe when lang change
       this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-        console.log(event)
         this.translate.use(event.lang);
         localStorage.setItem('locale', event.lang);
       });

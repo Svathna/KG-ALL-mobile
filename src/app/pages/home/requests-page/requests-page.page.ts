@@ -52,7 +52,6 @@ export class RequestsPagePage implements OnInit, OnDestroy {
                 this.isFetching = false;
                 if (data && data.success) {
                     this.requests = data.requests;
-                    console.log(this.requests);
                 }
             });
     }

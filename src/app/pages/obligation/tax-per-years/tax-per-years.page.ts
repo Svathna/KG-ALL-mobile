@@ -51,7 +51,6 @@ export class TaxPerYearsPage implements OnInit {
     const arrayData: TaxPerYear[] = await this.taxHistoryService.builTaxPerYears(taxPerYears ? taxPerYears : this.taxHistory.taxPerYears);
     this.taxPerYears = [...arrayData];
     this.isFetching = false;
-    console.log(this.taxPerYears);
   }
 
 }

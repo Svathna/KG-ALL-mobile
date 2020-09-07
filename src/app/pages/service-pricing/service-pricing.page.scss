@@ -11,5 +11,19 @@ ion-content {
             }
             
         }
+
+        .pdf-file {
+            // margin-top: 0px;
+
+            a {
+                text-decoration: underline;
+                color: #3069bb;
+                font-size: 14px;
+            }
+
+            .pdf-icon {
+                font-size: 4rem;
+            }
+        }
     }
 }

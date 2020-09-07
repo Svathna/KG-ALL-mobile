@@ -56,8 +56,6 @@ export class GeneralTaxPage implements OnInit {
     }
 
     calculation() {
-        console.log(this.taxCalculationForm.value);
-        console.log("Implement me!");
         if (this.taxCalculationForm.invalid) {
             return;
         }

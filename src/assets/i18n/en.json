@@ -149,6 +149,7 @@
 		"PATENT_TAX": "Patent Tax",
 		"TRADEMARK_TAX": "Trademark tax",
 		"PROPERTY_TAX": "Property",
-		"TRANSPORTATION_TAX": "Transportation Tax"
+        "TRANSPORTATION_TAX": "Transportation Tax",
+        "DOC_NAME": "Service Pricing Detail"
     }
 }

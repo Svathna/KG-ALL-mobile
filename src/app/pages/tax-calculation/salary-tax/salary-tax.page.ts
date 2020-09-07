@@ -160,7 +160,6 @@ export class SalaryTaxPage implements OnInit {
 
         if (salary && salary > 0) {
             const burdenAmount = spouse ? children + 1 : children;
-            console.log("burdenAmount :", burdenAmount);
             // if burdenAmount
             taxBase = burdenAmount > 0 ? salary - (burdenAmount * 150000) : salary;
         } else {
