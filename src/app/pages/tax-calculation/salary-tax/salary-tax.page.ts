@@ -204,17 +204,6 @@ export class SalaryTaxPage implements OnInit {
         this.resetForm();
     }
 
-    // async viewInput(index: number) {
-    //     const popover = await this.popoverCtrl.create({
-    //         component: CardInputVeiwerComponent,
-    //         translucent: true,
-    //         componentProps: {
-    //             cardInput: this.cardInputArray[index],
-    //         }
-    //     });
-    //     return await popover.present();
-    // }
-
     backTaxCalculation() {
         this.navCtl.navigateBack("tax-calculation");
     }

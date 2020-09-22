@@ -77,49 +77,49 @@
 					<ion-card-content class="ion-no-padding">
 						<ion-list class="result-list ion-no-padding" lines="none">
 							<ion-item>
-								<ion-col>
+								<ion-col size="6">
 									<ion-label color="light">{{ 'TAX_CALCULATION.SALARY_TAX' | translate }} ៖</ion-label>
-									<ion-label color="light">
-										<strong>
-											{{ calucationResults.salaryTax | number }} ៛
-										</strong>
+								</ion-col>
+								<ion-col>
+									<ion-label color="light" class="ion-text-end">
+										<strong>{{ calucationResults.salaryTax | number }} ៛</strong>
 									</ion-label>
 								</ion-col>
 							</ion-item>
 							<ion-item>
-								<ion-col>
+								<ion-col size="6">
 									<ion-label color="light">{{ 'TAX_CALCULATION.BONUS_TAX' | translate }} ៖</ion-label>
-									<ion-label color="light">
-										<strong>
-											{{ calucationResults.bonusTax | number }} ៛
-										</strong>
+								</ion-col>
+								<ion-col>
+									<ion-label color="light" class="ion-text-end">
+										<strong>{{ calucationResults.bonusTax | number }} ៛</strong>
 									</ion-label>
 								</ion-col>
 							</ion-item>
 							<ion-item>
-								<ion-col>
+								<ion-col size="6">
 									<ion-label color="light">{{ 'TAX_CALCULATION.TOTAL_TAX' | translate }} ៖</ion-label>
-									<ion-label color="light">
-										<strong>
-											{{ calucationResults.totalTax | number }} ៛
-										</strong>
+								</ion-col>
+								<ion-col>
+									<ion-label color="light" class="ion-text-end">
+										<strong>{{ calucationResults.totalTax | number }} ៛</strong>
 									</ion-label>
 								</ion-col>
 							</ion-item>
 							<ion-item>
-								<ion-col>
+								<ion-col size="6">
 									<ion-label color="light">{{ 'TAX_CALCULATION.TAX_RATE' | translate }} ៖</ion-label>
-									<ion-label color="light">
-										<strong>
-											{{ calucationResults.rate }} %
-										</strong>
+								</ion-col>
+								<ion-col>
+									<ion-label color="light" class="ion-text-end">
+										<strong>{{ calucationResults.rate }} %</strong>
 									</ion-label>
 								</ion-col>
 							</ion-item>
 							<ion-item>
 								<ion-col>
 									<ion-label color="light">{{ 'TAX_CALCULATION.FINAL_SALARY' | translate }} ៖</ion-label>
-									<ion-label color="light">
+									<ion-label class="ion-text-center" color="light">
 										<strong>
 											{{ calucationResults.salaryLeft | number }} ៛
 										</strong>
