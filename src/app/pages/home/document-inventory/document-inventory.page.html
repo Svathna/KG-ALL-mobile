@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-	<ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
+	<ion-progress-bar *ngIf="isFetching || isSendingRequest" type="indeterminate"></ion-progress-bar>
 	<div class="main-container">
 		<div class="request-section">
 			<form [formGroup]="requestForm">
