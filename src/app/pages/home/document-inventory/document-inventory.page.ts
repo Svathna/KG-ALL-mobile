@@ -9,7 +9,6 @@ import {
     FormControl,
 } from "@angular/forms";
 import { HelpersService } from "src/app/services/helpers.service";
-import { debounce, debounceTime } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -21,6 +20,7 @@ export class DocumentInventoryPage implements OnInit {
 	docs: Doc;
 	otherDocsFiltered: OtherDocument[] = [];
     isFetching = false;
+    isSendingRequest = false;
     requestForm: FormGroup;
 	companyId: string;
 	currentLang = 'kh';
@@ -53,13 +53,13 @@ export class DocumentInventoryPage implements OnInit {
         if (this.requestForm.invalid) {
             return;
         }
-        this.isFetching = true;
+        this.isSendingRequest = true;
         const companyId = await this.companyService.getCompanyId();
         const value = this.requestForm.value;
         this.requestForm.reset();
         Object.assign(value, { companyId });
         this.companyService.sendRequest(value).subscribe((data: any) => {
-            this.isFetching = false;
+            this.isSendingRequest = false;
             if (data && data.success) {
                 this.toasterRequestSuccess();
             }
@@ -83,8 +83,9 @@ export class DocumentInventoryPage implements OnInit {
         this.companyService.getCompanyDocs().subscribe((data: DocResponse) => {
             this.isFetching = false;
             if (data && data.doc) {
-				this.docs = data.doc;
+                this.docs = data.doc;
 				this.otherDocsFiltered = this.docs.others;
+                console.log(this.docs);
             }
         });
     }
