@@ -1,13 +1,22 @@
 ion-content {
     .main-container {
-        padding: 40px 0 0 15px;
+        padding: 25px 10px 0 10px;
         
         ion-skeleton-text {
             height: 16px;
         }
 
+        ion-card {
+            color: #000;
+
+            ion-card-content {
+                padding: 16px;
+            }
+            
+        }
+
         .pdf-file {
-            margin-top: 30px;
+            margin-top: 25px;
 
             a {
                 text-decoration: underline;

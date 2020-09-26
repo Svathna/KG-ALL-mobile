@@ -10,73 +10,77 @@
 <ion-content>
     <ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
     <div class="main-container">
-        <ion-grid *ngIf="moc" class="ion-no-padding">
-            <ion-row>
-                <strong>{{ 'MOC.REGISTRATION_ID' | translate }} :</strong>
-                <p class="ion-margin-start">{{ moc.mocNumber }}</p>
-            </ion-row>
-            <ion-row>
-                <strong>{{ 'MOC.REGISTRATION_DATE' | translate }} :</strong>
-                <p class="ion-margin-start">{{ moment(moc.notedDate).format('DD-MM-YYYY') }}</p>
-            </ion-row>
-            <ion-row>
-                <strong>{{ 'MOC.CAPITAL_REGISTRATION' | translate }} :</strong>
-                <p class="ion-margin-start">{{ moc.capital | number }} ៛</p>
-            </ion-row>
-            <ion-row>
-                <strong>{{ 'MOC.TYPE' | translate }} :</strong>
-                <p class="ion-margin-start">{{ 'COMPANY_TYPE.' + companyType[moc.companyType] | translate }}</p>
-            </ion-row>
-            <ion-row>
-                <strong>{{ 'MOC.ANNUAL_SUBMISSION_DATE' | translate }} :</strong>
-                <p class="ion-margin-start">{{ moment(moc.annualTranscriptMaintenanceDate).format('DD-MM-YYYY') }}</p>
-            </ion-row>
-            <ion-row>
-                <strong>{{ 'MOC.USERNAME' | translate }} :</strong>
-                <p class="ion-margin-start">{{ moc.mocUsernameLogin }}</p>
-            </ion-row>
-            <ion-row>
-                <strong>{{ 'MOC.PASSWORD' | translate }} :</strong>
-                <p class="ion-margin-start">{{ moc.mocPasswordLogin }}</p>
-            </ion-row>
-        </ion-grid>
+        <ion-card *ngIf="moc">
+            <ion-card-content>
+                <ion-row>
+                    <strong>{{ 'MOC.REGISTRATION_ID' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ moc.mocNumber }}</div>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.REGISTRATION_DATE' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ moment(moc.notedDate).format('DD-MM-YYYY') }}</div>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.CAPITAL_REGISTRATION' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ moc.capital | number }} ៛</div>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.TYPE' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ 'COMPANY_TYPE.' + companyType[moc.companyType] | translate }}</div>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.ANNUAL_SUBMISSION_DATE' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ moment(moc.annualTranscriptMaintenanceDate).format('DD-MM-YYYY') }}</div>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.USERNAME' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ moc.mocUsernameLogin }}</div>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.PASSWORD' | translate }} :</strong>
+                    <div class="ion-margin-start">{{ moc.mocPasswordLogin }}</div>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
         <!-- loading -->
-        <ion-grid *ngIf="!moc" class="ion-no-padding">
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.REGISTRATION_ID' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
-            </ion-row>
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.REGISTRATION_DATE' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
-            </ion-row>
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.CAPITAL_REGISTRATION' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
-            </ion-row>
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.TYPE' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
-            </ion-row>
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.ANNUAL_SUBMISSION_DATE' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
-            </ion-row>
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.USERNAME' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
-            </ion-row>
-            <ion-row class="ion-margin-top">
-                <strong>{{ 'MOC.PASSWORD' | translate }} :</strong>
-                <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
-            </ion-row>
-        </ion-grid>
+        <ion-card *ngIf="!moc">
+            <ion-card-content>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.REGISTRATION_ID' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 35%"></ion-skeleton-text>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.REGISTRATION_DATE' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.CAPITAL_REGISTRATION' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.TYPE' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 70%"></ion-skeleton-text>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.ANNUAL_SUBMISSION_DATE' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.USERNAME' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <strong>{{ 'MOC.PASSWORD' | translate }} :</strong>
+                    <ion-skeleton-text class="ion-margin-start" animated style="width: 40%"></ion-skeleton-text>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
         <!-- PDF section  -->
-        <div class="pdf-file">
+        <div class="pdf-file" *ngIf="docs">
             <strong>{{ 'DOC.DOWNLOAD_PDF' | translate }} :</strong>
             <div *ngIf="docs && !isFetching">
-                <ion-card class="doc-card">
-                    <ion-row *ngIf="docs.moc_certificate">
+                <ion-card *ngIf="docs.moc_certificate" class="doc-card">
+                    <ion-row>
                         <ion-col size="3">
                             <ion-icon (click)="onClickDownload(docs.moc_certificate, 'moc_certificate')" color="primary"
                                 class="pdf-icon" name="document-attach">
@@ -92,8 +96,8 @@
                         </ion-col>
                     </ion-row>
                 </ion-card>
-                <ion-card class="doc-card">
-                    <ion-row *ngIf="docs.business_extract">
+                <ion-card *ngIf="docs.business_extract" class="doc-card">
+                    <ion-row>
                         <ion-col size="3">
                             <ion-icon (click)="onClickDownload(docs.business_extract, 'business_extract')"
                                 color="primary" class="pdf-icon" name="document-attach">

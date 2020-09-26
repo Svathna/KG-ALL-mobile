@@ -101,7 +101,7 @@ export class CompanyService {
 			}
 		}
 		if (!this.company.taxHistory) {
-			return;
+			return this.http.get(environment.apiURL + `/tax/company/${this.company._id}`);
 		}
 		const id = this.company.taxHistory;
 		return this.http.get(environment.apiURL + `/tax/${id}`);
