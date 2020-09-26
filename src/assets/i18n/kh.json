@@ -122,7 +122,8 @@
         "CREATED_AT": "",
         "ACCEPTED_AT": "",
         "REJECTED_AT": "",
-        "DATE": "ថ្ងៃទី"
+        "DATE": "ថ្ងៃទី",
+        "NO_REQUEST": "មិនទាន់មានពាក្យស្នើរនៅឡើយទេ!"
     },
     "REQUEST_STATUS": {
         "pending": "កំពុងរង់ចាំ",

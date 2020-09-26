@@ -122,7 +122,8 @@
         "CREATED_AT": "created at",
         "ACCEPTED_AT": "accepted at",
         "REJECTED_AT": "rejected at",
-        "DATE": "date"
+        "DATE": "date",
+        "NO_REQUEST": "There is no request yet!"
     },
     "REQUEST_STATUS": {
         "pending": "Pending",

@@ -153,7 +153,7 @@ export class SalaryTaxPage implements OnInit {
         };
     }
 
-    taxBaseCalculator (value: CalucationInput) {
+    taxBaseCalculator(value: CalucationInput) {
         const { salary, spouse, children } = value;
 
         let taxBase;
@@ -173,6 +173,7 @@ export class SalaryTaxPage implements OnInit {
         this.isHad = false;
         this.children = 0;
         this.buildForm();
+        this.isShowingResults = false;
     }
 
     saveForCalculation() {
