@@ -3,7 +3,7 @@
 		<ion-buttons (click)="backTaxCalculation()" class="ion-padding-horizontal" slot="start">
 			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
 		</ion-buttons>
-		<ion-title color="light">{{ 'TAX_CALCULATION.BTN2' | translate }}</ion-title>
+		<ion-title color="light">{{ 'TAX_CALCULATION.BTN2' | translate }} (៛)</ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -15,13 +15,15 @@
 					<div>
 						<ion-label position="floating">{{ 'TAX_CALCULATION.SALARY' | translate }}</ion-label>
 						<ion-item>
-							<ion-input type="number" placeholder="0 ៛" formControlName="salary" required></ion-input>
+							<ion-input type="text" inputmode="decimal" placeholder="0 ៛" [(ngModel)]="salaryModel" [ngModelOptions]="{standalone: true}" (ionInput)="salaryInput($event)" required></ion-input>
 						</ion-item>
 					</div>
 					<div class="ion-margin-top">
 						<ion-label position="floating">{{ 'TAX_CALCULATION.BONUS' | translate }}</ion-label>
 						<ion-item>
-							<ion-input type="number" placeholder="0 ៛" formControlName="bonus"></ion-input>
+							<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="bonusModel" [ngModelOptions]="{standalone: true}"
+								(input)="bonusInput($event)">
+							</ion-input>
 						</ion-item>
 					</div>
 					<div class="ion-margin-top">
@@ -68,21 +70,6 @@
 						</ion-col>
 					</ion-row>
 				</div>
-
-				<!-- <div>
-					<ion-row>
-						<ion-col class="ion-no-padding ion-padding-end" size="5">
-							<ion-button type="reset" fill="outline" class="w-100-p btn-calculation" (click)="reset()">
-								<ion-label>{{ 'TAX_CALCULATION.BTN_RESET' | translate }}</ion-label>
-							</ion-button>
-						</ion-col>
-						<ion-col class="ion-no-padding" size="7">
-							<ion-button color="primary" type="submit" class="w-100-p btn-calculation" (click)="calculation()">
-								<ion-label color="light">{{ 'TAX_CALCULATION.BTN_CALCULATE' | translate }}</ion-label>
-							</ion-button>
-						</ion-col>
-					</ion-row>
-				</div> -->
 			</form>
 		</div>
 		<!-- Result of calculation -->

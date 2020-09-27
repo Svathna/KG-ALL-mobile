@@ -16,8 +16,8 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule.forChild(),
     ReactiveFormsModule,
     IonicModule,
-    SalaryTaxPageRoutingModule
+    SalaryTaxPageRoutingModule,
   ],
-  declarations: [SalaryTaxPage]
+  declarations: [SalaryTaxPage],
 })
 export class SalaryTaxPageModule {}

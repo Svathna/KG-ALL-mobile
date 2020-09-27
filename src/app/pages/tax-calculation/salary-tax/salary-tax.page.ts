@@ -6,6 +6,7 @@ import {
     FormControl,
     Validators,
 } from "@angular/forms";
+import { CurrencyPipe } from '@angular/common';
 
 export interface CalucationInput {
     salary: number;
@@ -38,6 +39,7 @@ const RATE_LEVEL4 = 0.2;
     selector: "app-salary-tax",
     templateUrl: "./salary-tax.page.html",
     styleUrls: ["./salary-tax.page.scss"],
+    providers: [CurrencyPipe],
 })
 export class SalaryTaxPage implements OnInit {
     btnFill = ["outline", "solid"];
@@ -49,18 +51,24 @@ export class SalaryTaxPage implements OnInit {
     cardInputArray: CalucationInput[] = [];
     isEditing = false;
     indexInputEditing: number;
+    salaryModel: any;
+    bonusModel: any;
 
     constructor(
         private navCtl: NavController,
         private formBuilder: FormBuilder,
         public popoverCtrl: PopoverController,
+        private currencyPipe: CurrencyPipe,
     ) {}
 
     ngOnInit() {
         this.buildForm();
+        // console.log(this.getCurrencyFormat(2000000));
     }
 
     buildForm() {
+        this.salaryModel = '';
+        this.bonusModel = '';
         this.taxCalculationForm = this.formBuilder.group({
             salary: new FormControl("", [
                 Validators.required,
@@ -98,6 +106,7 @@ export class SalaryTaxPage implements OnInit {
             return;
         }
         const value: CalucationInput = this.taxCalculationForm.value;
+        console.log(value);
         this.calucationResults = this.taxCalculator(value);
         this.isShowingResults = true;
     }
@@ -203,6 +212,36 @@ export class SalaryTaxPage implements OnInit {
         }
         this.cardInputArray[this.indexInputEditing] = this.taxCalculationForm.value;
         this.resetForm();
+    }
+
+    salaryInput(event) {
+        console.log(event.target.value)
+
+        const value = parseFloat((event.target.value + 'k').replace(/,/g, ''));
+        console.log(value)
+
+        this.taxCalculationForm.controls['salary'].setValue(value);
+        this.salaryModel = this.getCurrencyFormat(value);
+        console.log("salary", this.salaryModel)
+    }
+
+    bonusInput(event) {
+        console.log(this.bonusModel)
+        let value = event.target.value.replace(/,/g, '');
+        value = parseInt(value).toString();
+        console.log("type", typeof(value), value);
+        value = parseFloat(value);
+        this.taxCalculationForm.controls['bonus'].setValue(value);
+        this.bonusModel = this.getCurrencyFormat(value);
+    }
+
+    getCurrencyFormat(value: number) {
+        if (value) {
+            console.log('Input value: ', value)
+            if (!value.toString().includes('$')) {
+                return this.currencyPipe.transform(value, 'KHR', '', '1.0-0');
+            }
+        }
     }
 
     backTaxCalculation() {
