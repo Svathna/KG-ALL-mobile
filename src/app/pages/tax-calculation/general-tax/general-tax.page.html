@@ -16,19 +16,27 @@
 			<form class="tax-calculation-form ion-padding-horizontal"  [formGroup]="taxCalculationForm">
 				<ion-label position="floating">{{ 'TAX_CALCULATION.REVENUE' | translate }}*</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="revenue" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="revenueModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'revenue')" min="0">
+					</ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.EXPENDITURES_WITH_TOTAL_TAX_INVOICE' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="expendWithInvoiceTotal" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="expendWithInvoiceTotalModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'expendWithInvoiceTotal')" min="0">
+					</ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.PROPERTY_RENTAL_EXPENSES' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="expendOnRenting" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="expendOnRentingModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'expendOnRenting')" min="0">
+					</ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.OUTSOURCE_SERVICE_EXPENSES' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="expendOnOutsideService" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="expendOnOutsideServiceModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'expendOnOutsideService')" min="0">
+					</ion-input>
 				</ion-item>
 				<div>
 					<ion-row>

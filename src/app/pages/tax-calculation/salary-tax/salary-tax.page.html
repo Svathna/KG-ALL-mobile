@@ -15,7 +15,9 @@
 					<div>
 						<ion-label position="floating">{{ 'TAX_CALCULATION.SALARY' | translate }}</ion-label>
 						<ion-item>
-							<ion-input type="text" inputmode="decimal" placeholder="0 ៛" [(ngModel)]="salaryModel" [ngModelOptions]="{standalone: true}" (ionInput)="salaryInput($event)" required></ion-input>
+							<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="salaryModel"
+								[ngModelOptions]="{standalone: true}" (ionInput)="salaryInput($event)" min="0" required>
+							</ion-input>
 						</ion-item>
 					</div>
 					<div class="ion-margin-top">

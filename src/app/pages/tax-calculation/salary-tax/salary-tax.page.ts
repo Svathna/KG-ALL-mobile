@@ -215,31 +215,21 @@ export class SalaryTaxPage implements OnInit {
     }
 
     salaryInput(event) {
-        console.log(event.target.value)
-
-        const value = parseFloat((event.target.value + 'k').replace(/,/g, ''));
-        console.log(value)
-
+        const value = parseFloat((event.target.value).replace(/,/g, '').replace(/៛/g, ''));
         this.taxCalculationForm.controls['salary'].setValue(value);
         this.salaryModel = this.getCurrencyFormat(value);
-        console.log("salary", this.salaryModel)
     }
 
     bonusInput(event) {
-        console.log(this.bonusModel)
-        let value = event.target.value.replace(/,/g, '');
-        value = parseInt(value).toString();
-        console.log("type", typeof(value), value);
-        value = parseFloat(value);
+        const value = parseFloat((event.target.value).replace(/,/g, '').replace(/៛/g, ''));
         this.taxCalculationForm.controls['bonus'].setValue(value);
         this.bonusModel = this.getCurrencyFormat(value);
     }
 
     getCurrencyFormat(value: number) {
         if (value) {
-            console.log('Input value: ', value)
             if (!value.toString().includes('$')) {
-                return this.currencyPipe.transform(value, 'KHR', '', '1.0-0');
+                return this.currencyPipe.transform(value, 'KHR', '៛', '1.0-0');
             }
         }
     }
