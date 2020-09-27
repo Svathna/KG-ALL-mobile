@@ -63,7 +63,6 @@ export class SalaryTaxPage implements OnInit {
 
     ngOnInit() {
         this.buildForm();
-        // console.log(this.getCurrencyFormat(2000000));
     }
 
     buildForm() {

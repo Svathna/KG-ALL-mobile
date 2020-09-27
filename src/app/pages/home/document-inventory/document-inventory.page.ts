@@ -85,7 +85,6 @@ export class DocumentInventoryPage implements OnInit {
             if (data && data.doc) {
                 this.docs = data.doc;
 				this.otherDocsFiltered = this.docs.others;
-                console.log(this.docs);
             }
         });
     }
