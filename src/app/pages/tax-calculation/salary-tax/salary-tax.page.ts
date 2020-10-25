@@ -6,6 +6,7 @@ import {
     FormControl,
     Validators,
 } from "@angular/forms";
+import { CurrencyPipe } from '@angular/common';
 
 export interface CalucationInput {
     salary: number;
@@ -38,6 +39,7 @@ const RATE_LEVEL4 = 0.2;
     selector: "app-salary-tax",
     templateUrl: "./salary-tax.page.html",
     styleUrls: ["./salary-tax.page.scss"],
+    providers: [CurrencyPipe],
 })
 export class SalaryTaxPage implements OnInit {
     btnFill = ["outline", "solid"];
@@ -49,11 +51,14 @@ export class SalaryTaxPage implements OnInit {
     cardInputArray: CalucationInput[] = [];
     isEditing = false;
     indexInputEditing: number;
+    salaryModel: any;
+    bonusModel: any;
 
     constructor(
         private navCtl: NavController,
         private formBuilder: FormBuilder,
         public popoverCtrl: PopoverController,
+        private currencyPipe: CurrencyPipe,
     ) {}
 
     ngOnInit() {
@@ -61,6 +66,8 @@ export class SalaryTaxPage implements OnInit {
     }
 
     buildForm() {
+        this.salaryModel = '';
+        this.bonusModel = '';
         this.taxCalculationForm = this.formBuilder.group({
             salary: new FormControl("", [
                 Validators.required,
@@ -98,6 +105,7 @@ export class SalaryTaxPage implements OnInit {
             return;
         }
         const value: CalucationInput = this.taxCalculationForm.value;
+        console.log(value);
         this.calucationResults = this.taxCalculator(value);
         this.isShowingResults = true;
     }
@@ -153,7 +161,7 @@ export class SalaryTaxPage implements OnInit {
         };
     }
 
-    taxBaseCalculator (value: CalucationInput) {
+    taxBaseCalculator(value: CalucationInput) {
         const { salary, spouse, children } = value;
 
         let taxBase;
@@ -173,6 +181,7 @@ export class SalaryTaxPage implements OnInit {
         this.isHad = false;
         this.children = 0;
         this.buildForm();
+        this.isShowingResults = false;
     }
 
     saveForCalculation() {
@@ -204,16 +213,25 @@ export class SalaryTaxPage implements OnInit {
         this.resetForm();
     }
 
-    // async viewInput(index: number) {
-    //     const popover = await this.popoverCtrl.create({
-    //         component: CardInputVeiwerComponent,
-    //         translucent: true,
-    //         componentProps: {
-    //             cardInput: this.cardInputArray[index],
-    //         }
-    //     });
-    //     return await popover.present();
-    // }
+    salaryInput(event) {
+        const value = parseFloat((event.target.value).replace(/,/g, '').replace(/៛/g, ''));
+        this.taxCalculationForm.controls['salary'].setValue(value);
+        this.salaryModel = this.getCurrencyFormat(value);
+    }
+
+    bonusInput(event) {
+        const value = parseFloat((event.target.value).replace(/,/g, '').replace(/៛/g, ''));
+        this.taxCalculationForm.controls['bonus'].setValue(value);
+        this.bonusModel = this.getCurrencyFormat(value);
+    }
+
+    getCurrencyFormat(value: number) {
+        if (value) {
+            if (!value.toString().includes('$')) {
+                return this.currencyPipe.transform(value, 'KHR', '៛', '1.0-0');
+            }
+        }
+    }
 
     backTaxCalculation() {
         this.navCtl.navigateBack("tax-calculation");

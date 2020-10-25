@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from "@angular/core";
 import {
     FormGroup,
@@ -28,15 +29,21 @@ const PERCENT_OF_TAX = 0.01;
     selector: "app-general-tax",
     templateUrl: "./general-tax.page.html",
     styleUrls: ["./general-tax.page.scss"],
+    providers: [CurrencyPipe],
 })
 export class GeneralTaxPage implements OnInit {
     taxCalculationForm: FormGroup;
     calucationResults: CalucationResults;
     isShowingResults = false;
+    revenueModel: any;
+    expendWithInvoiceTotalModel: any;
+    expendOnRentingModel: any;
+    expendOnOutsideServiceModel: any;
 
     constructor(
         private navCtl: NavController,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private currencyPipe: CurrencyPipe,
     ) {}
 
     ngOnInit() {
@@ -44,6 +51,7 @@ export class GeneralTaxPage implements OnInit {
     }
 
     buildForm() {
+        this.resetModel();
         this.taxCalculationForm = this.formBuilder.group({
             revenue: new FormControl("", [
                 Validators.required,
@@ -64,7 +72,15 @@ export class GeneralTaxPage implements OnInit {
         this.isShowingResults = true;
     }
 
+    resetModel() {
+        this.revenueModel = '';
+        this.expendOnRentingModel = '';
+        this.expendOnOutsideServiceModel = '';
+        this.expendWithInvoiceTotalModel = '';
+    }
+
     reset() {
+        this.resetModel();
         this.taxCalculationForm.reset();
         this.isShowingResults = false;
     }
@@ -85,6 +101,32 @@ export class GeneralTaxPage implements OnInit {
             valueAddedTax,
             rentingTax,
             serviceTax,
+        }
+    }
+
+    onInputValue(event, controlName: string) {
+        const value = parseFloat((event.target.value).replace(/,/g, '').replace(/៛/g, ''));
+        this.taxCalculationForm.controls[controlName].setValue(value);
+
+        if(controlName === 'revenue') {
+            this.revenueModel = this.getCurrencyFormat(value);
+        } else if(controlName === 'expendWithInvoiceTotal') {
+            this.expendWithInvoiceTotalModel = this.getCurrencyFormat(value);
+        } else if(controlName === 'expendOnRenting') {
+            this.expendOnRentingModel = this.getCurrencyFormat(value);
+        } else if(controlName === 'expendOnOutsideService') {
+            this.expendOnOutsideServiceModel = this.getCurrencyFormat(value);
+        } else {
+            return;
+        }
+    }
+
+    getCurrencyFormat(value: number) {
+        if (value) {
+            console.log('Input value: ', value)
+            if (!value.toString().includes('$')) {
+                return this.currencyPipe.transform(value, 'KHR', '៛', '1.0-0');
+            }
         }
     }
 

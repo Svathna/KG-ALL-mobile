@@ -3,7 +3,7 @@
 		<ion-buttons (click)="backTaxCalculation()" class="ion-padding-horizontal" slot="start">
 			<ion-icon size="large" color="light" name="arrow-back-outline"></ion-icon>
 		</ion-buttons>
-		<ion-title color="light">{{ 'TAX_CALCULATION.BTN1' | translate }}</ion-title>
+		<ion-title color="light">{{ 'TAX_CALCULATION.BTN1' | translate }} (៛)</ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -16,19 +16,27 @@
 			<form class="tax-calculation-form ion-padding-horizontal"  [formGroup]="taxCalculationForm">
 				<ion-label position="floating">{{ 'TAX_CALCULATION.REVENUE' | translate }}*</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="revenue" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="revenueModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'revenue')" min="0">
+					</ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.EXPENDITURES_WITH_TOTAL_TAX_INVOICE' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="expendWithInvoiceTotal" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="expendWithInvoiceTotalModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'expendWithInvoiceTotal')" min="0">
+					</ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.PROPERTY_RENTAL_EXPENSES' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="expendOnRenting" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="expendOnRentingModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'expendOnRenting')" min="0">
+					</ion-input>
 				</ion-item>
 				<ion-label position="floating">{{ 'TAX_CALCULATION.OUTSOURCE_SERVICE_EXPENSES' | translate }}</ion-label>
 				<ion-item>
-					<ion-input type="number" placeholder="0 ៛" formControlName="expendOnOutsideService" min="0"></ion-input>
+					<ion-input type="text" inputmode="numeric" placeholder="0 ៛" [(ngModel)]="expendOnOutsideServiceModel"
+						[ngModelOptions]="{standalone: true}" (ionInput)="onInputValue($event, 'expendOnOutsideService')" min="0">
+					</ion-input>
 				</ion-item>
 				<div>
 					<ion-row>
@@ -58,7 +66,7 @@
 							<ion-item>
 								<ion-col>
 									<ion-label color="light">{{ 'TAX_CALCULATION.INCOME_TAX_RELIEF' | translate }} ៖</ion-label>
-									<ion-label color="light">
+									<ion-label color="light" class="ion-text-center">
 										<strong>
 											{{calucationResults.incomeTax | number}} ៛
 										</strong>
@@ -68,7 +76,7 @@
 							<ion-item>
 								<ion-col>
 									<ion-label color="light">{{ 'TAX_CALCULATION.VAT_TO_BE_PAID' | translate }} ៖</ion-label>
-									<ion-label color="light">
+									<ion-label color="light" class="ion-text-center">
 										<strong>
 											{{calucationResults.valueAddedTax | number}} ៛
 										</strong>
@@ -78,7 +86,7 @@
 							<ion-item>
 								<ion-col>
 									<ion-label color="light">{{ 'TAX_CALCULATION.RENTAL_WITHHOLDING_TAX' | translate }} 10% ៖</ion-label>
-									<ion-label color="light">
+									<ion-label color="light" class="ion-text-center">
 										<strong>
 											{{calucationResults.rentingTax | number}} ៛
 										</strong>
@@ -88,7 +96,7 @@
 							<ion-item>
 								<ion-col>
 									<ion-label color="light">{{ 'TAX_CALCULATION.WITHHOLDING_TAX_ON_SERVICE' | translate }} 15% ៖</ion-label>
-									<ion-label color="light">
+									<ion-label color="light" class="ion-text-center">
 										<strong>
 											{{calucationResults.serviceTax | number}} ៛
 										</strong>

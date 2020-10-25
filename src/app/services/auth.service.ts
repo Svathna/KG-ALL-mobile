@@ -86,6 +86,7 @@ export class AuthService implements OnInit {
     signOut() {
         localStorage.removeItem("user");
         localStorage.removeItem("token");
+        localStorage.removeItem("company");
         this.navCtr.navigateBack("login");
     }
 

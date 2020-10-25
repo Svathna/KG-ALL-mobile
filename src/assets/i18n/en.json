@@ -21,25 +21,25 @@
     },
     "MOC": {
         "HEADER": "Ministry of Commerce",
-        "REGISTRATION_ID": "Commercial Registration ID",
-        "REGISTRATION_DATE": "Noted Date",
-        "CAPITAL_REGISTRATION": "Capital Registration",
-        "TYPE": "Type",
-        "ANNUAL_SUBMISSION_DATE": "Annual Submission Date",
+        "REGISTRATION_ID": "Registration Number",
+        "REGISTRATION_DATE": "Registration Date",
+        "CAPITAL_REGISTRATION": "Registration Capital",
+        "TYPE": "Company Type",
+        "ANNUAL_SUBMISSION_DATE": "Filling Annual Declare date",
         "USERNAME": "Username (For MOC)",
         "PASSWORD": "Password (For MOC)",
         "RIEL": "Riel"
     },
     "GDT": {
-        "HEADER": "Taxation Department",
-        "TAX_IDENTIFICATION": "Tax Identification Number",
+        "HEADER": "Department of Taxation",
+        "TAX_IDENTIFICATION": "Fiscal Identification Number",
         "REGISTRATION_DATE": "Registration Date",
         "REGISTRATION_AT": "Registration At",
         "ADDRESS": "Address",
         "BANK_NAME": "Bank Name",
         "BANK_ACC_NAME": "Bank Account Name",
         "BANK_ACC_NUM": "Bank Account Number",
-        "TAX_CARD_NUM": "Tax Card Number",
+        "TAX_CARD_NUM": "GDT Card Number",
         "PHONE_NUMBER": "Phonenumber"
     },
     "COMPANY_STATUS": {
@@ -57,12 +57,12 @@
     },
     "TAX_CALCULATION": {
         "HEADER": "Tax Calculation",
-        "BTN1": "General Tax Calculation",
+        "BTN1": "Monthly Tax Calculation",
         "BTN2": "Salary Tax Calculation",
         "REVENUE": "Company Revenue",
-        "EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "Expenditures Total Tax Invoice",
-        "PROPERTY_RENTAL_EXPENSES": "Property Rental Expenses",
-        "OUTSOURCE_SERVICE_EXPENSES": "Oustside Service Exprenses",
+        "EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "Expend On Tax Invoice",
+        "PROPERTY_RENTAL_EXPENSES": "Expend Rental Fee of Movable and Immovable Property",
+        "OUTSOURCE_SERVICE_EXPENSES": "Expend on Service of Non-Company",
         "BTN_RESET": "Reset",
         "BTN_CALCULATE": "Calculate",
         "SALARY": "Monthly Salary",
@@ -99,7 +99,8 @@
         "HEADER": "Documents",
         "BTN_REQUEST": "Send Request",
         "REQUEST_PLACEHOLDER": "Request Any Document",
-        "SEARCH": "Search"
+        "SEARCH": "Search",
+        "OTHER_DOCS": "Other documents as PDF"
     },
     "MONTHS": {
         "JAN": "Jan",
@@ -122,7 +123,8 @@
         "CREATED_AT": "created at",
         "ACCEPTED_AT": "accepted at",
         "REJECTED_AT": "rejected at",
-        "DATE": "date"
+        "DATE": "date",
+        "NO_REQUEST": "There is no request!"
     },
     "REQUEST_STATUS": {
         "pending": "Pending",

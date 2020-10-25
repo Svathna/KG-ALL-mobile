@@ -28,6 +28,9 @@
 				</ion-col>
 			</ion-row>
 		</ion-grid>
+		<div *ngIf="!isFetching && requests.length === 0" class="ion-text-center ion-margin-top">
+			<h3 class="ion-margin-top">{{ 'REQUEST_PAGE.NO_REQUEST' | translate }}</h3>
+		</div>
 		<!-- loading -->
 		<ion-grid *ngIf="isFetching">
 			<ion-row>

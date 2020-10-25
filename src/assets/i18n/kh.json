@@ -57,11 +57,11 @@
     },
     "TAX_CALCULATION": {
         "HEADER": "ការគណនាពន្ធ",
-        "BTN1": "ការគណនាពន្ធទូទៅ",
+        "BTN1": "ការគណនាពន្ធច្រចាំខែ",
         "BTN2": "ការគណនាពន្ធប្រាក់បៀវត្ស",
         "REVENUE": "ប្រាក់ចំណូលក្រុមហ៊ុន",
-        "EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "ចំណាយដែលមានវិក័យបត្រអាករសរុប",
-        "PROPERTY_RENTAL_EXPENSES": "ចំណាយលើជួលចលទ្រព្យ និងអចលទ្រព្យ",
+        "EXPENDITURES_WITH_TOTAL_TAX_INVOICE": "ចំណាយលើវិក័យបត្រអាករសរុប",
+        "PROPERTY_RENTAL_EXPENSES": "ចំណាយលើការជួលអចលទ្រព្យ និងចលទ្រព្យ",
         "OUTSOURCE_SERVICE_EXPENSES": "ចំណាយលើសេវាកម្មនៃបុគ្គលិកមិនមែនក្រុមហ៊ុន",
         "BTN_RESET": "កំណត់ឡើងវិញ",
         "BTN_CALCULATE": "គណនា",
@@ -99,7 +99,8 @@
         "HEADER": "ទូរឯកសារ",
         "BTN_REQUEST": "ដាក់ស្នើ",
         "REQUEST_PLACEHOLDER": "ពាក្យស្នើសុំឯកសារបន្ថែម",
-        "SEARCH": "ស្វែងរក"
+        "SEARCH": "ស្វែងរក",
+        "OTHER_DOCS": "ឯកសារផ្សេងៗជា PDF"
     },
     "MONTHS": {
         "JAN": "មករា",
@@ -122,7 +123,8 @@
         "CREATED_AT": "",
         "ACCEPTED_AT": "",
         "REJECTED_AT": "",
-        "DATE": "ថ្ងៃទី"
+        "DATE": "ថ្ងៃទី",
+        "NO_REQUEST": "មិនទាន់មានពាក្យស្នើរនៅឡើយទេ!"
     },
     "REQUEST_STATUS": {
         "pending": "កំពុងរង់ចាំ",

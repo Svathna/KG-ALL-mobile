@@ -55,7 +55,7 @@ export class CompanyService {
 				this.authService.signOut();
 			}
 		}
-		const docId = this.company.docs._id ? this.company.docs._id : this.company.docs;
+		const docId = this.company.docs && this.company.docs._id ? this.company.docs._id : this.company.docs;
 		return this.http.get(environment.apiURL + `/doc/${docId}`);
 	}
 
@@ -101,7 +101,7 @@ export class CompanyService {
 			}
 		}
 		if (!this.company.taxHistory) {
-			return;
+			return this.http.get(environment.apiURL + `/tax/company/${this.company._id}`);
 		}
 		const id = this.company.taxHistory;
 		return this.http.get(environment.apiURL + `/tax/${id}`);

@@ -3,9 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  // apiURL: "https://localhost:5000"
-  apiURL: "https://jujoo-17d27e21.localhost.run"
+    production: false,
+    // apiURL: 'http://localhost:3000',
+    // apiURL: 'https://jujoo-d2a5330f.localhost.run',
+    // apiURL: 'https://d80f508e62af.ngrok.io',
+    apiURL: 'https://kg-all.herokuapp.com',
 };
 
 /*

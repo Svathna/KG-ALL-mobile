@@ -58,6 +58,8 @@ export class AppComponent {
       if (data && data.success) {
         const { company } = data;
         this.companyService.setCompanyToLocal(company);
+      } else {
+        this.authService.signOut();
       }
     });
   }

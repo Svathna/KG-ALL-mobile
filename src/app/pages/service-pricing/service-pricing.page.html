@@ -8,26 +8,27 @@
 </ion-header>
 
 <ion-content>
-  <div class="main-container">
+  <div *ngIf="!isFetching" class="main-container">
     <!-- monthly Tax Service Pricing -->
     <ion-card>
       <ion-card-content>
         <ion-card-title class="text-center">{{ 'SERVICE.MONTHLY_TAX_HEADER' | translate }}</ion-card-title>
+        <hr>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.PRICING_LESSTHAN_50' | translate }}:</div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.monthlyTaxService">
               {{ servicePricing.monthlyTaxService.lessThanThresholdPrice | currency: 'USD' }}
             </div>
           </ion-col>
         </ion-row>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.PRICING_MORETHAN_50' | translate }}: </div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.monthlyTaxService">
               {{ servicePricing.monthlyTaxService.moreThanThresholdPrice | currency: 'USD' }}
             </div>
@@ -39,51 +40,52 @@
     <ion-card>
       <ion-card-content>
         <ion-card-title class="text-center">{{ 'SERVICE.ANNUAL_TAX_HEADER' | translate }}</ion-card-title>
+        <hr>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.INCOME_TAX' | translate }}: </div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.annualTaxService">
               {{ servicePricing.annualTaxService.salaryTaxPrice | currency: 'USD' }}
             </div>
           </ion-col>
         </ion-row>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.PATENT_TAX' | translate }}: </div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.annualTaxService">
               {{ servicePricing.annualTaxService.patentTaxPrice | currency: 'USD' }}
             </div>
           </ion-col>
         </ion-row>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.TRADEMARK_TAX' | translate }}: </div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.annualTaxService">
               {{ servicePricing.annualTaxService.trademarkTaxPrice | currency: 'USD' }}
             </div>
           </ion-col>
         </ion-row>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.PROPERTY_TAX' | translate }}: </div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.annualTaxService">
               {{ servicePricing.annualTaxService.propertyTaxPrice | currency: 'USD' }}
             </div>
           </ion-col>
         </ion-row>
         <ion-row class="ion-margin-top">
-          <ion-col size="7">
+          <ion-col size="8">
             <div>{{ 'SERVICE.TRANSPORTATION_TAX' | translate }}: </div>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="4">
             <div *ngIf="servicePricing && servicePricing.annualTaxService">
               {{ servicePricing.annualTaxService.transportationTaxPrice | currency: 'USD' }}
             </div>
@@ -115,5 +117,40 @@
         </ion-col>
       </ion-row>
     </ion-card>
+  </div>
+  <!-- Loading -->
+  <div *ngIf="isFetching" class="main-container">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title class="text-center">{{ 'SERVICE.MONTHLY_TAX_HEADER' | translate }}</ion-card-title>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 700%"></ion-skeleton-text>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title class="text-center">{{ 'SERVICE.ANNUAL_TAX_HEADER' | translate }}</ion-card-title>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 50%"></ion-skeleton-text>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 70%"></ion-skeleton-text>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 80%"></ion-skeleton-text>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 60%"></ion-skeleton-text>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-skeleton-text class="ion-margin-start" animated style="width: 400%"></ion-skeleton-text>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    
   </div>
 </ion-content>

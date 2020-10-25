@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-	<ion-progress-bar *ngIf="isFetching" type="indeterminate"></ion-progress-bar>
+	<ion-progress-bar *ngIf="isFetching || isSendingRequest" type="indeterminate"></ion-progress-bar>
 	<div class="main-container">
 		<div class="request-section">
 			<form [formGroup]="requestForm">
@@ -25,8 +25,8 @@
 			<strong class="ion-margin-top">{{ 'DOC.DOWNLOAD_PDF' | translate }} :</strong>
 			<div *ngIf="!isFetching">
 				<div *ngIf="docs">
-					<ion-card class="doc-card">
-						<ion-row *ngIf="docs.moc_certificate">
+					<ion-card *ngIf="docs.moc_certificate" class="doc-card">
+						<ion-row>
 							<ion-col size="3">
 								<ion-icon (click)="onClickdownload(docs.moc_certificate, 'moc_certificate')"
 									color="primary" 
@@ -48,8 +48,8 @@
 							</ion-col>
 						</ion-row>
 					</ion-card>
-					<ion-card class="doc-card">
-						<ion-row *ngIf="docs.business_extract">
+					<ion-card *ngIf="docs.business_extract" class="doc-card">
+						<ion-row>
 							<ion-col size="3">
 								<ion-icon (click)="onClickdownload(docs.business_extract, 'business_extract')"
 									color="primary" 
@@ -71,8 +71,8 @@
 							</ion-col>
 						</ion-row>
 					</ion-card>
-					<ion-card class="doc-card">
-						<ion-row *ngIf="docs.vat_certificate">
+					<ion-card *ngIf="docs.vat_certificate" class="doc-card">
+						<ion-row>
 							<ion-col size="3">
 								<ion-icon (click)="onClickdownload(docs.vat_certificate, 'vat_certificate')"
 									color="primary" 
@@ -94,8 +94,8 @@
 							</ion-col>
 						</ion-row>
 					</ion-card>
-					<ion-card class="doc-card">
-						<ion-row *ngIf="docs.patent">
+					<ion-card *ngIf="docs.patent" class="doc-card">
+						<ion-row>
 							<ion-col size="3">
 								<ion-icon (click)="onClickdownload(docs.patent, 'patent')"
 									color="primary" 
@@ -117,8 +117,8 @@
 							</ion-col>
 						</ion-row>
 					</ion-card>
-					<ion-card class="doc-card">
-						<ion-row *ngIf="docs.gdt_card">
+					<ion-card *ngIf="docs.gdt_card" class="doc-card">
+						<ion-row>
 							<ion-col size="3">
 								<ion-icon (click)="onClickdownload(docs.gdt_card, 'gdt_card')"
 									color="primary" 
@@ -144,7 +144,7 @@
 				<!-- Other Doc  section-->
 				<div *ngIf="docs && docs.others" class="ion-margin-top ion-margin-bottom">
 					<strong>
-						ឯកសារផ្សេងៗជា PDF :
+						{{ 'DOC_PAGE.OTHER_DOCS' | translate }} :
 					</strong>
 					<div>
 						<ion-searchbar (ionInput)="filterDocs($event)" showCancelButton="focus" placeholder="{{ 'DOC_PAGE.SEARCH' | translate }}"></ion-searchbar>
