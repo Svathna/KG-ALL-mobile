@@ -144,7 +144,7 @@
 				<!-- Other Doc  section-->
 				<div *ngIf="docs && docs.others" class="ion-margin-top ion-margin-bottom">
 					<strong>
-						ឯកសារផ្សេងៗជា PDF :
+						{{ 'DOC_PAGE.OTHER_DOCS' | translate }} :
 					</strong>
 					<div>
 						<ion-searchbar (ionInput)="filterDocs($event)" showCancelButton="focus" placeholder="{{ 'DOC_PAGE.SEARCH' | translate }}"></ion-searchbar>

@@ -54,7 +54,7 @@
                                 <div class="ion-margin-top ion-padding-start border-bottom"
                                     *ngFor="let item of taxPerMonths">
                                     <h6 *ngIf="item.taxPaidAmount">{{ item.taxPaidAmount  | number }} ៛</h6>
-                                    <h6 *ngIf="item.taxPaidAmount">...</h6>
+                                    <h6 *ngIf="!item.taxPaidAmount">...</h6>
                                 </div>
                             </ion-col>
                     </ion-slide>

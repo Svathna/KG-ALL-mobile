@@ -55,7 +55,7 @@ export class CompanyService {
 				this.authService.signOut();
 			}
 		}
-		const docId = this.company.docs._id ? this.company.docs._id : this.company.docs;
+		const docId = this.company.docs && this.company.docs._id ? this.company.docs._id : this.company.docs;
 		return this.http.get(environment.apiURL + `/doc/${docId}`);
 	}
 
